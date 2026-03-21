@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-cream text-brown font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3 {
+    @apply font-display text-ink;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center
+      bg-terra text-white font-body font-semibold
+      uppercase tracking-wide text-sm
+      px-6 py-3 rounded-xl
+      hover:bg-terra-light active:bg-terra-dark
+      transition-colors duration-200
+      min-h-[48px] min-w-[48px];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center
+      border-2 border-terra text-terra font-body font-semibold
+      uppercase tracking-wide text-sm
+      px-6 py-3 rounded-xl
+      hover:bg-terra hover:text-white
+      transition-colors duration-200
+      min-h-[48px] min-w-[48px];
+  }
+}
