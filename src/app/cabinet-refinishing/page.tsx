@@ -1,3 +1,4 @@
+// VPP v2.0 deployed
 import type { Metadata } from 'next'
 import { BrandName } from '@/components/BrandName'
 import { Footer } from '@/components/Footer'
@@ -52,17 +53,21 @@ function Hero() {
 
         {/* Headline — staggered fade in */}
         <h1 className="font-display text-ink text-4xl md:text-5xl lg:text-6xl leading-tight mb-4 animate-fade-in-up">
-          Your Kitchen. Refreshed.
+          Still Walking Into a Kitchen That
           <br />
-          <span className="inline-block mt-2 bg-terra/10 text-terra px-4 py-1 rounded-full text-3xl md:text-4xl lg:text-5xl">
-            Starting at $2,250
-          </span>
+          Doesn&rsquo;t Feel Like Yours?
         </h1>
 
         {/* Subhead — staggered */}
-        <p className="font-body text-brown text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed animate-fade-in-up animation-delay-200">
-          Licensed cabinet refinishing for East Valley homeowners. Same
-          cabinets. Stunning new finish. Done in 3–5 days.
+        <p className="font-body text-brown text-lg md:text-xl max-w-2xl mx-auto mb-6 leading-relaxed animate-fade-in-up animation-delay-200">
+          Builder-grade cabinets age your entire home. A full remodel costs
+          $30,000 and takes weeks. Cabinet refinishing gives you a brand new
+          kitchen — same cabinets, stunning new finish — in 3 to 5 days.
+        </p>
+
+        {/* Price badge */}
+        <p className="inline-block bg-terra/10 text-terra font-display text-2xl md:text-3xl px-5 py-2 rounded-full mb-8 animate-fade-in-up animation-delay-200">
+          Starting at $2,250
         </p>
 
         {/* CTAs — staggered */}
@@ -92,10 +97,11 @@ function ValueProposition() {
           </h2>
 
           <p className="font-body text-brown text-lg leading-relaxed mb-10">
-            A full kitchen remodel runs $30,000 or more — and takes weeks of
-            demolition, dust, and disruption. Cabinet refinishing delivers a
-            stunning transformation for a fraction of the cost, with zero
-            demolition and your kitchen back in 3–5 business days.
+            New cabinet replacement runs $8,000 to $25,000 — and that&rsquo;s
+            before countertops, backsplash, and weeks of your kitchen being a
+            construction zone. Cabinet refinishing delivers the same visual
+            transformation for a fraction of the cost, with zero demolition and
+            your kitchen back in days, not months.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -153,13 +159,101 @@ function ValueProposition() {
   )
 }
 
+function WhatsIncluded() {
+  const items = [
+    {
+      feature: 'Professional cabinet refinishing with 2 coats of premium finish paint',
+      benefit:
+        'so your cabinets look and feel factory-new, not like a weekend DIY project that peels in six months.',
+    },
+    {
+      feature: 'Full deep clean including the greasy cabinet tops near the ceiling',
+      benefit:
+        'so the surfaces nobody wants to touch get handled before we even start painting. You shouldn\u2019t have to clean up before paying someone to refinish your kitchen.',
+    },
+    {
+      feature: 'Handle and hardware audit',
+      benefit:
+        'we inspect every existing handle position. If your builder installed them crooked (and many did), we fill the old holes, re-drill to the correct alignment, and reinstall. Whether you keep your handles or upgrade, every hole is right.',
+    },
+    {
+      feature: 'Hardware sourcing available',
+      benefit:
+        'if you want new handles or knobs, we source them for you so you don\u2019t have to hunt through Home Depot trying to match hole spacing and finish. Tell us what you like, we handle the rest.',
+    },
+    {
+      feature: 'Soft-close hinge sourcing and installation',
+      benefit:
+        'so you never deal with slamming cabinet doors again. We source them, install them, and adjust them.',
+    },
+    {
+      feature: 'Important cabinet labels preserved',
+      benefit:
+        'any labels inside your cabinet doors (emergency contacts, utility info, warranty details from the builder) are carefully removed before painting, reprinted clean, and reapplied after the job. Nothing gets lost. Nobody else does this.',
+    },
+    {
+      feature: '5-year warranty in writing',
+      benefit:
+        'not a verbal promise. A written warranty that covers the finish. Most DIY cabinet paint jobs fail within 12 months. Most competitors offer 1 year or nothing.',
+    },
+    {
+      feature: 'Fixed price in writing before we touch a single cabinet',
+      benefit:
+        'so you know exactly what you\u2019re paying before the job starts. No surprises, no change orders, no \u201Cwell, once we got in there\u2026\u201D',
+    },
+    {
+      feature: '3 to 5 day completion for most East Valley kitchens',
+      benefit:
+        'your kitchen is back in days, not weeks. No demolition. Fully contained workspace. You can cook dinner while we work.',
+    },
+  ]
+
+  return (
+    <section className="bg-cream">
+      <div className="mx-auto max-w-content px-6 py-16 md:py-24">
+        <div className="text-center mb-12">
+          <h2 className="font-display text-ink text-3xl md:text-4xl mb-4">
+            Everything That&rsquo;s Included — No Surprises, No Extras
+          </h2>
+          <p className="font-body text-brown text-lg max-w-2xl mx-auto">
+            Most cabinet painters just spray your doors and leave. Here&rsquo;s
+            what VPP actually delivers:
+          </p>
+        </div>
+
+        <div className="max-w-3xl mx-auto space-y-4">
+          {items.map((item) => (
+            <div
+              key={item.feature}
+              className="bg-sand-light rounded-2xl p-5 md:p-6 border border-rule/50 flex gap-4"
+            >
+              <CheckIcon />
+              <p className="font-body text-brown text-sm md:text-base leading-relaxed">
+                <span className="font-semibold text-ink">{item.feature}</span>
+                {' — '}
+                {item.benefit}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <p className="max-w-3xl mx-auto mt-10 text-center font-body font-semibold text-ink text-base md:text-lg leading-relaxed bg-sand rounded-2xl p-6 border border-rule/50">
+          This is what $2,250 to $4,000 buys you. Compare that to $30,000 for a
+          remodel — or $0 for another year of walking past cabinets you
+          don&rsquo;t love.
+        </p>
+      </div>
+    </section>
+  )
+}
+
 function Process() {
   const steps = [
     {
       number: '01',
       title: 'Complimentary Consultation & Color Selection',
       description:
-        'I visit your home, assess your cabinets, and help you choose the perfect finish from hundreds of premium color options.',
+        'I visit your home, assess your cabinets, discuss your vision, and help you choose the perfect finish from hundreds of premium color options. You\u2019ll get a written quote on the spot — not an email three days later.',
     },
     {
       number: '02',
@@ -189,7 +283,7 @@ function Process() {
       number: '06',
       title: 'Final Walkthrough & Care Instructions',
       description:
-        'A detailed walkthrough to make sure every detail meets your expectations, plus care instructions to keep your cabinets looking new for years.',
+        'A detailed walkthrough to make sure every single detail meets your expectations — plus a printed care guide so you know exactly how to keep your cabinets looking new for years. And your 5-year warranty documentation.',
     },
   ]
 
@@ -423,11 +517,13 @@ function FinalCTA() {
     <section className="bg-ink">
       <div className="mx-auto max-w-content px-6 py-16 md:py-24 text-center">
         <h2 className="font-display text-sand-light text-3xl md:text-4xl mb-4">
-          Ready to Refresh Your Kitchen?
+          Your Kitchen Deserves Better Than &ldquo;Good Enough&rdquo;
         </h2>
         <p className="font-body text-rule text-lg mb-8 max-w-xl mx-auto">
           Your complimentary cabinet consultation includes a home visit, color
-          selection, and a detailed written estimate — no obligation.
+          selection from hundreds of premium options, and a detailed written
+          estimate — no obligation, no pressure, no &ldquo;let me get back to
+          you.&rdquo; Ricardo delivers your quote on the spot.
         </p>
 
         <a
@@ -463,6 +559,7 @@ export default function CabinetRefinishingPage() {
       <Navigation />
       <Hero />
       <ValueProposition />
+      <WhatsIncluded />
       <Process />
       <Reviews />
       <Gallery />
