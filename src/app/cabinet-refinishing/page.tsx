@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { BrandName } from '@/components/BrandName'
 import { Footer } from '@/components/Footer'
 import { StickyMobileCTA } from '@/components/StickyMobileCTA'
+import { Navigation } from '@/components/Navigation'
 
 export const metadata: Metadata = {
   title: 'Cabinet Refinishing Chandler AZ | Valley Painting Pros',
@@ -39,26 +40,34 @@ function StarIcon() {
 
 function Hero() {
   return (
-    <section className="bg-cream">
-      <div className="mx-auto max-w-content px-6 pt-12 pb-16 md:pt-20 md:pb-24 text-center">
-        {/* Trust bar */}
-        <p className="mb-6 text-sm font-body font-medium text-mid uppercase tracking-widest">
+    <section className="relative bg-cream overflow-hidden">
+      {/* Subtle warm gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-sand-light/60 via-cream to-cream pointer-events-none" aria-hidden="true" />
+
+      <div className="relative mx-auto max-w-content px-6 pt-12 pb-16 md:pt-20 md:pb-24 text-center">
+        {/* Trust bar — fade in */}
+        <p className="mb-6 text-sm font-body font-medium text-mid uppercase tracking-widest animate-fade-in">
           AZ ROC #363664 · Licensed, Bonded &amp; Insured
         </p>
 
-        <h1 className="font-display text-ink text-4xl md:text-5xl lg:text-6xl leading-tight mb-4">
+        {/* Headline — staggered fade in */}
+        <h1 className="font-display text-ink text-4xl md:text-5xl lg:text-6xl leading-tight mb-4 animate-fade-in-up">
           Your Kitchen. Refreshed.
           <br />
-          <span className="text-terra">Starting at $2,250.</span>
+          <span className="inline-block mt-2 bg-terra/10 text-terra px-4 py-1 rounded-full text-3xl md:text-4xl lg:text-5xl">
+            Starting at $2,250
+          </span>
         </h1>
 
-        <p className="font-body text-brown text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
+        {/* Subhead — staggered */}
+        <p className="font-body text-brown text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed animate-fade-in-up animation-delay-200">
           Licensed cabinet refinishing for East Valley homeowners. Same
           cabinets. Stunning new finish. Done in 3–5 days.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="tel:+14804332680" className="btn-primary text-base px-8 py-4">
+        {/* CTAs — staggered */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-400">
+          <a href="tel:+14804332680" className="btn-primary text-base px-8 py-4 shadow-lg shadow-terra/20">
             <PhoneIcon className="w-5 h-5 mr-2" />
             Get Your Complimentary Cabinet Consultation
           </a>
@@ -112,12 +121,18 @@ function ValueProposition() {
             ].map((item) => (
               <div
                 key={item.label}
-                className={`rounded-2xl p-6 ${
+                className={`relative rounded-2xl p-6 ${
                   item.highlight
                     ? 'bg-white border-2 border-terra shadow-md'
                     : 'bg-sand border border-rule'
                 }`}
               >
+                {/* "Most Popular" badge on refinishing card */}
+                {item.highlight && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-terra text-white font-body font-semibold text-xs uppercase tracking-wider px-3 py-1 rounded-full">
+                    Most Popular
+                  </span>
+                )}
                 <p className="font-body text-sm font-medium text-mid uppercase tracking-wide mb-2">
                   {item.label}
                 </p>
@@ -191,13 +206,16 @@ function Process() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Subtle connecting line on desktop */}
+          <div className="hidden lg:block absolute top-12 left-[16%] right-[16%] h-px bg-rule/40" aria-hidden="true" />
+
           {steps.map((step) => (
             <div
               key={step.number}
-              className="bg-sand-light rounded-2xl p-6 border border-rule/50"
+              className="relative bg-sand-light rounded-2xl p-6 border border-rule/50"
             >
-              <span className="inline-block font-display text-terra text-2xl mb-3">
+              <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-terra/10 font-display text-terra text-2xl font-bold mb-3">
                 {step.number}
               </span>
               <h3 className="font-display text-ink text-lg mb-2">
@@ -215,26 +233,37 @@ function Process() {
 }
 
 function Reviews() {
+  const featuredReviews = [
+    {
+      text: 'Thank you Ricardo for my gorgeous kitchen cabinets! They look beautiful! It\u2019s a pleasure working with Ricardo. He is professional and ensures customer satisfaction. The team worked efficiently and were friendly! I can\u2019t wait for him to paint my interior walls this week!',
+      author: 'Rita Solliday',
+    },
+    {
+      text: 'They said they would take care of our home as if it were their own. They must live in a palace because they were more careful and thorough with their prep than I would have been. They are perfectionists. Their work is outstanding. Will definitely use them again.',
+      author: 'Dustin Tibbitts',
+    },
+  ]
+
   const reviews = [
     {
-      text: 'The attention to detail was incredible. Our cabinets look brand new and the whole project was done in four days.',
-      author: 'East Valley Homeowner',
-      rating: 5,
+      text: 'The hardest, nicest and timeliest painters around the valley. We\u2019ve had a few over the past 10 years and my business goes to them in a heartbeat in the future jobs. Thanks so much Jeramey and Ricardo for your attention to detail and hard work.',
+      author: 'Robin Cancro',
     },
     {
-      text: 'Ricardo was professional from the first phone call to the final walkthrough. The finish quality is outstanding.',
-      author: 'Gilbert Homeowner',
-      rating: 5,
+      text: 'I was blown away by their professionalism and affordability. The crew leader, Ricardo, was friendly, and kept me informed throughout the entire job. The end result was stunning! I highly recommend. Thank you Ricardo and team!',
+      author: 'James Dolph',
     },
     {
-      text: 'Could not be happier with the results. Everyone who visits our home asks who did our cabinets.',
-      author: 'Chandler Homeowner',
-      rating: 5,
+      text: 'Valley Painting Pros really went above and beyond. Ricardo was able to quickly fit our project into his schedule, and he is an excellent communicator and so pleasant to work with. Ricardo and Gereimy did an amazing job with drywall repair and painting for us. I\u2019m very glad to have been referred to Ricardo and will definitely hire Valley Painting Pros for future projects!',
+      author: 'Shannon Ruecker',
     },
     {
-      text: 'On time, on budget, and the results exceeded our expectations. Highly recommend Valley Painting Pros.',
-      author: 'Mesa Homeowner',
-      rating: 5,
+      text: 'Ricardo did an amazing job. He gave me an accurate quote and showed up exactly on time. He was very communicative and did an amazing job. Loved working with Valley Painting and look forward to working with them again.',
+      author: 'Kenneth Stauffer',
+    },
+    {
+      text: 'Valley Painting Pros did an amazing job painting the interior of my home! I couldn\u2019t be happier with the results. Highly recommend this company for their excellent workmanship and professionalism.',
+      author: 'Paola',
     },
   ]
 
@@ -256,21 +285,47 @@ function Reviews() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-          {reviews.map((review, i) => (
+        {/* Featured reviews — full width */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          {featuredReviews.map((review) => (
             <div
-              key={i}
+              key={review.author}
+              className="bg-white rounded-2xl p-8 shadow-md border-2 border-terra/20 relative"
+            >
+              <div className="absolute -top-3 left-6 bg-terra text-white font-body font-semibold text-xs uppercase tracking-wider px-3 py-1 rounded-full">
+                Featured
+              </div>
+              <div className="flex gap-0.5 mb-4">
+                {[...Array(5)].map((_, j) => (
+                  <StarIcon key={j} />
+                ))}
+              </div>
+              <p className="font-accent italic text-brown text-base md:text-lg leading-relaxed mb-4">
+                &ldquo;{review.text}&rdquo;
+              </p>
+              <p className="font-body text-sm text-ink font-semibold">
+                — {review.author}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Remaining reviews — 2-column grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          {reviews.map((review) => (
+            <div
+              key={review.author}
               className="bg-white rounded-2xl p-6 shadow-sm border border-rule/30"
             >
               <div className="flex gap-0.5 mb-3">
-                {[...Array(review.rating)].map((_, j) => (
+                {[...Array(5)].map((_, j) => (
                   <StarIcon key={j} />
                 ))}
               </div>
               <p className="font-accent italic text-brown text-base leading-relaxed mb-4">
                 &ldquo;{review.text}&rdquo;
               </p>
-              <p className="font-body text-sm text-mid font-medium">
+              <p className="font-body text-sm text-ink font-semibold">
                 — {review.author}
               </p>
             </div>
@@ -310,20 +365,27 @@ function Gallery() {
           {[1, 2, 3, 4].map((n) => (
             <div key={n} className="flex gap-3">
               {/* Before placeholder */}
-              <div className="flex-1 aspect-[4/3] rounded-xl border-2 border-rule bg-sand flex items-center justify-center">
-                <span className="font-body text-sm font-semibold text-mid uppercase tracking-wide">
+              <div className="flex-1 aspect-[4/3] rounded-xl border-2 border-rule bg-gradient-to-br from-sand to-sand-light flex items-center justify-center relative overflow-hidden">
+                {/* Diagonal stripe pattern */}
+                <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, #7A6558 10px, #7A6558 11px)' }} aria-hidden="true" />
+                <span className="relative font-body text-sm font-semibold text-mid uppercase tracking-wide">
                   Before
                 </span>
               </div>
               {/* After placeholder */}
-              <div className="flex-1 aspect-[4/3] rounded-xl border-2 border-terra bg-sand-light flex items-center justify-center">
-                <span className="font-body text-sm font-semibold text-terra uppercase tracking-wide">
+              <div className="flex-1 aspect-[4/3] rounded-xl border-2 border-terra bg-gradient-to-br from-sand-light to-cream flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, #C4613A 10px, #C4613A 11px)' }} aria-hidden="true" />
+                <span className="relative font-body text-sm font-semibold text-terra uppercase tracking-wide">
                   After
                 </span>
               </div>
             </div>
           ))}
         </div>
+
+        <p className="text-center font-body text-mid text-sm mt-8 italic">
+          Photos coming soon — ask to see our portfolio during your consultation
+        </p>
       </div>
     </section>
   )
@@ -370,7 +432,7 @@ function FinalCTA() {
 
         <a
           href="tel:+14804332680"
-          className="btn-primary text-lg px-10 py-5 mb-6 inline-flex"
+          className="btn-primary text-lg px-10 py-5 mb-6 inline-flex shadow-lg shadow-terra/30"
         >
           <PhoneIcon className="w-6 h-6 mr-3" />
           Get Your Complimentary Cabinet Consultation
@@ -398,6 +460,7 @@ function FinalCTA() {
 export default function CabinetRefinishingPage() {
   return (
     <>
+      <Navigation />
       <Hero />
       <ValueProposition />
       <Process />
@@ -408,7 +471,7 @@ export default function CabinetRefinishingPage() {
       <Footer />
       <StickyMobileCTA />
       {/* Bottom padding on mobile so sticky CTA doesn't cover footer */}
-      <div className="h-16 md:hidden" aria-hidden="true" />
+      <div className="h-20 md:hidden" aria-hidden="true" />
     </>
   )
 }
