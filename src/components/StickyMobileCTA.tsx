@@ -3,7 +3,7 @@
 export function StickyMobileCTA() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
-      <div className="bg-terra shadow-lg px-4 py-3">
+      <div className="bg-terra shadow-lg px-4 py-3 animate-subtle-glow">
         <a
           href="tel:+14804332680"
           className="flex items-center justify-center gap-2 text-white font-body font-semibold text-base min-h-[48px]"

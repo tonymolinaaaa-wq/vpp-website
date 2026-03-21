@@ -40,3 +40,42 @@
       min-h-[48px] min-w-[48px];
   }
 }
+
+/* ─── Hero fade-in animations ─── */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out both;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out both;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* ─── Sticky mobile CTA pulse ─── */
+
+@keyframes subtle-glow {
+  0%, 100% { box-shadow: 0 -2px 12px rgba(196, 97, 58, 0.3); }
+  50% { box-shadow: 0 -2px 20px rgba(196, 97, 58, 0.5); }
+}
+
+.animate-subtle-glow {
+  animation: subtle-glow 3s ease-in-out infinite;
+}
