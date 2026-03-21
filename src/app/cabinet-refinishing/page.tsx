@@ -1,3 +1,4 @@
+// VPP v2.0 deployed
 import type { Metadata } from 'next'
 import { BrandName } from '@/components/BrandName'
 import { Footer } from '@/components/Footer'
