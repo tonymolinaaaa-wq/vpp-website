@@ -48,7 +48,7 @@ export function StickyMobileCTA() {
               Transform Your Kitchen — Call Now
             </span>
             <span className="font-body font-light text-[11px] text-cream/80">
-              Tap to call Ricardo directly
+              Tap to call us directly
             </span>
           </div>
         </a>

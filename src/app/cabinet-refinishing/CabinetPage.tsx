@@ -242,7 +242,7 @@ function Hero() {
               </div>
 
               <p className="font-body text-[13px] text-mid mb-2">
-                ✓ Licensed &amp; Insured · ✓ 5-Star Rated · ✓ 5-Year Warranty
+                ✓ Licensed, Bonded &amp; Insured · ✓ 5-Star Rated · ✓ 5-Year Warranty
               </p>
               <p className="font-body italic text-[13px] text-terra">
                 We take 4–6 cabinet projects per month to maintain our quality standard.
@@ -294,7 +294,7 @@ function SocialProofBar() {
         <span className="text-rule">·</span>
         <span className="font-body font-medium text-xs md:text-[13px] text-mid">Torch Awards Nominee</span>
         <span className="text-rule">·</span>
-        <span className="font-body font-medium text-xs md:text-[13px] text-mid">Licensed &amp; Insured</span>
+        <span className="font-body font-medium text-xs md:text-[13px] text-mid">Licensed, Bonded &amp; Insured</span>
       </div>
     </section>
   )
@@ -323,7 +323,7 @@ function HowItWorks() {
             {
               num: 1,
               title: 'Free Consultation',
-              desc: 'Ricardo personally walks your kitchen, takes measurements, and builds a detailed quote — typically same day. No pressure. No sales pitch.',
+              desc: 'We walk your kitchen, take measurements, and build a detailed quote — typically same day. No pressure. No sales pitch.',
             },
             {
               num: 2,
@@ -413,7 +413,7 @@ function Guarantee() {
             Every cabinet refinishing job comes with a written warranty delivered at job completion — not a verbal promise. If the finish fails under normal use within 5 years, we come back and make it right. No fine print. No runaround.
           </p>
           <p className="font-body font-medium text-sm text-terra">
-            AZ ROC #363664 · Licensed &amp; Insured · Your protection is backed by a licensed contractor, not a handyman.
+            AZ ROC #363664 · Licensed, Bonded &amp; Insured · Your protection is backed by a licensed contractor, not a handyman.
           </p>
         </div>
       </RevealSection>
@@ -744,7 +744,7 @@ function ServiceAreaMap() {
             Chandler <span className="text-terra">·</span> Gilbert <span className="text-terra">·</span> Mesa <span className="text-terra">·</span> Tempe
           </p>
           <p className="font-body text-brown text-base max-w-lg mx-auto">
-            Every consultation, every job, every follow-up — handled by Ricardo personally. No call centers. No subcontractors from across town.
+            Every consultation, every job, every follow-up — handled by our team personally. No call centers. No subcontractors from across town.
           </p>
         </RevealSection>
 
@@ -835,7 +835,7 @@ function EmotionalClose() {
               Most homeowners assume the only fix is a $30,000 remodel — ripping everything out, living without a kitchen for weeks, coordinating with contractors who stop returning calls halfway through.
             </p>
             <p>
-              There&apos;s a better path. We refinish what you already have — same cabinet boxes, completely different kitchen — in 3–5 days, for a fraction of the cost. Ricardo personally walks through your kitchen, answers every question, and builds your quote. No salespeople. No pressure. No middlemen.
+              There&apos;s a better path. We refinish what you already have — same cabinet boxes, completely different kitchen — in 3–5 days, for a fraction of the cost. We walk your kitchen, answer every question, and build your quote on the spot. No salespeople. No pressure. No middlemen.
             </p>
           </div>
           <p className="font-body font-medium text-sm text-terra mb-8">
@@ -902,7 +902,7 @@ function QuoteForm() {
               Ready to Love Your Kitchen?
             </h2>
             <p className="font-body text-sand text-base leading-[1.7] mb-6">
-              Fill out the form and Ricardo will personally reach out — typically within a few hours. Or call anytime.
+              Fill out the form and we'll reach out — typically within a few hours. Or call anytime.
             </p>
             <a
               href="tel:+14804332680"
@@ -1035,7 +1035,7 @@ function QuoteForm() {
                   </button>
 
                   <p className="font-body font-light text-xs text-mid text-center">
-                    No spam. No call centers. Just Ricardo.
+                    No spam. No call centers. Just our team.
                   </p>
                 </form>
               )}
