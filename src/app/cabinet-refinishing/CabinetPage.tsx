@@ -660,11 +660,11 @@ function FAQ() {
     },
     {
       q: 'How messy is this going to be?',
-      a: 'Your kitchen stays usable the entire time. We remove all doors and drawer fronts, take them to a fully contained workspace, and refinish them off-site or in your garage. Bases are masked and painted in place with full protection. You can cook dinner every night we\u2019re working.',
+      a: 'Your kitchen will be out of commission for about 2 days while we work on the base cabinets. We tackle the bases first so you get your kitchen back as fast as possible. Day one we mask everything and begin prep. Day two we seal, prime, and apply two finish coats to the bases \u2014 by end of day or first thing the next morning, the masking comes down and your kitchen is yours again. Meanwhile, we work on your doors and drawers simultaneously on the driveway and in your garage. Everything stays at your home \u2014 we never take your doors offsite. Start to finish, on your property.',
     },
     {
       q: 'Can I pick any color?',
-      a: 'Yes. We work with any cabinet-grade paint color you choose. During your consultation, Ricardo will walk you through options and help you select a finish that matches your kitchen\u2019s lighting, countertops, and style. Most homeowners go lighter \u2014 whites, warm grays, and greiges are the most popular choices in the East Valley right now.',
+      a: 'Yes. We work with any cabinet-grade paint color you choose. During your consultation, we\u2019ll walk you through options and help you select a finish that matches your kitchen\u2019s lighting, countertops, and style. Most homeowners go lighter \u2014 whites, warm grays, and greiges are the most popular choices in the East Valley right now.',
     },
     {
       q: 'How is this different from what I\u2019d get at Home Depot?',
