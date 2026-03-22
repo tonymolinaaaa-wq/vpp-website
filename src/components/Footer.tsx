@@ -35,22 +35,17 @@ export function Footer() {
               href="https://www.bbb.org/us/az/tempe/profile/painting-contractors/valley-painting-pros-llc-1126-1000156113"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 bg-sand-light/10 border border-mid/30 rounded-lg px-3.5 py-2 hover:border-mid/50 transition-colors group"
+              className="inline-flex items-center gap-3 hover:opacity-90 transition-opacity group"
               aria-label="BBB Accredited Business — View VPP profile"
             >
-              {/* BBB torch icon */}
-              <svg viewBox="0 0 32 40" fill="none" className="w-6 h-7 flex-shrink-0" aria-hidden="true">
-                <rect x="1" y="12" width="30" height="27" rx="2" fill="#005A78" />
-                <text x="16" y="30" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold" fontFamily="sans-serif">BBB</text>
-                <ellipse cx="16" cy="8" rx="5" ry="5" fill="#005A78" />
-                <path d="M16 2 L17.5 6 L16 5 L14.5 6 Z" fill="#E8A723" />
-                <path d="M13 5 Q16 0 19 5" stroke="#E8A723" strokeWidth="1.5" fill="none" />
-              </svg>
+              <span className="inline-flex items-center justify-center bg-[#005A78] text-white font-bold text-[13px] tracking-wide rounded px-2 py-1 leading-none flex-shrink-0">
+                BBB
+              </span>
               <div className="flex flex-col">
-                <span className="font-body font-semibold text-[11px] text-sand-light tracking-wide uppercase leading-tight">
-                  BBB Accredited
+                <span className="font-body font-semibold text-[13px] text-sand-light leading-tight">
+                  Accredited Business
                 </span>
-                <span className="font-body text-[10px] text-mid leading-tight">
+                <span className="font-body text-[11px] text-mid leading-tight mt-0.5">
                   A+ Rating · Torch Awards Nominee
                 </span>
               </div>

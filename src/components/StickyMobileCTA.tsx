@@ -21,7 +21,7 @@ export function StickyMobileCTA() {
                 }}
                 className="bg-ink text-white font-body font-semibold text-sm px-5 h-10 rounded-xl hover:bg-ink/90 transition-colors"
               >
-                Get Your Free Quote
+                Get Your Quote
               </button>
               <a
                 href="tel:+14804332680"

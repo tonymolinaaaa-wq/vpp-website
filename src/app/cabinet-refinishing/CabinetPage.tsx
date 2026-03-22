@@ -163,7 +163,7 @@ function StickyNav() {
             onClick={() => smoothScrollTo('quote-form')}
             className="bg-terra text-white font-body font-semibold text-xs md:text-[13px] px-4 py-2 rounded-xl hover:bg-terra-dark transition-colors"
           >
-            Get a Free Quote
+            Get a Quote
           </button>
         </div>
       </div>
@@ -231,7 +231,7 @@ function Hero() {
                   onClick={() => smoothScrollTo('quote-form')}
                   className="btn-primary text-base h-14 px-8 shadow-lg"
                 >
-                  Get Your Free Cabinet Quote
+                  Get Your Cabinet Quote
                 </button>
                 <a
                   href="tel:+14804332680"
@@ -289,11 +289,16 @@ function SocialProofBar() {
         </span>
         <span className="text-rule">·</span>
         <span className="font-body font-medium text-xs md:text-[13px] text-mid">AZ ROC #363664</span>
-        <span className="text-rule">·</span>
-        <span className="font-body font-medium text-xs md:text-[13px] text-mid">BBB A+ Rated</span>
-        <span className="text-rule">·</span>
-        <span className="font-body font-medium text-xs md:text-[13px] text-mid">Torch Awards Nominee</span>
-        <span className="text-rule">·</span>
+        <span className="text-rule hidden sm:inline">·</span>
+        <span className="inline-flex items-center gap-1 bg-cream border border-rule rounded-full px-3 py-0.5">
+          <span className="inline-block w-[22px] h-[14px] bg-[#005A78] rounded-[3px] text-[8px] font-bold text-white text-center leading-[14px] flex-shrink-0">BBB</span>
+          <span className="font-body font-semibold text-xs text-brown">A+ Rated</span>
+        </span>
+        <span className="inline-flex items-center gap-1 bg-cream border border-rule rounded-full px-3 py-0.5">
+          <span className="text-terra text-xs">★</span>
+          <span className="font-body font-semibold text-xs text-brown">Torch Awards Nominee</span>
+        </span>
+        <span className="text-rule hidden sm:inline">·</span>
         <span className="font-body font-medium text-xs md:text-[13px] text-mid">Licensed, Bonded &amp; Insured</span>
       </div>
     </section>
@@ -322,7 +327,7 @@ function HowItWorks() {
           {[
             {
               num: 1,
-              title: 'Free Consultation',
+              title: 'Your Consultation',
               desc: 'We walk your kitchen, take measurements, and build a detailed quote — typically same day. No pressure. No sales pitch.',
             },
             {
@@ -490,7 +495,7 @@ function ComparisonCards() {
                 onClick={() => smoothScrollTo('quote-form')}
                 className="w-full btn-primary"
               >
-                Get Your Free Quote
+                Get Your Quote
               </button>
             </div>
           </RevealSection>
@@ -555,7 +560,7 @@ function BeforeAfter() {
               Real VPP Transformation Photos
             </h3>
             <p className="font-body text-brown text-[15px] leading-[1.7] max-w-md mx-auto">
-              We&apos;re building our portfolio one kitchen at a time. Ask to see our recent work during your free consultation.
+              We&apos;re building our portfolio one kitchen at a time. Ask to see our recent work during your consultation.
             </p>
           </div>
         </RevealSection>
@@ -845,7 +850,7 @@ function EmotionalClose() {
             onClick={() => smoothScrollTo('quote-form')}
             className="btn-primary h-14 text-base"
           >
-            Schedule Your Free Consultation
+            Schedule Your Consultation
           </button>
         </RevealSection>
       </div>
@@ -911,7 +916,7 @@ function QuoteForm() {
               (480) 433-2680
             </a>
             <p className="font-body text-[13px] text-mid mb-2">
-              ✓ Free consultation · ✓ Same-day quotes · ✓ No obligations
+              ✓ No-obligation consultation · ✓ Same-day quotes · ✓ No pressure
             </p>
             <p className="font-body italic text-sm text-terra mb-6">
               We take 4–6 cabinet projects per month. Scheduling fills early.
@@ -1030,7 +1035,7 @@ function QuoteForm() {
                         Sending...
                       </span>
                     ) : (
-                      'Get My Free Cabinet Quote'
+                      'Get My Cabinet Quote'
                     )}
                   </button>
 
