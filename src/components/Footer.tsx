@@ -29,15 +29,35 @@ export function Footer() {
           </div>
 
           {/* Trust credentials */}
-          <div className="space-y-2">
+          <div className="space-y-3">
+            {/* BBB Badge */}
+            <a
+              href="https://www.bbb.org/us/az/tempe/profile/painting-contractors/valley-painting-pros-llc-1126-1000156113"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 bg-sand-light/10 border border-mid/30 rounded-lg px-3.5 py-2 hover:border-mid/50 transition-colors group"
+              aria-label="BBB Accredited Business — View VPP profile"
+            >
+              {/* BBB torch icon */}
+              <svg viewBox="0 0 32 40" fill="none" className="w-6 h-7 flex-shrink-0" aria-hidden="true">
+                <rect x="1" y="12" width="30" height="27" rx="2" fill="#005A78" />
+                <text x="16" y="30" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold" fontFamily="sans-serif">BBB</text>
+                <ellipse cx="16" cy="8" rx="5" ry="5" fill="#005A78" />
+                <path d="M16 2 L17.5 6 L16 5 L14.5 6 Z" fill="#E8A723" />
+                <path d="M13 5 Q16 0 19 5" stroke="#E8A723" strokeWidth="1.5" fill="none" />
+              </svg>
+              <div className="flex flex-col">
+                <span className="font-body font-semibold text-[11px] text-sand-light tracking-wide uppercase leading-tight">
+                  BBB Accredited
+                </span>
+                <span className="font-body text-[10px] text-mid leading-tight">
+                  A+ Rating · Torch Awards Nominee
+                </span>
+              </div>
+            </a>
+
             <p className="font-body text-[13px] text-mid">
               AZ ROC #363664 · Licensed &amp; Insured
-            </p>
-            <p className="font-body text-[13px] text-mid">
-              BBB Accredited · A+ Rating
-            </p>
-            <p className="font-body text-xs text-mid">
-              BBB Torch Awards for Ethics — 2026 Nominee
             </p>
             <p className="font-body text-[13px] text-mid flex items-center gap-1">
               5.0{' '}

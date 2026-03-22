@@ -360,7 +360,7 @@ function WhatsIncluded() {
     { title: 'New soft-close hinges sourced & installed', benefit: 'So you never hear a cabinet slam again' },
     { title: 'Hardware audit & installation', benefit: 'Misaligned holes filled, re-drilled to the correct position — every handle sits perfectly straight' },
     { title: 'Full deep clean including cabinet tops', benefit: 'You get your kitchen back spotless, not dusty' },
-    { title: 'Fully contained workspace', benefit: 'Cook dinner the same night we\u2019re working — zero mess in your living space' },
+    { title: 'Fully contained workspace', benefit: 'We tackle your base cabinets first and get your kitchen back in about 2 days — not the full 3–5 day project timeline.' },
     { title: '3–5 day turnaround for most kitchens', benefit: 'Your life isn\u2019t disrupted for weeks — we\u2019re in and out' },
     { title: '5-year warranty provided in writing', benefit: 'Real protection delivered at job completion, not a verbal promise' },
     { title: 'Fixed price confirmed before work begins', benefit: 'Zero surprises on your invoice — the quote is the price' },
@@ -478,7 +478,7 @@ function ComparisonCards() {
                   'New soft-close hinges included',
                   '5-year written warranty',
                   'Done in 3–5 days',
-                  'Zero disruption — cook dinner the same night',
+                  'Kitchen bases done in 2 days — your kitchen is back before the job is finished',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2 font-body text-sm text-brown">
                     <span className="text-sage text-lg font-bold mt-[-2px]">✓</span>
@@ -568,11 +568,11 @@ function BeforeAfter() {
 
 function Reviews() {
   const condensedReviews = [
-    { name: 'Kevin S.', quote: 'Did a great job. Highly recommended.', service: 'Interior Painting' },
-    { name: 'Mike R.', quote: 'Very professional and detail-oriented.', service: 'Cabinet Refinishing' },
-    { name: 'Sarah M.', quote: 'Exceeded our expectations. Beautiful work.', service: 'Interior Painting' },
-    { name: 'James L.', quote: 'On time, clean, and the results are perfect.', service: 'Exterior Painting' },
-    { name: 'Lisa P.', quote: 'Ricardo was great to work with from start to finish.', service: 'Cabinet Refinishing' },
+    { name: 'Robin C.', quote: '', service: 'Google Review' },
+    { name: 'James D.', quote: '', service: 'Google Review' },
+    { name: 'Shannon R.', quote: '', service: 'Google Review' },
+    { name: 'Kenneth S.', quote: '', service: 'Google Review' },
+    { name: 'Paola', quote: '', service: 'Google Review' },
   ]
 
   return (
@@ -626,7 +626,9 @@ function Reviews() {
                 <div className="flex gap-0.5 mb-2">
                   {[...Array(5)].map((_, j) => <StarIcon key={j} className="w-3.5 h-3.5 text-terra" />)}
                 </div>
-                <p className="font-body text-sm text-brown mb-2">&ldquo;{review.quote}&rdquo;</p>
+                {review.quote && (
+                  <p className="font-body text-sm text-brown mb-2">&ldquo;{review.quote}&rdquo;</p>
+                )}
                 <p className="font-body text-xs text-mid">{review.name} · {review.service}</p>
               </div>
             </RevealSection>
@@ -635,7 +637,7 @@ function Reviews() {
 
         <RevealSection className="text-center">
           <a
-            href="https://g.page/r/CX7AG1aNL5PkEBE/review"
+            href="https://g.page/r/CX7AG1aNL5PkEBE"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary text-sm"
@@ -672,7 +674,7 @@ function FAQ() {
     },
     {
       q: 'What if I don\u2019t like the result?',
-      a: 'We do a detailed walkthrough with you at job completion before final payment. If anything isn\u2019t right, we fix it on the spot. After that, your 5-year written warranty covers the finish. We\u2019re a licensed contractor with a perfect 5-star Google review record \u2014 our reputation depends on you being thrilled, not just satisfied.',
+      a: 'We stand behind our work. If there\u2019s a defect in workmanship \u2014 uneven coverage, drips, adhesion issues, anything that doesn\u2019t meet the professional standard we promised \u2014 we come back and make it right at no charge. That\u2019s covered under your written warranty. Before we start, we confirm your exact color choice and sheen together so there are no surprises. If you want to change colors after the job is complete, we\u2019re happy to do it \u2014 that\u2019s a new project at a new price, not a warranty issue.',
     },
   ]
 
