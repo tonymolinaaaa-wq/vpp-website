@@ -23,25 +23,52 @@ const lora = Lora({
 })
 
 export const metadata: Metadata = {
-  title: 'Valley Painting Pros | East Valley Residential Painting',
+  title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa & Tempe | Valley Painting Pros',
   description:
-    'Licensed residential painting in Chandler, Gilbert, Mesa & Tempe. Cabinet refinishing from $2,250. AZ ROC #363664.',
+    'Professional cabinet refinishing starting at $2,250. 5-star rated, ROC licensed, 5-year warranty. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
+  openGraph: {
+    title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa & Tempe | Valley Painting Pros',
+    description:
+      'Professional cabinet refinishing starting at $2,250. 5-star rated, ROC licensed, 5-year warranty. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
+    type: 'website',
+    locale: 'en_US',
+  },
 }
 
-const localBusinessSchema = {
+const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': 'HomeAndConstructionBusiness',
   name: 'Valley Painting Pros',
+  description:
+    'Professional cabinet refinishing and interior painting in the East Valley. Licensed, insured, 5-star rated.',
+  url: 'https://valleypaintingpros.com',
   telephone: '+14804332680',
   email: 'valleypaintingprosllc@gmail.com',
-  url: 'https://valleypaintingpros.com',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Chandler',
     addressRegion: 'AZ',
+    addressCountry: 'US',
   },
-  areaServed: ['Chandler', 'Gilbert', 'Mesa', 'Tempe'],
-  priceRange: '$$',
+  areaServed: [
+    { '@type': 'City', name: 'Chandler, AZ' },
+    { '@type': 'City', name: 'Gilbert, AZ' },
+    { '@type': 'City', name: 'Mesa, AZ' },
+    { '@type': 'City', name: 'Tempe, AZ' },
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '7',
+    bestRating: '5',
+  },
+  priceRange: '$2,250–$4,000',
+  hasCredential: {
+    '@type': 'EducationalOccupationalCredential',
+    credentialCategory: 'license',
+    name: 'AZ ROC License #363664 — CR-34 Painting and Wallcovering',
+  },
+  sameAs: [],
 }
 
 export default function RootLayout({
@@ -55,10 +82,12 @@ export default function RootLayout({
       className={`${dmSerif.variable} ${outfit.variable} ${lora.variable}`}
     >
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
+            __html: JSON.stringify(structuredData),
           }}
         />
       </head>

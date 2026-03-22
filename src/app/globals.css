@@ -23,21 +23,41 @@
   .btn-primary {
     @apply inline-flex items-center justify-center
       bg-terra text-white font-body font-semibold
-      uppercase tracking-wide text-sm
-      px-6 py-3 rounded-xl
-      hover:bg-terra-light active:bg-terra-dark
-      transition-colors duration-200
-      min-h-[48px] min-w-[48px];
+      rounded-xl shadow-md
+      px-8 py-4
+      hover:bg-terra-dark hover:shadow-lg
+      active:bg-terra-dark
+      transition-all duration-150
+      min-h-[56px] min-w-[44px];
+    font-size: 16px;
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.02);
   }
 
   .btn-secondary {
     @apply inline-flex items-center justify-center
       border-2 border-terra text-terra font-body font-semibold
-      uppercase tracking-wide text-sm
-      px-6 py-3 rounded-xl
-      hover:bg-terra hover:text-white
-      transition-colors duration-200
-      min-h-[48px] min-w-[48px];
+      rounded-xl
+      px-8 py-4
+      hover:bg-sand-light
+      transition-all duration-150
+      min-h-[56px] min-w-[44px];
+    font-size: 16px;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
