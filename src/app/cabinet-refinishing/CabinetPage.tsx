@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
+import Image from 'next/image'
 import { Footer } from '@/components/Footer'
 import { StickyMobileCTA } from '@/components/StickyMobileCTA'
 
@@ -272,12 +273,14 @@ function Hero() {
               transition: 'opacity 600ms ease 600ms, transform 600ms ease 600ms',
             }}
           >
-            <div className="bg-sand rounded-2xl p-12 flex flex-col items-center justify-center min-h-[300px] md:min-h-[400px] border-l-[3px] border-terra shadow-sm">
-              <CameraIcon />
-              <p className="font-body text-sm text-mid mt-4 text-center">
-                Real transformation photos coming soon
-              </p>
-            </div>
+            <Image
+              src="/cabinet-hero-kitchen.jpg"
+              alt="White cabinet refinishing by Valley Painting Pros — kitchen with granite countertops and stainless steel range hood"
+              width={1024}
+              height={1536}
+              className="rounded-2xl shadow-sm border-l-[3px] border-terra object-cover w-full h-auto"
+              priority
+            />
           </div>
         </div>
       </div>
