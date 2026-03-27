@@ -17,11 +17,11 @@ export function Navigation() {
         scrolled ? 'shadow-md' : ''
       }`}
     >
-      <div className="mx-auto max-w-content px-4 sm:px-6 flex items-center justify-between h-14 sm:h-16">
+      <div className="mx-auto max-w-content px-4 sm:px-6 flex items-center justify-between h-16 sm:h-[72px]">
         {/* Compact Horizontal Logo */}
         <div className="flex items-center gap-3">
           {/* VP Monogram Mark */}
-          <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="flex-shrink-0">
+          <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="flex-shrink-0">
             <rect x="1" y="1" width="62" height="62" rx="4" stroke="#C4B9AF" strokeWidth="1.5"/>
             <text x="32" y="44" textAnchor="middle" fontFamily="'DM Serif Display', Georgia, serif" fontSize="32" fontWeight="400" fill="#1E1C1A">V</text>
             <text x="32" y="44" textAnchor="middle" fontFamily="'DM Serif Display', Georgia, serif" fontSize="32" fontWeight="400" fontStyle="italic" fill="#C4613A" dx="14">P</text>
@@ -29,11 +29,11 @@ export function Navigation() {
           </svg>
 
           {/* Vertical Divider */}
-          <div className="w-px h-7 bg-terra/40" />
+          <div className="w-px h-8 bg-terra/40" />
 
           {/* Wordmark + Credential */}
           <div className="flex flex-col justify-center">
-            <span className="text-base leading-tight">
+            <span className="text-xl sm:text-2xl leading-tight">
               <span className="font-display">Valley Painting </span>
               <span className="font-display italic text-terra">Pros</span>
             </span>

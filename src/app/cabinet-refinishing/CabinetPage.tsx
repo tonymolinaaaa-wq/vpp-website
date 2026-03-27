@@ -131,7 +131,7 @@ function StickyNav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 h-14 md:h-16 flex items-center transition-all duration-200 ${
+      className={`fixed top-0 left-0 right-0 z-50 h-16 md:h-[72px] flex items-center transition-all duration-200 ${
         scrolled
           ? 'bg-cream/95 backdrop-blur-md shadow-sm border-b border-sand'
           : 'bg-cream border-b border-sand'
@@ -141,7 +141,7 @@ function StickyNav() {
         {/* Compact Horizontal Logo */}
         <div className="flex items-center gap-3">
           {/* VP Monogram Mark */}
-          <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="flex-shrink-0">
+          <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="flex-shrink-0">
             <rect x="1" y="1" width="62" height="62" rx="4" stroke="#C4B9AF" strokeWidth="1.5"/>
             <text x="32" y="44" textAnchor="middle" fontFamily="'DM Serif Display', Georgia, serif" fontSize="32" fontWeight="400" fill="#1E1C1A">V</text>
             <text x="32" y="44" textAnchor="middle" fontFamily="'DM Serif Display', Georgia, serif" fontSize="32" fontWeight="400" fontStyle="italic" fill="#C4613A" dx="14">P</text>
@@ -149,11 +149,11 @@ function StickyNav() {
           </svg>
 
           {/* Vertical Divider */}
-          <div className="w-px h-7 bg-terra/40" />
+          <div className="w-px h-8 bg-terra/40" />
 
           {/* Wordmark + Credential */}
           <div className="flex flex-col justify-center">
-            <span className="text-base leading-tight">
+            <span className="text-xl md:text-2xl leading-tight">
               <span className="font-display">Valley Painting </span>
               <span className="font-display italic text-terra">Pros</span>
             </span>
@@ -194,7 +194,7 @@ function Hero() {
   }, [])
 
   return (
-    <section className="bg-cream pt-20 md:pt-24">
+    <section className="bg-cream pt-[72px] md:pt-[80px]">
       <div className="mx-auto max-w-content px-6 pb-16 md:pb-24 min-h-[75vh] md:min-h-[85vh] flex items-center">
         <div className="grid grid-cols-1 md:grid-cols-[55%_45%] gap-10 md:gap-12 items-center w-full">
           {/* Left column — copy */}
