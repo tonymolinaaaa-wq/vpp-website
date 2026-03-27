@@ -138,16 +138,29 @@ function StickyNav() {
       }`}
     >
       <div className="mx-auto max-w-content w-full px-4 md:px-6 flex items-center justify-between">
-        {/* Logo lockup */}
-        <div className="flex flex-col">
-          <div className="leading-tight">
-            <span className="font-display text-ink text-lg md:text-xl">Valley Painting </span>
-            <span className="font-display italic text-terra text-lg md:text-xl">Pros</span>
+        {/* Compact Horizontal Logo */}
+        <div className="flex items-center gap-3">
+          {/* VP Monogram Mark */}
+          <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="flex-shrink-0">
+            <rect x="1" y="1" width="62" height="62" rx="4" stroke="#C4B9AF" strokeWidth="1.5"/>
+            <text x="32" y="44" textAnchor="middle" fontFamily="'DM Serif Display', Georgia, serif" fontSize="32" fontWeight="400" fill="#1E1C1A">V</text>
+            <text x="32" y="44" textAnchor="middle" fontFamily="'DM Serif Display', Georgia, serif" fontSize="32" fontWeight="400" fontStyle="italic" fill="#C4613A" dx="14">P</text>
+            <line x1="12" y1="52" x2="52" y2="52" stroke="#C4613A" strokeWidth="2"/>
+          </svg>
+
+          {/* Vertical Divider */}
+          <div className="w-px h-7 bg-terra/40" />
+
+          {/* Wordmark + Credential */}
+          <div className="flex flex-col justify-center">
+            <span className="text-base leading-tight">
+              <span className="font-display">Valley Painting </span>
+              <span className="font-display italic text-terra">Pros</span>
+            </span>
+            <span className="text-[10px] font-body font-medium uppercase tracking-wider text-mid leading-tight">
+              AZ ROC #363664
+            </span>
           </div>
-          <div className="w-full h-[2px] bg-terra mt-0.5" />
-          <span className="font-body font-semibold text-mid uppercase tracking-[0.2em] text-[9px] mt-0.5">
-            ROC #363664
-          </span>
         </div>
 
         {/* Right side */}
