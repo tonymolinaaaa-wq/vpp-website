@@ -749,8 +749,6 @@ function FAQ() {
 /* ───────── 11. SERVICE AREA MAP ───────── */
 
 function ServiceAreaMap() {
-  const [hoveredCity, setHoveredCity] = useState<string | null>(null)
-
   return (
     <section className="bg-sand py-20">
       <div className="mx-auto max-w-content px-6">
@@ -767,67 +765,15 @@ function ServiceAreaMap() {
         </RevealSection>
 
         <RevealSection className="flex justify-center">
-          <div className="relative max-w-lg w-full">
-            <svg viewBox="0 0 500 400" className="w-full h-auto" role="img" aria-label="Map showing VPP service area: Tempe, Mesa, Chandler, and Gilbert">
-              {/* Tempe - upper left */}
-              <polygon
-                points="30,30 200,30 200,180 100,200 30,180"
-                fill={hoveredCity === 'Tempe' ? 'rgba(143,175,146,0.6)' : 'rgba(143,175,146,0.4)'}
-                stroke="#C4B9AF"
-                strokeWidth="1.5"
-                className="transition-all duration-200 cursor-pointer"
-                onMouseEnter={() => setHoveredCity('Tempe')}
-                onMouseLeave={() => setHoveredCity(null)}
-                style={{ transform: hoveredCity === 'Tempe' ? 'scale(1.01)' : 'scale(1)', transformOrigin: '115px 115px' }}
-              />
-              <text x="110" y="120" textAnchor="middle" className="font-body font-semibold text-[13px] fill-ink pointer-events-none">Tempe</text>
-
-              {/* Mesa - upper right (largest) */}
-              <polygon
-                points="210,30 470,30 470,210 350,220 210,200 200,180 200,30"
-                fill={hoveredCity === 'Mesa' ? 'rgba(212,130,94,0.5)' : 'rgba(212,130,94,0.3)'}
-                stroke="#C4B9AF"
-                strokeWidth="1.5"
-                className="transition-all duration-200 cursor-pointer"
-                onMouseEnter={() => setHoveredCity('Mesa')}
-                onMouseLeave={() => setHoveredCity(null)}
-                style={{ transform: hoveredCity === 'Mesa' ? 'scale(1.01)' : 'scale(1)', transformOrigin: '335px 120px' }}
-              />
-              <text x="335" y="130" textAnchor="middle" className="font-body font-semibold text-[13px] fill-ink pointer-events-none">Mesa</text>
-
-              {/* Chandler - lower left */}
-              <polygon
-                points="30,190 100,210 200,210 240,230 240,370 30,370"
-                fill={hoveredCity === 'Chandler' ? 'rgba(196,97,58,0.5)' : 'rgba(196,97,58,0.3)'}
-                stroke="#C4B9AF"
-                strokeWidth="1.5"
-                className="transition-all duration-200 cursor-pointer"
-                onMouseEnter={() => setHoveredCity('Chandler')}
-                onMouseLeave={() => setHoveredCity(null)}
-                style={{ transform: hoveredCity === 'Chandler' ? 'scale(1.01)' : 'scale(1)', transformOrigin: '135px 290px' }}
-              />
-              <text x="135" y="300" textAnchor="middle" className="font-body font-semibold text-[13px] fill-ink pointer-events-none">Chandler</text>
-
-              {/* Gilbert - lower right */}
-              <polygon
-                points="250,230 350,230 470,220 470,370 250,370"
-                fill={hoveredCity === 'Gilbert' ? 'rgba(107,140,110,0.6)' : 'rgba(107,140,110,0.3)'}
-                stroke="#C4B9AF"
-                strokeWidth="1.5"
-                className="transition-all duration-200 cursor-pointer"
-                onMouseEnter={() => setHoveredCity('Gilbert')}
-                onMouseLeave={() => setHoveredCity(null)}
-                style={{ transform: hoveredCity === 'Gilbert' ? 'scale(1.01)' : 'scale(1)', transformOrigin: '360px 300px' }}
-              />
-              <text x="360" y="300" textAnchor="middle" className="font-body font-semibold text-[13px] fill-ink pointer-events-none">Gilbert</text>
-            </svg>
-
-            {/* Tooltip */}
-            {hoveredCity && (
-              <div className="absolute top-2 left-1/2 -translate-x-1/2 bg-cream text-ink font-body text-sm font-medium px-4 py-2 rounded-lg shadow-md pointer-events-none z-10">
-                We serve {hoveredCity}!
-              </div>
-            )}
+          <div className="w-full max-w-2xl rounded-2xl overflow-hidden shadow-md">
+            <iframe
+              src="https://www.google.com/maps/d/u/4/embed?mid=1z6sZW-vXlA0FH5U0Ilfz3atZPOZDhPo&ehbc=2E312F&noprof=1"
+              width="100%"
+              height="480"
+              style={{ border: 0 }}
+              loading="lazy"
+              title="Valley Painting Pros service area map"
+            />
           </div>
         </RevealSection>
       </div>
