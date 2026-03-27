@@ -540,7 +540,7 @@ function ComparisonCards() {
         {/* Below-cards testimonial */}
         <RevealSection delay={300} className="text-center mt-10">
           <p className="font-accent italic text-lg text-brown">
-            &ldquo;Gorgeous kitchen cabinets.&rdquo;
+            &ldquo;My gorgeous kitchen cabinets!&rdquo;
           </p>
           <p className="font-body font-medium text-sm text-mid mt-2 flex items-center justify-center gap-1">
             — Rita S. · Google{' '}
@@ -613,7 +613,7 @@ function Reviews() {
                 {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
               </div>
               <p className="font-accent italic text-lg text-brown leading-relaxed mb-4">
-                &ldquo;Gorgeous kitchen cabinets. Ricardo ensures customer satisfaction.&rdquo;
+                &ldquo;Thank you Ricardo for my gorgeous kitchen cabinets! They look beautiful!&rdquo;
               </p>
               <p className="font-body font-medium text-sm text-mid">
                 Rita S. · Cabinet Refinishing · Google Review
@@ -627,7 +627,7 @@ function Reviews() {
                 {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
               </div>
               <p className="font-accent italic text-lg text-brown leading-relaxed mb-4">
-                &ldquo;They are perfectionists. More careful and thorough with their prep than I would have been.&rdquo;
+                &ldquo;They were more careful and thorough with their prep than I would have been. They are perfectionists.&rdquo;
               </p>
               <p className="font-body font-medium text-sm text-mid">
                 Dustin T. · Interior Painting · Google Review
@@ -884,7 +884,7 @@ function QuoteForm() {
             {/* Adjacent testimonial */}
             <div className="bg-sand-light/10 rounded-lg p-4">
               <p className="font-accent italic text-base text-sand leading-relaxed mb-2">
-                &ldquo;Accurate quote. Showed up exactly on time.&rdquo;
+                &ldquo;He gave me an accurate quote and showed up exactly on time.&rdquo;
               </p>
               <p className="font-body text-xs text-mid flex items-center gap-1">
                 — Kenneth S. · Google{' '}
