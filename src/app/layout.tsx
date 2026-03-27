@@ -82,6 +82,11 @@ export default function RootLayout({
       className={`${dmSerif.variable} ${outfit.variable} ${lora.variable}`}
     >
       <head>
+        <link rel="icon" href="/VPP_favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/VPP_apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta property="og:image" content="/VPP_og-image.png" />
+        <meta name="theme-color" content="#C4613A" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
