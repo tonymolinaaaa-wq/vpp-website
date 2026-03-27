@@ -601,7 +601,7 @@ function Reviews() {
             What Homeowners Say
           </p>
           <h2 className="font-display text-ink text-[28px] md:text-[38px] leading-[1.2]">
-            7 Reviews. All 5 Stars. Zero Exceptions.
+            All 5 Stars. Zero Exceptions.
           </h2>
         </RevealSection>
 
