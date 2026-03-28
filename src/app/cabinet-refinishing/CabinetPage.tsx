@@ -396,7 +396,7 @@ function WhatsIncluded() {
             Everything Included
           </p>
           <h2 className="font-display text-ink text-[28px] md:text-[38px] leading-[1.2] mb-3">
-            This Is What $2,250–$4,000 Gets You
+            This Is What $125 per Door Gets You
           </h2>
           <p className="font-body text-brown text-base max-w-xl mx-auto">
             Every item below is included in your quoted price. No add-ons. No surprises.
@@ -491,8 +491,8 @@ function ComparisonCards() {
                 Recommended
               </span>
               <p className="font-body font-semibold text-base text-ink mb-2 mt-2">VPP Cabinet Refinishing</p>
-              <p className="font-display text-[32px] text-terra mb-1">$2,250–$4,000</p>
-              <p className="font-body font-medium text-[13px] text-brown mb-5">$125 per door &amp; drawer</p>
+              <p className="font-display text-[32px] text-terra mb-1">$125 per door &amp; drawer</p>
+              <p className="font-body font-medium text-[13px] text-brown mb-5">Every kitchen is different — your price is based on exactly what you have.</p>
               <ul className="space-y-3 mb-6">
                 {[
                   'Professional 3-coat system that lasts years',

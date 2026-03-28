@@ -25,11 +25,11 @@ const lora = Lora({
 export const metadata: Metadata = {
   title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa & Tempe | Valley Painting Pros',
   description:
-    'Professional cabinet refinishing starting at $2,250. 5-star rated, ROC licensed, 5-year warranty. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
+    'Cabinet refinishing at $125 per door & drawer. 5-star rated, ROC licensed, 5-year warranty. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
   openGraph: {
     title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa & Tempe | Valley Painting Pros',
     description:
-      'Professional cabinet refinishing starting at $2,250. 5-star rated, ROC licensed, 5-year warranty. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
+      'Cabinet refinishing at $125 per door & drawer. 5-star rated, ROC licensed, 5-year warranty. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
     type: 'website',
     locale: 'en_US',
   },
@@ -62,7 +62,7 @@ const structuredData = {
     reviewCount: '7',
     bestRating: '5',
   },
-  priceRange: '$2,250–$4,000',
+  priceRange: '$$',
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
     credentialCategory: 'license',
