@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
+import { ReactCompareSlider, ReactCompareSliderImage, ReactCompareSliderHandle } from 'react-compare-slider'
 import { Footer } from '@/components/Footer'
 import { StickyMobileCTA } from '@/components/StickyMobileCTA'
 
@@ -274,8 +275,8 @@ function Hero() {
             }}
           >
             <Image
-              src="/images/cabinet-hero-after.jpg"
-              alt="Refinished white cabinets by Valley Painting Pros — completed kitchen transformation"
+              src="/images/cabinet-hero-island.png"
+              alt="Refinished kitchen by Valley Painting Pros — white upper cabinets with navy blue island"
               width={1024}
               height={1536}
               className="rounded-2xl shadow-sm border-l-[3px] border-terra object-cover w-full h-auto"
@@ -570,14 +571,86 @@ function BeforeAfter() {
         </RevealSection>
 
         <RevealSection>
-          <div className="bg-sand rounded-2xl p-10 md:p-12 max-w-2xl mx-auto text-center border-l-4 border-terra">
-            <CameraIcon />
-            <h3 className="font-display text-ink text-xl md:text-2xl mt-4 mb-3">
-              Real VPP Transformation Photos
-            </h3>
-            <p className="font-body text-brown text-[15px] leading-[1.7] max-w-md mx-auto">
-              We&apos;re building our portfolio one kitchen at a time. Ask to see our recent work during your consultation.
-            </p>
+          <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-lg relative">
+            <ReactCompareSlider
+              itemOne={
+                <ReactCompareSliderImage
+                  src="/images/cabinet-hero-before.png"
+                  alt="Kitchen cabinets before refinishing by Valley Painting Pros"
+                />
+              }
+              itemTwo={
+                <ReactCompareSliderImage
+                  src="/images/cabinet-hero-after.jpg"
+                  alt="Kitchen cabinets after refinishing by Valley Painting Pros"
+                />
+              }
+              handle={
+                <ReactCompareSliderHandle
+                  buttonStyle={{
+                    backgroundColor: '#C4613A',
+                    border: 'none',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                  }}
+                  linesStyle={{ color: '#C4613A' }}
+                />
+              }
+            />
+            <span className="absolute top-4 left-4 bg-ink/70 text-white font-body font-semibold text-xs px-3 py-1 rounded-full pointer-events-none">
+              Before
+            </span>
+            <span className="absolute top-4 right-4 bg-ink/70 text-white font-body font-semibold text-xs px-3 py-1 rounded-full pointer-events-none">
+              After
+            </span>
+          </div>
+          <p className="font-body text-brown text-sm text-center mt-4 italic">
+            Same cabinets. Same kitchen. Completely different feel.
+          </p>
+        </RevealSection>
+
+        {/* Gallery grid */}
+        <RevealSection className="mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <Image
+                src="/images/cabinet-ushaped-swirl-granite.png"
+                alt="U-shaped kitchen with white cabinets and swirl granite countertops"
+                width={1024}
+                height={1536}
+                className="rounded-xl shadow-sm object-cover w-full h-auto"
+              />
+              <p className="font-body text-xs text-mid mt-2 text-center">White cabinets with swirl granite countertops</p>
+            </div>
+            <div>
+              <Image
+                src="/images/cabinet-shaker-evening.png"
+                alt="White shaker cabinets with travertine backsplash and granite countertops"
+                width={1536}
+                height={1024}
+                className="rounded-xl shadow-sm object-cover w-full h-auto"
+              />
+              <p className="font-body text-xs text-mid mt-2 text-center">White shaker cabinets with travertine backsplash</p>
+            </div>
+            <div>
+              <Image
+                src="/images/cabinet-white-granite-backsplash.png"
+                alt="White cabinets with mosaic backsplash and stainless range hood"
+                width={1536}
+                height={1024}
+                className="rounded-xl shadow-sm object-cover w-full h-auto"
+              />
+              <p className="font-body text-xs text-mid mt-2 text-center">White cabinets with mosaic backsplash</p>
+            </div>
+            <div>
+              <Image
+                src="/images/cabinet-bathroom-vanity.png"
+                alt="Refinished white bathroom double vanity with marble countertop"
+                width={1024}
+                height={1536}
+                className="rounded-xl shadow-sm object-cover w-full h-auto"
+              />
+              <p className="font-body text-xs text-mid mt-2 text-center">Refinished bathroom double vanity</p>
+            </div>
           </div>
         </RevealSection>
       </div>
