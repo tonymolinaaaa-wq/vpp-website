@@ -25,11 +25,11 @@ const lora = Lora({
 export const metadata: Metadata = {
   title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa & Tempe | Valley Painting Pros',
   description:
-    'Cabinet refinishing at $125 per door & drawer. 5-star rated, ROC licensed, 5-year warranty. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
+    'Cabinet refinishing at $150 per opening. 5-star rated, ROC licensed, 5-year warranty. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
   openGraph: {
     title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa & Tempe | Valley Painting Pros',
     description:
-      'Cabinet refinishing at $125 per door & drawer. 5-star rated, ROC licensed, 5-year warranty. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
+      'Cabinet refinishing at $150 per opening. 5-star rated, ROC licensed, 5-year warranty. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
     type: 'website',
     locale: 'en_US',
   },
@@ -40,7 +40,7 @@ const structuredData = {
   '@type': 'HomeAndConstructionBusiness',
   name: 'Valley Painting Pros',
   description:
-    'Professional cabinet refinishing and interior painting in the East Valley. Licensed, insured, 5-star rated.',
+    'Professional cabinet refinishing in the East Valley. Licensed, insured, 5-star rated.',
   url: 'https://valleypaintingpros.com',
   telephone: '+14804332680',
   email: 'valleypaintingprosllc@gmail.com',
