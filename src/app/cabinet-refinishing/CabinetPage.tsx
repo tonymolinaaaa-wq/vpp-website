@@ -896,15 +896,17 @@ function EmotionalClose() {
 /* ───────── 13. QUOTE FORM ───────── */
 
 function QuoteForm() {
-  const [formData, setFormData] = useState({ name: '', phone: '', howHeard: '' })
+  const [formData, setFormData] = useState({ name: '', phone: '', zip: '', cabinetCount: '', howHeard: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
-  const [errors, setErrors] = useState<{ name?: string; phone?: string; howHeard?: string }>({})
+  const [errors, setErrors] = useState<{ name?: string; phone?: string; zip?: string; cabinetCount?: string; howHeard?: string }>({})
 
   const validate = (data: typeof formData) => {
-    const e: { name?: string; phone?: string; howHeard?: string } = {}
+    const e: { name?: string; phone?: string; zip?: string; cabinetCount?: string; howHeard?: string } = {}
     if (data.name.trim().length < 2) e.name = 'Please enter your name (at least 2 characters).'
     const digits = data.phone.replace(/\D/g, '')
     if (digits.length < 10) e.phone = 'Please enter a valid phone number (at least 10 digits).'
+    if (!/^\d{5}$/.test(data.zip)) e.zip = 'Enter your 5-digit zip code'
+    if (!data.cabinetCount) e.cabinetCount = 'Please select an approximate count.'
     if (!data.howHeard) e.howHeard = 'Please let us know how you heard about us.'
     return e
   }
@@ -1040,6 +1042,49 @@ function QuoteForm() {
                     />
                     {errors.phone && (
                       <p className="font-body text-sm text-terra mt-1.5">{errors.phone}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="zip" className="block font-body font-medium text-sm text-ink mb-1.5">
+                      Zip Code
+                    </label>
+                    <input
+                      type="text"
+                      inputMode="numeric"
+                      id="zip"
+                      name="zip"
+                      maxLength={5}
+                      value={formData.zip}
+                      onChange={(e) => setFormData({ ...formData, zip: e.target.value.replace(/\D/g, '').slice(0, 5) })}
+                      className="w-full h-12 rounded-lg border border-sand bg-white px-4 font-body text-base text-ink placeholder:text-mid/60 focus:outline-none focus:ring-2 focus:ring-terra focus:border-transparent transition-shadow"
+                      placeholder="85249"
+                    />
+                    {errors.zip && (
+                      <p className="font-body text-sm text-terra mt-1.5">{errors.zip}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="cabinetCount" className="block font-body font-medium text-sm text-ink mb-1.5">
+                      Approximate Cabinet Count
+                    </label>
+                    <select
+                      id="cabinetCount"
+                      name="cabinetCount"
+                      value={formData.cabinetCount}
+                      onChange={(e) => setFormData({ ...formData, cabinetCount: e.target.value })}
+                      className="w-full h-12 rounded-lg border border-sand bg-white px-4 font-body text-base text-ink focus:outline-none focus:ring-2 focus:ring-terra focus:border-transparent transition-shadow appearance-none"
+                    >
+                      <option value="">Select approximate count...</option>
+                      <option value="Under 20 doors & drawers">Under 20 doors & drawers</option>
+                      <option value="20–30 doors & drawers">20–30 doors & drawers</option>
+                      <option value="30–40 doors & drawers">30–40 doors & drawers</option>
+                      <option value="40+ doors & drawers">40+ doors & drawers</option>
+                      <option value="Not sure">Not sure</option>
+                    </select>
+                    {errors.cabinetCount && (
+                      <p className="font-body text-sm text-terra mt-1.5">{errors.cabinetCount}</p>
                     )}
                   </div>
 
