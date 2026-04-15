@@ -24,7 +24,7 @@ export function Footer() {
               valleypaintingprosllc@gmail.com
             </a>
             <p className="font-body text-sm text-rule">
-              Chandler · Gilbert · Mesa · Tempe
+              Chandler · Gilbert · Mesa · Queen Creek · Tempe
             </p>
           </div>
 

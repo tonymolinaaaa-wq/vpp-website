@@ -23,11 +23,11 @@ const lora = Lora({
 })
 
 export const metadata: Metadata = {
-  title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa & Tempe | Valley Painting Pros',
+  title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa, Queen Creek & Tempe | Valley Painting Pros',
   description:
     'Cabinet refinishing at $150 per opening. 5-star rated, ROC licensed, 5-year warranty. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
   openGraph: {
-    title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa & Tempe | Valley Painting Pros',
+    title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa, Queen Creek & Tempe | Valley Painting Pros',
     description:
       'Cabinet refinishing at $150 per opening. 5-star rated, ROC licensed, 5-year warranty. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
     type: 'website',
@@ -54,6 +54,7 @@ const structuredData = {
     { '@type': 'City', name: 'Chandler, AZ' },
     { '@type': 'City', name: 'Gilbert, AZ' },
     { '@type': 'City', name: 'Mesa, AZ' },
+    { '@type': 'City', name: 'Queen Creek, AZ' },
     { '@type': 'City', name: 'Tempe, AZ' },
   ],
   aggregateRating: {
@@ -68,7 +69,10 @@ const structuredData = {
     credentialCategory: 'license',
     name: 'AZ ROC License #363664 — CR-34 Painting and Wallcovering',
   },
-  sameAs: [],
+  sameAs: [
+    'https://www.facebook.com/valleyprosaz',
+    'https://www.instagram.com/valleyprosaz',
+  ],
 }
 
 export default function RootLayout({

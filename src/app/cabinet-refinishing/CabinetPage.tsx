@@ -382,6 +382,7 @@ function WhatsIncluded() {
     { title: 'New soft-close hinges sourced & installed', benefit: 'So you never hear a cabinet slam again' },
     { title: 'Hardware audit & installation', benefit: 'Misaligned holes filled, re-drilled to the correct position — every handle sits perfectly straight' },
     { title: 'Full deep clean including cabinet tops', benefit: 'You get your kitchen back spotless, not dusty' },
+    { title: 'Felt pads on every door and drawer', benefit: 'Protects your new finish from sticking or rubbing — quiet, clean contact every time you open and close' },
     { title: 'Fully contained workspace', benefit: 'We tackle your base cabinets first and get your kitchen back in about 2 days — not the full 3–5 day project timeline.' },
     { title: '3–5 day turnaround for most kitchens', benefit: 'Your life isn\u2019t disrupted for weeks — we\u2019re in and out' },
     { title: '5-year warranty provided in writing', benefit: 'Real protection delivered at job completion, not a verbal promise' },
@@ -833,7 +834,7 @@ function ServiceAreaMap() {
             Your Neighbors Trust Us
           </h2>
           <p className="font-body font-medium text-lg text-brown mb-3">
-            Chandler <span className="text-terra">·</span> Gilbert <span className="text-terra">·</span> Mesa <span className="text-terra">·</span> Tempe
+            Chandler <span className="text-terra">·</span> Gilbert <span className="text-terra">·</span> Mesa <span className="text-terra">·</span> Queen Creek <span className="text-terra">·</span> Tempe
           </p>
           <p className="font-body text-brown text-base max-w-lg mx-auto">
             Every consultation, every job, every follow-up — handled by our team personally. No call centers. No subcontractors from across town.
