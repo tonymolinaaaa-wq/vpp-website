@@ -898,37 +898,37 @@ function EmotionalClose() {
 function QuoteForm() {
   const [formData, setFormData] = useState({ name: '', phone: '', howHeard: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [errors, setErrors] = useState<{ name?: string; phone?: string; howHeard?: string }>({})
+
+  const validate = (data: typeof formData) => {
+    const e: { name?: string; phone?: string; howHeard?: string } = {}
+    if (data.name.trim().length < 2) e.name = 'Please enter your name (at least 2 characters).'
+    const digits = data.phone.replace(/\D/g, '')
+    if (digits.length < 10) e.phone = 'Please enter a valid phone number (at least 10 digits).'
+    if (!data.howHeard) e.howHeard = 'Please let us know how you heard about us.'
+    return e
+  }
 
   const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault()
+    const v = validate(formData)
+    setErrors(v)
+    if (Object.keys(v).length > 0) return
+
     setStatus('sending')
-
     try {
-      const res = await fetch('/api/quote', {
+      const res = await fetch('https://formspree.io/f/xaqankry', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ ...formData, _source: 'cabinet-refinishing' }),
       })
-
       if (res.ok) {
         setStatus('success')
       } else {
-        // Fallback to mailto
-        const subject = encodeURIComponent('New Cabinet Quote Request')
-        const body = encodeURIComponent(
-          `Name: ${formData.name}\nPhone: ${formData.phone}\nHow they heard about us: ${formData.howHeard || 'Not specified'}`
-        )
-        window.location.href = `mailto:valleypaintingprosllc@gmail.com?subject=${subject}&body=${body}`
-        setStatus('success')
+        setStatus('error')
       }
     } catch {
-      // Fallback to mailto
-      const subject = encodeURIComponent('New Cabinet Quote Request')
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\nPhone: ${formData.phone}\nHow they heard about us: ${formData.howHeard || 'Not specified'}`
-      )
-      window.location.href = `mailto:valleypaintingprosllc@gmail.com?subject=${subject}&body=${body}`
-      setStatus('success')
+      setStatus('error')
     }
   }, [formData])
 
@@ -983,10 +983,13 @@ function QuoteForm() {
                     </svg>
                   </div>
                   <h3 className="font-display text-ink text-2xl mb-3">
-                    Got It — Ricardo Will Call You Soon
+                    Thanks — We Got Your Request
                   </h3>
                   <p className="font-body text-brown text-[15px] leading-[1.7] mb-4 max-w-md mx-auto">
-                    You&apos;ll hear from Ricardo personally — typically within a few hours during business hours. He&apos;ll walk through your project, answer every question, and if you&apos;d like, schedule a time to see your kitchen in person.
+                    We&apos;ll reach out within a few hours, usually sooner. Or call us anytime at{' '}
+                    <a href="tel:+14804332680" className="text-terra underline underline-offset-2 hover:text-terra-dark">
+                      (480) 433-2680
+                    </a>.
                   </p>
                   <p className="font-body text-[13px] text-mid">
                     In the meantime, see what other homeowners say about working with us →{' '}
@@ -1002,7 +1005,8 @@ function QuoteForm() {
                 </div>
               ) : (
                 /* Form */
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} noValidate className="space-y-5">
+                  <input type="hidden" name="_source" value="cabinet-refinishing" />
                   <div>
                     <label htmlFor="name" className="block font-body font-medium text-sm text-ink mb-1.5">
                       Your Name
@@ -1010,12 +1014,15 @@ function QuoteForm() {
                     <input
                       type="text"
                       id="name"
-                      required
+                      name="name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full h-12 rounded-lg border border-sand bg-white px-4 font-body text-base text-ink placeholder:text-mid/60 focus:outline-none focus:ring-2 focus:ring-terra focus:border-transparent transition-shadow"
                       placeholder="First and last name"
                     />
+                    {errors.name && (
+                      <p className="font-body text-sm text-terra mt-1.5">{errors.name}</p>
+                    )}
                   </div>
 
                   <div>
@@ -1025,12 +1032,15 @@ function QuoteForm() {
                     <input
                       type="tel"
                       id="phone"
-                      required
+                      name="phone"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full h-12 rounded-lg border border-sand bg-white px-4 font-body text-base text-ink placeholder:text-mid/60 focus:outline-none focus:ring-2 focus:ring-terra focus:border-transparent transition-shadow"
                       placeholder="(___) ___-____"
                     />
+                    {errors.phone && (
+                      <p className="font-body text-sm text-terra mt-1.5">{errors.phone}</p>
+                    )}
                   </div>
 
                   <div>
@@ -1039,6 +1049,7 @@ function QuoteForm() {
                     </label>
                     <select
                       id="howHeard"
+                      name="howHeard"
                       value={formData.howHeard}
                       onChange={(e) => setFormData({ ...formData, howHeard: e.target.value })}
                       className="w-full h-12 rounded-lg border border-sand bg-white px-4 font-body text-base text-ink focus:outline-none focus:ring-2 focus:ring-terra focus:border-transparent transition-shadow appearance-none"
@@ -1052,6 +1063,9 @@ function QuoteForm() {
                       <option value="Drove Past a Job Site">Drove Past a Job Site</option>
                       <option value="Other">Other</option>
                     </select>
+                    {errors.howHeard && (
+                      <p className="font-body text-sm text-terra mt-1.5">{errors.howHeard}</p>
+                    )}
                   </div>
 
                   <button
@@ -1073,6 +1087,13 @@ function QuoteForm() {
                       'Get My Cabinet Quote'
                     )}
                   </button>
+
+                  {status === 'error' && (
+                    <p className="font-body text-sm text-terra text-center">
+                      Something went wrong. Please call us directly at{' '}
+                      <a href="tel:+14804332680" className="underline underline-offset-2">(480) 433-2680</a>.
+                    </p>
+                  )}
 
                   <p className="font-body font-light text-xs text-mid text-center">
                     No spam. No call centers. Just our team.
