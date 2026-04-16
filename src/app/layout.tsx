@@ -100,7 +100,12 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <noscript>
+          <style>{`[data-reveal] { opacity: 1 !important; transform: none !important; animation: none !important; }`}</style>
+        </noscript>
+        {children}
+      </body>
     </html>
   )
 }
