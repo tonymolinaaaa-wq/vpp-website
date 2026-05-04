@@ -4,11 +4,11 @@ import CabinetPage from './CabinetPage'
 export const metadata: Metadata = {
   title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa, Queen Creek & Tempe | Valley Painting Pros',
   description:
-    'Cabinet refinishing at $150 per opening. 5-star rated, ROC licensed, 5-year warranty. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
+    'Cabinet refinishing in the East Valley. 5-star rated, ROC licensed, 5-year warranty. Custom quote — free in-home estimate. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
   openGraph: {
     title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa, Queen Creek & Tempe | Valley Painting Pros',
     description:
-      'Cabinet refinishing at $150 per opening. 5-star rated, ROC licensed, 5-year warranty. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
+      'Cabinet refinishing in the East Valley. 5-star rated, ROC licensed, 5-year warranty. Custom quote — free in-home estimate. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
     type: 'website',
     locale: 'en_US',
   },
