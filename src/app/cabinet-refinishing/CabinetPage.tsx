@@ -351,24 +351,25 @@ function SocialProofBar() {
             </div>
           </div>
 
-          {/* BBB Accredited A+ — official badge */}
-          <div className="flex items-center gap-2.5">
-            <picture>
-              <source srcSet="/images/badge-bbb.webp" type="image/webp" />
-              <Image
-                src="/images/badge-bbb.png"
-                alt="BBB Accredited Business — A+ Rating"
-                width={48}
-                height={48}
-                className="w-12 h-12 flex-shrink-0"
-                unoptimized
-              />
-            </picture>
-            <div className="text-left leading-tight">
-              <div className="font-body font-bold text-[15px] text-ink">BBB Accredited</div>
-              <div className="font-body text-[12px] text-brown">A+ Rating</div>
-            </div>
-          </div>
+          {/* BBB Standing Trust Seal — official live-linked seal from BBB CDN.
+              Must be served from BBB's own URL so consumers can verify accreditation is current. */}
+          <a
+            href="https://www.bbb.org/us/az/mesa/profile/painting-contractors/valley-painting-pros-llc-1126-1000156113/#sealclick"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            className="inline-flex items-center transition-opacity hover:opacity-85"
+            aria-label="Verify Valley Painting Pros BBB Accreditation — opens BBB Business Profile in new tab"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://seal-central-northern-western-arizona.bbb.org/seals/blue-seal-250-52-whitetxt-bbb-1000156113.png"
+              alt="Valley Painting Pros LLC BBB Business Review"
+              width={250}
+              height={52}
+              style={{ border: 0 }}
+              className="h-[52px] w-auto"
+            />
+          </a>
 
           {/* AZ ROC — official seal + license number */}
           <div className="flex items-center gap-2.5">
