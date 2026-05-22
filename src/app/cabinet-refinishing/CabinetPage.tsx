@@ -178,7 +178,7 @@ function StickyNav() {
               <span className="font-display italic text-terra">Pros</span>
             </span>
             <span className="text-[10px] font-body font-medium uppercase tracking-wider text-mid leading-tight">
-              AZ ROC #363664
+              AZ ROC CR-34 · #363664
             </span>
           </div>
         </div>
@@ -421,7 +421,7 @@ function SocialProofBar() {
               />
             </picture>
             <div className="text-left leading-tight">
-              <div className="font-body font-bold text-[15px] text-ink">AZ ROC Licensed</div>
+              <div className="font-body font-bold text-[15px] text-ink">AZ ROC CR-34 · Licensed for Residential &amp; Commercial</div>
               <div className="font-body text-[12px] text-brown">#363664 · Verify →</div>
             </div>
           </a>
@@ -739,8 +739,8 @@ function ComparisonCards() {
                 Recommended
               </span>
               <p className="font-body font-semibold text-base text-ink mb-2 mt-2">VPP Cabinet Refinishing</p>
-              <p className="font-display text-[32px] text-terra mb-1">Custom quote</p>
-              <p className="font-body font-medium text-[13px] text-brown mb-5">Free in-home estimate — every kitchen is different, so your quote is based on exactly what you have.</p>
+              <p className="font-display text-[32px] text-terra mb-1">$150 per opening</p>
+              <p className="font-body font-medium text-[13px] text-brown mb-5">Each door or drawer · Free in-home estimate</p>
               <ul className="space-y-3 mb-6">
                 {[
                   'Professional 3-coat system that lasts years',
@@ -1088,7 +1088,7 @@ function ServiceAreaMap() {
             Your Neighbors Trust Us
           </h2>
           <p className="font-body font-medium text-lg text-brown mb-3">
-            Chandler <span className="text-terra">·</span> Gilbert <span className="text-terra">·</span> Mesa <span className="text-terra">·</span> Queen Creek <span className="text-terra">·</span> Tempe
+            Chandler <span className="text-terra">·</span> Gilbert <span className="text-terra">·</span> Mesa <span className="text-terra">·</span> Queen Creek <span className="text-terra">·</span> Scottsdale <span className="text-terra">·</span> Tempe
           </p>
           <p className="font-body text-brown text-base max-w-lg mx-auto">
             Every consultation, every job, every follow-up — handled by our team. No call centers.
@@ -1131,7 +1131,7 @@ function EmotionalClose() {
             </p>
           </div>
           <p className="font-body font-medium text-sm text-terra mb-8">
-            We take 4–6 cabinet projects per month to maintain our quality standard. Spots fill early.
+            Most start dates book 2–3 weeks out. We don&apos;t speed up to fit more in.
           </p>
           <button
             onClick={() => smoothScrollTo('quote-form')}
@@ -1208,7 +1208,7 @@ function QuoteForm() {
               ✓ No-obligation consultation · ✓ Same-day quotes · ✓ No pressure
             </p>
             <p className="font-body italic text-sm text-terra mb-6">
-              We take 4–6 cabinet projects per month. Scheduling fills early.
+              If you&apos;re hoping for a specific start date, mention it on the form — our calendar fills early.
             </p>
 
             {/* Adjacent testimonial */}
