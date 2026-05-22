@@ -403,11 +403,11 @@ function SocialProofBar() {
 
           {/* AZ ROC — official seal + license number, linked to ROC verification */}
           <a
-            href="https://azroc.my.site.com/AZRoc/s/contractor-search"
+            href="https://azroc.my.site.com/AZRoc/s/contractor-search?licenseId=a0ocs00000JC2pVAAT"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2.5 transition-opacity hover:opacity-85"
-            aria-label="Verify ROC license #363664 at roc.az.gov — opens in a new tab"
+            aria-label="Verify ROC license #363664 on the Arizona Registrar of Contractors website — opens in a new tab"
           >
             <picture>
               <source srcSet="/images/badge-az-roc.webp" type="image/webp" />
