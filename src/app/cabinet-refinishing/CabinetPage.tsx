@@ -258,14 +258,28 @@ function Hero() {
               </div>
 
               <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-3 list-none p-0">
-                {['Licensed, Bonded & Insured', '5-Star Rated', '5-Year Warranty'].map((item) => (
-                  <li key={item} className="inline-flex items-center gap-1.5">
-                    <span className="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full bg-sage flex-shrink-0">
-                      <svg viewBox="0 0 12 12" className="w-2.5 h-2.5" fill="none" stroke="#FAF7F4" strokeWidth={2.5} aria-hidden="true">
-                        <path d="M2.5 6.5L5 9l4.5-5.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
-                    <span className="font-body font-semibold text-[13px] md:text-sm text-brown tracking-tight">{item}</span>
+                {[
+                  { label: 'Licensed, Bonded & Insured', kind: 'check' as const },
+                  { label: '5-Star Rated', kind: 'stars' as const },
+                  { label: '5-Year Warranty', kind: 'check' as const },
+                ].map((item) => (
+                  <li key={item.label} className="inline-flex items-center gap-1.5">
+                    {item.kind === 'stars' ? (
+                      <span className="inline-flex items-center flex-shrink-0" aria-label="5 out of 5 stars">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} viewBox="0 0 20 20" fill="#E8A33D" className="w-[13px] h-[13px]" aria-hidden="true">
+                            <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
+                          </svg>
+                        ))}
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full bg-sage flex-shrink-0">
+                        <svg viewBox="0 0 12 12" className="w-2.5 h-2.5" fill="none" stroke="#FAF7F4" strokeWidth={2.5} aria-hidden="true">
+                          <path d="M2.5 6.5L5 9l4.5-5.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                    )}
+                    <span className="font-body font-semibold text-[13px] md:text-sm text-brown tracking-tight">{item.label}</span>
                   </li>
                 ))}
               </ul>
