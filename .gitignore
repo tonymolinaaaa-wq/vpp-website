@@ -38,3 +38,7 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# local-only raw content (videos, source footage) — never pushed to remote
+/public/Cabinet Content/
+/local-content/
