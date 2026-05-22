@@ -551,100 +551,136 @@ function HowItWorks() {
 /* ───────── 5. WHAT'S INCLUDED ───────── */
 
 function WhatsIncluded() {
-  const items = [
-    { title: 'Professional-grade primer, paint & topcoat', benefit: 'So the finish lasts years without yellowing or chipping' },
-    { title: 'New soft-close hinges sourced & installed', benefit: 'So you never hear a cabinet slam again' },
-    { title: 'Hardware audit & installation', benefit: 'Misaligned holes filled, re-drilled to the correct position — every handle sits perfectly straight' },
-    { title: 'Full deep clean including cabinet tops', benefit: 'You get your kitchen back spotless, not dusty' },
-    { title: 'Felt pads on every door and drawer', benefit: 'Protects your new finish from sticking or rubbing — quiet, clean contact every time you open and close' },
-    { title: 'Fully contained workspace', benefit: 'We tackle your base cabinets first and get your kitchen back in about 2 days — not the full 3–5 day project timeline.' },
-    { title: '3–5 day turnaround for most kitchens', benefit: 'Your life isn\u2019t disrupted for weeks — we\u2019re in and out' },
-    { title: '5-year warranty provided in writing', benefit: 'Real protection delivered at job completion, not a verbal promise' },
-    { title: 'Fixed price confirmed before work begins', benefit: 'Zero surprises on your invoice — the quote is the price' },
-    { title: 'Important cabinet labels preserved', benefit: 'Emergency contacts, warranty info — removed, reprinted clean, reapplied. Nothing gets lost' },
+  const sections = [
+    {
+      num: '01',
+      eyebrow: 'The Work Itself',
+      title: 'What Goes Into Your Kitchen',
+      items: [
+        {
+          title: 'Professional 3-coat system',
+          desc: 'Bonding primer plus two coats of cabinet-grade finish. Your finish lasts years without yellowing or chipping.',
+        },
+        {
+          title: 'New soft-close hinges — included in your base quote',
+          desc: 'Sourced and installed on every door. We haven’t found another East Valley refinisher who includes this. You never hear a cabinet slam again.',
+        },
+        {
+          title: 'Hardware audit and re-installation',
+          desc: 'Misaligned holes filled, then re-drilled to the correct position. Every handle sits perfectly straight — not crooked like the day we walked in.',
+        },
+        {
+          title: 'Full deep clean, including cabinet tops',
+          desc: 'We clean the surfaces most painters skip entirely. You get your kitchen back spotless, not dusty.',
+        },
+        {
+          title: 'Felt pads on every door and drawer',
+          desc: 'Quiet, clean contact every time you open and close. Your new finish doesn’t stick or rub.',
+        },
+        {
+          title: 'Cabinet labels preserved',
+          desc: 'Emergency contacts, appliance warranty stickers, electrical panel labels — removed, reprinted clean, reapplied. Nothing important gets lost.',
+        },
+      ],
+    },
+    {
+      num: '02',
+      eyebrow: 'Your Experience, In Writing',
+      title: 'What We Commit To While We’re In Your Home',
+      items: [
+        {
+          title: '$300/Day Finish Promise',
+          desc: 'Written into your contract. If we miss the contracted finish date for any reason other than weather, HOA approval delays, or owner-initiated change orders, we credit $300 per business day until the work is done.',
+        },
+        {
+          title: 'Fixed price confirmed before work begins',
+          desc: 'The quote is the price. No surprise charges on your invoice. Ever.',
+        },
+        {
+          title: 'Daily Photo Updates by text',
+          desc: 'Four milestone photos every working day: morning arrival, prep complete, paint in progress, end-of-day cleanup. You know what’s happening while you’re at work.',
+        },
+        {
+          title: 'Surface protection on everything we don’t refinish',
+          desc: 'Floors, counters, appliances, walls. We leave your kitchen cleaner than we found it.',
+        },
+        {
+          title: 'Base cabinets back in 2 days',
+          desc: 'Most kitchens are 3–5 days total, but your base cabinets are usable again by day two. Your kitchen isn’t out of commission for a week.',
+        },
+      ],
+    },
+    {
+      num: '03',
+      eyebrow: 'The Long Tail',
+      title: 'What We Stand Behind After We Leave',
+      items: [
+        {
+          title: 'Lifetime Touch-Up Kit',
+          desc: 'A labeled, sealed kit delivered at job completion: one quart of every color used, a brush, and a written log of which color went where. Free re-orders for life.',
+        },
+        {
+          title: '6-Month Quality Hold',
+          desc: 'Scheduled on your phone before we leave. Six months in, we come back, walk the kitchen, and confirm the finish is holding up the way it should. Any workmanship issues are touched up free.',
+        },
+        {
+          title: '12-Month Wellness Check',
+          desc: 'Scheduled on your phone before we leave. One year out, a free 30-minute walkthrough. Workmanship issues touched up free. Wear and tear is quoted, never assumed.',
+        },
+        {
+          title: '5-Year Written Warranty',
+          desc: 'Delivered in writing at job completion, not verbal. If the finish fails under normal use within 5 years, we come back and make it right. No fine print, no runaround.',
+        },
+      ],
+    },
   ]
 
   return (
-    <section className="bg-cream py-20 md:py-24">
+    <section className="bg-sand-light py-20 md:py-24">
       <div className="mx-auto max-w-content px-6">
         <RevealSection className="text-center mb-14">
           <p className="font-body font-semibold text-[11px] tracking-[0.22em] uppercase text-terra mb-3">
             Everything Included
           </p>
           <h2 className="font-display text-ink text-[28px] md:text-[38px] leading-[1.2] mb-3">
-            This Is What&apos;s Included in Your Quote
+            This Is Everything That Comes With Your Quote
           </h2>
           <p className="font-body text-brown text-base max-w-xl mx-auto">
-            Every item below is included in your quoted price. No add-ons. No surprises.
+            Every item below is contractual. In writing, before you sign. No add-ons, no surprises, no fine print.
           </p>
         </RevealSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-7 max-w-4xl mx-auto">
-          {items.map((item, i) => (
-            <RevealSection key={i} delay={i * 80} className="flex items-start gap-4">
-              <CheckCircleIcon />
-              <div>
-                <p className="font-body font-medium text-ink text-base">{item.title}</p>
-                <p className="font-body text-brown text-sm mt-1">{item.benefit}</p>
-              </div>
-            </RevealSection>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ───────── 6. THE GUARANTEE ───────── */
-
-function Guarantee() {
-  const promises = [
-    {
-      Icon: TagIcon,
-      title: 'Fixed Price Promise',
-      body: 'Your quote is your final invoice. No surprise charges, no upsells mid-project, no "we ran into something" change orders. The number we give you before we start is the number you pay.',
-    },
-    {
-      Icon: SparklesIcon,
-      title: 'No-Mess Promise',
-      body: 'We protect every surface we’re not refinishing — floors, counters, appliances, walls. Your kitchen is left cleaner than we found it, including a deep clean of cabinet tops most painters skip.',
-    },
-    {
-      Icon: ShieldIcon,
-      title: '5-Year Written Warranty',
-      body: 'Delivered in writing at job completion — not a verbal promise. If the finish fails under normal use within 5 years, we come back and make it right. No fine print. No runaround.',
-    },
-  ]
-
-  return (
-    <section className="bg-cream py-20 md:py-24">
-      <div className="mx-auto max-w-content px-6">
-        <RevealSection className="text-center mb-12">
-          <p className="font-body font-semibold text-[11px] tracking-[0.22em] uppercase text-terra mb-3">
-            Our 3-Part Promise
-          </p>
-          <h2 className="font-display text-ink text-[28px] md:text-[38px] leading-[1.2]">
-            Backed in Writing — Not Verbally
-          </h2>
-        </RevealSection>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {promises.map((promise, i) => (
-            <RevealSection key={promise.title} delay={i * 100}>
-              <div className="bg-sand-light rounded-2xl p-7 md:p-8 text-center h-full border-t-[3px] border-terra">
-                <promise.Icon />
-                <h3 className="font-display text-ink text-[22px] md:text-[24px] mt-4 mb-3">
-                  {promise.title}
-                </h3>
-                <p className="font-body text-brown text-[15px] leading-[1.7]">
-                  {promise.body}
+        <div className="max-w-4xl mx-auto space-y-16 md:space-y-20">
+          {sections.map((section) => (
+            <div key={section.num}>
+              <RevealSection className="text-center mb-10">
+                <p className="font-body font-semibold text-[11px] tracking-[0.22em] uppercase text-terra mb-3">
+                  {section.num} · {section.eyebrow}
                 </p>
+                <h3 className="font-display text-ink text-[24px] md:text-[30px] leading-[1.2]">
+                  {section.title}
+                </h3>
+              </RevealSection>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+                {section.items.map((item, i) => (
+                  <RevealSection key={i} delay={i * 60} className="flex items-start gap-4">
+                    <CheckCircleIcon />
+                    <div>
+                      <p className="font-body font-medium text-ink text-base">{item.title}</p>
+                      <p className="font-body text-brown text-sm mt-1">{item.desc}</p>
+                    </div>
+                  </RevealSection>
+                ))}
               </div>
-            </RevealSection>
+            </div>
           ))}
         </div>
 
-        <RevealSection delay={300} className="text-center mt-10 max-w-3xl mx-auto">
+        <RevealSection delay={200} className="text-center mt-14 md:mt-16 max-w-3xl mx-auto">
+          <p className="font-body font-medium text-base text-terra mb-3">
+            Every commitment above is contractual. In writing, on every quote, before you sign.
+          </p>
           <p className="font-body font-medium text-sm text-terra">
             AZ ROC #363664 · Bonded · $1M / $2M Liability Insured · Your protection is backed by a licensed contractor, not a handyman.
           </p>
@@ -654,7 +690,7 @@ function Guarantee() {
   )
 }
 
-/* ───────── 7. COMPARISON CARDS ───────── */
+/* ───────── 6. COMPARISON CARDS ───────── */
 
 function ComparisonCards() {
   return (
@@ -1380,7 +1416,6 @@ export default function CabinetPage() {
       <ProblemAgitate />
       <HowItWorks />
       <WhatsIncluded />
-      <Guarantee />
       <ComparisonCards />
       <BeforeAfter />
       <Reviews />
