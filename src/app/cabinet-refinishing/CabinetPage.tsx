@@ -332,30 +332,97 @@ function Hero() {
 
 function SocialProofBar() {
   return (
-    <section className="bg-sand-light">
-      <div className="mx-auto max-w-content px-4 py-4 md:py-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-center">
-        <span className="font-body font-medium text-xs md:text-[13px] text-mid flex items-center gap-1">
-          5.0{' '}
-          <span className="flex">
-            {[...Array(5)].map((_, i) => (
-              <StarIcon key={i} className="w-3.5 h-3.5 text-terra" />
-            ))}
-          </span>{' '}
-          Google Reviews
-        </span>
-        <span className="text-rule">·</span>
-        <span className="font-body font-medium text-xs md:text-[13px] text-mid">AZ ROC #363664</span>
-        <span className="text-rule hidden sm:inline">·</span>
-        <span className="inline-flex items-center gap-1 bg-cream border border-rule rounded-full px-3 py-0.5">
-          <span className="inline-block w-[22px] h-[14px] bg-[#005A78] rounded-[3px] text-[8px] font-bold text-white text-center leading-[14px] flex-shrink-0">BBB</span>
-          <span className="font-body font-semibold text-xs text-brown">A+ Rated</span>
-        </span>
-        <span className="inline-flex items-center gap-1 bg-cream border border-rule rounded-full px-3 py-0.5">
-          <span className="text-terra text-xs">★</span>
-          <span className="font-body font-semibold text-xs text-brown">Torch Awards Nominee</span>
-        </span>
-        <span className="text-rule hidden sm:inline">·</span>
-        <span className="font-body font-medium text-xs md:text-[13px] text-mid">Licensed, Bonded &amp; Insured</span>
+    <section className="bg-sand border-y border-rule">
+      <div className="mx-auto max-w-content px-4 py-6 md:py-7">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 md:gap-x-10 gap-y-5">
+
+          {/* 5.0 Google Reviews — gold stars */}
+          <div className="flex items-center gap-2.5">
+            <span className="flex gap-[2px]" aria-label="5.0 out of 5 stars">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} viewBox="0 0 20 20" fill="#E8A33D" className="w-[20px] h-[20px]" aria-hidden="true">
+                  <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
+                </svg>
+              ))}
+            </span>
+            <div className="text-left leading-tight">
+              <div className="font-body font-bold text-[15px] text-ink">5.0 Rating</div>
+              <div className="font-body text-[12px] text-brown">Google Reviews</div>
+            </div>
+          </div>
+
+          {/* BBB Accredited A+ — official badge */}
+          <div className="flex items-center gap-2.5">
+            <picture>
+              <source srcSet="/images/badge-bbb.webp" type="image/webp" />
+              <Image
+                src="/images/badge-bbb.png"
+                alt="BBB Accredited Business — A+ Rating"
+                width={48}
+                height={48}
+                className="w-12 h-12 flex-shrink-0"
+                unoptimized
+              />
+            </picture>
+            <div className="text-left leading-tight">
+              <div className="font-body font-bold text-[15px] text-ink">BBB Accredited</div>
+              <div className="font-body text-[12px] text-brown">A+ Rating</div>
+            </div>
+          </div>
+
+          {/* AZ ROC — official seal + license number */}
+          <div className="flex items-center gap-2.5">
+            <picture>
+              <source srcSet="/images/badge-az-roc.webp" type="image/webp" />
+              <Image
+                src="/images/badge-az-roc.png"
+                alt="Arizona Registrar of Contractors — Licensed since 1931"
+                width={48}
+                height={48}
+                className="w-12 h-12 flex-shrink-0"
+                unoptimized
+              />
+            </picture>
+            <div className="text-left leading-tight">
+              <div className="font-body font-bold text-[15px] text-ink">AZ ROC Licensed</div>
+              <div className="font-body text-[12px] text-brown">#363664</div>
+            </div>
+          </div>
+
+          {/* BBB Torch Awards Nominee — custom badge */}
+          <div className="flex items-center gap-2.5">
+            <span
+              className="w-12 h-12 rounded-full bg-terra flex items-center justify-center flex-shrink-0 shadow-sm"
+              aria-hidden="true"
+            >
+              <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
+                {/* Outer flame — gold */}
+                <path
+                  d="M12 2.2c-1.6 2.4-4.2 4-3.4 7.6.3 1.6 1.6 2.7 3.4 2.5 1.8.2 3.1-.9 3.4-2.5C16.2 6.2 13.6 4.6 12 2.2z"
+                  fill="#E8A33D"
+                />
+                {/* Inner flame highlight — cream */}
+                <path
+                  d="M12 5.4c-.9 1.4-2.1 2.6-1.5 4.4.2.7.9 1.2 1.5 1.1.6.1 1.3-.4 1.5-1.1.6-1.8-.6-3-1.5-4.4z"
+                  fill="#FAF7F4"
+                />
+                {/* Bowl */}
+                <rect x="8.5" y="12.4" width="7" height="2.4" rx="0.6" fill="#FAF7F4" />
+                {/* Handle */}
+                <rect x="10.5" y="14.8" width="3" height="6.4" rx="0.5" fill="#FAF7F4" />
+              </svg>
+            </span>
+            <div className="text-left leading-tight">
+              <div className="font-body font-bold text-[15px] text-ink">Torch Awards</div>
+              <div className="font-body text-[12px] text-brown">Nominee for Ethics</div>
+            </div>
+          </div>
+
+        </div>
+
+        <p className="mt-5 text-center font-body font-medium text-[12px] tracking-wide uppercase text-mid">
+          Licensed · Bonded · Insured
+        </p>
       </div>
     </section>
   )
