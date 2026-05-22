@@ -257,9 +257,18 @@ function Hero() {
                 </a>
               </div>
 
-              <p className="font-body text-[13px] text-mid mb-2">
-                ✓ Licensed, Bonded &amp; Insured · ✓ 5-Star Rated · ✓ 5-Year Warranty
-              </p>
+              <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-3 list-none p-0">
+                {['Licensed, Bonded & Insured', '5-Star Rated', '5-Year Warranty'].map((item) => (
+                  <li key={item} className="inline-flex items-center gap-1.5">
+                    <span className="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full bg-sage flex-shrink-0">
+                      <svg viewBox="0 0 12 12" className="w-2.5 h-2.5" fill="none" stroke="#FAF7F4" strokeWidth={2.5} aria-hidden="true">
+                        <path d="M2.5 6.5L5 9l4.5-5.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                    <span className="font-body font-semibold text-[13px] md:text-sm text-brown tracking-tight">{item}</span>
+                  </li>
+                ))}
+              </ul>
               <p className="font-body italic text-[13px] text-terra">
                 We take 4–6 cabinet projects per month to maintain our quality standard.
               </p>
