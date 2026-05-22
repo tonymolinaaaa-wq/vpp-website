@@ -298,14 +298,29 @@ function Hero() {
               transition: 'opacity 600ms ease 600ms, transform 600ms ease 600ms',
             }}
           >
+            {/* Poster fallback — shown on mobile (saves data) and when reduced-motion is preferred. Also acts as <video> poster. */}
             <Image
-              src="/images/cabinet-hero-island.png"
-              alt="Refinished kitchen by Valley Painting Pros — white upper cabinets with navy blue island"
-              width={1024}
-              height={1536}
-              className="rounded-2xl shadow-sm border-l-[3px] border-terra object-cover w-full h-auto"
+              src="/images/cabinet-hero-poster.jpg"
+              alt="Refinished kitchen by Valley Painting Pros — gray cabinets with white range under skylight"
+              width={720}
+              height={960}
+              className="rounded-2xl shadow-sm border-l-[3px] border-terra object-cover w-full h-auto block motion-safe:md:hidden"
               priority
             />
+            {/* Desktop video — autoplay-loop on md+ when motion is allowed */}
+            <video
+              className="rounded-2xl shadow-sm border-l-[3px] border-terra object-cover w-full h-auto hidden motion-safe:md:block"
+              poster="/images/cabinet-hero-poster.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden="true"
+            >
+              <source src="/videos/cabinet-hero.webm" type="video/webm" />
+              <source src="/videos/cabinet-hero.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </div>

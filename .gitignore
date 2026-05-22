@@ -42,3 +42,4 @@ next-env.d.ts
 # local-only raw content (videos, source footage) — never pushed to remote
 /public/Cabinet Content/
 /local-content/
+/.clip-preview/
