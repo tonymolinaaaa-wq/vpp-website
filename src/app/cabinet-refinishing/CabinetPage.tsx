@@ -77,8 +77,8 @@ function StarIcon({ className = 'w-5 h-5 text-terra' }: { className?: string }) 
 
 function CheckCircleIcon() {
   return (
-    <div className="w-12 h-12 rounded-full bg-sand flex items-center justify-center flex-shrink-0">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C4613A" strokeWidth={2.5} className="w-6 h-6" aria-hidden="true">
+    <div className="w-12 h-12 rounded-full bg-sage flex items-center justify-center flex-shrink-0 shadow-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FAF7F4" strokeWidth={3} className="w-6 h-6" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
       </svg>
     </div>
