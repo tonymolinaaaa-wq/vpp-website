@@ -1091,7 +1091,7 @@ function ServiceAreaMap() {
             Chandler <span className="text-terra">·</span> Gilbert <span className="text-terra">·</span> Mesa <span className="text-terra">·</span> Queen Creek <span className="text-terra">·</span> Tempe
           </p>
           <p className="font-body text-brown text-base max-w-lg mx-auto">
-            Every consultation, every job, every follow-up — handled by our team personally. No call centers. No subcontractors from across town.
+            Every consultation, every job, every follow-up — handled by our team. No call centers.
           </p>
         </RevealSection>
 

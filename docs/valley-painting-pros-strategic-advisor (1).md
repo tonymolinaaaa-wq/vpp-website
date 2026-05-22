@@ -3,7 +3,7 @@
 **Company:** Valley Painting Pros | Residential Painting LLC | Phoenix, Arizona  
 **Credentials:** Arizona ROC License (R-34 Painting & Wall Covering classification) · $1M/$2M General Liability · Surety Bond  
 **Primary Wedge Service:** Cabinet Refinishing  
-**Business Model:** Bootstrapped direct-to-consumer; subcontracting funds operations  
+**Business Model:** Bootstrapped direct-to-consumer; VPP-managed subcontractor crews execute jobs under VPP's license, warranty, and oversight  
 **Document Purpose:** Permanent advisor reference — named frameworks, worked examples, applied to residential painting and cabinet refinishing
 
 ---

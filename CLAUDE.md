@@ -170,6 +170,7 @@ When auditing the site, check every page for:
 - Do not invent testimonials or fake reviews
 - Do not add pricing tiers or upsell language
 - Do not reference v2.1 brand assets, sub-brands, or retired logos
+- Do not claim "in-house crew," "no subcontractors," "no subs," or any equivalent — VPP delivers work through VPP-managed subcontractor crews. Refer to them as "our crew" or "our team" in customer-facing copy. Trust signals come from licensing, warranty, fixed price, and oversight — not from claims about crew composition.
 
 ---
 
