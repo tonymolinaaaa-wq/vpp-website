@@ -87,8 +87,25 @@ function CheckCircleIcon() {
 
 function ShieldIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C4613A" strokeWidth={2} className="w-16 h-16 mx-auto" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C4613A" strokeWidth={2} className="w-14 h-14 mx-auto" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+    </svg>
+  )
+}
+
+function TagIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C4613A" strokeWidth={2} className="w-14 h-14 mx-auto" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6z" />
+    </svg>
+  )
+}
+
+function SparklesIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C4613A" strokeWidth={2} className="w-14 h-14 mx-auto" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
     </svg>
   )
 }
@@ -242,7 +259,7 @@ function Hero() {
                 transition: 'opacity 600ms ease 800ms, transform 600ms ease 800ms',
               }}
             >
-              <div className="flex flex-col sm:flex-row items-start gap-4 mb-5">
+              <div className="flex flex-col sm:flex-row items-start gap-4 mb-3">
                 <button
                   onClick={() => smoothScrollTo('quote-form')}
                   className="btn-primary text-base h-14 px-8 shadow-lg"
@@ -256,6 +273,13 @@ function Hero() {
                   or call (480) 433-2680
                 </a>
               </div>
+
+              <button
+                onClick={() => smoothScrollTo('gallery')}
+                className="font-body font-medium text-sm text-brown underline underline-offset-4 hover:text-terra transition-colors mb-5"
+              >
+                or see recent transformations →
+              </button>
 
               <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-3 list-none p-0">
                 {[
@@ -336,8 +360,14 @@ function SocialProofBar() {
       <div className="mx-auto max-w-content px-4 py-6 md:py-7">
         <div className="flex flex-wrap items-center justify-center gap-x-6 md:gap-x-10 gap-y-5">
 
-          {/* 5.0 Google Reviews — gold stars */}
-          <div className="flex items-center gap-2.5">
+          {/* 5.0 Google Reviews — gold stars, linked to live Google profile */}
+          <a
+            href="https://g.page/r/CX7AG1aNL5PkEBE"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2.5 transition-opacity hover:opacity-85"
+            aria-label="Read all 7 five-star Google reviews — opens Google in a new tab"
+          >
             <span className="flex gap-[2px]" aria-label="5.0 out of 5 stars">
               {[...Array(5)].map((_, i) => (
                 <svg key={i} viewBox="0 0 20 20" fill="#E8A33D" className="w-[20px] h-[20px]" aria-hidden="true">
@@ -346,10 +376,10 @@ function SocialProofBar() {
               ))}
             </span>
             <div className="text-left leading-tight">
-              <div className="font-body font-bold text-[15px] text-ink">5.0 Rating</div>
-              <div className="font-body text-[12px] text-brown">Google Reviews</div>
+              <div className="font-body font-bold text-[15px] text-ink">5.0 Stars</div>
+              <div className="font-body text-[12px] text-brown">7 Google Reviews</div>
             </div>
-          </div>
+          </a>
 
           {/* BBB Standing Trust Seal — official live-linked seal from BBB CDN.
               Must be served from BBB's own URL so consumers can verify accreditation is current. */}
@@ -371,8 +401,14 @@ function SocialProofBar() {
             />
           </a>
 
-          {/* AZ ROC — official seal + license number */}
-          <div className="flex items-center gap-2.5">
+          {/* AZ ROC — official seal + license number, linked to ROC verification */}
+          <a
+            href="https://azroc.my.site.com/AZRoc/s/contractor-search"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2.5 transition-opacity hover:opacity-85"
+            aria-label="Verify ROC license #363664 at roc.az.gov — opens in a new tab"
+          >
             <picture>
               <source srcSet="/images/badge-az-roc.webp" type="image/webp" />
               <Image
@@ -386,9 +422,9 @@ function SocialProofBar() {
             </picture>
             <div className="text-left leading-tight">
               <div className="font-body font-bold text-[15px] text-ink">AZ ROC Licensed</div>
-              <div className="font-body text-[12px] text-brown">#363664</div>
+              <div className="font-body text-[12px] text-brown">#363664 · Verify →</div>
             </div>
-          </div>
+          </a>
 
           {/* BBB Torch Awards Nominee — custom badge */}
           <div className="flex items-center gap-2.5">
@@ -422,8 +458,39 @@ function SocialProofBar() {
         </div>
 
         <p className="mt-5 text-center font-body font-medium text-[12px] tracking-wide uppercase text-mid">
-          Licensed · Bonded · Insured
+          Licensed · Bonded · $1M / $2M Liability Insured
         </p>
+      </div>
+    </section>
+  )
+}
+
+/* ───────── 3B. PROBLEM / AGITATE (PAS Framework) ───────── */
+
+function ProblemAgitate() {
+  return (
+    <section className="bg-sand-light py-20 md:py-24">
+      <div className="mx-auto max-w-content px-6">
+        <RevealSection className="max-w-3xl mx-auto">
+          <p className="font-body font-semibold text-[11px] tracking-[0.22em] uppercase text-terra mb-4 text-center">
+            Why Most East Valley Kitchens Stay Dated
+          </p>
+          <h2 className="font-display text-ink text-[28px] md:text-[40px] leading-[1.15] mb-8 text-center">
+            There&apos;s a Reason You Haven&apos;t Done This Yet.
+          </h2>
+
+          <div className="font-body text-brown text-[17px] leading-[1.8] space-y-5">
+            <p>
+              You walk past those cabinets every morning. The honey oak from 2003. Hardware that doesn&apos;t match anything. A finish worn shiny near the stove. You&apos;ve thought about doing something for years.
+            </p>
+            <p>
+              Then you got the remodel quote — $25,000, $35,000, sometimes more. Six weeks without a kitchen. Permits. A contractor you&apos;re not sure about. So you put it off. Or you tried a DIY paint kit, watched it bubble and chip within a year, and put it off again.
+            </p>
+            <p className="text-ink font-medium">
+              Cabinet refinishing closes the gap. Your cabinets stay. Your layout stays. Your kitchen stays usable. We do what the original cabinetmaker did — with a finish system built for daily use, not just to leave the factory.
+            </p>
+          </div>
+        </RevealSection>
       </div>
     </section>
   )
@@ -531,22 +598,58 @@ function WhatsIncluded() {
 /* ───────── 6. THE GUARANTEE ───────── */
 
 function Guarantee() {
+  const promises = [
+    {
+      Icon: TagIcon,
+      title: 'Fixed Price Promise',
+      body: 'Your quote is your final invoice. No surprise charges, no upsells mid-project, no "we ran into something" change orders. The number we give you before we start is the number you pay.',
+    },
+    {
+      Icon: SparklesIcon,
+      title: 'No-Mess Promise',
+      body: 'We protect every surface we’re not refinishing — floors, counters, appliances, walls. Your kitchen is left cleaner than we found it, including a deep clean of cabinet tops most painters skip.',
+    },
+    {
+      Icon: ShieldIcon,
+      title: '5-Year Written Warranty',
+      body: 'Delivered in writing at job completion — not a verbal promise. If the finish fails under normal use within 5 years, we come back and make it right. No fine print. No runaround.',
+    },
+  ]
+
   return (
-    <section className="bg-cream py-16">
-      <RevealSection className="mx-auto max-w-3xl px-6">
-        <div className="bg-sand-light rounded-2xl p-8 md:p-10 text-center border-t-[3px] border-terra">
-          <ShieldIcon />
-          <h2 className="font-display text-ink text-[28px] md:text-[32px] mt-5 mb-4">
-            Our 5-Year Written Warranty
+    <section className="bg-cream py-20 md:py-24">
+      <div className="mx-auto max-w-content px-6">
+        <RevealSection className="text-center mb-12">
+          <p className="font-body font-semibold text-[11px] tracking-[0.22em] uppercase text-terra mb-3">
+            Our 3-Part Promise
+          </p>
+          <h2 className="font-display text-ink text-[28px] md:text-[38px] leading-[1.2]">
+            Backed in Writing — Not Verbally
           </h2>
-          <p className="font-body text-brown text-base max-w-xl mx-auto mb-5 leading-[1.7]">
-            Every cabinet refinishing job comes with a written warranty delivered at job completion — not a verbal promise. If the finish fails under normal use within 5 years, we come back and make it right. No fine print. No runaround.
-          </p>
-          <p className="font-body font-medium text-sm text-terra">
-            AZ ROC #363664 · Licensed, Bonded &amp; Insured · Your protection is backed by a licensed contractor, not a handyman.
-          </p>
+        </RevealSection>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {promises.map((promise, i) => (
+            <RevealSection key={promise.title} delay={i * 100}>
+              <div className="bg-sand-light rounded-2xl p-7 md:p-8 text-center h-full border-t-[3px] border-terra">
+                <promise.Icon />
+                <h3 className="font-display text-ink text-[22px] md:text-[24px] mt-4 mb-3">
+                  {promise.title}
+                </h3>
+                <p className="font-body text-brown text-[15px] leading-[1.7]">
+                  {promise.body}
+                </p>
+              </div>
+            </RevealSection>
+          ))}
         </div>
-      </RevealSection>
+
+        <RevealSection delay={300} className="text-center mt-10 max-w-3xl mx-auto">
+          <p className="font-body font-medium text-sm text-terra">
+            AZ ROC #363664 · Bonded · $1M / $2M Liability Insured · Your protection is backed by a licensed contractor, not a handyman.
+          </p>
+        </RevealSection>
+      </div>
     </section>
   )
 }
@@ -655,7 +758,7 @@ function ComparisonCards() {
             &ldquo;My gorgeous kitchen cabinets!&rdquo;
           </p>
           <p className="font-body font-medium text-sm text-mid mt-2 flex items-center justify-center gap-1">
-            — Rita S. · Google{' '}
+            — Rita S. · Chandler, AZ · Google{' '}
             <span className="flex">
               {[...Array(5)].map((_, i) => (
                 <StarIcon key={i} className="w-3.5 h-3.5 text-terra" />
@@ -672,7 +775,7 @@ function ComparisonCards() {
 
 function BeforeAfter() {
   return (
-    <section className="bg-sand-light py-20">
+    <section id="gallery" className="bg-sand-light py-20">
       <div className="mx-auto max-w-content px-6">
         <RevealSection className="text-center mb-10">
           <h2 className="font-display text-ink text-[28px] md:text-[32px]">See the Difference</h2>
@@ -770,11 +873,11 @@ function BeforeAfter() {
 
 function Reviews() {
   const condensedReviews = [
-    { name: 'Robin C.', quote: '', service: 'Google Review' },
-    { name: 'James D.', quote: '', service: 'Google Review' },
-    { name: 'Shannon R.', quote: '', service: 'Google Review' },
-    { name: 'Kenneth S.', quote: '', service: 'Google Review' },
-    { name: 'Paola', quote: '', service: 'Google Review' },
+    { name: 'Robin C.', city: 'Gilbert, AZ', quote: '', service: 'Google Review' },
+    { name: 'James D.', city: 'East Valley, AZ', quote: '', service: 'Google Review' },
+    { name: 'Shannon R.', city: 'East Valley, AZ', quote: '', service: 'Google Review' },
+    { name: 'Kenneth S.', city: 'East Valley, AZ', quote: '', service: 'Google Review' },
+    { name: 'Paola', city: 'East Valley, AZ', quote: '', service: 'Google Review' },
   ]
 
   return (
@@ -800,7 +903,7 @@ function Reviews() {
                 &ldquo;Thank you Ricardo for my gorgeous kitchen cabinets! They look beautiful!&rdquo;
               </p>
               <p className="font-body font-medium text-sm text-mid">
-                Rita S. · Cabinet Refinishing · Google Review
+                Rita S. · Chandler, AZ · Cabinet Refinishing · Google Review
               </p>
             </div>
           </RevealSection>
@@ -814,7 +917,7 @@ function Reviews() {
                 &ldquo;They were more careful and thorough with their prep than I would have been. They are perfectionists.&rdquo;
               </p>
               <p className="font-body font-medium text-sm text-mid">
-                Dustin T. · Cabinet Refinishing · Google Review
+                Dustin T. · East Valley, AZ · Cabinet Refinishing · Google Review
               </p>
             </div>
           </RevealSection>
@@ -831,7 +934,7 @@ function Reviews() {
                 {review.quote && (
                   <p className="font-body text-sm text-brown mb-2">&ldquo;{review.quote}&rdquo;</p>
                 )}
-                <p className="font-body text-xs text-mid">{review.name} · {review.service}</p>
+                <p className="font-body text-xs text-mid">{review.name} · {review.city} · {review.service}</p>
               </div>
             </RevealSection>
           ))}
@@ -878,6 +981,14 @@ function FAQ() {
       q: 'What if I don\u2019t like the result?',
       a: 'We stand behind our work. If there\u2019s a defect in workmanship \u2014 uneven coverage, drips, adhesion issues, anything that doesn\u2019t meet the professional standard we promised \u2014 we come back and make it right at no charge. That\u2019s covered under your written warranty. Before we start, we confirm your exact color choice and sheen together so there are no surprises. If you want to change colors after the job is complete, we\u2019re happy to do it \u2014 that\u2019s a new project at a new price, not a warranty issue.',
     },
+    {
+      q: 'I want to get a few quotes first \u2014 what should I ask each refinisher?',
+      a: 'Smart move. Here\u2019s the short list to ask every refinisher you compare us against: 1) Do you spray or brush/roll? (Spray = factory finish. Brush = visible marks.) 2) How many coats? (Our system is bonding primer plus two cabinet-grade finish coats.) 3) Do you sand and degrease before primer? (Both \u2014 skipping prep is why DIY paint peels.) 4) Do you remove doors and finish them off-cabinet? (We do. On-site finishing leaves drips and overspray.) 5) Is your warranty written and delivered at job completion? (Ours is, for 5 years.) 6) Is your ROC license active and complaint-free? (Look us up \u2014 #363664 \u2014 at roc.az.gov.) Bring our answers to your other estimates. If a refinisher dodges any of these questions, that\u2019s your answer.',
+    },
+    {
+      q: 'How do I know I can trust your work?',
+      a: 'Three layers of verification, none of which require you to take our word for it. First: AZ ROC #363664 \u2014 you can look up our license at roc.az.gov in 30 seconds. Active, in good standing, no complaints. Second: 5.0 Google rating across 7 reviews \u2014 every one on the public profile, every one named. No paid review services. Third: BBB accredited and a Torch Awards nominee for ethics. Beyond that, your protection is the written warranty delivered at job completion. If anything fails under normal use, you have a signed document that says we come back and fix it.',
+    },
   ]
 
   return (
@@ -913,7 +1024,7 @@ function FAQ() {
                 <div
                   className="overflow-hidden transition-all duration-200 ease-in-out"
                   style={{
-                    maxHeight: openIndex === i ? '500px' : '0px',
+                    maxHeight: openIndex === i ? '800px' : '0px',
                     opacity: openIndex === i ? 1 : 0,
                   }}
                 >
@@ -973,17 +1084,14 @@ function EmotionalClose() {
       <div className="mx-auto max-w-content px-6">
         <RevealSection className="text-center max-w-2xl mx-auto">
           <h2 className="font-display text-ink text-[28px] md:text-[38px] leading-[1.2] mb-8">
-            Your Kitchen Deserves Better Than &ldquo;Good Enough&rdquo;
+            Ready for a Kitchen You&apos;re Proud Of?
           </h2>
           <div className="font-body text-brown text-[17px] leading-[1.8] space-y-5 mb-8">
             <p>
-              You&apos;ve thought about it every time you walk in. The dark, dated cabinets. The worn-out hardware. The kitchen that looks like someone else&apos;s home.
+              Most homeowners spend two or three years &ldquo;thinking about it&rdquo; before they pick up the phone. The kitchen doesn&apos;t get better while you wait. Neither does the cost of a remodel.
             </p>
             <p>
-              Most homeowners assume the only fix is a $30,000 remodel — ripping everything out, living without a kitchen for weeks, coordinating with contractors who stop returning calls halfway through.
-            </p>
-            <p>
-              There&apos;s a better path. We refinish what you already have — same cabinet boxes, completely different kitchen — in 3–5 days, for a fraction of the cost. We walk your kitchen, answer every question, and build your quote on the spot. No salespeople. No pressure. No middlemen.
+              A 20-minute consultation. A fixed quote on the spot. A 3–5 day project. You&apos;ll wonder why you waited.
             </p>
           </div>
           <p className="font-body font-medium text-sm text-terra mb-8">
@@ -1073,7 +1181,7 @@ function QuoteForm() {
                 &ldquo;He gave me an accurate quote and showed up exactly on time.&rdquo;
               </p>
               <p className="font-body text-xs text-mid flex items-center gap-1">
-                — Kenneth S. · Google{' '}
+                — Kenneth S. · East Valley, AZ · Google{' '}
                 <span className="flex">
                   {[...Array(5)].map((_, i) => <StarIcon key={i} className="w-3 h-3 text-terra" />)}
                 </span>
@@ -1269,6 +1377,7 @@ export default function CabinetPage() {
       <StickyNav />
       <Hero />
       <SocialProofBar />
+      <ProblemAgitate />
       <HowItWorks />
       <WhatsIncluded />
       <Guarantee />
