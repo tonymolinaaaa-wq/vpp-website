@@ -1187,7 +1187,7 @@ export default function CabinetPage() {
       <Hero />
       <SocialProofBar />
       <HowItWorks />
-      {/* <WhatsIncluded /> */}
+      <WhatsIncluded />
       <Guarantee />
       <ComparisonCards />
       <BeforeAfter />
