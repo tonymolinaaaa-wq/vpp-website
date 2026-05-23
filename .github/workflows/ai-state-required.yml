@@ -1,0 +1,44 @@
+name: AI-STATE Required
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+jobs:
+  ai-state-required:
+    name: AI-STATE.md required for meaningful changes
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Collect PR changed files
+        shell: bash
+        run: |
+          git diff --name-only --diff-filter=ACMRTD \
+            "${{ github.event.pull_request.base.sha }}" \
+            HEAD > .ai-state-changed-files
+          cat .ai-state-changed-files
+
+      - name: Verify changed files list is non-empty
+        shell: bash
+        run: |
+          if [ ! -s .ai-state-changed-files ]; then
+            echo "WARNING: PR diff returned no changed files."
+            echo "This usually means the base SHA is missing or the PR is empty."
+            echo "Skipping check, but this should be investigated."
+          fi
+
+      - name: Check AI-STATE.md update requirement
+        run: node scripts/check-ai-state-required.mjs --files-from .ai-state-changed-files
