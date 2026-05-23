@@ -6,6 +6,16 @@
 
 ---
 
+## AGENT SESSION RULE — READ FIRST
+
+Before your final response after editing files:
+
+1. Run git status.
+2. If this session changed non-allowlisted repo files, update AI-STATE.md.
+3. Stage AI-STATE.md with the same commit unless Ricardo explicitly approves an override.
+
+---
+
 ## PROJECT
 
 Valley Painting Pros (VPP) — cabinet refinishing contractor, East Valley Arizona.
@@ -44,11 +54,10 @@ Before ending any session where you edited files, update AI-STATE.md with:
 
 - Current branch
 - Working tree status (clean / uncommitted changes present)
-- Latest known commit SHA on the branch (from git log -1 --format=%H)
+- State last updated after commit (from git log -1 --format=%H, plus subject)
 - What was committed this session (1-line summary)
 - What was edited but not committed (if anything)
 - Any blockers encountered
-- Recommended first action for the next session
 - Any decisions made (append to Decisions log; do not delete prior decisions)
 - Update the "Last meaningful update" line at the top of AI-STATE.md with today's date
 
@@ -59,6 +68,36 @@ If you create a commit during the session, you may either:
 
 AI-STATE.md wins over stale chat memory for project status, unless the current
 user request says otherwise or the repo proves it stale.
+
+---
+
+## AI-STATE.md ENFORCEMENT
+
+Local commits and GitHub pull requests enforce AI-STATE.md updates for
+meaningful repo changes.
+
+Allowlisted paths that do not require AI-STATE.md by themselves:
+- README.md
+- docs/**
+- AGENTS.md
+- CLAUDE.md
+- AI-STATE.md
+- .github/**
+
+All other paths require AI-STATE.md to be changed in the same commit or pull
+request. The local pre-commit hook and the GitHub Action use the same checker:
+scripts/check-ai-state-required.mjs.
+
+If the hook blocks a legitimately trivial change, stop and ask Ricardo before
+using git commit --no-verify. Overrides are for Ricardo-approved exceptions only.
+
+---
+
+## POST-MERGE STATE POLICY
+
+Do not create bot-driven post-merge commits solely to chase the latest HEAD SHA.
+AI-STATE.md may be one commit behind on exact SHA immediately after a merge.
+The next meaningful non-allowlisted PR or session must update AI-STATE.md.
 
 ---
 

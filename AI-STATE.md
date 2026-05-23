@@ -2,6 +2,7 @@
 # Dynamic execution state for the VPP website repo.
 # Records what agents have done and the current state of the repo.
 # Does NOT direct strategy or prioritize next work — that happens outside this file.
+# Exact HEAD comes from git. AI-STATE.md records execution state as of its last update.
 # This file wins over stale chat memory for project status.
 # Last meaningful update: 2026-05-23
 
@@ -9,10 +10,10 @@
 
 ## SNAPSHOT
 
-- Branch: main
-- Working tree: clean
-- Latest known commit on origin/main: c0dbf37
-- Local matches origin: yes
+- State last updated from branch: main
+- State last updated after commit: 45f3357 docs(agents): adopt three-file agent coordination system (#19)
+- Working tree at last update: clean
+- Local matched origin at last update: yes
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -21,11 +22,11 @@
 ## LAST SESSION
 
 Date: 2026-05-23
-Agent: Codex (this session)
+Agent: Codex
 Branch worked: codex/agent-coordination-system
 Files touched: AGENTS.md, CLAUDE.md, AI-STATE.md
-Committed: pending (this session is the one creating the system)
-Edited but not committed: n/a
+Committed: PR #19 squash-merged to main as 45f3357 docs(agents): adopt three-file agent coordination system (#19)
+Edited but not committed: none
 Blockers encountered: none
 
 ---
@@ -35,7 +36,8 @@ Blockers encountered: none
 
 - 2026-05-23: Adopted three-file agent coordination system
   (AGENTS.md / CLAUDE.md / AI-STATE.md) replacing duplicated CLAUDE.md and
-  AGENTS.md. Codex reviewed and approved via two-round review.
+  AGENTS.md. Codex reviewed and approved via two-round review. Merged in
+  PR #19 as commit 45f3357.
 - 2026-05-23: Swapped commit order to C (analytics) before B (blog) during
   three-commit working-tree cleanup because BlogEstimateForm imports from
   analytics.ts. Both intermediate commits typecheck cleanly.
