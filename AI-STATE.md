@@ -10,7 +10,7 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: claude/mobile-hero-frame-002
+- State last updated from branch: codex/robots-txt-section-5
 - State last updated after commit: this commit
 - Working tree at last update: clean after this commit
 - Local matched origin at last update: no (feature branch not pushed yet)
@@ -22,10 +22,12 @@
 ## LAST SESSION
 
 Date: 2026-05-23
-Agent: Claude Code
-Branch worked: claude/mobile-hero-frame-002
-Files touched: src/app/cabinet-refinishing/CabinetPage.tsx (modified), public/images/cabinet-hero-bathroom.jpg (created), AI-STATE.md (modified)
-Committed: this commit swaps mobile hero to bathroom vanity (frame_002) and corrects video poster from kitchen mismatch
+Agent: Codex
+Branch worked: codex/robots-txt-section-5
+Files touched: src/app/robots.ts (created), AI-STATE.md (modified)
+Committed: this commit creates a Next.js App Router robots.txt metadata route
+  for Section 5, allowing all crawlers, disallowing /api/, and referencing
+  the existing sitemap.
 Edited but not committed: none
 Blockers encountered: none
 
@@ -67,6 +69,9 @@ Blockers encountered: none
   ceiling is 720x1280 (iPhone portrait HD), so next/image handles WebP and
   responsive variants automatically. Old cabinet-hero-poster.jpg left on disk
   pending production verification.
+- 2026-05-23: Added robots.txt via src/app/robots.ts for checklist Section 5,
+  allowing all crawlers except /api/ and referencing the existing
+  src/app/sitemap.ts output instead of creating a new sitemap.
 
 ---
 
