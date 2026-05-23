@@ -89,8 +89,10 @@ export default function RootLayout({
       className={`${alfaSlab.variable} ${inter.variable}`}
     >
       <head>
-        <link rel="icon" href="/VPP_favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/VPP_apple-touch-icon.png" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta property="og:image" content="/VPP_og-image.png" />
         <meta name="theme-color" content="#C24A22" />
