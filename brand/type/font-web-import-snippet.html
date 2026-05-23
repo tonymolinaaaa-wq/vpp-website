@@ -1,0 +1,56 @@
+<!--
+  VPP Font Web Import Snippet — v1.0 (May 2026)
+
+  HOW TO USE:
+  Paste the three <link> tags below into the <head> section of every page of the
+  Valley Painting Pros website. They load Alfa Slab One (display headings) and
+  Inter (body, UI, sub-headings) from Google Fonts CDN.
+
+  WHY THREE TAGS:
+  Tags 1 and 2 are "preconnect" hints that tell the browser to set up a connection
+  to Google's font servers BEFORE the actual font request — this saves 100-300ms
+  of perceived page load time. Tag 3 is the actual font request.
+
+  WEIGHTS LOADED:
+  - Alfa Slab One: Regular (only weight available — this font ships single-weight)
+  - Inter: 400 (Regular), 500 (Medium), 700 (Bold) — covers body, labels, sub-headings
+
+  ADDING MORE WEIGHTS LATER:
+  If a future asset needs Inter 600 (Semi-bold) or Inter 900 (Black), edit the
+  weight list in the third tag: family=Inter:wght@400;500;600;700;900
+  Don't load weights you don't use — each weight is a separate font file the
+  browser must download.
+
+  font-display=swap:
+  The swap parameter tells the browser to show fallback fonts immediately if the
+  Google fonts haven't loaded yet, then swap in once ready. Prevents invisible
+  text during the brief font-loading window.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!--
+  CSS USAGE EXAMPLE (after the fonts are loaded above):
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+  }
+
+  h1, h2 {
+    font-family: 'Alfa Slab One', Georgia, serif;
+    font-weight: 400;  /* Alfa Slab One only ships in one weight */
+  }
+
+  h3 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;  /* Switch to bold Inter at H3 — slab is too heavy at this size */
+  }
+
+  .vpp-trust-strip {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+  }
+-->

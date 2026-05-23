@@ -40,7 +40,7 @@ next-env.d.ts
 .vercel
 
 # local-only raw content (videos, source footage, design source files) — never pushed to remote
-/public/Cabinet Content/
+/public/cabinet-content/
 /local-content/
 /.clip-preview/
-/public/Social Proof SVG's/
+/public/social-proof/

@@ -1,0 +1,213 @@
+/* ========================================================================
+   VALLEY PAINTING PROS — BRAND COLOR PALETTE (CSS Variables)
+   Version 1.0 · May 2026 · Locked by Creative Production Advisor
+
+   HOW TO USE:
+   1. Paste this entire file into your website's main stylesheet (or import it)
+   2. Reference any color anywhere in your CSS as: var(--vpp-charcoal-900)
+   3. To change a brand color globally, update the value here once — every
+      reference across the site updates automatically.
+
+   PAIRED WITH:
+   - vpp-brand-tokens.json (same values in machine-readable format)
+   - vpp-color-swatch-card.svg (visual reference)
+   - vpp-brand-guidelines-v1.0.md (full usage rules)
+
+   GOOGLE FONTS IMPORT (add to top of HTML <head>):
+   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+   ======================================================================== */
+
+:root {
+
+  /* ---------- BRAND CHARCOAL (warm near-black) ---------- */
+  --vpp-charcoal-50:  #F4F2EE;   /* Lightest tint — barely-there warm gray surface */
+  --vpp-charcoal-100: #E1DDD4;   /* Subtle background tint */
+  --vpp-charcoal-300: #9F9789;   /* Disabled text, placeholders */
+  --vpp-charcoal-500: #5C544A;   /* Secondary text on cream */
+  --vpp-charcoal-700: #3A332B;   /* Dark text alternate */
+  --vpp-charcoal-900: #1F1A14;   /* PRIMARY — wordmark, body text, dark backgrounds */
+
+  /* ---------- BRAND TERRACOTTA (burnt orange / rust) ---------- */
+  --vpp-terracotta-100: #F6D9CC; /* Subtle tint for callout backgrounds */
+  --vpp-terracotta-300: #E89878; /* Hover states on subtle elements */
+  --vpp-terracotta-500: #C24A22; /* PRIMARY — the "P" of the monogram, all CTAs, accent */
+  --vpp-terracotta-600: #A83E1C; /* CTA hover state */
+  --vpp-terracotta-700: #8C3417; /* CTA pressed/active state */
+
+  /* ---------- BRAND CREAM (warm off-white — replaces pure white) ---------- */
+  --vpp-cream-50:  #FAF6EC;      /* Lightest — elevated cards, modals */
+  --vpp-cream-100: #F2EAD7;      /* PRIMARY — page background, system-wide */
+  --vpp-cream-200: #E8DDC5;      /* Elevated panel background, warmth */
+  --vpp-cream-300: #D9CBAF;      /* Subtle dividers and borders */
+
+  /* ---------- BRAND SAGE (muted desert green) ---------- */
+  --vpp-sage-100: #DDE5DC;       /* Subtle "success" backgrounds */
+  --vpp-sage-300: #A8BDA6;       /* Lighter sage for graphic accents */
+  --vpp-sage-500: #7A9577;       /* PRIMARY — tertiary accent, success states */
+  --vpp-sage-700: #5A7257;       /* Darker sage for emphasis */
+
+  /* ---------- WARM NEUTRALS (NOT cool gray — keep the warm system) ---------- */
+  --vpp-warm-gray-400: #A39B8C;  /* Borders, dividers, secondary UI */
+  --vpp-warm-gray-700: #5C544A;  /* Secondary text, captions */
+
+  /* ---------- SEMANTIC ALIASES (use these in components, not raw colors) ---------- */
+  --vpp-action:       var(--vpp-terracotta-500);  /* All CTA buttons */
+  --vpp-action-hover: var(--vpp-terracotta-600);  /* CTA hover */
+  --vpp-success:      var(--vpp-sage-500);        /* Estimate accepted, complete */
+  --vpp-warning:      #D97706;                    /* Warm amber — soft alerts */
+  --vpp-error:        #B91C1C;                    /* Warm red — hard alerts */
+
+  --vpp-text-primary:    var(--vpp-charcoal-900);
+  --vpp-text-secondary:  var(--vpp-charcoal-500);
+  --vpp-text-muted:      var(--vpp-charcoal-300);
+  --vpp-text-inverse:    var(--vpp-cream-50);
+  --vpp-text-link:       var(--vpp-terracotta-500);
+  --vpp-text-link-hover: var(--vpp-terracotta-600);
+
+  --vpp-surface-base:     var(--vpp-cream-100);   /* Page background */
+  --vpp-surface-elevated: var(--vpp-cream-50);    /* Cards, modals */
+  --vpp-surface-sunken:   var(--vpp-cream-200);   /* Inset panels */
+  --vpp-surface-dark:     var(--vpp-charcoal-900);/* Dark mode pages, footer */
+
+  --vpp-border-subtle:  var(--vpp-cream-200);
+  --vpp-border-default: var(--vpp-warm-gray-400);
+  --vpp-border-strong:  var(--vpp-charcoal-500);
+
+  /* ---------- TYPOGRAPHY ---------- */
+  --vpp-font-display: 'Alfa Slab One', Georgia, 'Times New Roman', serif;
+  --vpp-font-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Fluid type scale */
+  --vpp-text-display:    clamp(2.5rem, 5vw, 4rem);
+  --vpp-text-h1:         clamp(2rem, 4vw, 3rem);
+  --vpp-text-h2:         clamp(1.625rem, 3vw, 2rem);
+  --vpp-text-h3:         1.25rem;
+  --vpp-text-body-large: 1.125rem;
+  --vpp-text-body:       1rem;
+  --vpp-text-body-small: 0.875rem;
+  --vpp-text-caption:    0.75rem;
+
+  /* ---------- SPACING (4px scale) ---------- */
+  --vpp-space-1:  4px;
+  --vpp-space-2:  8px;
+  --vpp-space-3:  12px;
+  --vpp-space-4:  16px;
+  --vpp-space-6:  24px;
+  --vpp-space-8:  32px;
+  --vpp-space-12: 48px;
+  --vpp-space-16: 64px;
+  --vpp-space-24: 96px;
+
+  /* ---------- RADIUS ---------- */
+  --vpp-radius-sm:   4px;
+  --vpp-radius-md:   8px;
+  --vpp-radius-lg:   16px;
+  --vpp-radius-xl:   24px;
+  --vpp-radius-full: 9999px;
+
+  /* ---------- SHADOWS (charcoal-tinted, not pure black — warmth preserved) ---------- */
+  --vpp-shadow-sm: 0 1px 2px  rgba(31, 26, 20, 0.05);
+  --vpp-shadow-md: 0 4px 6px  rgba(31, 26, 20, 0.07);
+  --vpp-shadow-lg: 0 10px 15px rgba(31, 26, 20, 0.10);
+  --vpp-shadow-xl: 0 20px 25px rgba(31, 26, 20, 0.12);
+}
+
+/* ========================================================================
+   STARTER UTILITY CLASSES (optional — drop these in for common patterns)
+   ======================================================================== */
+
+/* Default body baseline — ensures cream background and charcoal text everywhere */
+body {
+  background-color: var(--vpp-surface-base);
+  color: var(--vpp-text-primary);
+  font-family: var(--vpp-font-body);
+  font-size: var(--vpp-text-body);
+  line-height: 1.5;
+}
+
+/* Headings default to display font */
+h1, h2 {
+  font-family: var(--vpp-font-display);
+  line-height: 1.1;
+  color: var(--vpp-text-primary);
+}
+
+/* H3 switches to bold sans-serif per locked typography rules — slab is too heavy at H3 */
+h3, h4, h5, h6 {
+  font-family: var(--vpp-font-body);
+  font-weight: 700;
+  color: var(--vpp-text-primary);
+}
+
+h1 { font-size: var(--vpp-text-h1); }
+h2 { font-size: var(--vpp-text-h2); }
+h3 { font-size: var(--vpp-text-h3); }
+
+/* Primary CTA button — drop-in ready */
+.vpp-btn-primary {
+  background-color: var(--vpp-action);
+  color: var(--vpp-cream-50);
+  font-family: var(--vpp-font-body);
+  font-weight: 500;
+  font-size: var(--vpp-text-body);
+  padding: var(--vpp-space-3) var(--vpp-space-6);
+  border-radius: var(--vpp-radius-md);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.vpp-btn-primary:hover { background-color: var(--vpp-action-hover); }
+.vpp-btn-primary:active { background-color: var(--vpp-terracotta-700); }
+
+/* Secondary CTA — outline style */
+.vpp-btn-secondary {
+  background-color: transparent;
+  color: var(--vpp-charcoal-900);
+  font-family: var(--vpp-font-body);
+  font-weight: 500;
+  padding: var(--vpp-space-3) var(--vpp-space-6);
+  border-radius: var(--vpp-radius-md);
+  border: 2px solid var(--vpp-charcoal-900);
+  cursor: pointer;
+}
+
+.vpp-btn-secondary:hover {
+  background-color: var(--vpp-charcoal-900);
+  color: var(--vpp-cream-50);
+}
+
+/* Trust strip — for ROC CR-34 / Bonded / Insured presentation */
+.vpp-trust-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vpp-space-2);
+  font-family: var(--vpp-font-body);
+  font-size: var(--vpp-text-body-small);
+  font-weight: 500;
+  color: var(--vpp-charcoal-900);
+  background-color: var(--vpp-cream-50);
+  padding: var(--vpp-space-2) var(--vpp-space-4);
+  border-radius: var(--vpp-radius-sm);
+  border: 1px solid var(--vpp-border-subtle);
+}
+
+/* Link styling */
+a {
+  color: var(--vpp-text-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--vpp-text-link-hover);
+}
+
+/* Focus ring — accessibility, terracotta tinted */
+*:focus-visible {
+  outline: 2px solid var(--vpp-terracotta-500);
+  outline-offset: 2px;
+  border-radius: var(--vpp-radius-sm);
+}

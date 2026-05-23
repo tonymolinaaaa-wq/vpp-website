@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" font-family="'Inter', system-ui, -apple-system, sans-serif">
+
+  <!-- ===== BACKGROUND ===== -->
+  <rect width="1200" height="1600" fill="#F2EAD7"/>
+
+  <!-- ===== HEADER ===== -->
+  <g transform="translate(80, 80)">
+    <text x="0" y="0" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="900" fill="#1F1A14" letter-spacing="-1">VALLEY PAINTING PROS</text>
+    <text x="0" y="36" font-size="20" font-weight="400" fill="#5C544A" letter-spacing="2">BRAND COLOR PALETTE  ·  VERSION 1.0  ·  MAY 2026</text>
+
+    <!-- Decorative divider line — terracotta with sage tip, mirrors the logo divider element -->
+    <line x1="0" y1="62" x2="900" y2="62" stroke="#C24A22" stroke-width="3"/>
+    <line x1="900" y1="62" x2="1040" y2="62" stroke="#7A9577" stroke-width="3"/>
+  </g>
+
+  <!-- ===== PRIMARY PALETTE SECTION HEADER ===== -->
+  <text x="80" y="220" font-size="14" font-weight="700" fill="#5C544A" letter-spacing="3">PRIMARY PALETTE</text>
+
+  <!-- ===== 2x2 PRIMARY SWATCH GRID ===== -->
+
+  <!-- CHARCOAL -->
+  <g transform="translate(80, 250)">
+    <rect width="510" height="220" fill="#1F1A14" rx="8"/>
+    <text x="30" y="60" font-family="Georgia, serif" font-size="32" font-weight="900" fill="#F2EAD7">Charcoal</text>
+    <text x="30" y="100" font-size="22" font-weight="500" fill="#F2EAD7" font-family="'Courier New', monospace">#1F1A14</text>
+    <text x="30" y="130" font-size="14" font-weight="400" fill="#9F9789" font-family="'Courier New', monospace">RGB  31 · 26 · 20</text>
+    <text x="30" y="180" font-size="13" font-weight="400" fill="#E1DDD4">Wordmark · Body text on cream</text>
+    <text x="30" y="200" font-size="13" font-weight="400" fill="#E1DDD4">Dark backgrounds · Primary text</text>
+  </g>
+
+  <!-- TERRACOTTA -->
+  <g transform="translate(610, 250)">
+    <rect width="510" height="220" fill="#C24A22" rx="8"/>
+    <text x="30" y="60" font-family="Georgia, serif" font-size="32" font-weight="900" fill="#F2EAD7">Terracotta</text>
+    <text x="30" y="100" font-size="22" font-weight="500" fill="#F2EAD7" font-family="'Courier New', monospace">#C24A22</text>
+    <text x="30" y="130" font-size="14" font-weight="400" fill="#F6D9CC" font-family="'Courier New', monospace">RGB  194 · 74 · 34</text>
+    <text x="30" y="180" font-size="13" font-weight="400" fill="#F6D9CC">The "P" of the monogram</text>
+    <text x="30" y="200" font-size="13" font-weight="400" fill="#F6D9CC">All primary CTAs · Action accent</text>
+  </g>
+
+  <!-- CREAM -->
+  <g transform="translate(80, 490)">
+    <rect width="510" height="220" fill="#F2EAD7" rx="8" stroke="#A39B8C" stroke-width="1"/>
+    <text x="30" y="60" font-family="Georgia, serif" font-size="32" font-weight="900" fill="#1F1A14">Cream</text>
+    <text x="30" y="100" font-size="22" font-weight="500" fill="#1F1A14" font-family="'Courier New', monospace">#F2EAD7</text>
+    <text x="30" y="130" font-size="14" font-weight="400" fill="#5C544A" font-family="'Courier New', monospace">RGB  242 · 234 · 215</text>
+    <text x="30" y="180" font-size="13" font-weight="400" fill="#3A332B">Primary page background</text>
+    <text x="30" y="200" font-size="13" font-weight="400" fill="#3A332B">Replaces pure white system-wide</text>
+  </g>
+
+  <!-- SAGE -->
+  <g transform="translate(610, 490)">
+    <rect width="510" height="220" fill="#7A9577" rx="8"/>
+    <text x="30" y="60" font-family="Georgia, serif" font-size="32" font-weight="900" fill="#F2EAD7">Sage</text>
+    <text x="30" y="100" font-size="22" font-weight="500" fill="#F2EAD7" font-family="'Courier New', monospace">#7A9577</text>
+    <text x="30" y="130" font-size="14" font-weight="400" fill="#DDE5DC" font-family="'Courier New', monospace">RGB  122 · 149 · 119</text>
+    <text x="30" y="180" font-size="13" font-weight="400" fill="#DDE5DC">Tertiary accent · Use sparingly</text>
+    <text x="30" y="200" font-size="13" font-weight="400" fill="#DDE5DC">Success states · Divider tip</text>
+  </g>
+
+  <!-- ===== EXTENDED NEUTRALS SECTION ===== -->
+  <text x="80" y="770" font-size="14" font-weight="700" fill="#5C544A" letter-spacing="3">EXTENDED NEUTRALS</text>
+
+  <!-- 4 smaller neutral swatches in a row -->
+  <g transform="translate(80, 800)">
+    <!-- Cream-50 -->
+    <rect width="250" height="130" fill="#FAF6EC" rx="6" stroke="#A39B8C" stroke-width="1"/>
+    <text x="20" y="40" font-family="Georgia, serif" font-size="18" font-weight="700" fill="#1F1A14">Cream-50</text>
+    <text x="20" y="68" font-size="14" font-weight="500" fill="#1F1A14" font-family="'Courier New', monospace">#FAF6EC</text>
+    <text x="20" y="100" font-size="11" font-weight="400" fill="#5C544A">Elevated surface</text>
+    <text x="20" y="116" font-size="11" font-weight="400" fill="#5C544A">Cards · Modals</text>
+  </g>
+
+  <g transform="translate(346, 800)">
+    <!-- Cream-200 -->
+    <rect width="250" height="130" fill="#E8DDC5" rx="6"/>
+    <text x="20" y="40" font-family="Georgia, serif" font-size="18" font-weight="700" fill="#1F1A14">Cream-200</text>
+    <text x="20" y="68" font-size="14" font-weight="500" fill="#1F1A14" font-family="'Courier New', monospace">#E8DDC5</text>
+    <text x="20" y="100" font-size="11" font-weight="400" fill="#3A332B">Sunken panels</text>
+    <text x="20" y="116" font-size="11" font-weight="400" fill="#3A332B">Inset code blocks</text>
+  </g>
+
+  <g transform="translate(612, 800)">
+    <!-- Warm-gray-400 -->
+    <rect width="250" height="130" fill="#A39B8C" rx="6"/>
+    <text x="20" y="40" font-family="Georgia, serif" font-size="18" font-weight="700" fill="#1F1A14">Warm-Gray-400</text>
+    <text x="20" y="68" font-size="14" font-weight="500" fill="#1F1A14" font-family="'Courier New', monospace">#A39B8C</text>
+    <text x="20" y="100" font-size="11" font-weight="400" fill="#1F1A14">Borders · Dividers</text>
+    <text x="20" y="116" font-size="11" font-weight="400" fill="#1F1A14">Secondary UI</text>
+  </g>
+
+  <g transform="translate(878, 800)">
+    <!-- Warm-gray-700 -->
+    <rect width="244" height="130" fill="#5C544A" rx="6"/>
+    <text x="20" y="40" font-family="Georgia, serif" font-size="18" font-weight="700" fill="#F2EAD7">Warm-Gray-700</text>
+    <text x="20" y="68" font-size="14" font-weight="500" fill="#F2EAD7" font-family="'Courier New', monospace">#5C544A</text>
+    <text x="20" y="100" font-size="11" font-weight="400" fill="#E1DDD4">Secondary text</text>
+    <text x="20" y="116" font-size="11" font-weight="400" fill="#E1DDD4">Captions · Helper</text>
+  </g>
+
+  <!-- ===== CONTRAST PAIRINGS SECTION ===== -->
+  <text x="80" y="990" font-size="14" font-weight="700" fill="#5C544A" letter-spacing="3">CONTRAST PAIRINGS  ·  WCAG AA REQUIRED</text>
+
+  <!-- Pairing card 1: Charcoal on Cream — DEFAULT BODY -->
+  <g transform="translate(80, 1020)">
+    <rect width="340" height="100" fill="#F2EAD7" rx="6" stroke="#A39B8C" stroke-width="1"/>
+    <text x="20" y="40" font-family="Georgia, serif" font-size="22" font-weight="900" fill="#1F1A14">Default body text</text>
+    <text x="20" y="65" font-size="12" font-weight="400" fill="#5C544A">Charcoal on Cream  ·  ~14:1  ·  AAA</text>
+    <text x="20" y="86" font-size="11" font-weight="500" fill="#7A9577">✓ PRIMARY USE</text>
+  </g>
+
+  <!-- Pairing card 2: Cream on Charcoal -->
+  <g transform="translate(434, 1020)">
+    <rect width="340" height="100" fill="#1F1A14" rx="6"/>
+    <text x="20" y="40" font-family="Georgia, serif" font-size="22" font-weight="900" fill="#F2EAD7">Dark mode body</text>
+    <text x="20" y="65" font-size="12" font-weight="400" fill="#9F9789">Cream on Charcoal  ·  ~13:1  ·  AAA</text>
+    <text x="20" y="86" font-size="11" font-weight="500" fill="#A8BDA6">✓ PRIMARY USE</text>
+  </g>
+
+  <!-- Pairing card 3: Charcoal on Terracotta (CTA buttons) -->
+  <g transform="translate(788, 1020)">
+    <rect width="334" height="100" fill="#C24A22" rx="6"/>
+    <text x="20" y="40" font-family="Georgia, serif" font-size="22" font-weight="900" fill="#1F1A14">CTA Button</text>
+    <text x="20" y="65" font-size="12" font-weight="400" fill="#1F1A14">Charcoal on Terracotta  ·  ~5.2:1  ·  AA</text>
+    <text x="20" y="86" font-size="11" font-weight="500" fill="#1F1A14">✓ BUTTON USE</text>
+  </g>
+
+  <!-- Pairing card 4: Terracotta on Cream (links, large headings) -->
+  <g transform="translate(80, 1140)">
+    <rect width="340" height="100" fill="#F2EAD7" rx="6" stroke="#A39B8C" stroke-width="1"/>
+    <text x="20" y="40" font-family="Georgia, serif" font-size="22" font-weight="900" fill="#C24A22">Headlines &amp; Links</text>
+    <text x="20" y="65" font-size="12" font-weight="400" fill="#5C544A">Terracotta on Cream  ·  ~4.8:1  ·  AA</text>
+    <text x="20" y="86" font-size="11" font-weight="500" fill="#7A9577">✓ LARGE TEXT</text>
+  </g>
+
+  <!-- Pairing card 5: Terracotta on Charcoal — FAIL -->
+  <g transform="translate(434, 1140)">
+    <rect width="340" height="100" fill="#1F1A14" rx="6"/>
+    <text x="20" y="40" font-family="Georgia, serif" font-size="22" font-weight="900" fill="#C24A22">Don't do this</text>
+    <text x="20" y="65" font-size="12" font-weight="400" fill="#9F9789">Terracotta on Charcoal  ·  ~2.8:1  ·  FAIL</text>
+    <text x="20" y="86" font-size="11" font-weight="500" fill="#E89878">✗ NEVER FOR TEXT</text>
+  </g>
+
+  <!-- Pairing card 6: Sage on Cream — large only -->
+  <g transform="translate(788, 1140)">
+    <rect width="334" height="100" fill="#F2EAD7" rx="6" stroke="#A39B8C" stroke-width="1"/>
+    <text x="20" y="40" font-family="Georgia, serif" font-size="22" font-weight="900" fill="#7A9577">Large text only</text>
+    <text x="20" y="65" font-size="12" font-weight="400" fill="#5C544A">Sage on Cream  ·  ~3.2:1  ·  AA Large</text>
+    <text x="20" y="86" font-size="11" font-weight="500" fill="#A83E1C">△ LARGE TEXT ONLY</text>
+  </g>
+
+  <!-- ===== USAGE RULES STRIP ===== -->
+  <g transform="translate(80, 1290)">
+    <rect width="1040" height="180" fill="#FAF6EC" rx="8" stroke="#D9CBAF" stroke-width="1"/>
+
+    <text x="30" y="40" font-size="14" font-weight="700" fill="#5C544A" letter-spacing="3">CORE PALETTE RULES</text>
+
+    <text x="30" y="75" font-size="14" font-weight="500" fill="#1F1A14">✓  Use Cream (#F2EAD7) as the default light background — never pure white</text>
+    <text x="30" y="100" font-size="14" font-weight="500" fill="#1F1A14">✓  Use Terracotta (#C24A22) for primary CTAs and accents only — not body</text>
+    <text x="30" y="125" font-size="14" font-weight="500" fill="#1F1A14">✓  Use Sage (#7A9577) sparingly — tertiary accent, success states, large text only</text>
+
+    <text x="30" y="155" font-size="14" font-weight="500" fill="#C24A22">✗  No cool blues, teal, navy, or cool gray anywhere in the system</text>
+  </g>
+
+  <!-- ===== FOOTER ===== -->
+  <g transform="translate(80, 1530)">
+    <line x1="0" y1="0" x2="1040" y2="0" stroke="#D9CBAF" stroke-width="1"/>
+    <text x="0" y="30" font-size="11" font-weight="400" fill="#5C544A" letter-spacing="1">VPP BRAND IDENTITY  ·  LOCKED BY CREATIVE PRODUCTION ADVISOR  ·  V1.0</text>
+    <text x="1040" y="30" font-size="11" font-weight="400" fill="#5C544A" text-anchor="end">Validate every new pairing at webaim.org/resources/contrastchecker</text>
+  </g>
+
+</svg>

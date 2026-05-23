@@ -1,0 +1,133 @@
+{
+  "_meta": {
+    "name": "Valley Painting Pros Brand Tokens",
+    "version": "1.0.0",
+    "locked": "2026-05",
+    "source_of_truth": "Creative Production Advisor — Brand Identity Locking Workflow",
+    "notes": "All hex values derived visually from approved VPP logo files. Verify against source logo file in Adobe Color or Affinity for any pixel-critical work."
+  },
+
+  "color": {
+    "brand": {
+      "charcoal": {
+        "50":  { "value": "#F4F2EE", "description": "Lightest charcoal tint — barely-there warm gray surface" },
+        "100": { "value": "#E1DDD4", "description": "Subtle charcoal background tint" },
+        "300": { "value": "#9F9789", "description": "Disabled text, placeholder copy" },
+        "500": { "value": "#5C544A", "description": "Mid-charcoal — secondary text on cream" },
+        "700": { "value": "#3A332B", "description": "Dark text on cream — for body copy alternate" },
+        "900": { "value": "#1F1A14", "description": "PRIMARY — wordmark, body text on cream, dark backgrounds" }
+      },
+      "terracotta": {
+        "100": { "value": "#F6D9CC", "description": "Subtle terracotta tint for callout backgrounds" },
+        "300": { "value": "#E89878", "description": "Lighter terracotta — hover states on subtle elements" },
+        "500": { "value": "#C24A22", "description": "PRIMARY — the 'P' of the monogram, all CTAs, accent" },
+        "600": { "value": "#A83E1C", "description": "Terracotta hover — 8% darker than primary" },
+        "700": { "value": "#8C3417", "description": "Terracotta pressed/active state" }
+      },
+      "cream": {
+        "50":  { "value": "#FAF6EC", "description": "Lightest surface — cards lifted off the base background" },
+        "100": { "value": "#F2EAD7", "description": "PRIMARY — page background, replaces pure white throughout the system" },
+        "200": { "value": "#E8DDC5", "description": "Elevated panel background, subtle warmth" },
+        "300": { "value": "#D9CBAF", "description": "Subtle dividers and borders in warm contexts" }
+      },
+      "sage": {
+        "100": { "value": "#DDE5DC", "description": "Subtle sage tint for 'success' backgrounds" },
+        "300": { "value": "#A8BDA6", "description": "Lighter sage for graphic accents" },
+        "500": { "value": "#7A9577", "description": "PRIMARY — tertiary accent, divider tip, success states" },
+        "700": { "value": "#5A7257", "description": "Darker sage for emphasis on success states" }
+      }
+    },
+    "neutral": {
+      "warm-gray": {
+        "400": { "value": "#A39B8C", "description": "Borders, dividers, secondary UI elements" },
+        "700": { "value": "#5C544A", "description": "Secondary text, captions, helper copy" }
+      }
+    },
+    "semantic": {
+      "action":       { "value": "#C24A22", "description": "All primary CTA buttons (maps to terracotta-500)" },
+      "action-hover": { "value": "#A83E1C", "description": "CTA hover state (maps to terracotta-600)" },
+      "success":      { "value": "#7A9577", "description": "Estimate accepted, job complete (maps to sage-500)" },
+      "warning":      { "value": "#D97706", "description": "Warm amber — quote expiring, soft alerts" },
+      "error":        { "value": "#B91C1C", "description": "Warm red — form errors, hard alerts" },
+      "info":         { "value": "#5C544A", "description": "Neutral informational state (maps to warm-gray-700)" }
+    },
+    "text": {
+      "primary":    { "value": "#1F1A14", "description": "Body text on cream — default" },
+      "secondary":  { "value": "#5C544A", "description": "Helper text, captions" },
+      "muted":      { "value": "#9F9789", "description": "Disabled text, placeholders" },
+      "inverse":    { "value": "#FAF6EC", "description": "Body text on charcoal backgrounds" },
+      "link":       { "value": "#C24A22", "description": "Inline links — terracotta" },
+      "link-hover": { "value": "#A83E1C", "description": "Link hover state" }
+    },
+    "surface": {
+      "base":     { "value": "#F2EAD7", "description": "Page background — primary cream" },
+      "elevated": { "value": "#FAF6EC", "description": "Cards, modals — lifted surfaces" },
+      "sunken":   { "value": "#E8DDC5", "description": "Inset panels, code blocks, blockquotes" },
+      "dark":     { "value": "#1F1A14", "description": "Dark mode page background, footer panels" }
+    },
+    "border": {
+      "subtle":  { "value": "#E8DDC5", "description": "Default cards, panels" },
+      "default": { "value": "#A39B8C", "description": "Inputs, buttons, dividers" },
+      "strong":  { "value": "#5C544A", "description": "Emphasis dividers, focused inputs" }
+    }
+  },
+
+  "typography": {
+    "font-family": {
+      "display": { "value": "'Alfa Slab One', Georgia, 'Times New Roman', serif", "description": "Heavy slab serif — display headings H1, H2, hero text only" },
+      "body":    { "value": "'Inter', system-ui, -apple-system, sans-serif", "description": "Body, UI, sub-headings — everything except display headings" }
+    },
+    "font-weight": {
+      "regular": { "value": 400 },
+      "medium":  { "value": 500 },
+      "bold":    { "value": 700 }
+    },
+    "font-size": {
+      "display":    { "value": "clamp(2.5rem, 5vw, 4rem)",     "description": "Hero, large display headlines" },
+      "h1":         { "value": "clamp(2rem, 4vw, 3rem)",       "description": "Page H1" },
+      "h2":         { "value": "clamp(1.625rem, 3vw, 2rem)",   "description": "Section H2" },
+      "h3":         { "value": "1.25rem",                       "description": "Sub-section H3 — SWITCH TO INTER 700, not slab" },
+      "body-large": { "value": "1.125rem",                      "description": "Lead paragraphs, important body" },
+      "body":       { "value": "1rem",                          "description": "Default body" },
+      "body-small": { "value": "0.875rem",                      "description": "Captions, metadata" },
+      "caption":    { "value": "0.75rem",                       "description": "Legal, footer, timestamps" }
+    },
+    "line-height": {
+      "tight":   { "value": 1.1, "description": "Display headings — slab serif works best tight" },
+      "snug":    { "value": 1.25 },
+      "normal":  { "value": 1.5, "description": "Default body" },
+      "relaxed": { "value": 1.75, "description": "Long-form reading copy" }
+    }
+  },
+
+  "space": {
+    "0":  { "value": "0" },
+    "1":  { "value": "4px" },
+    "2":  { "value": "8px" },
+    "3":  { "value": "12px" },
+    "4":  { "value": "16px" },
+    "6":  { "value": "24px" },
+    "8":  { "value": "32px" },
+    "12": { "value": "48px" },
+    "16": { "value": "64px" },
+    "24": { "value": "96px" },
+    "32": { "value": "128px" }
+  },
+
+  "radius": {
+    "none": { "value": "0" },
+    "sm":   { "value": "4px",   "description": "Inputs, small buttons" },
+    "md":   { "value": "8px",   "description": "Cards, default buttons" },
+    "lg":   { "value": "16px",  "description": "Panels, modal corners" },
+    "xl":   { "value": "24px",  "description": "Hero cards, feature blocks" },
+    "full": { "value": "9999px", "description": "Pills, fully rounded buttons" }
+  },
+
+  "shadow": {
+    "_note": "All shadows tinted with charcoal RGB (31,26,20) instead of pure black — keeps the warm-system consistency even in shadow.",
+    "sm": { "value": "0 1px 2px rgba(31,26,20,0.05)" },
+    "md": { "value": "0 4px 6px rgba(31,26,20,0.07)" },
+    "lg": { "value": "0 10px 15px rgba(31,26,20,0.10)" },
+    "xl": { "value": "0 20px 25px rgba(31,26,20,0.12)" }
+  }
+}
