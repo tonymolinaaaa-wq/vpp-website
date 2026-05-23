@@ -77,17 +77,15 @@ function StarIcon({ className = 'w-5 h-5 text-terra' }: { className?: string }) 
 
 function CheckCircleIcon() {
   return (
-    <div className="w-12 h-12 rounded-full bg-sage flex items-center justify-center flex-shrink-0 shadow-sm">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FAF7F4" strokeWidth={3} className="w-6 h-6" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-      </svg>
+    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg border border-sage/25 bg-cream shadow-sm">
+      <span className="font-body text-lg font-bold leading-none text-sage" aria-hidden="true">✓</span>
     </div>
   )
 }
 
 function ShieldIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C4613A" strokeWidth={2} className="w-14 h-14 mx-auto" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C24A22" strokeWidth={2} className="w-14 h-14 mx-auto" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
     </svg>
   )
@@ -95,7 +93,7 @@ function ShieldIcon() {
 
 function TagIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C4613A" strokeWidth={2} className="w-14 h-14 mx-auto" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C24A22" strokeWidth={2} className="w-14 h-14 mx-auto" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6z" />
     </svg>
@@ -104,7 +102,7 @@ function TagIcon() {
 
 function SparklesIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C4613A" strokeWidth={2} className="w-14 h-14 mx-auto" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C24A22" strokeWidth={2} className="w-14 h-14 mx-auto" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
     </svg>
   )
@@ -112,7 +110,7 @@ function SparklesIcon() {
 
 function CameraIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#7A6558" strokeWidth={1.5} className="w-12 h-12" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#A39B8C" strokeWidth={1.5} className="w-12 h-12" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" />
     </svg>
@@ -157,31 +155,28 @@ function StickyNav() {
           : 'bg-cream border-b border-sand'
       }`}
     >
-      <div className="mx-auto max-w-content w-full px-4 md:px-6 flex items-center justify-between">
-        {/* Compact Horizontal Logo */}
-        <div className="flex items-center gap-3">
-          {/* VP Monogram Mark */}
-          <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="flex-shrink-0">
-            <rect x="1" y="1" width="62" height="62" rx="4" stroke="#C4B9AF" strokeWidth="1.5"/>
-            <text x="32" y="44" textAnchor="middle" fontFamily="'DM Serif Display', Georgia, serif" fontSize="32" fontWeight="400" fill="#1E1C1A">V</text>
-            <text x="32" y="44" textAnchor="middle" fontFamily="'DM Serif Display', Georgia, serif" fontSize="32" fontWeight="400" fontStyle="italic" fill="#C4613A" dx="14">P</text>
-            <line x1="12" y1="52" x2="52" y2="52" stroke="#C4613A" strokeWidth="2"/>
-          </svg>
+      <div className="mx-auto max-w-content w-full px-4 md:px-6 flex items-center justify-between gap-3">
+        <a href="#top" className="flex min-w-0 items-center gap-2.5 md:gap-3" aria-label="Valley Painting Pros home">
+          <span className="relative h-9 w-11 flex-shrink-0 overflow-hidden rounded bg-cream shadow-[inset_0_0_0_1px_rgba(31,26,20,0.12)] md:h-10 md:w-12" aria-hidden="true">
+            <Image
+              src="/logos/vpp-monogram-color-on-cream.png"
+              alt=""
+              width={1254}
+              height={1254}
+              className="absolute left-[47%] top-1/2 h-[58px] w-[58px] max-w-none -translate-x-1/2 -translate-y-1/2 md:h-[64px] md:w-[64px]"
+              priority
+            />
+          </span>
 
-          {/* Vertical Divider */}
-          <div className="w-px h-8 bg-terra/40" />
-
-          {/* Wordmark + Credential */}
-          <div className="flex flex-col justify-center">
-            <span className="text-xl md:text-2xl leading-tight">
-              <span className="font-display">Valley Painting </span>
-              <span className="font-display italic text-terra">Pros</span>
+          <span className="flex min-w-0 flex-col justify-center">
+            <span className="font-display text-[14px] leading-none tracking-[0.01em] text-ink uppercase sm:text-xl md:text-2xl">
+              Valley Painting Pros
             </span>
-            <span className="text-[10px] font-body font-medium uppercase tracking-wider text-mid leading-tight">
-              AZ ROC CR-34 · #363664
+            <span className="mt-1 text-[8px] font-body font-semibold uppercase tracking-[0.12em] text-mid leading-tight sm:text-[10px] sm:tracking-[0.18em]">
+              <span className="hidden sm:inline">Cabinet refinishing | </span>AZ ROC #363664
             </span>
-          </div>
-        </div>
+          </span>
+        </a>
 
         {/* Right side */}
         <div className="flex items-center gap-3 md:gap-4">
@@ -194,7 +189,7 @@ function StickyNav() {
           </a>
           <button
             onClick={() => smoothScrollTo('quote-form')}
-            className="bg-terra text-white font-body font-semibold text-xs md:text-[13px] px-4 py-2 rounded-xl hover:bg-terra-dark transition-colors"
+            className="bg-terra text-white font-body font-semibold text-xs md:text-[13px] px-3 md:px-4 py-2 rounded-lg hover:bg-terra-dark transition-colors whitespace-nowrap"
           >
             Get a Quote
           </button>
@@ -214,7 +209,7 @@ function Hero() {
   }, [])
 
   return (
-    <section className="bg-cream pt-[72px] md:pt-[80px]">
+    <section id="top" className="bg-cream pt-[72px] md:pt-[80px]">
       <div className="mx-auto max-w-content px-6 pb-16 md:pb-24 min-h-[75vh] md:min-h-[85vh] flex items-center">
         <div className="grid grid-cols-1 md:grid-cols-[55%_45%] gap-10 md:gap-12 items-center w-full">
           {/* Left column — copy */}
@@ -298,7 +293,7 @@ function Hero() {
                       </span>
                     ) : (
                       <span className="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full bg-sage flex-shrink-0">
-                        <svg viewBox="0 0 12 12" className="w-2.5 h-2.5" fill="none" stroke="#FAF7F4" strokeWidth={2.5} aria-hidden="true">
+                        <svg viewBox="0 0 12 12" className="w-2.5 h-2.5" fill="none" stroke="#FAF6EC" strokeWidth={2.5} aria-hidden="true">
                           <path d="M2.5 6.5L5 9l4.5-5.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </span>
@@ -322,29 +317,29 @@ function Hero() {
               transition: 'opacity 600ms ease 600ms, transform 600ms ease 600ms',
             }}
           >
-            {/* Poster fallback — shown on mobile (saves data) and when reduced-motion is preferred. Also acts as <video> poster. */}
-            <Image
-              src="/images/cabinet-hero-poster.jpg"
-              alt="Refinished kitchen by Valley Painting Pros — gray cabinets with white range under skylight"
-              width={720}
-              height={960}
-              className="rounded-2xl shadow-sm border-l-[3px] border-terra object-cover w-full h-auto block motion-safe:md:hidden"
-              priority
-            />
-            {/* Desktop video — autoplay-loop on md+ when motion is allowed */}
-            <video
-              className="rounded-2xl shadow-sm border-l-[3px] border-terra object-cover w-full h-auto hidden motion-safe:md:block"
-              poster="/images/cabinet-hero-poster.jpg"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-hidden="true"
-            >
-              <source src="/videos/cabinet-hero.webm" type="video/webm" />
-              <source src="/videos/cabinet-hero.mp4" type="video/mp4" />
-            </video>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-lg border-l-[3px] border-terra bg-sand shadow-sm">
+              <Image
+                src="/images/cabinet-hero-poster.jpg"
+                alt="Refinished kitchen by Valley Painting Pros with gray cabinets and white range under skylight"
+                fill
+                sizes="(min-width: 768px) 45vw, 100vw"
+                className="object-cover"
+                priority
+              />
+              <video
+                className="absolute inset-0 hidden h-full w-full object-cover motion-safe:md:block"
+                poster="/images/cabinet-hero-poster.jpg"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-hidden="true"
+              >
+                <source src="/videos/cabinet-hero.webm" type="video/webm" />
+                <source src="/videos/cabinet-hero.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
       </div>
@@ -355,6 +350,125 @@ function Hero() {
 /* ───────── 3. SOCIAL PROOF BAR ───────── */
 
 function SocialProofBar() {
+  return (
+    <section className="bg-sand border-y border-rule">
+      <div className="mx-auto max-w-content px-6 py-8 md:py-10">
+        <div className="mb-6 grid gap-2 md:grid-cols-[1fr_auto] md:items-end">
+          <div>
+            <p className="font-body font-semibold text-[11px] tracking-[0.22em] uppercase text-terra">
+              Verified Before We Start
+            </p>
+            <h2 className="mt-2 font-display text-ink text-[24px] md:text-[32px] leading-[1.15]">
+              Trust Signals You Can Check Yourself
+            </h2>
+          </div>
+          <p className="font-body text-sm text-brown md:text-right">
+            Licensed, bonded, insured, and backed by a written 5-year warranty.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <a
+            href="https://g.page/r/CX7AG1aNL5PkEBE"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center rounded-lg border border-rule/70 bg-cream p-5 text-center transition-all hover:-translate-y-0.5 hover:border-terra/60 hover:shadow-md"
+            aria-label="Read all 7 five-star Google reviews - opens Google in a new tab"
+          >
+            <span className="mb-4 flex justify-center gap-[2px]" aria-label="5.0 out of 5 stars">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} viewBox="0 0 20 20" fill="#E8A33D" className="h-5 w-5" aria-hidden="true">
+                  <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
+                </svg>
+              ))}
+            </span>
+            <div className="font-body font-bold text-lg text-ink">5.0 Google Rating</div>
+            <div className="mt-1 font-body text-sm text-brown">7 public reviews from East Valley homeowners.</div>
+            <span className="mt-4 inline-block font-body text-xs font-semibold uppercase tracking-[0.16em] text-terra group-hover:text-terra-dark">
+              Read reviews
+            </span>
+          </a>
+
+          <a
+            href="https://azroc.my.site.com/AZRoc/s/contractor-search?licenseId=a0ocs00000JC2pVAAT"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center rounded-lg border border-rule/70 bg-cream p-5 text-center transition-all hover:-translate-y-0.5 hover:border-terra/60 hover:shadow-md"
+            aria-label="Verify ROC license #363664 on the Arizona Registrar of Contractors website - opens in a new tab"
+          >
+            <picture>
+              <source srcSet="/images/badge-az-roc.webp" type="image/webp" />
+              <Image
+                src="/images/badge-az-roc.png"
+                alt="Arizona Registrar of Contractors licensed contractor badge"
+                width={48}
+                height={48}
+                className="mb-4 h-12 w-12"
+                unoptimized
+              />
+            </picture>
+            <div className="font-body font-bold text-lg text-ink">AZ ROC #363664</div>
+            <div className="mt-1 font-body text-sm text-brown">Bonded, insured, and publicly verifiable.</div>
+            <span className="mt-4 inline-block font-body text-xs font-semibold uppercase tracking-[0.16em] text-terra group-hover:text-terra-dark">
+              Verify license
+            </span>
+          </a>
+
+          <a
+            href="https://www.bbb.org/us/az/mesa/profile/painting-contractors/valley-painting-pros-llc-1126-1000156113/#sealclick"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            className="group flex flex-col items-center rounded-lg border border-rule/70 bg-cream p-5 text-center transition-all hover:-translate-y-0.5 hover:border-terra/60 hover:shadow-md"
+            aria-label="Verify Valley Painting Pros BBB Accreditation - opens BBB Business Profile in a new tab"
+          >
+            <div className="mb-4 flex h-[52px] w-full items-center justify-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://seal-central-northern-western-arizona.bbb.org/seals/blue-seal-250-52-whitetxt-bbb-1000156113.png"
+                alt="Valley Painting Pros LLC BBB Business Review"
+                width={250}
+                height={52}
+                style={{ border: 0 }}
+                className="h-[52px] w-auto max-w-full"
+              />
+            </div>
+            <div className="font-body font-bold text-lg text-ink">BBB Accredited</div>
+            <div className="mt-1 font-body text-sm text-brown">Torch Awards nominee for ethics.</div>
+            <span className="mt-4 inline-block font-body text-xs font-semibold uppercase tracking-[0.16em] text-terra group-hover:text-terra-dark">
+              View profile
+            </span>
+          </a>
+
+          <div className="flex flex-col items-center rounded-lg border border-rule/70 bg-cream p-5 text-center">
+            <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-sage/30 bg-sage/15 text-sage shadow-sm" aria-hidden="true">
+              <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none">
+                <path
+                  d="M12 2.75l7 2.55v5.65c0 4.55-2.88 8.62-7 10.13-4.12-1.51-7-5.58-7-10.13V5.3l7-2.55z"
+                  fill="currentColor"
+                  opacity="0.95"
+                />
+                <path
+                  d="M8.25 12.2l2.35 2.35 5.15-5.3"
+                  stroke="#FAF6EC"
+                  strokeWidth={2.1}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+            <div className="font-body font-bold text-lg text-ink">5-Year Warranty</div>
+            <div className="mt-1 font-body text-sm text-brown">Delivered in writing at job completion.</div>
+            <span className="mt-4 inline-block font-body text-xs font-semibold uppercase tracking-[0.16em] text-terra">
+              Written protection
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function LegacySocialProofBar() {
   return (
     <section className="bg-sand border-y border-rule">
       <div className="mx-auto max-w-content px-4 py-6 md:py-7">
@@ -421,8 +535,8 @@ function SocialProofBar() {
               />
             </picture>
             <div className="text-left leading-tight">
-              <div className="font-body font-bold text-[15px] text-ink">AZ ROC CR-34 · Licensed for Residential &amp; Commercial</div>
-              <div className="font-body text-[12px] text-brown">#363664 · Verify →</div>
+              <div className="font-body font-bold text-[15px] text-ink">AZ ROC #363664</div>
+              <div className="font-body text-[12px] text-brown">Bonded · Insured · Verify →</div>
             </div>
           </a>
 
@@ -441,12 +555,12 @@ function SocialProofBar() {
                 {/* Inner flame highlight — cream */}
                 <path
                   d="M12 5.4c-.9 1.4-2.1 2.6-1.5 4.4.2.7.9 1.2 1.5 1.1.6.1 1.3-.4 1.5-1.1.6-1.8-.6-3-1.5-4.4z"
-                  fill="#FAF7F4"
+                  fill="#FAF6EC"
                 />
                 {/* Bowl */}
-                <rect x="8.5" y="12.4" width="7" height="2.4" rx="0.6" fill="#FAF7F4" />
+                <rect x="8.5" y="12.4" width="7" height="2.4" rx="0.6" fill="#FAF6EC" />
                 {/* Handle */}
-                <rect x="10.5" y="14.8" width="3" height="6.4" rx="0.5" fill="#FAF7F4" />
+                <rect x="10.5" y="14.8" width="3" height="6.4" rx="0.5" fill="#FAF6EC" />
               </svg>
             </span>
             <div className="text-left leading-tight">
@@ -740,7 +854,7 @@ function ComparisonCards() {
               </span>
               <p className="font-body font-semibold text-base text-ink mb-2 mt-2">VPP Cabinet Refinishing</p>
               <p className="font-display text-[32px] text-terra mb-1">$150 per opening</p>
-              <p className="font-body font-medium text-[13px] text-brown mb-5">Each door or drawer · Free in-home estimate</p>
+              <p className="font-body font-medium text-[13px] text-brown mb-5">Doors and drawers count as openings. Free in-home estimate.</p>
               <ul className="space-y-3 mb-6">
                 {[
                   'Professional 3-coat system that lasts years',
@@ -768,7 +882,7 @@ function ComparisonCards() {
           <RevealSection delay={200}>
             <div className="bg-sand rounded-xl p-8 border-t-[3px] border-rule h-full">
               <p className="font-body font-semibold text-base text-mid mb-2">Full Kitchen Remodel</p>
-              <p className="font-body text-[28px] text-mid line-through decoration-rule mb-5">$30,000+</p>
+              <p className="font-body text-[28px] text-mid line-through decoration-rule mb-5">$8,000-$25,000+</p>
               <ul className="space-y-3 mb-6">
                 {[
                   '4–8 week timeline',
@@ -788,9 +902,18 @@ function ComparisonCards() {
           </RevealSection>
         </div>
 
+        <RevealSection delay={260} className="mt-8 rounded-lg border border-terra/30 bg-cream px-6 py-5 text-center shadow-sm">
+          <p className="font-display text-[24px] leading-tight text-ink md:text-[30px]">
+            A $15,000 kitchen remodel result for $4,800.
+          </p>
+          <p className="mt-2 font-body text-sm text-brown">
+            Example: a medium kitchen with 32 openings at $150 per opening.
+          </p>
+        </RevealSection>
+
         {/* Below-cards testimonial */}
         <RevealSection delay={300} className="text-center mt-10">
-          <p className="font-accent italic text-lg text-brown">
+          <p className="font-body italic text-lg text-brown">
             &ldquo;My gorgeous kitchen cabinets!&rdquo;
           </p>
           <p className="font-body font-medium text-sm text-mid mt-2 flex items-center justify-center gap-1">
@@ -810,6 +933,37 @@ function ComparisonCards() {
 /* ───────── 8. BEFORE / AFTER ───────── */
 
 function BeforeAfter() {
+  const galleryItems = [
+    {
+      src: '/cabinet-content/IMG_4711.JPEG',
+      alt: 'Wide kitchen with refinished white cabinets and granite countertops by Valley Painting Pros',
+      caption: 'White cabinet refinish with existing granite preserved',
+      frameClass: 'md:col-span-2 aspect-[16/10]',
+      sizes: '(min-width: 768px) 66vw, 100vw',
+    },
+    {
+      src: '/cabinet-content/IMG_1840.JPEG',
+      alt: 'Dark refinished bathroom vanity with framed mirror and granite counter',
+      caption: 'Dark vanity refinish with existing hardware reset',
+      frameClass: 'aspect-[4/5]',
+      sizes: '(min-width: 768px) 33vw, 100vw',
+    },
+    {
+      src: '/cabinet-content/IMG_4707.JPEG',
+      alt: 'Refinished white kitchen cabinets around stainless range',
+      caption: 'Cabinet finish detail around high-use cooking zone',
+      frameClass: 'aspect-[4/5]',
+      sizes: '(min-width: 768px) 33vw, 100vw',
+    },
+    {
+      src: '/cabinet-content/IMG_8074.JPEG',
+      alt: 'Long kitchen wall with refinished white cabinets and black pulls',
+      caption: 'White finish with black hardware contrast',
+      frameClass: 'md:col-span-2 aspect-[16/10]',
+      sizes: '(min-width: 768px) 66vw, 100vw',
+    },
+  ]
+
   return (
     <section id="gallery" className="bg-sand-light py-20">
       <div className="mx-auto max-w-content px-6">
@@ -835,11 +989,11 @@ function BeforeAfter() {
               handle={
                 <ReactCompareSliderHandle
                   buttonStyle={{
-                    backgroundColor: '#C4613A',
+                    backgroundColor: '#C24A22',
                     border: 'none',
                     boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
                   }}
-                  linesStyle={{ color: '#C4613A' }}
+                  linesStyle={{ color: '#C24A22' }}
                 />
               }
             />
@@ -857,47 +1011,37 @@ function BeforeAfter() {
 
         {/* Gallery grid */}
         <RevealSection className="mt-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="mb-5 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
-              <Image
-                src="/images/cabinet-ushaped-swirl-granite.png"
-                alt="U-shaped kitchen with white cabinets and swirl granite countertops"
-                width={1024}
-                height={1536}
-                className="rounded-xl shadow-sm object-cover w-full h-auto"
-              />
-              <p className="font-body text-xs text-mid mt-2 text-center">White cabinets with swirl granite countertops</p>
+              <p className="font-body font-semibold text-[11px] uppercase tracking-[0.22em] text-terra">
+                Real VPP Project Photos
+              </p>
+              <h3 className="mt-2 font-display text-[24px] leading-tight text-ink md:text-[30px]">
+                Finished Surfaces, Not Stock Kitchens
+              </h3>
             </div>
-            <div>
-              <Image
-                src="/images/cabinet-shaker-evening.png"
-                alt="White shaker cabinets with travertine backsplash and granite countertops"
-                width={1536}
-                height={1024}
-                className="rounded-xl shadow-sm object-cover w-full h-auto"
-              />
-              <p className="font-body text-xs text-mid mt-2 text-center">White shaker cabinets with travertine backsplash</p>
-            </div>
-            <div>
-              <Image
-                src="/images/cabinet-white-granite-backsplash.png"
-                alt="White cabinets with mosaic backsplash and stainless range hood"
-                width={1536}
-                height={1024}
-                className="rounded-xl shadow-sm object-cover w-full h-auto"
-              />
-              <p className="font-body text-xs text-mid mt-2 text-center">White cabinets with mosaic backsplash</p>
-            </div>
-            <div>
-              <Image
-                src="/images/cabinet-bathroom-vanity.png"
-                alt="Refinished white bathroom double vanity with marble countertop"
-                width={1024}
-                height={1536}
-                className="rounded-xl shadow-sm object-cover w-full h-auto"
-              />
-              <p className="font-body text-xs text-mid mt-2 text-center">Refinished bathroom double vanity</p>
-            </div>
+            <p className="max-w-md font-body text-sm text-brown md:text-right">
+              The photos below come from the cabinet-content library in this repo.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            {galleryItems.map((item) => (
+              <figure key={item.src} className={item.frameClass}>
+                <div className="group relative h-full overflow-hidden rounded-lg border border-rule bg-cream shadow-sm">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes={item.sizes}
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+                <figcaption className="mt-2 font-body text-xs text-mid">
+                  {item.caption}
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </RevealSection>
       </div>
@@ -935,7 +1079,7 @@ function Reviews() {
               <div className="flex gap-0.5 mb-3">
                 {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
               </div>
-              <p className="font-accent italic text-lg text-brown leading-relaxed mb-4">
+              <p className="font-body italic text-lg text-brown leading-relaxed mb-4">
                 &ldquo;Thank you Ricardo for my gorgeous kitchen cabinets! They look beautiful!&rdquo;
               </p>
               <p className="font-body font-medium text-sm text-mid">
@@ -949,7 +1093,7 @@ function Reviews() {
               <div className="flex gap-0.5 mb-3">
                 {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
               </div>
-              <p className="font-accent italic text-lg text-brown leading-relaxed mb-4">
+              <p className="font-body italic text-lg text-brown leading-relaxed mb-4">
                 &ldquo;They were more careful and thorough with their prep than I would have been. They are perfectionists.&rdquo;
               </p>
               <p className="font-body font-medium text-sm text-mid">
@@ -1096,13 +1240,28 @@ function ServiceAreaMap() {
         </RevealSection>
 
         <RevealSection className="flex justify-center">
-          <div className="w-full max-w-2xl rounded-2xl overflow-hidden shadow-md">
+          <div className="w-full max-w-4xl overflow-hidden rounded-lg border border-rule bg-cream shadow-md">
+            <div className="flex flex-col gap-2 border-b border-rule bg-cream px-5 py-4 text-left md:flex-row md:items-center md:justify-between">
+              <p className="font-body text-sm font-semibold text-ink">
+                East Valley cabinet refinishing service area
+              </p>
+              <a
+                href="https://www.google.com/maps/d/viewer?mid=1AhSOOR0VpZ9hKeRr9CbbS3VuMJd6UI8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body text-xs font-semibold uppercase tracking-[0.16em] text-terra hover:text-terra-dark"
+              >
+                Open map
+              </a>
+            </div>
             <iframe
-              src="https://www.google.com/maps/d/u/0/embed?mid=1AhSOOR0VpZ9hKeRr9CbbS3VuMJd6UI8&ehbc=2E312F"
+              src="https://www.google.com/maps/d/embed?mid=1AhSOOR0VpZ9hKeRr9CbbS3VuMJd6UI8&ehbc=2E312F"
               width="100%"
               height="480"
               style={{ border: 0 }}
+              className="block w-full bg-sand-light"
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
               title="Valley Painting Pros service area map"
             />
           </div>
@@ -1213,7 +1372,7 @@ function QuoteForm() {
 
             {/* Adjacent testimonial */}
             <div className="bg-sand-light/10 rounded-lg p-4">
-              <p className="font-accent italic text-base text-sand leading-relaxed mb-2">
+              <p className="font-body italic text-base text-sand leading-relaxed mb-2">
                 &ldquo;He gave me an accurate quote and showed up exactly on time.&rdquo;
               </p>
               <p className="font-body text-xs text-mid flex items-center gap-1">
@@ -1232,7 +1391,7 @@ function QuoteForm() {
                 /* Success state */
                 <div className="text-center py-8">
                   <div className="w-12 h-12 rounded-full bg-sage/20 flex items-center justify-center mx-auto mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#6B8C6E" strokeWidth={2.5} className="w-6 h-6" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#7A9577" strokeWidth={2.5} className="w-6 h-6" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   </div>

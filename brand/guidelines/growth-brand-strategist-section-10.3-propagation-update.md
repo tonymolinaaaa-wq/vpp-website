@@ -32,13 +32,13 @@ franchise chain, generic handyman, luxury remodeler, or tech-adjacent service.
 
 > Valley Painting Pros is the East Valley Arizona painting contractor for homeowners
 > who want clean prep, durable finishes, and a contractor they can actually verify —
-> ROC CR-34 licensed, bonded, and insured, with cabinet refinishing as the lead service.
+> AZ ROC #363664, bonded, and insured, with cabinet refinishing as the only current service.
 
 **Visual identity principles:**
 
 | Principle | Rule | Why it matters |
 |---|---|---|
-| Licensed trust first | ROC CR-34, insured, bonded, review rating, and real project photos should appear more often than decorative graphics. | Local homeowners worry about contractor reliability more than clever branding. |
+| Licensed trust first | AZ ROC #363664, insured, bonded, review rating, and real project photos should appear more often than decorative graphics. | Local homeowners worry about contractor reliability more than clever branding. |
 | Warm desert craft, not corporate | Use terracotta (#C24A22), warm charcoal (#1F1A14), cream (#F2EAD7), and sage (#7A9577). Avoid cool blues, teal, navy, or cool grays. Avoid distressed wood textures and cartoon paint splashes. | Signals Arizona locality without looking cheap, dated, or generic-corporate. |
 | Slab-serif weight, not geometric minimalism | Display typography is heavy slab serif. Body is humanist sans. The combination reads craft-forward and substantial. | The logo's slab-serif construction must be reinforced, not contradicted, in surrounding typography. |
 | Cabinet refinishing proof | Lead with smooth cabinet finishes, prep shots, and before/after transformations. | Cabinet refinishing is the wedge service and has stronger visual contrast than many wall-painting jobs. |
@@ -84,23 +84,23 @@ weight collapses; cap at two lines.
 | Minimum size | Stacked logo: 140px digital / 1.25 in print. Compact horizontal: 200px / 1.5 in. Monogram: 32px / 0.5 in |
 | Background | Full-color logo on Cream or white. One-color reversed on Charcoal or dark photo overlays. One-color dark for single-color print applications. |
 | Do not | Stretch, recolor outside palette, add drop shadows, rotate, place over busy photo without solid plate, or merge with trust signals (ROC, insured, bonded stay as a separate trust bar near the logo, not inside it) |
-| Lockup | ROC CR-34, insured, bonded, and review badges form a trust bar near the logo or CTA — never inside the logo mark itself |
+| Lockup | AZ ROC #363664, insured, bonded, and review badges form a trust bar near the logo or CTA — never inside the logo mark itself |
 
 **Applied layout rules (East Valley positioning is default):**
 
 | Asset | VPP identity application |
 |---|---|
-| Website hero | Cream background, Charcoal headline in Alfa Slab One, Terracotta CTA button, real cabinet before/after image, trust bar reading "Arizona ROC CR-34 · Bonded · $1M/$2M Insured" below CTA |
-| Meta static ad | Large real before/after photo, small Charcoal-on-Cream trust badge "ROC CR-34 · Bonded · Insured," short Alfa Slab One headline on a Cream panel, CTA button in Terracotta |
-| Door hanger | Top: "Cabinet Refinishing in Your Neighborhood." Middle: real before/after pair. Bottom: QR code, phone, ROC CR-34 trust bar. Use Sage only as a thin underline or accent element, never as a primary surface. |
-| Estimate packet | Paint Scout-generated. Apply locked palette and font choices in Paint Scout's branding settings. Trust signals (ROC CR-34, insurance, bond, warranty) appear in proof sidebar. |
+| Website hero | Cream background, Charcoal headline in Alfa Slab One, Terracotta CTA button, real cabinet before/after image, trust bar reading "AZ ROC #363664 · Bonded · $1M/$2M Insured" below CTA |
+| Meta static ad | Large real before/after photo, small Charcoal-on-Cream trust badge "AZ ROC #363664 · Bonded · Insured," short Alfa Slab One headline on a Cream panel, CTA button in Terracotta |
+| Door hanger | Top: "Cabinet Refinishing in Your Neighborhood." Middle: real before/after pair. Bottom: QR code, phone, AZ ROC #363664 trust bar. Use Sage only as a thin underline or accent element, never as a primary surface. |
+| Estimate packet | Paint Scout-generated. Apply locked palette and font choices in Paint Scout's branding settings. Trust signals (AZ ROC #363664, insurance, bond, warranty) appear in proof sidebar. |
 | Truck door / vehicle | Charcoal door → reversed (cream/terracotta) logo. Compact horizontal lockup for the side of the truck; monogram alone for back window or rear panel. |
 
 **Worked example: cabinet refinishing Meta ad look (locked v1.0)**
 
 Use a split before/after image of oak cabinets becoming warm cream-painted cabinets
 (real VPP job, never AI-fabricated). Place a small top-left Charcoal-on-Cream badge:
-"Arizona ROC CR-34 · Bonded · Insured." Put the headline in a Cream panel:
+"AZ ROC #363664 · Bonded · Insured." Put the headline in a Cream panel:
 "Refresh Your Kitchen Without Replacing Your Cabinets" — set in Alfa Slab One,
 Charcoal. CTA button: "Get a Free Cabinet Estimate" — set in Inter 500 on a Terracotta
 fill. Use Sage only as a thin 2px underline beneath the trust badge if at all. Never

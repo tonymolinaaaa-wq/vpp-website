@@ -1,4 +1,4 @@
-# CLAUDE.md — VPP Website
+# AGENTS.md — VPP Website
 
 **Last updated:** April 10, 2026
 

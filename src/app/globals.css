@@ -9,24 +9,28 @@
   }
 
   body {
-    @apply bg-cream text-brown font-body;
+    @apply bg-brand-cream-100 text-brand-charcoal-900 font-body;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3 {
-    @apply font-display text-ink;
+  h1, h2 {
+    @apply font-display text-brand-charcoal-900;
+  }
+
+  h3 {
+    @apply font-body font-bold text-brand-charcoal-900;
   }
 }
 
 @layer components {
   .btn-primary {
     @apply inline-flex items-center justify-center
-      bg-terra text-white font-body font-semibold
+      bg-brand-terracotta-500 text-brand-cream-50 font-body font-semibold
       rounded-xl shadow-md
       px-8 py-4
-      hover:bg-terra-dark hover:shadow-lg
-      active:bg-terra-dark
+      hover:bg-brand-terracotta-600 hover:shadow-lg
+      active:bg-brand-terracotta-700
       transition-all duration-150
       min-h-[56px] min-w-[44px];
     font-size: 16px;
@@ -38,10 +42,10 @@
 
   .btn-secondary {
     @apply inline-flex items-center justify-center
-      border-2 border-terra text-terra font-body font-semibold
+      border-2 border-brand-terracotta-500 text-brand-terracotta-500 font-body font-semibold
       rounded-xl
       px-8 py-4
-      hover:bg-sand-light
+      hover:bg-brand-cream-50
       transition-all duration-150
       min-h-[56px] min-w-[44px];
     font-size: 16px;

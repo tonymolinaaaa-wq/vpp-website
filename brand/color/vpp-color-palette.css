@@ -177,7 +177,7 @@ h3 { font-size: var(--vpp-text-h3); }
   color: var(--vpp-cream-50);
 }
 
-/* Trust strip — for ROC CR-34 / Bonded / Insured presentation */
+/* Trust strip — for AZ ROC #363664 / Bonded / Insured presentation */
 .vpp-trust-strip {
   display: inline-flex;
   align-items: center;

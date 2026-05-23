@@ -9,23 +9,67 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: '#1E1C1A',
-        brown: '#4A3728',
-        mid: '#7A6558',
-        rule: '#C4B9AF',
-        terra: '#C4613A',
-        'terra-light': '#D4825E',
-        'terra-dark': '#9E4A2A',
-        sage: '#6B8C6E',
-        'sage-light': '#8FAF92',
-        sand: '#E8DDD4',
-        'sand-light': '#F2EDE8',
-        cream: '#FAF7F4',
+        // Locked VPP brand identity v1.0 (May 2026)
+        // Source of truth: /brand/color/vpp-brand-tokens.json
+        brand: {
+          charcoal: {
+            50:  '#F4F2EE',
+            100: '#E1DDD4',
+            300: '#9F9789',
+            500: '#5C544A',
+            700: '#3A332B',
+            900: '#1F1A14',
+          },
+          terracotta: {
+            100: '#F6D9CC',
+            300: '#E89878',
+            500: '#C24A22',
+            600: '#A83E1C',
+            700: '#8C3417',
+          },
+          cream: {
+            50:  '#FAF6EC',
+            100: '#F2EAD7',
+            200: '#E8DDC5',
+            300: '#D9CBAF',
+          },
+          sage: {
+            100: '#DDE5DC',
+            300: '#A8BDA6',
+            500: '#7A9577',
+            700: '#5A7257',
+          },
+        },
+        ink: '#1F1A14',
+        brown: '#5C544A',
+        mid: '#A39B8C',
+        rule: '#D9CBAF',
+        terra: '#C24A22',
+        'terra-light': '#E89878',
+        'terra-dark': '#A83E1C',
+        sage: '#7A9577',
+        'sage-light': '#A8BDA6',
+        sand: '#E8DDC5',
+        'sand-light': '#F2EAD7',
+        cream: '#FAF6EC',
+        neutral: {
+          'warm-gray': {
+            400: '#A39B8C',
+            700: '#5C544A',
+          },
+        },
+        semantic: {
+          action: '#C24A22',
+          'action-hover': '#A83E1C',
+          success: '#7A9577',
+          warning: '#D97706',
+          error: '#B91C1C',
+          info: '#5C544A',
+        },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'serif'],
-        body: ['var(--font-body)', 'sans-serif'],
-        accent: ['var(--font-accent)', 'serif'],
+        display: ['var(--font-display)', 'Georgia', 'Times New Roman', 'serif'],
+        body: ['var(--font-body)', 'system-ui', '-apple-system', 'sans-serif'],
       },
       maxWidth: {
         content: '1200px',

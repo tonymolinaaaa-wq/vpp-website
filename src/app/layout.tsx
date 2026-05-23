@@ -1,35 +1,29 @@
 import type { Metadata } from 'next'
-import { DM_Serif_Display, Outfit, Lora } from 'next/font/google'
+import { Alfa_Slab_One, Inter } from 'next/font/google'
 import './globals.css'
 
-const dmSerif = DM_Serif_Display({
+const alfaSlab = Alfa_Slab_One({
   weight: ['400'],
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
 })
 
-const outfit = Outfit({
+const inter = Inter({
+  weight: ['400', '500', '700'],
   subsets: ['latin'],
   variable: '--font-body',
-  display: 'swap',
-})
-
-const lora = Lora({
-  subsets: ['latin'],
-  style: ['italic'],
-  variable: '--font-accent',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
   title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa, Queen Creek, Scottsdale & Tempe | Valley Painting Pros',
   description:
-    'Cabinet refinishing in the East Valley. 5-star rated, ROC licensed, 5-year warranty. Custom quote — free in-home estimate. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
+    'Cabinet refinishing in the East Valley. AZ ROC #363664, 5-star rated, 5-year warranty. Custom quote — free in-home estimate. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
   openGraph: {
     title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa, Queen Creek, Scottsdale & Tempe | Valley Painting Pros',
     description:
-      'Cabinet refinishing in the East Valley. 5-star rated, ROC licensed, 5-year warranty. Custom quote — free in-home estimate. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
+      'Cabinet refinishing in the East Valley. AZ ROC #363664, 5-star rated, 5-year warranty. Custom quote — free in-home estimate. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
     type: 'website',
     locale: 'en_US',
   },
@@ -76,7 +70,7 @@ const structuredData = {
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
     credentialCategory: 'license',
-    name: 'AZ ROC License #363664 — CR-34 Painting & Wallcovering (Licensed for Both Residential and Commercial Work)',
+    name: 'AZ ROC License #363664',
   },
   sameAs: [
     'https://www.facebook.com/valleyprosaz',
@@ -92,14 +86,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSerif.variable} ${outfit.variable} ${lora.variable}`}
+      className={`${alfaSlab.variable} ${inter.variable}`}
     >
       <head>
         <link rel="icon" href="/VPP_favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/VPP_apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta property="og:image" content="/VPP_og-image.png" />
-        <meta name="theme-color" content="#C4613A" />
+        <meta name="theme-color" content="#C24A22" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script

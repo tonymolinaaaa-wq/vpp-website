@@ -6,7 +6,7 @@
 
 ## 1. Brand Idea
 
-Valley Painting Pros is the **Trustworthy Desert Craftsman**: a local, family-run, Arizona-licensed painting contractor for East Valley homeowners who want clean prep, durable finishes, and a contractor they can verify. Cabinet refinishing is the lead wedge. Interior and exterior painting are parallel and upsell services.
+Valley Painting Pros is the **Trustworthy Desert Craftsman**: a local, family-run, Arizona-licensed cabinet refinishing specialist for East Valley homeowners who want clean prep, durable finishes, and a contractor they can verify. Cabinet refinishing is the only current service. Do not advertise interior painting, exterior painting, or broad painting-company services.
 
 **The brand must read as:** local, craft-forward, substantial, warm, no-nonsense.
 **The brand must never read as:** corporate, luxury, tech-adjacent, discount, scrappy.
@@ -162,7 +162,7 @@ Direct. Confident. Local. Warm without being casual. Never corporate. Never sale
 
 ### Credentials reference
 
-Always specific: **"ROC CR-34"** (or "ROC CR-34 — dual residential/commercial"). Never generic "Licensed Contractor" or "ROC Licensed." The CR-34 classification is a competitive differentiator.
+Always specific: **"AZ ROC #363664"** or **"Arizona ROC License #363664"**. Do not use generic "Licensed Contractor" or "ROC Licensed" as the main public trust signal. CR-34 may appear only as supporting license-class context when needed, never in place of the ROC number.
 
 ### Voice → Microcopy translation
 
@@ -171,7 +171,7 @@ Always specific: **"ROC CR-34"** (or "ROC CR-34 — dual residential/commercial"
 | CTA on hero | "Get Started" | "Get a Free Estimate" |
 | CTA on cabinet ad | "Click Here" | "See My Kitchen's New Look" |
 | Confirmation message | "Form submitted!" | "Got it — we'll be in touch within the hour." |
-| Trust strip | "Licensed & Insured" | "Arizona ROC CR-34 · Bonded · $1M/$2M Insured" |
+| Trust strip | "Licensed & Insured" | "AZ ROC #363664 · Bonded · $1M/$2M Insured" |
 | Service area | "Phoenix Metro" | "East Valley: Gilbert, Mesa, Chandler, Tempe, Scottsdale, Queen Creek" |
 | About blurb | "Family-owned business" | "Family-run out of [City], serving the East Valley since [Year]" |
 
@@ -206,7 +206,7 @@ Always specific: **"ROC CR-34"** (or "ROC CR-34 — dual residential/commercial"
 | Use cream as the default light background | Use pure white anywhere in the brand system |
 | Pair Alfa Slab One (display) with Inter (everything else) | Mix in additional display fonts |
 | Use terracotta for CTAs and the "P" letterform | Use teal, navy, or cool blue anywhere |
-| Always include "ROC CR-34" when claiming credentials | Write "Licensed Contractor" generically |
+| Always include "AZ ROC #363664" when claiming credentials | Write "Licensed Contractor" generically |
 | Always position as East Valley specialist | Position as "Phoenix" in marketing copy (SEO context only) |
 | Use real photos of completed VPP jobs | Generate AI photos for GBP or before/after pairs |
 | Test contrast at WebAIM before deploying any new color pairing | Use sage green or terracotta as body text on dark backgrounds |
