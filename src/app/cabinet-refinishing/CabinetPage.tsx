@@ -327,8 +327,8 @@ function Hero() {
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-lg border-l-[3px] border-terra bg-sand shadow-sm">
               <Image
-                src="/images/cabinet-hero-poster.jpg"
-                alt="Refinished kitchen by Valley Painting Pros with gray cabinets and white range under skylight"
+                src="/images/cabinet-hero-bathroom.jpg"
+                alt="Refinished bathroom vanity by Valley Painting Pros — sage-green cabinets with raised-panel doors and black hardware over hex tile."
                 fill
                 sizes="(min-width: 768px) 45vw, 100vw"
                 className="object-cover"
@@ -336,7 +336,7 @@ function Hero() {
               />
               <video
                 className="absolute inset-0 hidden h-full w-full object-cover motion-safe:md:block"
-                poster="/images/cabinet-hero-poster.jpg"
+                poster="/images/cabinet-hero-bathroom.jpg"
                 autoPlay
                 muted
                 loop
