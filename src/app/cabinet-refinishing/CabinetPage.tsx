@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { ReactCompareSlider, ReactCompareSliderImage, ReactCompareSliderHandle } from 'react-compare-slider'
 import { Footer } from '@/components/Footer'
@@ -1330,7 +1330,7 @@ function QuoteForm() {
     return e
   }
 
-  const handleSubmit = useCallback(async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     const v = validate(formData)
     setErrors(v)
@@ -1355,7 +1355,7 @@ function QuoteForm() {
     } catch {
       setStatus('error')
     }
-  }, [formData])
+  }
 
   return (
     <section id="quote-form" className="bg-ink py-20 md:py-24">
@@ -1367,7 +1367,7 @@ function QuoteForm() {
               Ready to Love Your Kitchen?
             </h2>
             <p className="font-body text-sand text-base leading-[1.7] mb-6">
-              Fill out the form and we'll reach out — typically within a few hours. Or call anytime.
+              Fill out the form and we&apos;ll reach out — typically within a few hours. Or call anytime.
             </p>
             <a
               href="tel:+14804332680"

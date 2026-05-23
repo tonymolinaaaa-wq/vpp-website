@@ -50,6 +50,51 @@
       min-h-[56px] min-w-[44px];
     font-size: 16px;
   }
+
+  .blog-prose {
+    @apply font-body text-base leading-8 text-brown;
+  }
+
+  .blog-prose > * + * {
+    margin-top: 1.25rem;
+  }
+
+  .blog-prose h2 {
+    @apply mt-10 font-display text-[28px] leading-tight text-ink;
+  }
+
+  .blog-prose h3 {
+    @apply mt-8 font-body text-xl font-bold leading-tight text-ink;
+  }
+
+  .blog-prose p {
+    @apply text-brown;
+  }
+
+  .blog-prose a {
+    @apply font-semibold text-terra underline underline-offset-4 hover:text-terra-dark;
+  }
+
+  .blog-prose ul,
+  .blog-prose ol {
+    @apply pl-6;
+  }
+
+  .blog-prose ul {
+    list-style: disc;
+  }
+
+  .blog-prose ol {
+    list-style: decimal;
+  }
+
+  .blog-prose li + li {
+    margin-top: 0.5rem;
+  }
+
+  .blog-prose blockquote {
+    @apply border-l-4 border-terra bg-sand py-3 pl-5 pr-4 font-body text-lg font-medium text-ink;
+  }
 }
 
 /* Reduced motion for accessibility */
