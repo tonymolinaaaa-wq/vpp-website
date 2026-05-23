@@ -54,17 +54,25 @@ Before ending any session where you edited files, update AI-STATE.md with:
 
 - Current branch
 - Working tree status (clean / uncommitted changes present)
-- State last updated after commit (from git log -1 --format=%H, plus subject)
+- State last updated after commit
 - What was committed this session (1-line summary)
 - What was edited but not committed (if anything)
 - Any blockers encountered
 - Any decisions made (append to Decisions log; do not delete prior decisions)
 - Update the "Last meaningful update" line at the top of AI-STATE.md with today's date
 
-If you create a commit during the session, you may either:
-  (a) Commit your work first, then update AI-STATE.md as a follow-up commit, or
-  (b) Update AI-STATE.md as part of the same commit, leaving the SHA field
-      to read "this commit" or omitting it — the SHA can be inferred from git.
+Commit-time state rules:
+- If AI-STATE.md is committed in the same commit as the work, write
+  "this commit" for the SHA/commit field. Do not write "pending commit on this
+  branch" into a commit that is meant to be merged.
+- If the exact prior commit matters before making a new commit, use
+  git log -1 --format=%H plus subject.
+- Do not make an extra AI-STATE-only commit solely to replace "this commit"
+  with the final SHA after the commit is created. The SHA is inferable from git.
+- After push, PR creation, checks, or merge, report the exact branch, PR URL,
+  check status, merge SHA, and deploy/preview URL in chat/final response.
+  Do not create bot-driven follow-up commits just to record those transport
+  events unless Ricardo explicitly asks.
 
 AI-STATE.md wins over stale chat memory for project status, unless the current
 user request says otherwise or the repo proves it stale.
@@ -95,9 +103,10 @@ using git commit --no-verify. Overrides are for Ricardo-approved exceptions only
 
 ## POST-MERGE STATE POLICY
 
-Do not create bot-driven post-merge commits solely to chase the latest HEAD SHA.
-AI-STATE.md may be one commit behind on exact SHA immediately after a merge.
-The next meaningful non-allowlisted PR or session must update AI-STATE.md.
+Do not create bot-driven post-merge commits solely to chase the latest HEAD SHA,
+PR status, deployment status, or merge status. AI-STATE.md may be one commit
+behind on exact SHA immediately after a merge. The next meaningful repo-change
+session must update AI-STATE.md with the current state before ending.
 
 ---
 

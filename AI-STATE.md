@@ -10,10 +10,10 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: codex/og-image
-- State last updated after commit: pending commit on this branch
-- Working tree at last update: uncommitted changes present
-- Local matched origin at last update: no (feature branch not pushed yet)
+- State last updated from branch: main
+- State last updated after commit: this commit
+- Working tree at last update: clean after this commit
+- Local matched origin at last update: no (this commit not pushed yet)
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -23,10 +23,10 @@
 
 Date: 2026-05-23
 Agent: Codex
-Branch worked: codex/og-image
-Files touched: public/VPP_og-image.png (created), public/og-templates/cabinet.html (created), public/og-templates/vpp-horizontal-color-transparent-lg.png (created), AI-STATE.md (modified)
-Committed: pending commit on this branch
-Edited but not committed: .codex-backups/claude-og-template-cabinet.html remains untracked as a local backup of Claude Code's prior attempt; other .codex-backups preview/log artifacts are not intended for commit
+Branch worked: main
+Files touched: AGENTS.md, AI-STATE.md
+Committed: this commit updates AI-STATE.md commit-time and post-merge reporting rules
+Edited but not committed: none
 Blockers encountered: none
 
 ---
@@ -52,6 +52,10 @@ Blockers encountered: none
   contrast rules in brand guidelines. Added a cropped transparent logo helper
   for the reusable template because the verified source logo PNG is padded and
   opaque.
+- 2026-05-23: Clarified AI-STATE.md update protocol so state committed with
+  work uses "this commit" instead of "pending commit on this branch." Push,
+  PR, checks, merge, and deploy facts should be reported in chat/final response
+  rather than forcing bot-only follow-up commits.
 
 ---
 
