@@ -1,5 +1,7 @@
 'use client'
 
+import { trackEvent } from '@/lib/analytics'
+
 export function StickyMobileCTA() {
   return (
     <>
@@ -13,6 +15,10 @@ export function StickyMobileCTA() {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => {
+                  trackEvent('estimate_cta_click', {
+                    page: 'cabinet_refinishing',
+                    placement: 'desktop_sticky_bar',
+                  })
                   const el = document.getElementById('quote-form')
                   if (el) {
                     const top = el.getBoundingClientRect().top + window.scrollY - 80

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Alfa_Slab_One, Inter } from 'next/font/google'
+import { Analytics } from '@/components/Analytics'
 import './globals.css'
 
 const alfaSlab = Alfa_Slab_One({
@@ -78,6 +79,8 @@ const structuredData = {
   ],
 }
 
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+
 export default function RootLayout({
   children,
 }: {
@@ -96,6 +99,9 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <meta property="og:image" content="/VPP_og-image.png" />
         <meta name="theme-color" content="#C24A22" />
+        {googleSiteVerification ? (
+          <meta name="google-site-verification" content={googleSiteVerification} />
+        ) : null}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
@@ -110,6 +116,7 @@ export default function RootLayout({
           <style>{`[data-reveal] { opacity: 1 !important; transform: none !important; animation: none !important; }`}</style>
         </noscript>
         {children}
+        <Analytics />
       </body>
     </html>
   )

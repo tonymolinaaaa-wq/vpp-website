@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { ReactCompareSlider, ReactCompareSliderImage, ReactCompareSliderHandle } from 'react-compare-slider'
 import { Footer } from '@/components/Footer'
 import { StickyMobileCTA } from '@/components/StickyMobileCTA'
+import { trackEvent } from '@/lib/analytics'
 
 /* ───────── ANIMATION HOOK ───────── */
 
@@ -129,6 +130,13 @@ function BrandName({ className = '' }: { className?: string }) {
 /* ───────── SMOOTH SCROLL ───────── */
 
 function smoothScrollTo(id: string) {
+  if (id === 'quote-form') {
+    trackEvent('estimate_cta_click', {
+      target: id,
+      page: 'cabinet_refinishing',
+    })
+  }
+
   const el = document.getElementById(id)
   if (!el) return
   const offset = 80
@@ -1336,6 +1344,10 @@ function QuoteForm() {
         body: JSON.stringify({ ...formData, _source: 'cabinet-refinishing' }),
       })
       if (res.ok) {
+        trackEvent('quote_form_submit', {
+          source: 'cabinet-refinishing',
+          form: 'cabinet_refinishing',
+        })
         setStatus('success')
       } else {
         setStatus('error')
