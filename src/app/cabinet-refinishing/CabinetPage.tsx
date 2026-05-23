@@ -935,28 +935,28 @@ function ComparisonCards() {
 function BeforeAfter() {
   const galleryItems = [
     {
-      src: '/cabinet-content/IMG_4711.JPEG',
+      src: '/images/gallery/vpp-gallery-kitchen-wide.jpg',
       alt: 'Wide kitchen with refinished white cabinets and granite countertops by Valley Painting Pros',
       caption: 'White cabinet refinish with existing granite preserved',
       frameClass: 'md:col-span-2 aspect-[16/10]',
       sizes: '(min-width: 768px) 66vw, 100vw',
     },
     {
-      src: '/cabinet-content/IMG_1840.JPEG',
+      src: '/images/gallery/vpp-gallery-dark-vanity.jpg',
       alt: 'Dark refinished bathroom vanity with framed mirror and granite counter',
       caption: 'Dark vanity refinish with existing hardware reset',
       frameClass: 'aspect-[4/5]',
       sizes: '(min-width: 768px) 33vw, 100vw',
     },
     {
-      src: '/cabinet-content/IMG_4707.JPEG',
+      src: '/images/gallery/vpp-gallery-range-detail.jpg',
       alt: 'Refinished white kitchen cabinets around stainless range',
       caption: 'Cabinet finish detail around high-use cooking zone',
       frameClass: 'aspect-[4/5]',
       sizes: '(min-width: 768px) 33vw, 100vw',
     },
     {
-      src: '/cabinet-content/IMG_8074.JPEG',
+      src: '/images/gallery/vpp-gallery-white-black-hardware.jpg',
       alt: 'Long kitchen wall with refinished white cabinets and black pulls',
       caption: 'White finish with black hardware contrast',
       frameClass: 'md:col-span-2 aspect-[16/10]',
@@ -1021,7 +1021,7 @@ function BeforeAfter() {
               </h3>
             </div>
             <p className="max-w-md font-body text-sm text-brown md:text-right">
-              The photos below come from the cabinet-content library in this repo.
+              Recent cabinet refinishing work from VPP projects.
             </p>
           </div>
 
