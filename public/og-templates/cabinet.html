@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1200, height=630, initial-scale=1">
+    <title>Valley Painting Pros OG Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+
+      body {
+        background: #1F1A14;
+      }
+
+      .og-card {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #1F1A14;
+        isolation: isolate;
+      }
+
+      .photo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 65% 66%;
+      }
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to right,
+          rgba(31, 26, 20, 0.92) 0%,
+          rgba(31, 26, 20, 0.88) 35%,
+          rgba(31, 26, 20, 0.0) 65%
+        );
+      }
+
+      .logo {
+        position: absolute;
+        top: 48px;
+        left: 60px;
+        width: 760px;
+        height: auto;
+        filter: drop-shadow(0 2px 10px rgba(31, 26, 20, 0.45));
+      }
+
+      .headline {
+        position: absolute;
+        top: 238px;
+        left: 60px;
+        max-width: 720px;
+        margin: 0;
+        color: #FAF6EC;
+        font-family: 'Alfa Slab One', Georgia, serif;
+        font-size: 56px;
+        font-weight: 400;
+        line-height: 1.15;
+        letter-spacing: -0.5px;
+        text-wrap: balance;
+        text-shadow: 0 2px 14px rgba(31, 26, 20, 0.45);
+      }
+
+      .trust-line {
+        position: absolute;
+        top: 434px;
+        left: 60px;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        text-shadow: 0 2px 10px rgba(31, 26, 20, 0.45);
+      }
+
+      .trust {
+        color: #FAF6EC;
+        font-family: 'Inter', system-ui, sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      .sep {
+        margin: 0 12px;
+        color: #C24A22;
+        font-family: 'Inter', system-ui, sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1;
+      }
+    </style>
+    <script>
+      window.__vppOgFontsReady = document.fonts.ready.then(() => {
+        document.documentElement.dataset.fonts = 'ready';
+      });
+    </script>
+  </head>
+  <body>
+    <main class="og-card" aria-label="Valley Painting Pros cabinet refinishing social card">
+      <img
+        class="photo"
+        src="/cabinet-content/IMG_9262-frames/frame_002.jpg"
+        alt=""
+        aria-hidden="true"
+      >
+      <div class="overlay" aria-hidden="true"></div>
+      <img
+        class="logo"
+        src="/og-templates/vpp-horizontal-color-transparent-lg.png?v=2"
+        alt="Valley Painting Pros"
+      >
+      <h1 class="headline">Cabinet Refinishing in the East Valley</h1>
+      <div class="trust-line" aria-label="AZ ROC CR-34 number 363664, 5-year warranty, one million slash two million insured">
+        <span class="trust">AZ ROC CR-34 #363664</span>
+        <span class="sep">·</span>
+        <span class="trust">5-Year Warranty</span>
+        <span class="sep">·</span>
+        <span class="trust">$1M/$2M Insured</span>
+      </div>
+    </main>
+  </body>
+</html>
