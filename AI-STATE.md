@@ -10,10 +10,10 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: main
-- State last updated after commit: 45f3357 docs(agents): adopt three-file agent coordination system (#19)
-- Working tree at last update: clean
-- Local matched origin at last update: yes
+- State last updated from branch: codex/og-image
+- State last updated after commit: pending commit on this branch
+- Working tree at last update: uncommitted changes present
+- Local matched origin at last update: no (feature branch not pushed yet)
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -23,10 +23,10 @@
 
 Date: 2026-05-23
 Agent: Codex
-Branch worked: codex/agent-coordination-system
-Files touched: AGENTS.md, CLAUDE.md, AI-STATE.md
-Committed: PR #19 squash-merged to main as 45f3357 docs(agents): adopt three-file agent coordination system (#19)
-Edited but not committed: none
+Branch worked: codex/og-image
+Files touched: public/VPP_og-image.png (created), public/og-templates/cabinet.html (created), public/og-templates/vpp-horizontal-color-transparent-lg.png (created), AI-STATE.md (modified)
+Committed: pending commit on this branch
+Edited but not committed: .codex-backups/claude-og-template-cabinet.html remains untracked as a local backup of Claude Code's prior attempt; other .codex-backups preview/log artifacts are not intended for commit
 Blockers encountered: none
 
 ---
@@ -43,6 +43,15 @@ Blockers encountered: none
   analytics.ts. Both intermediate commits typecheck cleanly.
 - 2026-05-23: Isolated favicon fix from pre-existing Stream B+C changes
   using file-swap staging technique. One defect per commit discipline.
+- 2026-05-23: Created OG social card via HTML template + headless Chrome
+  screenshot approach. Source photo: frame_002.jpg from IMG_9262-frames
+  (bathroom vanity, real VPP work). Headline positioned room-neutral
+  ("Cabinet Refinishing in the East Valley") to accommodate future
+  multi-room hero rotation feature. Trust line uses Cream-50 #FAF6EC;
+  Terracotta #C24A22 reserved for separator graphic accents per WCAG
+  contrast rules in brand guidelines. Added a cropped transparent logo helper
+  for the reusable template because the verified source logo PNG is padded and
+  opaque.
 
 ---
 
