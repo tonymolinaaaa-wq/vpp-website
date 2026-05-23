@@ -10,7 +10,7 @@ This is the website for **Valley Painting Pros (VPP)** — a cabinet refinishing
 
 **Stack:** Next.js · Vercel · GitHub (`tonymolinaaaa-wq/vpp-website`, main branch)
 **Live URL:** `vpp-website.vercel.app`
-**Production domain:** `www.valleypaintingpros.com` (not yet connected)
+**Production domain:** `www.valleypaintingpros.com` (live on Vercel)
 
 ---
 
