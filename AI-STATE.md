@@ -10,10 +10,10 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: main
+- State last updated from branch: claude/mobile-hero-frame-002
 - State last updated after commit: this commit
 - Working tree at last update: clean after this commit
-- Local matched origin at last update: no (this commit not pushed yet)
+- Local matched origin at last update: no (feature branch not pushed yet)
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -22,10 +22,10 @@
 ## LAST SESSION
 
 Date: 2026-05-23
-Agent: Codex
-Branch worked: main
-Files touched: AGENTS.md, AI-STATE.md
-Committed: this commit updates AI-STATE.md commit-time and post-merge reporting rules
+Agent: Claude Code
+Branch worked: claude/mobile-hero-frame-002
+Files touched: src/app/cabinet-refinishing/CabinetPage.tsx (modified), public/images/cabinet-hero-bathroom.jpg (created), AI-STATE.md (modified)
+Committed: this commit swaps mobile hero to bathroom vanity (frame_002) and corrects video poster from kitchen mismatch
 Edited but not committed: none
 Blockers encountered: none
 
@@ -56,6 +56,17 @@ Blockers encountered: none
   work uses "this commit" instead of "pending commit on this branch." Push,
   PR, checks, merge, and deploy facts should be reported in chat/final response
   rather than forcing bot-only follow-up commits.
+- 2026-05-23: Mobile hero swapped from cabinet-hero-poster.jpg (kitchen) to
+  cabinet-hero-bathroom.jpg (frame_002 from IMG_9262 — bathroom vanity, real
+  VPP work). Video poster attribute also updated to the new image. The
+  previous poster was unrelated to the actual desktop video content (the
+  video is the same bathroom vanity from IMG_9262.MP4), so the swap corrected
+  a pre-existing content mismatch. Desktop video element, src files,
+  breakpoint, and motion-safe behavior left unchanged. Kept next/image with
+  a 720x1280 JPEG source rather than building a manual srcset — source video
+  ceiling is 720x1280 (iPhone portrait HD), so next/image handles WebP and
+  responsive variants automatically. Old cabinet-hero-poster.jpg left on disk
+  pending production verification.
 
 ---
 
