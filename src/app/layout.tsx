@@ -72,7 +72,7 @@ const structuredData = {
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
     credentialCategory: 'license',
-    name: 'AZ ROC License #363664',
+    name: 'AZ ROC #363664',
   },
   sameAs: [
     'https://www.facebook.com/valleyprosaz',

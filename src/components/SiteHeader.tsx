@@ -75,7 +75,7 @@ export function SiteHeader({
               Valley Painting Pros
             </span>
             <span className="mt-1 hidden font-body text-[8px] font-semibold uppercase leading-tight tracking-[0.12em] text-mid sm:block sm:text-[10px] sm:tracking-[0.18em]">
-              <span className="hidden sm:inline">Cabinet refinishing | </span>AZ ROC CR-34 #363664
+              <span className="hidden sm:inline">Cabinet refinishing | </span>AZ ROC #363664
             </span>
           </span>
         </a>

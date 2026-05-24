@@ -274,9 +274,11 @@ Key line: "A $15,000 kitchen remodel result for $4,800."
 - Do NOT name specific paint products (Sherwin-Williams, Dunn-Edwards, etc.)
 
 ### ROC License
-- AZ ROC CR-34 #363664 — display in every page footer and anywhere credibility
-  is referenced. CR-34 = dual residential/commercial classification.
-  Always include the classification, not just the number.
+- AZ ROC #363664 — display in every page footer and anywhere credibility
+  is referenced. Use this shorter public-facing format across website copy and
+  canonical metadata.
+- CR-34 is the license classification and may appear only as supporting internal
+  or explanatory context when needed, never in the main public trust signal.
 
 ---
 
@@ -363,7 +365,7 @@ When auditing the site, check every page for:
 4. Color values — match v4.0 palette exactly
 5. Typography — Alfa Slab One display, Inter body/UI
 6. Voice — confident peer tone, no salesy language
-7. ROC license — AZ ROC CR-34 #363664 in footer, classification visible
+7. ROC license — AZ ROC #363664 in footer
 8. Value stack — all 8 inclusions accurate
 9. Price anchoring — against replacement, not competitors
 10. No stale content

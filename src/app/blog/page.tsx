@@ -72,7 +72,7 @@ export default function BlogPage() {
                   '$150 per opening',
                   'Prep, prime, topcoat, hardware audit, soft-close hinge upgrade, felt pads, and deep clean included',
                   '5-year written warranty',
-                  'AZ ROC CR-34 #363664',
+                  'AZ ROC #363664',
                 ].map((item) => (
                   <div key={item} className="flex min-w-0 gap-3">
                     <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded bg-sage text-sm font-bold text-cream">

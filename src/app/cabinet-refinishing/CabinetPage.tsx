@@ -316,7 +316,7 @@ function Hero() {
                 ))}
               </ul>
               <p className="font-body italic text-[13px] leading-6 text-terra max-w-[310px] md:max-w-[520px] break-words">
-                Built for daily kitchen use. Verified locally: AZ ROC CR-34 #363664.
+                Built for daily kitchen use. Verified locally: AZ ROC #363664.
               </p>
             </div>
           </div>
@@ -439,7 +439,7 @@ function LegacySocialProofBar() {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2.5 transition-opacity hover:opacity-85"
-            aria-label="Verify AZ ROC CR-34 license #363664 on the Arizona Registrar of Contractors website — opens in a new tab"
+            aria-label="Verify AZ ROC #363664 on the Arizona Registrar of Contractors website — opens in a new tab"
           >
             <picture>
               <source srcSet="/images/badge-az-roc.webp" type="image/webp" />
@@ -453,7 +453,7 @@ function LegacySocialProofBar() {
               />
             </picture>
             <div className="text-left leading-tight">
-              <div className="font-body font-bold text-[15px] text-ink">AZ ROC CR-34 #363664</div>
+              <div className="font-body font-bold text-[15px] text-ink">AZ ROC #363664</div>
               <div className="font-body text-[12px] text-brown">Bonded · Insured · Verify →</div>
             </div>
           </a>
@@ -714,7 +714,7 @@ function WhatsIncluded() {
             Every commitment above is contractual. In writing, on every quote, before you sign.
           </p>
           <p className="font-body font-medium text-sm text-terra">
-            AZ ROC CR-34 #363664 · Bonded · $1M / $2M Liability Insured · Your protection is backed by a licensed contractor, not a handyman.
+            AZ ROC #363664 · Bonded · $1M / $2M Liability Insured · Your protection is backed by a licensed contractor, not a handyman.
           </p>
         </RevealSection>
       </div>
@@ -1081,11 +1081,11 @@ function FAQ() {
     },
     {
       q: 'I want to get a few quotes first \u2014 what should I ask each refinisher?',
-      a: 'Smart move. Here\u2019s the short list to ask every refinisher you compare us against: 1) Do you spray or brush/roll? (Spray = factory finish. Brush = visible marks.) 2) How many coats? (Our system is bonding primer plus two cabinet-grade finish coats.) 3) Do you sand and degrease before primer? (Both \u2014 skipping prep is why DIY paint peels.) 4) Do you remove doors and finish them off-cabinet? (We do. On-site finishing leaves drips and overspray.) 5) Is your warranty written and delivered at job completion? (Ours is, for 5 years.) 6) Is your ROC license active and complaint-free? (Look us up \u2014 AZ ROC CR-34 #363664 \u2014 at roc.az.gov.) Bring our answers to your other estimates. If a refinisher dodges any of these questions, that\u2019s your answer.',
+      a: 'Smart move. Here\u2019s the short list to ask every refinisher you compare us against: 1) Do you spray or brush/roll? (Spray = factory finish. Brush = visible marks.) 2) How many coats? (Our system is bonding primer plus two cabinet-grade finish coats.) 3) Do you sand and degrease before primer? (Both \u2014 skipping prep is why DIY paint peels.) 4) Do you remove doors and finish them off-cabinet? (We do. On-site finishing leaves drips and overspray.) 5) Is your warranty written and delivered at job completion? (Ours is, for 5 years.) 6) Is your ROC license active and complaint-free? (Look us up \u2014 AZ ROC #363664 \u2014 at roc.az.gov.) Bring our answers to your other estimates. If a refinisher dodges any of these questions, that\u2019s your answer.',
     },
     {
       q: 'How do I know I can trust your work?',
-      a: 'Three layers of verification, none of which require you to take our word for it. First: AZ ROC CR-34 #363664 \u2014 you can look up our license at roc.az.gov in 30 seconds. Active, in good standing, no complaints. Second: 5.0 Google rating across 7 reviews \u2014 every one on the public profile, every one named. No paid review services. Third: BBB accredited and a Torch Awards nominee for ethics. Beyond that, your protection is the written warranty delivered at job completion. If anything fails under normal use, you have a signed document that says we come back and fix it.',
+      a: 'Three layers of verification, none of which require you to take our word for it. First: AZ ROC #363664 \u2014 you can look up our license at roc.az.gov in 30 seconds. Active, in good standing, no complaints. Second: 5.0 Google rating across 7 reviews \u2014 every one on the public profile, every one named. No paid review services. Third: BBB accredited and a Torch Awards nominee for ethics. Beyond that, your protection is the written warranty delivered at job completion. If anything fails under normal use, you have a signed document that says we come back and fix it.',
     },
   ]
 

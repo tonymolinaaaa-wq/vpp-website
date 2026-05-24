@@ -85,7 +85,7 @@ export function Footer() {
             </a>
 
             <p className="font-body text-[13px] text-mid">
-              AZ ROC CR-34 #363664 | Licensed, Bonded &amp; Insured
+              AZ ROC #363664 | Licensed, Bonded &amp; Insured
             </p>
             <p className="font-body text-[13px] text-mid flex items-center gap-1">
               5.0{' '}

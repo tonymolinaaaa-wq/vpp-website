@@ -10,14 +10,14 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: codex/blog-congruence-audit
-- State last updated after commit: 1432a11a0e0ccaeaf75cd722298c66d3698afe14
-  fix(logos): swap header/footer monograms to SVG (#25)
-- Working tree at last update: uncommitted blog/header congruence plus focused
-  SEO/hierarchy/mobile-audit changes pending Ricardo review; pre-existing
-  untracked Ricardo-created extra logo assets remain under public/logos/pngs
-  and public/logos/svgs
-- Local matched origin at last update: no (feature branch not pushed)
+- State last updated from branch: codex/roc-copy-format
+- State last updated after commit: 1601bae9471e192298a7c3c0591109d766a7b7db
+  feat(site): unify blog and landing experience
+- Working tree at last update: uncommitted ROC wording consistency changes
+  pending Ricardo review; pre-existing untracked Ricardo-created extra logo
+  assets remain under public/logos/pngs and public/logos/svgs
+- Local matched origin at last update: yes for main at branch creation; feature
+  branch is local and not pushed
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -27,30 +27,24 @@
 
 Date: 2026-05-24
 Agent: Codex
-Branch worked: codex/blog-congruence-audit
-Files touched: src/components/SiteHeader.tsx,
-  src/components/TrustSignalCards.tsx,
-  src/app/cabinet-refinishing/CabinetPage.tsx,
-  src/app/cabinet-refinishing/page.tsx, src/app/blog/page.tsx,
-  src/app/blog/[slug]/page.tsx, src/components/Footer.tsx,
-  src/components/StickyMobileCTA.tsx,
-  src/components/blog/BlogInlineCTA.tsx,
+Branch worked: codex/roc-copy-format
+Files touched: AGENTS.md, src/components/TrustSignalCards.tsx,
+  src/components/StickyMobileCTA.tsx, src/components/Footer.tsx,
+  src/components/SiteHeader.tsx, src/app/blog/page.tsx,
   src/components/blog/BlogEstimateForm.tsx,
-  src/components/blog/BlogTrustSignals.tsx, AI-STATE.md
+  src/app/layout.tsx,
+  src/app/cabinet-refinishing/page.tsx,
+  src/app/cabinet-refinishing/CabinetPage.tsx, AI-STATE.md
 Committed: none; work is pending Level 2 review before staging.
-Edited but not committed: shared SiteHeader extraction, blog index/article
-  header replacement, shared TrustSignalCards proof block, visible CR-34
-  license wording cleanup, palette cleanup, mobile header/text wrapping fixes,
-  cabinet/blog canonical and og:url metadata, landing/blog H1 keyword-hierarchy
-  adjustments, 375px hero overflow fixes, and a footer Explore navigation link
-  to /blog from the landing page. The landing hero also now restores "Same
-  Cabinets. Completely Different ..." with a reduced-motion-aware typewriter
-  rotating Kitchen, Bathroom Vanity, Laundry Room, Built-Ins, and Wet Bar.
-  Extra Ricardo-created logo assets remain untracked under public/logos/pngs
-  and public/logos/svgs.
-Blockers encountered: src/app/layout.tsx still contains global metadata using
-  "AZ ROC #363664" without CR-34; left untouched because layout.tsx is a
-  Level 1 gate file requiring explicit patch approval before writes.
+Edited but not committed: public-facing ROC wording and page-level metadata /
+  FAQ copy changed from "AZ ROC CR-34 #363664" to "AZ ROC #363664"; AGENTS.md
+  updated so future website copy and canonical metadata use the shorter public
+  trust-signal format while CR-34 remains internal/explanatory context only;
+  src/app/layout.tsx structured-data credential label changed from
+  "AZ ROC License #363664" to "AZ ROC #363664" after Ricardo approved the
+  Level 1 gated write. Extra Ricardo-created logo assets remain untracked under
+  public/logos/pngs and public/logos/svgs.
+Blockers encountered: none.
 
 ---
 
@@ -123,6 +117,10 @@ Blockers encountered: src/app/layout.tsx still contains global metadata using
   cabinet-specific spaces: Kitchen, Bathroom Vanity, Laundry Room, Built-Ins,
   and Wet Bar. The hero eyebrow keeps "East Valley Cabinet Refinishing" for
   service clarity, and the animation respects reduced-motion preferences.
+- 2026-05-24: Standardized the public-facing ROC trust signal to
+  "AZ ROC #363664" for website copy and canonical metadata. CR-34 remains valid
+  license-class context, but should be used only internally or as explanatory
+  support when needed, not in the primary public trust signal.
 
 ---
 

@@ -64,7 +64,7 @@ export function TrustSignalCards({ compact = false }: TrustSignalCardsProps) {
         target="_blank"
         rel="noopener noreferrer"
         className="group flex flex-col items-center rounded-lg border border-rule/70 bg-cream p-5 text-center transition-all hover:-translate-y-0.5 hover:border-terra/60 hover:shadow-md"
-        aria-label="Verify AZ ROC CR-34 license #363664 on the Arizona Registrar of Contractors website - opens in a new tab"
+        aria-label="Verify AZ ROC #363664 on the Arizona Registrar of Contractors website - opens in a new tab"
       >
         <picture>
           <source srcSet="/images/badge-az-roc.webp" type="image/webp" />
@@ -77,7 +77,7 @@ export function TrustSignalCards({ compact = false }: TrustSignalCardsProps) {
             unoptimized
           />
         </picture>
-        <div className="font-body text-lg font-bold text-ink">AZ ROC CR-34 #363664</div>
+        <div className="font-body text-lg font-bold text-ink">AZ ROC #363664</div>
         <div className="mt-1 font-body text-sm text-brown">Bonded, insured, and publicly verifiable.</div>
         <span className="mt-4 inline-block font-body text-xs font-semibold uppercase tracking-[0.16em] text-terra group-hover:text-terra-dark">
           Verify license

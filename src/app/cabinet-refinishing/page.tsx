@@ -4,7 +4,7 @@ import CabinetPage from './CabinetPage'
 const pageTitle =
   'Cabinet Refinishing in Chandler, Gilbert, Mesa, Queen Creek, Scottsdale & Tempe | Valley Painting Pros'
 const pageDescription =
-  'Cabinet refinishing in the East Valley. AZ ROC CR-34 #363664, 5-star rated, 5-year warranty. Custom quote — free in-home estimate. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.'
+  'Cabinet refinishing in the East Valley. AZ ROC #363664, 5-star rated, 5-year warranty. Custom quote — free in-home estimate. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.'
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -75,7 +75,7 @@ const faqSchema = {
       name: 'I want to get a few quotes first — what should I ask each refinisher?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Smart move. Here’s the short list to ask every refinisher you compare us against: 1) Do you spray or brush/roll? (Spray = factory finish. Brush = visible marks.) 2) How many coats? (Our system is bonding primer plus two cabinet-grade finish coats.) 3) Do you sand and degrease before primer? (Both — skipping prep is why DIY paint peels.) 4) Do you remove doors and finish them off-cabinet? (We do. On-site finishing leaves drips and overspray.) 5) Is your warranty written and delivered at job completion? (Ours is, for 5 years.) 6) Is your ROC license active and complaint-free? (Look us up — AZ ROC CR-34 #363664 — at roc.az.gov.) Bring our answers to your other estimates. If a refinisher dodges any of these questions, that’s your answer.',
+        text: 'Smart move. Here’s the short list to ask every refinisher you compare us against: 1) Do you spray or brush/roll? (Spray = factory finish. Brush = visible marks.) 2) How many coats? (Our system is bonding primer plus two cabinet-grade finish coats.) 3) Do you sand and degrease before primer? (Both — skipping prep is why DIY paint peels.) 4) Do you remove doors and finish them off-cabinet? (We do. On-site finishing leaves drips and overspray.) 5) Is your warranty written and delivered at job completion? (Ours is, for 5 years.) 6) Is your ROC license active and complaint-free? (Look us up — AZ ROC #363664 — at roc.az.gov.) Bring our answers to your other estimates. If a refinisher dodges any of these questions, that’s your answer.',
       },
     },
     {
@@ -83,7 +83,7 @@ const faqSchema = {
       name: 'How do I know I can trust your work?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Three layers of verification, none of which require you to take our word for it. First: AZ ROC CR-34 #363664 — you can look up our license at roc.az.gov in 30 seconds. Active, in good standing, no complaints. Second: 5.0 Google rating across 7 reviews — every one on the public profile, every one named. No paid review services. Third: BBB accredited and a Torch Awards nominee for ethics. Beyond that, your protection is the written warranty delivered at job completion. If anything fails under normal use, you have a signed document that says we come back and fix it.',
+        text: 'Three layers of verification, none of which require you to take our word for it. First: AZ ROC #363664 — you can look up our license at roc.az.gov in 30 seconds. Active, in good standing, no complaints. Second: 5.0 Google rating across 7 reviews — every one on the public profile, every one named. No paid review services. Third: BBB accredited and a Torch Awards nominee for ethics. Beyond that, your protection is the written warranty delivered at job completion. If anything fails under normal use, you have a signed document that says we come back and fix it.',
       },
     },
   ],

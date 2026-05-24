@@ -54,7 +54,7 @@ export function StickyMobileCTA() {
               Call for a Cabinet Quote
             </span>
             <span className="font-body font-light text-[11px] text-cream/80">
-              AZ ROC CR-34 #363664 | 5-year warranty
+              AZ ROC #363664 | 5-year warranty
             </span>
           </div>
         </a>
