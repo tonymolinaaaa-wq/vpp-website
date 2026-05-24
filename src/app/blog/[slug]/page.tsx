@@ -8,6 +8,7 @@ import { BlogInlineCTA } from '@/components/blog/BlogInlineCTA'
 import { BlogTrustSignals } from '@/components/blog/BlogTrustSignals'
 import { RelatedPosts } from '@/components/blog/RelatedPosts'
 import { Footer } from '@/components/Footer'
+import { SiteHeader } from '@/components/SiteHeader'
 import {
   getBlogPostBySlug,
   getPublishedBlogPosts,
@@ -42,6 +43,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
     openGraph: {
       title: frontmatter.ogTitle,
       description: frontmatter.ogDescription,
+      url: frontmatter.canonicalUrl,
       type: 'article',
       locale: 'en_US',
       publishedTime: frontmatter.date,
@@ -153,33 +155,24 @@ export default function BlogArticlePage({ params }: PageProps) {
         />
       )}
 
+      <SiteHeader trackingPage={`blog_${frontmatter.slug}`} />
       <main className="bg-cream">
-        <section className="border-b border-rule bg-cream pt-8">
-          <div className="mx-auto max-w-content px-6">
-            <nav className="flex items-center justify-between gap-4 py-4">
-              <Link href="/blog" className="font-body text-sm font-semibold text-terra underline underline-offset-4">
-                Blog
-              </Link>
-              <Link href="/cabinet-refinishing" className="font-display text-xl text-ink">
-                Valley Painting <span className="italic text-terra">Pros</span>
-              </Link>
-            </nav>
-          </div>
-        </section>
-
         <article>
-          <header className="bg-cream py-12 md:py-16">
+          <header id="top" className="bg-cream pb-12 pt-[104px] md:pb-16 md:pt-[128px]">
             <div className="mx-auto grid max-w-content gap-10 px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
               <div>
+                <Link href="/blog" className="mb-5 inline-flex font-body text-sm font-semibold text-terra underline underline-offset-4">
+                  Cabinet Refinishing Blog
+                </Link>
                 <div className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-1 font-body text-xs font-semibold uppercase tracking-[0.16em] text-terra">
                   <span>{frontmatter.category}</span>
                   <span className="text-mid" aria-hidden="true">|</span>
                   <span className="text-brown">{frontmatter.readingTime}</span>
                 </div>
-                <h1 className="font-display text-[34px] leading-[1.15] text-ink md:text-[48px]">
+                <h1 className="max-w-[310px] break-words font-display text-[27px] leading-[1.15] text-ink sm:max-w-full md:text-[48px]">
                   {frontmatter.title}
                 </h1>
-                <p className="mt-5 font-body text-lg leading-8 text-brown">
+                <p className="mt-5 max-w-[310px] break-words font-body text-lg leading-8 text-brown sm:max-w-full">
                   {frontmatter.description}
                 </p>
                 <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 font-body text-sm text-brown">
@@ -224,10 +217,10 @@ export default function BlogArticlePage({ params }: PageProps) {
               <aside className="lg:sticky lg:top-6">
                 <div className="rounded-lg border border-rule bg-sand p-5">
                   <p className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-terra">
-                    Article Source
+                    Estimate Next Step
                   </p>
                   <p className="mt-3 font-body text-sm leading-6 text-brown">
-                    Lead source: <span className="font-semibold text-ink">{frontmatter.ctaSource}</span>
+                    Use this guide to get oriented, then send the basics when you want a clear cabinet refinishing estimate for your own kitchen.
                   </p>
                   <a
                     href="#quote-form"

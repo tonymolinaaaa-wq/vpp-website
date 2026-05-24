@@ -4,7 +4,9 @@ import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { ReactCompareSlider, ReactCompareSliderImage, ReactCompareSliderHandle } from 'react-compare-slider'
 import { Footer } from '@/components/Footer'
+import { SiteHeader } from '@/components/SiteHeader'
 import { StickyMobileCTA } from '@/components/StickyMobileCTA'
+import { TrustSignalCards } from '@/components/TrustSignalCards'
 import { trackEvent } from '@/lib/analytics'
 
 /* ───────── ANIMATION HOOK ───────── */
@@ -59,14 +61,6 @@ function RevealSection({
 }
 
 /* ───────── ICONS ───────── */
-
-function PhoneIcon({ className = 'w-5 h-5' }: { className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-      <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd" />
-    </svg>
-  )
-}
 
 function StarIcon({ className = 'w-5 h-5 text-terra' }: { className?: string }) {
   return (
@@ -144,70 +138,79 @@ function smoothScrollTo(id: string) {
   window.scrollTo({ top, behavior: 'smooth' })
 }
 
-/* ───────── 1. STICKY NAV ───────── */
+const heroRotatingSpaces = [
+  'Kitchen',
+  'Bathroom Vanity',
+  'Laundry Room',
+  'Built-Ins',
+  'Wet Bar',
+]
 
-function StickyNav() {
-  const [scrolled, setScrolled] = useState(false)
+function RotatingHeroSpace() {
+  const [spaceIndex, setSpaceIndex] = useState(0)
+  const [displayText, setDisplayText] = useState(heroRotatingSpaces[0])
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [canAnimate, setCanAnimate] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10)
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const syncMotionPreference = () => setCanAnimate(!media.matches)
+
+    syncMotionPreference()
+    media.addEventListener('change', syncMotionPreference)
+    return () => media.removeEventListener('change', syncMotionPreference)
   }, [])
 
+  useEffect(() => {
+    if (!canAnimate) {
+      setDisplayText(heroRotatingSpaces[0])
+      setIsDeleting(false)
+      setSpaceIndex(0)
+      return
+    }
+
+    const currentSpace = heroRotatingSpaces[spaceIndex]
+    let delay = 85
+
+    if (isDeleting) {
+      delay = 40
+      if (displayText.length === 0) {
+        setIsDeleting(false)
+        setSpaceIndex((spaceIndex + 1) % heroRotatingSpaces.length)
+        return
+      }
+    } else if (displayText === currentSpace) {
+      delay = 1650
+    }
+
+    const timer = window.setTimeout(() => {
+      if (isDeleting) {
+        setDisplayText(currentSpace.slice(0, displayText.length - 1))
+        return
+      }
+
+      if (displayText === currentSpace) {
+        setIsDeleting(true)
+        return
+      }
+
+      setDisplayText(currentSpace.slice(0, displayText.length + 1))
+    }, delay)
+
+    return () => window.clearTimeout(timer)
+  }, [canAnimate, displayText, isDeleting, spaceIndex])
+
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 h-16 md:h-[72px] flex items-center transition-all duration-200 ${
-        scrolled
-          ? 'bg-cream/95 backdrop-blur-md shadow-sm border-b border-sand'
-          : 'bg-cream border-b border-sand'
-      }`}
-    >
-      <div className="mx-auto max-w-content w-full px-4 md:px-6 flex items-center justify-between gap-3">
-        <a href="#top" className="flex min-w-0 items-center gap-2.5 md:gap-3" aria-label="Valley Painting Pros home">
-          <span className="relative h-9 w-11 flex-shrink-0 overflow-hidden rounded bg-cream shadow-[inset_0_0_0_1px_rgba(31,26,20,0.12)] md:h-10 md:w-12" aria-hidden="true">
-            <img
-              src="/logos/svgs/vppmonogramcoloroncream.svg"
-              alt=""
-              width={1254}
-              height={1254}
-              className="absolute left-[47%] top-1/2 h-[58px] w-[58px] max-w-none -translate-x-1/2 -translate-y-1/2 md:h-[64px] md:w-[64px]"
-              fetchPriority="high"
-            />
-          </span>
-
-          <span className="flex min-w-0 flex-col justify-center">
-            <span className="font-display text-[14px] leading-none tracking-[0.01em] text-ink uppercase sm:text-xl md:text-2xl">
-              Valley Painting Pros
-            </span>
-            <span className="mt-1 text-[8px] font-body font-semibold uppercase tracking-[0.12em] text-mid leading-tight sm:text-[10px] sm:tracking-[0.18em]">
-              <span className="hidden sm:inline">Cabinet refinishing | </span>AZ ROC #363664
-            </span>
-          </span>
-        </a>
-
-        {/* Right side */}
-        <div className="flex items-center gap-3 md:gap-4">
-          <a
-            href="tel:+14804332680"
-            className="hidden sm:flex items-center gap-1.5 font-body font-medium text-sm text-brown hover:text-terra transition-colors"
-          >
-            <PhoneIcon className="w-4 h-4" />
-            (480) 433-2680
-          </a>
-          <button
-            onClick={() => smoothScrollTo('quote-form')}
-            className="bg-terra text-white font-body font-semibold text-xs md:text-[13px] px-3 md:px-4 py-2 rounded-lg hover:bg-terra-dark transition-colors whitespace-nowrap"
-          >
-            Get a Quote
-          </button>
-        </div>
-      </div>
-    </nav>
+    <span className="inline-flex min-w-[12ch] items-baseline">
+      <span>{displayText || '\u00a0'}.</span>
+      {canAnimate ? (
+        <span className="ml-1 inline-block h-[0.88em] w-[0.08em] animate-pulse bg-terra align-[-0.08em]" aria-hidden="true" />
+      ) : null}
+    </span>
   )
 }
 
-/* ───────── 2. HERO ───────── */
+/* ───────── 1. HERO ───────── */
 
 function Hero() {
   const [loaded, setLoaded] = useState(false)
@@ -230,29 +233,31 @@ function Hero() {
                 transition: 'opacity 600ms ease 300ms, transform 600ms ease 300ms',
               }}
             >
-              East Valley&apos;s Cabinet Refinishing Specialists
+              East Valley Cabinet Refinishing
             </p>
 
             <h1
-              className="font-display text-ink text-[34px] md:text-[52px] leading-[1.15] mb-5"
+              className="mb-5 max-w-[320px] break-words font-display text-[28px] leading-[1.15] text-ink sm:text-[34px] md:max-w-[760px] md:text-[52px]"
               style={{
                 opacity: loaded ? 1 : 0,
                 transform: loaded ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'opacity 600ms ease 400ms, transform 600ms ease 400ms',
               }}
             >
-              Same Cabinets.<br />Completely Different Kitchen.
+              Same Cabinets.<br />
+              Completely Different<span className="hidden md:inline"> </span><br className="md:hidden" />
+              <RotatingHeroSpace />
             </h1>
 
             <p
-              className="font-body text-brown text-base md:text-[19px] leading-[1.7] max-w-[520px] mb-7"
+              className="font-body text-brown text-base md:text-[19px] leading-[1.7] max-w-[310px] md:max-w-[520px] mb-7 break-words"
               style={{
                 opacity: loaded ? 1 : 0,
                 transform: loaded ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'opacity 600ms ease 600ms, transform 600ms ease 600ms',
               }}
             >
-              Still walking past cabinets you don&apos;t love? Your kitchen should feel like yours — not the last owner&apos;s taste. We refinish your existing cabinets in 3–5 days, for a fraction of what a remodel costs.
+              Still walking past cabinets you don&apos;t love? Your space should feel like yours — not the last owner&apos;s taste. We refinish your existing cabinets in 3–5 days, for a fraction of what replacement costs.
             </p>
 
             <div
@@ -284,7 +289,7 @@ function Hero() {
                 or see recent transformations →
               </button>
 
-              <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-3 list-none p-0">
+              <ul className="flex flex-col items-start gap-x-4 gap-y-2 mb-3 list-none p-0 sm:flex-row sm:flex-wrap sm:items-center">
                 {[
                   { label: 'Licensed, Bonded & Insured', kind: 'check' as const },
                   { label: '5-Star Rated', kind: 'stars' as const },
@@ -294,7 +299,7 @@ function Hero() {
                     {item.kind === 'stars' ? (
                       <span className="inline-flex items-center flex-shrink-0" aria-label="5 out of 5 stars">
                         {[...Array(5)].map((_, i) => (
-                          <svg key={i} viewBox="0 0 20 20" fill="#E8A33D" className="w-[13px] h-[13px]" aria-hidden="true">
+                          <svg key={i} viewBox="0 0 20 20" fill="#C24A22" className="w-[13px] h-[13px]" aria-hidden="true">
                             <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
                           </svg>
                         ))}
@@ -310,8 +315,8 @@ function Hero() {
                   </li>
                 ))}
               </ul>
-              <p className="font-body italic text-[13px] text-terra">
-                We take 4–6 cabinet projects per month to maintain our quality standard.
+              <p className="font-body italic text-[13px] leading-6 text-terra max-w-[310px] md:max-w-[520px] break-words">
+                Built for daily kitchen use. Verified locally: AZ ROC CR-34 #363664.
               </p>
             </div>
           </div>
@@ -375,102 +380,7 @@ function SocialProofBar() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          <a
-            href="https://g.page/r/CX7AG1aNL5PkEBE"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col items-center rounded-lg border border-rule/70 bg-cream p-5 text-center transition-all hover:-translate-y-0.5 hover:border-terra/60 hover:shadow-md"
-            aria-label="Read all 7 five-star Google reviews - opens Google in a new tab"
-          >
-            <span className="mb-4 flex justify-center gap-[2px]" aria-label="5.0 out of 5 stars">
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} viewBox="0 0 20 20" fill="#E8A33D" className="h-5 w-5" aria-hidden="true">
-                  <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
-                </svg>
-              ))}
-            </span>
-            <div className="font-body font-bold text-lg text-ink">5.0 Google Rating</div>
-            <div className="mt-1 font-body text-sm text-brown">7 public reviews from East Valley homeowners.</div>
-            <span className="mt-4 inline-block font-body text-xs font-semibold uppercase tracking-[0.16em] text-terra group-hover:text-terra-dark">
-              Read reviews
-            </span>
-          </a>
-
-          <a
-            href="https://azroc.my.site.com/AZRoc/s/contractor-search?licenseId=a0ocs00000JC2pVAAT"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col items-center rounded-lg border border-rule/70 bg-cream p-5 text-center transition-all hover:-translate-y-0.5 hover:border-terra/60 hover:shadow-md"
-            aria-label="Verify ROC license #363664 on the Arizona Registrar of Contractors website - opens in a new tab"
-          >
-            <picture>
-              <source srcSet="/images/badge-az-roc.webp" type="image/webp" />
-              <Image
-                src="/images/badge-az-roc.png"
-                alt="Arizona Registrar of Contractors licensed contractor badge"
-                width={48}
-                height={48}
-                className="mb-4 h-12 w-12"
-                unoptimized
-              />
-            </picture>
-            <div className="font-body font-bold text-lg text-ink">AZ ROC #363664</div>
-            <div className="mt-1 font-body text-sm text-brown">Bonded, insured, and publicly verifiable.</div>
-            <span className="mt-4 inline-block font-body text-xs font-semibold uppercase tracking-[0.16em] text-terra group-hover:text-terra-dark">
-              Verify license
-            </span>
-          </a>
-
-          <a
-            href="https://www.bbb.org/us/az/mesa/profile/painting-contractors/valley-painting-pros-llc-1126-1000156113/#sealclick"
-            target="_blank"
-            rel="nofollow noopener noreferrer"
-            className="group flex flex-col items-center rounded-lg border border-rule/70 bg-cream p-5 text-center transition-all hover:-translate-y-0.5 hover:border-terra/60 hover:shadow-md"
-            aria-label="Verify Valley Painting Pros BBB Accreditation - opens BBB Business Profile in a new tab"
-          >
-            <div className="mb-4 flex h-[52px] w-full items-center justify-center">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://seal-central-northern-western-arizona.bbb.org/seals/blue-seal-250-52-whitetxt-bbb-1000156113.png"
-                alt="Valley Painting Pros LLC BBB Business Review"
-                width={250}
-                height={52}
-                style={{ border: 0 }}
-                className="h-[52px] w-auto max-w-full"
-              />
-            </div>
-            <div className="font-body font-bold text-lg text-ink">BBB Accredited</div>
-            <div className="mt-1 font-body text-sm text-brown">Torch Awards nominee for ethics.</div>
-            <span className="mt-4 inline-block font-body text-xs font-semibold uppercase tracking-[0.16em] text-terra group-hover:text-terra-dark">
-              View profile
-            </span>
-          </a>
-
-          <div className="flex flex-col items-center rounded-lg border border-rule/70 bg-cream p-5 text-center">
-            <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-sage/30 bg-sage/15 text-sage shadow-sm" aria-hidden="true">
-              <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none">
-                <path
-                  d="M12 2.75l7 2.55v5.65c0 4.55-2.88 8.62-7 10.13-4.12-1.51-7-5.58-7-10.13V5.3l7-2.55z"
-                  fill="currentColor"
-                  opacity="0.95"
-                />
-                <path
-                  d="M8.25 12.2l2.35 2.35 5.15-5.3"
-                  stroke="#FAF6EC"
-                  strokeWidth={2.1}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
-            <div className="font-body font-bold text-lg text-ink">5-Year Warranty</div>
-            <div className="mt-1 font-body text-sm text-brown">Delivered in writing at job completion.</div>
-            <span className="mt-4 inline-block font-body text-xs font-semibold uppercase tracking-[0.16em] text-terra">
-              Written protection
-            </span>
-          </div>
-        </div>
+        <TrustSignalCards />
       </div>
     </section>
   )
@@ -492,7 +402,7 @@ function LegacySocialProofBar() {
           >
             <span className="flex gap-[2px]" aria-label="5.0 out of 5 stars">
               {[...Array(5)].map((_, i) => (
-                <svg key={i} viewBox="0 0 20 20" fill="#E8A33D" className="w-[20px] h-[20px]" aria-hidden="true">
+                <svg key={i} viewBox="0 0 20 20" fill="#C24A22" className="w-[20px] h-[20px]" aria-hidden="true">
                   <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
                 </svg>
               ))}
@@ -529,7 +439,7 @@ function LegacySocialProofBar() {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2.5 transition-opacity hover:opacity-85"
-            aria-label="Verify ROC license #363664 on the Arizona Registrar of Contractors website — opens in a new tab"
+            aria-label="Verify AZ ROC CR-34 license #363664 on the Arizona Registrar of Contractors website — opens in a new tab"
           >
             <picture>
               <source srcSet="/images/badge-az-roc.webp" type="image/webp" />
@@ -543,7 +453,7 @@ function LegacySocialProofBar() {
               />
             </picture>
             <div className="text-left leading-tight">
-              <div className="font-body font-bold text-[15px] text-ink">AZ ROC #363664</div>
+              <div className="font-body font-bold text-[15px] text-ink">AZ ROC CR-34 #363664</div>
               <div className="font-body text-[12px] text-brown">Bonded · Insured · Verify →</div>
             </div>
           </a>
@@ -558,7 +468,7 @@ function LegacySocialProofBar() {
                 {/* Outer flame — gold */}
                 <path
                   d="M12 2.2c-1.6 2.4-4.2 4-3.4 7.6.3 1.6 1.6 2.7 3.4 2.5 1.8.2 3.1-.9 3.4-2.5C16.2 6.2 13.6 4.6 12 2.2z"
-                  fill="#E8A33D"
+                  fill="#C24A22"
                 />
                 {/* Inner flame highlight — cream */}
                 <path
@@ -804,7 +714,7 @@ function WhatsIncluded() {
             Every commitment above is contractual. In writing, on every quote, before you sign.
           </p>
           <p className="font-body font-medium text-sm text-terra">
-            AZ ROC #363664 · Bonded · $1M / $2M Liability Insured · Your protection is backed by a licensed contractor, not a handyman.
+            AZ ROC CR-34 #363664 · Bonded · $1M / $2M Liability Insured · Your protection is backed by a licensed contractor, not a handyman.
           </p>
         </RevealSection>
       </div>
@@ -1171,11 +1081,11 @@ function FAQ() {
     },
     {
       q: 'I want to get a few quotes first \u2014 what should I ask each refinisher?',
-      a: 'Smart move. Here\u2019s the short list to ask every refinisher you compare us against: 1) Do you spray or brush/roll? (Spray = factory finish. Brush = visible marks.) 2) How many coats? (Our system is bonding primer plus two cabinet-grade finish coats.) 3) Do you sand and degrease before primer? (Both \u2014 skipping prep is why DIY paint peels.) 4) Do you remove doors and finish them off-cabinet? (We do. On-site finishing leaves drips and overspray.) 5) Is your warranty written and delivered at job completion? (Ours is, for 5 years.) 6) Is your ROC license active and complaint-free? (Look us up \u2014 #363664 \u2014 at roc.az.gov.) Bring our answers to your other estimates. If a refinisher dodges any of these questions, that\u2019s your answer.',
+      a: 'Smart move. Here\u2019s the short list to ask every refinisher you compare us against: 1) Do you spray or brush/roll? (Spray = factory finish. Brush = visible marks.) 2) How many coats? (Our system is bonding primer plus two cabinet-grade finish coats.) 3) Do you sand and degrease before primer? (Both \u2014 skipping prep is why DIY paint peels.) 4) Do you remove doors and finish them off-cabinet? (We do. On-site finishing leaves drips and overspray.) 5) Is your warranty written and delivered at job completion? (Ours is, for 5 years.) 6) Is your ROC license active and complaint-free? (Look us up \u2014 AZ ROC CR-34 #363664 \u2014 at roc.az.gov.) Bring our answers to your other estimates. If a refinisher dodges any of these questions, that\u2019s your answer.',
     },
     {
       q: 'How do I know I can trust your work?',
-      a: 'Three layers of verification, none of which require you to take our word for it. First: AZ ROC #363664 \u2014 you can look up our license at roc.az.gov in 30 seconds. Active, in good standing, no complaints. Second: 5.0 Google rating across 7 reviews \u2014 every one on the public profile, every one named. No paid review services. Third: BBB accredited and a Torch Awards nominee for ethics. Beyond that, your protection is the written warranty delivered at job completion. If anything fails under normal use, you have a signed document that says we come back and fix it.',
+      a: 'Three layers of verification, none of which require you to take our word for it. First: AZ ROC CR-34 #363664 \u2014 you can look up our license at roc.az.gov in 30 seconds. Active, in good standing, no complaints. Second: 5.0 Google rating across 7 reviews \u2014 every one on the public profile, every one named. No paid review services. Third: BBB accredited and a Torch Awards nominee for ethics. Beyond that, your protection is the written warranty delivered at job completion. If anything fails under normal use, you have a signed document that says we come back and fix it.',
     },
   ]
 
@@ -1581,7 +1491,7 @@ function QuoteForm() {
 export default function CabinetPage() {
   return (
     <>
-      <StickyNav />
+      <SiteHeader homeHref="#top" trackingPage="cabinet_refinishing" />
       <Hero />
       <SocialProofBar />
       <ProblemAgitate />

@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="bg-ink py-12 md:py-16">
+    <footer id="footer" className="bg-ink py-12 md:py-16">
       <div className="mx-auto max-w-content px-6">
         {/* Row 1 — Brand + Contact */}
         <div className="flex flex-col gap-8 md:flex-row md:justify-between md:items-start mb-10">
@@ -40,6 +40,27 @@ export function Footer() {
             </p>
           </div>
 
+          {/* Footer navigation */}
+          <nav className="space-y-3" aria-label="Footer navigation">
+            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-sand-light">
+              Explore
+            </p>
+            <div className="flex flex-col gap-2">
+              <a
+                href="/cabinet-refinishing"
+                className="font-body text-sm font-semibold text-rule transition-colors hover:text-sand-light"
+              >
+                Cabinet Refinishing
+              </a>
+              <a
+                href="/blog"
+                className="font-body text-sm font-semibold text-rule transition-colors hover:text-sand-light"
+              >
+                Cabinet Refinishing Blog
+              </a>
+            </div>
+          </nav>
+
           {/* Trust credentials */}
           <div className="space-y-3">
             {/* BBB Badge */}
@@ -50,7 +71,7 @@ export function Footer() {
               className="inline-flex items-center gap-3 hover:opacity-90 transition-opacity group"
               aria-label="BBB Accredited Business — View VPP profile"
             >
-              <span className="inline-flex items-center justify-center bg-[#005A78] text-white font-bold text-[13px] tracking-wide rounded px-2 py-1 leading-none flex-shrink-0">
+              <span className="inline-flex items-center justify-center bg-sage text-cream font-bold text-[13px] tracking-wide rounded px-2 py-1 leading-none flex-shrink-0">
                 BBB
               </span>
               <div className="flex flex-col">
@@ -64,7 +85,7 @@ export function Footer() {
             </a>
 
             <p className="font-body text-[13px] text-mid">
-              AZ ROC #363664 · Licensed, Bonded &amp; Insured
+              AZ ROC CR-34 #363664 | Licensed, Bonded &amp; Insured
             </p>
             <p className="font-body text-[13px] text-mid flex items-center gap-1">
               5.0{' '}

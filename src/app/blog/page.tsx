@@ -5,6 +5,7 @@ import { BlogBottomCTA } from '@/components/blog/BlogInlineCTA'
 import { BlogEstimateForm } from '@/components/blog/BlogEstimateForm'
 import { BlogTrustSignals } from '@/components/blog/BlogTrustSignals'
 import { Footer } from '@/components/Footer'
+import { SiteHeader } from '@/components/SiteHeader'
 import { getBlogCategories, getFeaturedBlogPosts, getPublishedBlogPosts } from '@/lib/blog'
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     title: 'Cabinet Refinishing Blog | Valley Painting Pros',
     description:
       'Cabinet refinishing guides for Phoenix and East Valley homeowners comparing cost, timeline, process, and estimate options.',
+    url: 'https://www.valleypaintingpros.com/blog',
     type: 'website',
     locale: 'en_US',
   },
@@ -30,52 +32,38 @@ export default function BlogPage() {
 
   return (
     <>
+      <SiteHeader trackingPage="blog_index" />
       <main className="bg-cream">
-        <section className="border-b border-rule bg-cream pt-8">
-          <div className="mx-auto max-w-content px-6">
-            <nav className="flex items-center justify-between gap-4 py-4">
-              <Link href="/cabinet-refinishing" className="font-display text-xl text-ink">
-                Valley Painting <span className="italic text-terra">Pros</span>
-              </Link>
-              <a
-                href="tel:+14804332680"
-                className="font-body text-sm font-semibold text-terra underline underline-offset-4"
-              >
-                (480) 433-2680
-              </a>
-            </nav>
-          </div>
-        </section>
-
-        <section className="bg-cream py-16 md:py-20">
+        <section id="top" className="bg-cream pb-16 pt-[112px] md:pb-20 md:pt-[128px]">
           <div className="mx-auto grid max-w-content gap-10 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
             <div>
               <p className="font-body text-xs font-semibold uppercase tracking-[0.22em] text-terra">
                 Cabinet Refinishing Resources
               </p>
-              <h1 className="mt-4 max-w-3xl font-display text-[36px] leading-[1.15] text-ink md:text-[54px]">
-                Clear answers before you refinish your kitchen.
+              <h1 className="mt-4 max-w-[310px] break-words font-display text-[30px] leading-[1.15] text-ink sm:max-w-3xl md:text-[54px]">
+                <span className="sm:hidden">Cabinet<br />refinishing answers<br />for East Valley kitchens.</span>
+                <span className="hidden sm:inline">Cabinet refinishing answers for East Valley kitchens.</span>
               </h1>
-              <p className="mt-5 max-w-2xl font-body text-lg leading-8 text-brown">
+              <p className="mt-5 max-w-[310px] font-body text-lg leading-8 text-brown sm:max-w-2xl">
                 Guides for Phoenix and East Valley homeowners comparing cabinet refinishing cost, timeline, durability, and what to expect before asking for an estimate.
               </p>
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-7 flex flex-col items-start gap-3 sm:flex-row">
                 <a
                   href="#quote-form"
-                  className="inline-flex min-h-[54px] items-center justify-center rounded-lg bg-terra px-6 font-body text-base font-semibold text-white transition-colors hover:bg-terra-dark"
+                  className="inline-flex min-h-[54px] w-full max-w-[310px] items-center justify-center rounded-lg bg-terra px-6 font-body text-base font-semibold text-white transition-colors hover:bg-terra-dark sm:w-auto"
                 >
                   Get a Cabinet Estimate
                 </a>
                 <Link
                   href="/cabinet-refinishing"
-                  className="inline-flex min-h-[54px] items-center justify-center rounded-lg border border-rule px-6 font-body text-base font-semibold text-ink transition-colors hover:border-terra hover:text-terra"
+                  className="inline-flex min-h-[54px] w-full max-w-[310px] items-center justify-center rounded-lg border border-rule px-6 font-body text-base font-semibold text-ink transition-colors hover:border-terra hover:text-terra sm:w-auto"
                 >
                   View Refinishing Service
                 </Link>
               </div>
             </div>
 
-            <div className="rounded-lg border border-rule bg-sand p-5 md:p-6">
+            <div className="max-w-[310px] rounded-lg border border-rule bg-sand p-5 sm:max-w-none md:p-6">
               <p className="font-body text-sm font-semibold uppercase tracking-[0.16em] text-terra">
                 What VPP is known for
               </p>
@@ -84,13 +72,13 @@ export default function BlogPage() {
                   '$150 per opening',
                   'Prep, prime, topcoat, hardware audit, soft-close hinge upgrade, felt pads, and deep clean included',
                   '5-year written warranty',
-                  'AZ ROC #363664',
+                  'AZ ROC CR-34 #363664',
                 ].map((item) => (
-                  <div key={item} className="flex gap-3">
+                  <div key={item} className="flex min-w-0 gap-3">
                     <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded bg-sage text-sm font-bold text-cream">
                       ✓
                     </span>
-                    <p className="font-body text-sm leading-6 text-ink">{item}</p>
+                    <p className="min-w-0 break-words font-body text-sm leading-6 text-ink [overflow-wrap:anywhere]">{item}</p>
                   </div>
                 ))}
               </div>

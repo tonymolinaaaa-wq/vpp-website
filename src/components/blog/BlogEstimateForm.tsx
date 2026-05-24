@@ -62,7 +62,7 @@ export function BlogEstimateForm({
               Share the basics and we will follow up with next steps. For most East Valley kitchens, cabinet refinishing takes 3-5 days.
             </p>
             <p className="mt-4 font-body text-sm font-semibold text-ink">
-              AZ ROC #363664 | Bonded | Insured | 5-year written warranty
+              AZ ROC CR-34 #363664 | Bonded | Insured | 5-year written warranty
             </p>
           </div>
 

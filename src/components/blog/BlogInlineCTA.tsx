@@ -52,7 +52,7 @@ export function BlogBottomCTA({
               Cabinet refinishing is priced at $150 per opening. Prep, primer, topcoat, soft-close hinge upgrade, hardware audit, felt pads, deep clean, and a 5-year written warranty are included.
             </p>
           </div>
-          <div className="rounded-lg border border-sand/15 bg-cream/5 p-5">
+          <div>
             <BlogTrustSignals dark />
             <a
               href="#quote-form"
