@@ -201,7 +201,7 @@ function RotatingHeroSpace() {
   }, [canAnimate, displayText, isDeleting, spaceIndex])
 
   return (
-    <span className="inline-flex min-w-[12ch] items-baseline">
+    <span className="inline-flex min-w-[11ch] items-baseline sm:min-w-[12ch]">
       <span>{displayText || '\u00a0'}.</span>
       {canAnimate ? (
         <span className="ml-1 inline-block h-[0.88em] w-[0.08em] animate-pulse bg-terra align-[-0.08em]" aria-hidden="true" />
@@ -213,60 +213,36 @@ function RotatingHeroSpace() {
 /* ───────── 1. HERO ───────── */
 
 function Hero() {
-  const [loaded, setLoaded] = useState(false)
-  useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 300)
-    return () => clearTimeout(timer)
-  }, [])
-
   return (
-    <section id="top" className="bg-cream pt-[72px] md:pt-[80px]">
-      <div className="mx-auto max-w-content px-6 pb-16 md:pb-24 min-h-[75vh] md:min-h-[85vh] flex items-center">
-        <div className="grid grid-cols-1 md:grid-cols-[55%_45%] gap-10 md:gap-12 items-center w-full">
-          {/* Left column — copy */}
-          <div>
-            <p
-              className="font-body font-semibold text-[11px] tracking-[0.22em] uppercase text-terra mb-4"
-              style={{
-                opacity: loaded ? 1 : 0,
-                transform: loaded ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'opacity 600ms ease 300ms, transform 600ms ease 300ms',
-              }}
-            >
+    <section id="top" className="relative isolate overflow-hidden bg-ink pt-16 md:pt-[72px]">
+      <Image
+        src="/images/gallery/suburban-gilbert-kitchen.png"
+        alt="Suburban Gilbert kitchen with white cabinets and a large island."
+        fill
+        sizes="100vw"
+        className="object-cover object-center"
+        priority
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/80 to-ink/55 md:via-ink/65 md:to-ink/20" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-ink/20" aria-hidden="true" />
+
+      <div className="relative z-10 mx-auto flex min-h-[75svh] max-w-content items-center px-6 py-12 md:min-h-[85svh] md:py-16">
+        <div className="w-full max-w-[680px]">
+            <p className="font-body font-semibold text-[11px] tracking-[0.22em] uppercase text-terra-light mb-4">
               East Valley Cabinet Refinishing
             </p>
 
-            <h1
-              className="mb-5 max-w-[320px] break-words font-display text-[28px] leading-[1.15] text-ink sm:text-[34px] md:max-w-[760px] md:text-[52px]"
-              style={{
-                opacity: loaded ? 1 : 0,
-                transform: loaded ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'opacity 600ms ease 400ms, transform 600ms ease 400ms',
-              }}
-            >
+            <h1 className="mb-5 max-w-[320px] break-words font-display text-[24px] leading-[1.34] text-cream min-[390px]:text-[27px] min-[390px]:leading-[1.28] sm:text-[34px] sm:leading-[1.15] md:max-w-[760px] md:text-[52px]">
               Same Cabinets.<br />
               Completely Different<span className="hidden md:inline"> </span><br className="md:hidden" />
               <RotatingHeroSpace />
             </h1>
 
-            <p
-              className="font-body text-brown text-base md:text-[19px] leading-[1.7] max-w-[310px] md:max-w-[520px] mb-7 break-words"
-              style={{
-                opacity: loaded ? 1 : 0,
-                transform: loaded ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'opacity 600ms ease 600ms, transform 600ms ease 600ms',
-              }}
-            >
+            <p className="font-body text-sand-light text-base md:text-[19px] leading-[1.7] max-w-[310px] md:max-w-[520px] mb-7 break-words">
               Still walking past cabinets you don&apos;t love? Your space should feel like yours — not the last owner&apos;s taste. We refinish your existing cabinets in 3–5 days, for a fraction of what replacement costs.
             </p>
 
-            <div
-              style={{
-                opacity: loaded ? 1 : 0,
-                transform: loaded ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'opacity 600ms ease 800ms, transform 600ms ease 800ms',
-              }}
-            >
+            <div>
               <div className="flex flex-col sm:flex-row items-start gap-4 mb-3">
                 <button
                   onClick={() => smoothScrollTo('quote-form')}
@@ -276,7 +252,7 @@ function Hero() {
                 </button>
                 <a
                   href="tel:+14804332680"
-                  className="font-body font-medium text-sm text-terra underline underline-offset-4 hover:text-terra-dark transition-colors pt-2 sm:pt-4"
+                  className="font-body font-medium text-sm text-brand-cream-50 underline underline-offset-4 hover:text-terra-light transition-colors pt-2 sm:pt-4"
                 >
                   or call (480) 433-2680
                 </a>
@@ -284,7 +260,7 @@ function Hero() {
 
               <button
                 onClick={() => smoothScrollTo('gallery')}
-                className="font-body font-medium text-sm text-brown underline underline-offset-4 hover:text-terra transition-colors mb-5"
+                className="font-body font-medium text-sm text-sand-light underline underline-offset-4 hover:text-brand-cream-50 transition-colors mb-5"
               >
                 or see recent transformations →
               </button>
@@ -311,49 +287,14 @@ function Hero() {
                         </svg>
                       </span>
                     )}
-                    <span className="font-body font-semibold text-[13px] md:text-sm text-brown tracking-tight">{item.label}</span>
+                    <span className="font-body font-semibold text-[13px] md:text-sm text-brand-cream-50 tracking-tight">{item.label}</span>
                   </li>
                 ))}
               </ul>
-              <p className="font-body italic text-[13px] leading-6 text-terra max-w-[310px] md:max-w-[520px] break-words">
+              <p className="font-body italic text-[13px] leading-6 text-sand-light max-w-[310px] md:max-w-[520px] break-words">
                 Built for daily kitchen use. Verified locally: AZ ROC #363664.
               </p>
             </div>
-          </div>
-
-          {/* Right column — image area */}
-          <div
-            className="relative"
-            style={{
-              opacity: loaded ? 1 : 0,
-              transform: loaded ? 'translateY(0)' : 'translateY(20px)',
-              transition: 'opacity 600ms ease 600ms, transform 600ms ease 600ms',
-            }}
-          >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-lg border-l-[3px] border-terra bg-sand shadow-sm">
-              <Image
-                src="/images/cabinet-hero-bathroom.jpg"
-                alt="Refinished bathroom vanity by Valley Painting Pros — sage-green cabinets with raised-panel doors and black hardware over hex tile."
-                fill
-                sizes="(min-width: 768px) 45vw, 100vw"
-                className="object-cover"
-                priority
-              />
-              <video
-                className="absolute inset-0 hidden h-full w-full object-cover motion-safe:md:block"
-                poster="/images/cabinet-hero-bathroom.jpg"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                aria-hidden="true"
-              >
-                <source src="/videos/cabinet-hero.webm" type="video/webm" />
-                <source src="/videos/cabinet-hero.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -894,13 +835,13 @@ function BeforeAfter() {
             <ReactCompareSlider
               itemOne={
                 <ReactCompareSliderImage
-                  src="/images/cabinet-hero-before.png"
+                  src="/images/gallery/cabinet-hero-before.png"
                   alt="Kitchen cabinets before refinishing by Valley Painting Pros"
                 />
               }
               itemTwo={
                 <ReactCompareSliderImage
-                  src="/images/cabinet-hero-after.jpg"
+                  src="/images/gallery/cabinet-hero-after.jpg"
                   alt="Kitchen cabinets after refinishing by Valley Painting Pros"
                 />
               }

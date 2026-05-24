@@ -10,14 +10,13 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: codex/roc-copy-format
-- State last updated after commit: 1601bae9471e192298a7c3c0591109d766a7b7db
-  feat(site): unify blog and landing experience
-- Working tree at last update: uncommitted ROC wording consistency changes
-  pending Ricardo review; pre-existing untracked Ricardo-created extra logo
-  assets remain under public/logos/pngs and public/logos/svgs
-- Local matched origin at last update: yes for main at branch creation; feature
-  branch is local and not pushed
+- State last updated from branch: codex/full-bleed-hero-image
+- State last updated after commit: this commit
+- Working tree at last update: committed hero/image-path changes; extra
+  Ricardo-created gallery images open-concept-kitchen.png and
+  saltillo-floor-cabinets.png remain untracked, and extra Ricardo-created logo
+  assets remain untracked under public/logos/pngs and public/logos/svgs
+- Local matched origin at last update: feature branch is local and not pushed
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -27,24 +26,21 @@
 
 Date: 2026-05-24
 Agent: Codex
-Branch worked: codex/roc-copy-format
-Files touched: AGENTS.md, src/components/TrustSignalCards.tsx,
-  src/components/StickyMobileCTA.tsx, src/components/Footer.tsx,
-  src/components/SiteHeader.tsx, src/app/blog/page.tsx,
-  src/components/blog/BlogEstimateForm.tsx,
-  src/app/layout.tsx,
-  src/app/cabinet-refinishing/page.tsx,
-  src/app/cabinet-refinishing/CabinetPage.tsx, AI-STATE.md
-Committed: none; work is pending Level 2 review before staging.
-Edited but not committed: public-facing ROC wording and page-level metadata /
-  FAQ copy changed from "AZ ROC CR-34 #363664" to "AZ ROC #363664"; AGENTS.md
-  updated so future website copy and canonical metadata use the shorter public
-  trust-signal format while CR-34 remains internal/explanatory context only;
-  src/app/layout.tsx structured-data credential label changed from
-  "AZ ROC License #363664" to "AZ ROC #363664" after Ricardo approved the
-  Level 1 gated write. Extra Ricardo-created logo assets remain untracked under
-  public/logos/pngs and public/logos/svgs.
-Blockers encountered: none.
+Branch worked: codex/full-bleed-hero-image
+Files touched: src/app/cabinet-refinishing/CabinetPage.tsx,
+  src/content/blog/cabinet-refinishing-cost-phoenix-az.mdx,
+  src/content/blog/cabinet-refinishing-vs-replacing-cabinets.mdx,
+  src/content/blog/how-long-does-cabinet-refinishing-take.mdx, AI-STATE.md
+Committed: this commit; cabinet-refinishing hero converted from the two-column
+  media layout to a full-bleed background image using
+  /images/gallery/suburban-gilbert-kitchen.png; old JS-only hero fade state
+  removed so hero copy is visible by default; mobile hero H1 sizing tightened
+  for 375px; before/after slider and blog featured-image paths updated for the
+  moved public/images/gallery assets.
+Edited but not committed: extra Ricardo-created gallery images and logo assets
+  remain unstaged/uncommitted.
+Blockers encountered: in-app browser screenshot capture timed out, so visual
+  QA used in-app browser DOM metrics plus local headless Edge screenshots.
 
 ---
 
@@ -121,6 +117,11 @@ Blockers encountered: none.
   "AZ ROC #363664" for website copy and canonical metadata. CR-34 remains valid
   license-class context, but should be used only internally or as explanatory
   support when needed, not in the primary public trust signal.
+- 2026-05-24: Cabinet-refinishing hero now uses the Ricardo-added
+  suburban-gilbert-kitchen.png as a full-bleed background image with a dark VPP
+  overlay. Hero copy renders visible by default rather than depending on a
+  JS-only fade state because verification showed the old opacity gate could
+  leave above-the-fold copy hidden in browser checks.
 
 ---
 
