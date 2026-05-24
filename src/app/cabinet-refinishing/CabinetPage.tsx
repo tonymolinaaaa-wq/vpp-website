@@ -562,7 +562,7 @@ function WhatsIncluded() {
       title: 'What We Commit To While We’re In Your Home',
       items: [
         {
-          title: '$300/Day Finish Promise',
+          title: 'Finish-date guarantee',
           desc: 'Written into your contract. If we miss the contracted finish date for any reason other than weather, HOA approval delays, or owner-initiated change orders, we credit $300 per business day until the work is done.',
         },
         {
@@ -589,16 +589,16 @@ function WhatsIncluded() {
       title: 'What We Stand Behind After We Leave',
       items: [
         {
-          title: 'Lifetime Touch-Up Kit',
-          desc: 'A labeled, sealed kit delivered at job completion: one quart of every color used, a brush, and a written log of which color went where. Free re-orders for life.',
+          title: 'Leftover paint clearly labeled',
+          desc: 'At handoff, we label the leftover paint by color, finish, and where it was used, so you never have to wonder what was used where.',
         },
         {
-          title: '6-Month Quality Hold',
-          desc: 'Scheduled on your phone before we leave. Six months in, we come back, walk the kitchen, and confirm the finish is holding up the way it should. Any workmanship issues are touched up free.',
+          title: '6-Month Wellness Check',
+          desc: 'Scheduled on your phone before we leave. Six months in, we come back, walk the kitchen, and confirm the finish is holding up the way it should. Any workmanship issues are corrected free.',
         },
         {
           title: '12-Month Wellness Check',
-          desc: 'Scheduled on your phone before we leave. One year out, a free 30-minute walkthrough. Workmanship issues touched up free. Wear and tear is quoted, never assumed.',
+          desc: 'Scheduled on your phone before we leave. One year out, a free 30-minute walkthrough. Workmanship issues are corrected free. Wear and tear is quoted, never assumed.',
         },
         {
           title: '5-Year Written Warranty',

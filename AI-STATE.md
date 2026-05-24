@@ -10,14 +10,21 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: claude/mobile-header-hero-layout-pgjaT
+- State last updated from branch: codex/offer-stack-source-cleanup
 - State last updated after commit: this commit
-- Working tree at last update: committed header CTA + mobile hero
-  object-position changes; extra Ricardo-created gallery images
-  open-concept-kitchen.png and saltillo-floor-cabinets.png remain untracked,
-  and extra Ricardo-created logo assets remain untracked under
-  public/logos/pngs and public/logos/svgs
-- Local matched origin at last update: feature branch pushed to origin
+- Working tree at last update: committed stale-doc deletion and offer-stack
+  consistency pass on a fresh branch from origin/main. Current session deleted
+  the stale v4 HTML brand/logo docs, updated active offer docs to remove
+  public-facing 76-step language, replaced lifetime touch-up kit language with
+  clean leftover-paint labeling, preserved daily photo updates and finish-date
+  guarantee language, added 6-month and 12-month wellness checks to active offer
+  sources, tightened required license wording to "AZ ROC #363664", updated
+  cabinet-process pricing notes from old door-based wording to $150/opening,
+  and marked the old EAB strategist doc as archived framework material only.
+  Pre-existing untracked VPP Facebook post generator work, Ricardo-created
+  gallery images, and Ricardo-created logo assets remain untouched.
+- Local matched origin at last update: branch created from origin/main; push
+  pending
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -26,20 +33,29 @@
 ## LAST SESSION
 
 Date: 2026-05-24
-Agent: Claude
-Branch worked: claude/mobile-header-hero-layout-pgjaT
-Files touched: src/components/SiteHeader.tsx,
+Agent: Codex
+Branch worked: codex/offer-stack-source-cleanup
+Files touched: AGENTS.md, docs/VPP_Irresistible_Offer.md,
+  docs/VPP_Cabinet_Refinishing_Master_Process.md,
+  docs/VPP_ChatGPT_Ad_Source_Offer_Inclusions.md,
+  docs/CLAUDE-VPP- EAB BOARD/eab-growth-and-brand-strategist.md,
+  two deleted stale v4 HTML docs under docs/,
+  brand/guidelines/vpp-brand-guidelines-v1.0.md,
+  brand/prompt-block/vpp-house-style-prompt-block-v1.0.md,
   src/app/cabinet-refinishing/CabinetPage.tsx, AI-STATE.md
-Committed: this commit; restored the SiteHeader CTA button on mobile
-  (the phone link stays sm:flex-hidden to keep the 375px row clean, only
-  the orange Quote / Get a Quote button comes back), and shifted the
-  cabinet-refinishing hero image to object-[72%_center] below md so the
-  white cabinets on the right side of suburban-gilbert-kitchen.png show
-  through the overlay on mobile; desktop still uses object-center.
-Edited but not committed: extra Ricardo-created gallery images and logo assets
-  remain unstaged/uncommitted.
-Blockers encountered: none; npm run lint and npm run build both pass with only
-  pre-existing img/Image warnings.
+Committed: this commit; deleted stale v4 HTML brand/logo docs; synchronized
+  active offer/reference docs and cabinet landing page with current offer stack:
+  no public-facing 76-step process, no lifetime touch-up kit language, cleanly
+  labeled leftover paint, daily photo updates, finish-date guarantee, 6-month
+  wellness check, and 12-month wellness check; tightened active license wording
+  to require "AZ ROC #363664"; updated cabinet process notes to $150/opening;
+  marked the old EAB strategist doc as archived framework material only.
+Edited but not committed: none from this cleanup batch.
+  Pre-existing uncommitted Facebook post generator, generated assets, and
+  Ricardo-added gallery/logo assets remain untouched.
+Blockers encountered: AI-STATE.md conflicted while cherry-picking the cleanup
+  commit onto a fresh branch from origin/main; resolved by preserving the
+  latest main state context and adding this cleanup state.
 
 ---
 
@@ -130,6 +146,37 @@ Blockers encountered: none; npm run lint and npm run build both pass with only
   breakpoint and object-center from md up. The shift makes the white cabinets
   on the right side of suburban-gilbert-kitchen.png read through the dark
   overlay at 375px; desktop framing was already correct and is left untouched.
+- 2026-05-24: For the VPP Facebook post generator Pause Gate 1, the source
+  photo was verified at
+  public/cabinet-content/IMG_8703-keepers/03_door-plus-hinges-window-context.jpg
+  and copied into the requested generator asset path. The color-on-cream
+  horizontal logo was copied from public/logos/vpp-horizontal-color-on-cream.png
+  into the requested generator logo path. Rendering remains paused pending
+  Ricardo approval.
+- 2026-05-24: The specified rsms/inter raw OTF URLs returned 404 during font
+  setup. Per the brief fallback rule, Inter Regular, Medium, and Bold were
+  sourced from the official rsms/inter v4.1 release ZIP static TTF files and
+  saved under the requested local filenames.
+- 2026-05-24: Pause Gate 2 generated only the four approved-scope $150 sample
+  PNGs: Layouts A-D in vpp-cabinet-fb-posts/output/. Each sample is 1080x1350,
+  RGB PNG, and within the requested 400KB-2MB size range. Rendering stopped
+  before any other price.
+- 2026-05-24: Path B replaced all old Facebook post layouts with Layout 3 only
+  in scripts/generate_cabinet_post.py. The CLI now accepts --price or --matrix,
+  and --matrix renders four price variants at $125, $135, $145, and $150 using
+  filenames vpp-cabinet-fb-layout_3-{price}-4x5.png.
+- 2026-05-24: Revised Path B Layout 3 after Ricardo flagged the first version
+  as too cartoony and too quiet. The new render makes
+  "SOFT-CLOSE HINGES INCLUDED" the primary headline in a large Terracotta strip
+  and supports it with a cleaner lower-left price tile using a Terracotta
+  accent bar.
+- 2026-05-24: Deleted stale v4 HTML brand/logo documents to reduce agent
+  confusion. Current brand sources are the markdown/tokens files under brand/.
+- 2026-05-24: Updated the official offer stack: 76-step process is internal SOP
+  language, not customer-facing copy; lifetime touch-up kit wording is retired
+  in favor of cleanly labeled leftover paint; daily photo updates and the
+  finish-date guarantee remain; 6-month and 12-month wellness checks are part
+  of the active offer. Required public license wording is "AZ ROC #363664".
 
 ---
 
@@ -139,8 +186,6 @@ Blockers encountered: none; npm run lint and npm run build both pass with only
   recently. Treat as Level 1 gate (propose patch before writing).
 - public/cabinet-content/ and public/social-proof/ are gitignored — files
   there will NOT deploy to Vercel. Do not reference these paths in code.
-- docs/VPP_BrandIdentity_v4_0.html and docs/VPP_LogoSystem_v4_0.html are
-  stale and must not govern audits. Flag if referenced.
 - public/favicon.svg is 1.04MB (embedded raster). Works but wasteful.
   Do not remove without Ricardo's approval.
 - The 3 blog posts in src/content/blog/ have not been QC'd for pricing

@@ -1,3 +1,12 @@
+# ARCHIVED — DO NOT USE AS CURRENT VPP SOURCE OF TRUTH
+
+This file is historical framework material only. It contains stale examples for
+service scope, pricing, warranty, brand colors, typography, ROC wording, and
+offer mechanics. Do not use it for audits, implementation, customer-facing copy,
+ads, website changes, brand guidance, or offer decisions. Current source of
+truth lives in AGENTS.md, docs/VPP_Irresistible_Offer.md,
+docs/VPP_Cabinet_Refinishing_Master_Process.md, and the active brand/ files.
+
 # Valley Painting Pros — Growth & Brand Strategist
 
 **Executive Advisor Board · Customer-Facing Growth Advisor**
