@@ -166,13 +166,13 @@ function StickyNav() {
       <div className="mx-auto max-w-content w-full px-4 md:px-6 flex items-center justify-between gap-3">
         <a href="#top" className="flex min-w-0 items-center gap-2.5 md:gap-3" aria-label="Valley Painting Pros home">
           <span className="relative h-9 w-11 flex-shrink-0 overflow-hidden rounded bg-cream shadow-[inset_0_0_0_1px_rgba(31,26,20,0.12)] md:h-10 md:w-12" aria-hidden="true">
-            <Image
-              src="/logos/vpp-monogram-color-on-cream.png"
+            <img
+              src="/logos/svgs/vppmonogramcoloroncream.svg"
               alt=""
               width={1254}
               height={1254}
               className="absolute left-[47%] top-1/2 h-[58px] w-[58px] max-w-none -translate-x-1/2 -translate-y-1/2 md:h-[64px] md:w-[64px]"
-              priority
+              fetchPriority="high"
             />
           </span>
 
