@@ -10,13 +10,14 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: codex/full-bleed-hero-image
+- State last updated from branch: claude/mobile-header-hero-layout-pgjaT
 - State last updated after commit: this commit
-- Working tree at last update: committed hero/image-path changes; extra
-  Ricardo-created gallery images open-concept-kitchen.png and
-  saltillo-floor-cabinets.png remain untracked, and extra Ricardo-created logo
-  assets remain untracked under public/logos/pngs and public/logos/svgs
-- Local matched origin at last update: feature branch is local and not pushed
+- Working tree at last update: committed header CTA + mobile hero
+  object-position changes; extra Ricardo-created gallery images
+  open-concept-kitchen.png and saltillo-floor-cabinets.png remain untracked,
+  and extra Ricardo-created logo assets remain untracked under
+  public/logos/pngs and public/logos/svgs
+- Local matched origin at last update: feature branch pushed to origin
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -25,22 +26,20 @@
 ## LAST SESSION
 
 Date: 2026-05-24
-Agent: Codex
-Branch worked: codex/full-bleed-hero-image
-Files touched: src/app/cabinet-refinishing/CabinetPage.tsx,
-  src/content/blog/cabinet-refinishing-cost-phoenix-az.mdx,
-  src/content/blog/cabinet-refinishing-vs-replacing-cabinets.mdx,
-  src/content/blog/how-long-does-cabinet-refinishing-take.mdx, AI-STATE.md
-Committed: this commit; cabinet-refinishing hero converted from the two-column
-  media layout to a full-bleed background image using
-  /images/gallery/suburban-gilbert-kitchen.png; old JS-only hero fade state
-  removed so hero copy is visible by default; mobile hero H1 sizing tightened
-  for 375px; before/after slider and blog featured-image paths updated for the
-  moved public/images/gallery assets.
+Agent: Claude
+Branch worked: claude/mobile-header-hero-layout-pgjaT
+Files touched: src/components/SiteHeader.tsx,
+  src/app/cabinet-refinishing/CabinetPage.tsx, AI-STATE.md
+Committed: this commit; restored the SiteHeader CTA button on mobile
+  (the phone link stays sm:flex-hidden to keep the 375px row clean, only
+  the orange Quote / Get a Quote button comes back), and shifted the
+  cabinet-refinishing hero image to object-[72%_center] below md so the
+  white cabinets on the right side of suburban-gilbert-kitchen.png show
+  through the overlay on mobile; desktop still uses object-center.
 Edited but not committed: extra Ricardo-created gallery images and logo assets
   remain unstaged/uncommitted.
-Blockers encountered: in-app browser screenshot capture timed out, so visual
-  QA used in-app browser DOM metrics plus local headless Edge screenshots.
+Blockers encountered: none; npm run lint and npm run build both pass with only
+  pre-existing img/Image warnings.
 
 ---
 
@@ -122,6 +121,15 @@ Blockers encountered: in-app browser screenshot capture timed out, so visual
   overlay. Hero copy renders visible by default rather than depending on a
   JS-only fade state because verification showed the old opacity gate could
   leave above-the-fold copy hidden in browser checks.
+- 2026-05-24: Reversed the 2026-05-24 "hide header CTA below sm" decision.
+  The header quote button is now visible at every breakpoint so 375px users
+  always have a one-tap path to the form; only the phone number link stays
+  sm:flex-hidden to keep the row uncluttered. Button copy already swaps to
+  "Quote" under 390px via the existing min-[390px] span pair.
+- 2026-05-24: Cabinet hero image now uses object-[72%_center] below the md
+  breakpoint and object-center from md up. The shift makes the white cabinets
+  on the right side of suburban-gilbert-kitchen.png read through the dark
+  overlay at 375px; desktop framing was already correct and is left untouched.
 
 ---
 
