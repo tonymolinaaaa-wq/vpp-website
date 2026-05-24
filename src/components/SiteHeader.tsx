@@ -80,7 +80,7 @@ export function SiteHeader({
           </span>
         </a>
 
-        <div className="hidden items-center gap-3 sm:flex md:gap-4">
+        <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
           <a
             href="tel:+14804332680"
             className="hidden items-center gap-1.5 font-body text-sm font-medium text-brown transition-colors hover:text-terra sm:flex"

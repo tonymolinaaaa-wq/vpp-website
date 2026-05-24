@@ -220,7 +220,7 @@ function Hero() {
         alt="Suburban Gilbert kitchen with white cabinets and a large island."
         fill
         sizes="100vw"
-        className="object-cover object-center"
+        className="object-cover object-[72%_center] md:object-center"
         priority
       />
       <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/80 to-ink/55 md:via-ink/65 md:to-ink/20" aria-hidden="true" />
