@@ -4,13 +4,13 @@
 # Does NOT direct strategy or prioritize next work — that happens outside this file.
 # Exact HEAD comes from git. AI-STATE.md records execution state as of its last update.
 # This file wins over stale chat memory for project status.
-# Last meaningful update: 2026-05-23
+# Last meaningful update: 2026-05-24
 
 ---
 
 ## SNAPSHOT
 
-- State last updated from branch: codex/robots-txt-section-5
+- State last updated from branch: codex/logo-png-optimization-section-6
 - State last updated after commit: this commit
 - Working tree at last update: clean after this commit
 - Local matched origin at last update: no (feature branch not pushed yet)
@@ -21,13 +21,12 @@
 
 ## LAST SESSION
 
-Date: 2026-05-23
+Date: 2026-05-24
 Agent: Codex
-Branch worked: codex/robots-txt-section-5
-Files touched: src/app/robots.ts (created), AI-STATE.md (modified)
-Committed: this commit creates a Next.js App Router robots.txt metadata route
-  for Section 5, allowing all crawlers, disallowing /api/, and referencing
-  the existing sitemap.
+Branch worked: codex/logo-png-optimization-section-6
+Files touched: public/logos/*.png (12 optimized), AI-STATE.md (modified)
+Committed: this commit losslessly recompresses all tracked VPP logo PNGs
+  while preserving filenames, dimensions, and exact rendered pixels.
 Edited but not committed: none
 Blockers encountered: none
 
@@ -72,6 +71,11 @@ Blockers encountered: none
 - 2026-05-23: Added robots.txt via src/app/robots.ts for checklist Section 5,
   allowing all crawlers except /api/ and referencing the existing
   src/app/sitemap.ts output instead of creating a new sitemap.
+- 2026-05-24: Optimized all 12 tracked public/logos PNG variants in place
+  with lossless Pillow recompression. Each file preserved filename,
+  dimensions, and pixel data with diff 0. The source rasters contain thousands
+  of near-neighbor colors, so the sub-100 KB target was not achievable without
+  lossy quantization; fidelity was prioritized for brand assets.
 
 ---
 
