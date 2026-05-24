@@ -4,15 +4,16 @@
 # Does NOT direct strategy or prioritize next work — that happens outside this file.
 # Exact HEAD comes from git. AI-STATE.md records execution state as of its last update.
 # This file wins over stale chat memory for project status.
-# Last meaningful update: 2026-05-23
+# Last meaningful update: 2026-05-24
 
 ---
 
 ## SNAPSHOT
 
-- State last updated from branch: codex/robots-txt-section-5
+- State last updated from branch: codex/svg-logo-swap-section-6
 - State last updated after commit: this commit
-- Working tree at last update: clean after this commit
+- Working tree at last update: uncommitted Ricardo-created extra logo assets
+  remain under public/logos/pngs and public/logos/svgs after this commit
 - Local matched origin at last update: no (feature branch not pushed yet)
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
@@ -21,14 +22,18 @@
 
 ## LAST SESSION
 
-Date: 2026-05-23
+Date: 2026-05-24
 Agent: Codex
-Branch worked: codex/robots-txt-section-5
-Files touched: src/app/robots.ts (created), AI-STATE.md (modified)
-Committed: this commit creates a Next.js App Router robots.txt metadata route
-  for Section 5, allowing all crawlers, disallowing /api/, and referencing
-  the existing sitemap.
-Edited but not committed: none
+Branch worked: codex/svg-logo-swap-section-6
+Files touched: src/app/cabinet-refinishing/CabinetPage.tsx,
+  src/components/Footer.tsx, public/logos/svgs/vppmonogramcoloroncream.svg,
+  public/logos/svgs/vppmonogramcolorondark.svg,
+  public/logos/pngs/vpp-monogram-light-transparent-background.png,
+  AI-STATE.md
+Committed: this commit swaps the live header/footer monogram logo references
+  from broken local PNG paths to Ricardo's manually traced SVG assets.
+Edited but not committed: extra Ricardo-created logo assets remain untracked
+  under public/logos/pngs and public/logos/svgs for later curation.
 Blockers encountered: none
 
 ---
@@ -72,6 +77,10 @@ Blockers encountered: none
 - 2026-05-23: Added robots.txt via src/app/robots.ts for checklist Section 5,
   allowing all crawlers except /api/ and referencing the existing
   src/app/sitemap.ts output instead of creating a new sitemap.
+- 2026-05-24: Swapped the live header/footer monogram logo references to
+  Ricardo's manually traced SVGs using the canonical unhyphenated VPP naming
+  convention. Raw <img> tags are used intentionally for SVGs; root PNG logo
+  files are preserved on main as fallback/historical assets.
 
 ---
 

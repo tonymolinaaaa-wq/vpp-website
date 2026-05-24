@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export function Footer() {
   return (
     <footer className="bg-ink py-12 md:py-16">
@@ -10,12 +8,13 @@ export function Footer() {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <span className="relative h-12 w-14 flex-shrink-0 overflow-hidden rounded bg-ink" aria-hidden="true">
-                <Image
-                  src="/logos/vpp-monogram-color-on-dark.png"
+                <img
+                  src="/logos/svgs/vppmonogramcolorondark.svg"
                   alt=""
                   width={1254}
                   height={1254}
                   className="absolute left-[47%] top-1/2 h-[76px] w-[76px] max-w-none -translate-x-1/2 -translate-y-1/2"
+                  loading="lazy"
                 />
               </span>
               <span>
