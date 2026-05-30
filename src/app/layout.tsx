@@ -26,8 +26,26 @@ export const metadata: Metadata = {
     title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa, Queen Creek, Scottsdale & Tempe | Valley Painting Pros',
     description:
       'Cabinet refinishing in the East Valley. AZ ROC #363664, 5-star rated, 5-year warranty. Custom quote — free in-home estimate. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
+    url: 'https://www.valleypaintingpros.com/',
+    siteName: 'Valley Painting Pros',
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: '/VPP_og-image.png',
+        width: 1200,
+        height: 630,
+        type: 'image/png',
+        alt: 'Valley Painting Pros — Cabinet Refinishing in the East Valley. AZ ROC #363664, 5-year warranty.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa, Queen Creek, Scottsdale & Tempe | Valley Painting Pros',
+    description:
+      'Cabinet refinishing in the East Valley. AZ ROC #363664, 5-star rated, 5-year warranty. Custom quote — free in-home estimate. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
+    images: ['/VPP_og-image.png'],
   },
 }
 
@@ -98,7 +116,6 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta property="og:image" content="/VPP_og-image.png" />
         <meta name="theme-color" content="#C24A22" />
         {googleSiteVerification ? (
           <meta name="google-site-verification" content={googleSiteVerification} />

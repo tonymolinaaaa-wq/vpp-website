@@ -20,8 +20,25 @@ export const metadata: Metadata = {
     description:
       'Cabinet refinishing guides for Phoenix and East Valley homeowners comparing cost, timeline, process, and estimate options.',
     url: 'https://www.valleypaintingpros.com/blog',
+    siteName: 'Valley Painting Pros',
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: '/VPP_og-image.png',
+        width: 1200,
+        height: 630,
+        type: 'image/png',
+        alt: 'Valley Painting Pros — Cabinet Refinishing in the East Valley. AZ ROC #363664, 5-year warranty.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cabinet Refinishing Blog | Valley Painting Pros',
+    description:
+      'Cabinet refinishing guides for Phoenix and East Valley homeowners comparing cost, timeline, process, and estimate options.',
+    images: ['/VPP_og-image.png'],
   },
 }
 

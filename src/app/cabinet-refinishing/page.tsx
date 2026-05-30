@@ -16,13 +16,24 @@ export const metadata: Metadata = {
     title: pageTitle,
     description: pageDescription,
     url: 'https://www.valleypaintingpros.com/cabinet-refinishing',
+    siteName: 'Valley Painting Pros',
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: '/VPP_og-image.png',
+        width: 1200,
+        height: 630,
+        type: 'image/png',
+        alt: 'Valley Painting Pros — Cabinet Refinishing in the East Valley. AZ ROC #363664, 5-year warranty.',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
+    images: ['/VPP_og-image.png'],
   },
 }
 

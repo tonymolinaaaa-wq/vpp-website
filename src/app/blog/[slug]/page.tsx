@@ -44,6 +44,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
       title: frontmatter.ogTitle,
       description: frontmatter.ogDescription,
       url: frontmatter.canonicalUrl,
+      siteName: 'Valley Painting Pros',
       type: 'article',
       locale: 'en_US',
       publishedTime: frontmatter.date,
