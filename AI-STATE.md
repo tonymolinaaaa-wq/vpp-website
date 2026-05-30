@@ -12,11 +12,16 @@
 
 - State last updated from branch: claude/facebook-link-preview-hAnND
 - State last updated after commit: this commit
-- Working tree at last update: committed Open Graph / Twitter card hardening
-  across layout.tsx, cabinet-refinishing/page.tsx, blog/page.tsx, and
-  blog/[slug]/page.tsx; extra Ricardo-created gallery images
-  open-concept-kitchen.png and saltillo-floor-cabinets.png remain untracked,
-  and extra Ricardo-created logo assets remain untracked under
+- Working tree at last update: committed two changes on this branch — first
+  commit b4541b1 hardened Open Graph / Twitter card metadata across
+  layout.tsx, cabinet-refinishing/page.tsx, blog/page.tsx, and
+  blog/[slug]/page.tsx; this commit switches src/app/page.tsx from
+  redirect() to permanentRedirect() so the root URL returns a 308 instead
+  of a 307 (Facebook's scraper choked on the 307 with "Could Not Follow
+  Redirect" and kept serving its cached pre-cabinet-only preview, which is
+  the visible bug that triggered this work). Extra Ricardo-created gallery
+  images open-concept-kitchen.png and saltillo-floor-cabinets.png remain
+  untracked, and extra Ricardo-created logo assets remain untracked under
   public/logos/pngs and public/logos/svgs
 - Local matched origin at last update: feature branch pushed to origin
 - Production URL: https://www.valleypaintingpros.com
@@ -30,8 +35,10 @@ Date: 2026-05-26
 Agent: Claude
 Branch worked: claude/facebook-link-preview-hAnND
 Files touched: src/app/layout.tsx, src/app/cabinet-refinishing/page.tsx,
-  src/app/blog/page.tsx, src/app/blog/[slug]/page.tsx, AI-STATE.md
-Committed: this commit; hardened Open Graph / Twitter card metadata so
+  src/app/blog/page.tsx, src/app/blog/[slug]/page.tsx, src/app/page.tsx,
+  AI-STATE.md
+Committed: b4541b1 (prior commit on this branch) and this commit. b4541b1
+  hardened Open Graph / Twitter card metadata so
   Facebook, iMessage, Slack, LinkedIn, and X reliably render the new
   VPP_og-image.png preview. Moved the root og:image from a raw <head>
   meta tag into Next's metadata.openGraph.images so metadataBase resolves
@@ -44,6 +51,15 @@ Committed: this commit; hardened Open Graph / Twitter card metadata so
   to blog/[slug]/page.tsx for consistency; that route already supplied
   per-article images via frontmatter.featuredImage and a twitter card.
   Removed the now-redundant raw og:image meta tag from layout.tsx <head>.
+  This second commit switches src/app/page.tsx from next/navigation's
+  redirect() (307 temporary) to permanentRedirect() (308 permanent) so
+  the root URL is no longer a Facebook-scraper trap. Real-world reproduction:
+  pasting https://www.valleypaintingpros.com/ into Facebook's Sharing
+  Debugger returns "Could Not Follow Redirect — URL requested a HTTP
+  redirect, but it could not be followed" with response code 307, and the
+  link preview falls back to FB's cached pre-cabinet-only scrape. Switching
+  to 308 is also better SEO (Google honors permanent redirects more
+  favorably) and was already on the open checklist.
 Edited but not committed: extra Ricardo-created gallery images and logo assets
   remain unstaged/uncommitted.
 Blockers encountered: none; npm run lint and npm run build both pass with only
@@ -53,7 +69,12 @@ Blockers encountered: none; npm run lint and npm run build both pass with only
 Post-deploy step Ricardo must do: paste the production URLs into the
   Facebook Sharing Debugger (https://developers.facebook.com/tools/debug/)
   and click "Scrape Again" to bust Facebook's cached stale preview that
-  prompted this work. Repeat for /cabinet-refinishing and /blog.
+  prompted this work. Repeat for /cabinet-refinishing and /blog. The
+  /cabinet-refinishing URL was confirmed in this session to have never
+  been scraped by Facebook before (FB reported "this URL has never been
+  shared"), so a single Scrape pass will populate it cleanly. The root
+  URL specifically needed the 308 fix above to be deployed first — until
+  then FB will keep failing to follow the redirect.
 
 ---
 
@@ -162,6 +183,17 @@ Post-deploy step Ricardo must do: paste the production URLs into the
   twitter card; only siteName was added there for consistency. The fix only
   affects future scrapes — Ricardo must hit the Facebook Sharing Debugger
   post-deploy to bust the existing stale cache.
+- 2026-05-26: Promoted src/app/page.tsx root redirect from redirect() to
+  permanentRedirect() (307 -> 308) on the same branch after Ricardo
+  reproduced the bug in Facebook's Sharing Debugger. The debugger reported
+  "Could Not Follow Redirect — URL requested a HTTP redirect, but it could
+  not be followed" with response code 307 on the root URL, which is why
+  the Open Graph hardening work alone wasn't going to fix the visible
+  preview on /. FB's scraper specifically fails to follow Next's default
+  307 from redirect() and falls back to its cached pre-cabinet-only scrape;
+  308 from permanentRedirect() is followed correctly and lets FB read the
+  /cabinet-refinishing page's full OG metadata. This was already on the
+  open SEO checklist independent of the FB issue.
 
 ---
 
