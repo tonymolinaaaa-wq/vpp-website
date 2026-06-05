@@ -65,3 +65,7 @@ next-env.d.ts
 /public/images/gallery/golden-hour-barril-cactus.png
 /public/images/gallery/open-concept-kitchen.png
 /public/images/gallery/saltillo-floor-cabinets.png
+
+# local-only working docs (held by Ricardo; not for the public repo)
+/docs/VPP_Color_Approval.md
+/docs/VPP_Contract_Terms.md

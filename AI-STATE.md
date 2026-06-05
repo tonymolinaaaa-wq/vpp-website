@@ -10,24 +10,18 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: claude/gitignore-local-assets (created from origin/main)
+- State last updated from branch: main (direct commit)
 - State last updated after commit: this commit
-- Working tree at last update: triaged the ~31 untracked files left on the
-  orphaned codex branch and recorded the dispositions in .gitignore. Held local
-  (gitignored, kept on disk, not committed/deployed) per Ricardo's per-category
-  decisions: the 23-file brand logo set under public/logos/{pngs,svgs}/vpp-*
-  (pending the brand overhaul), 3 unused gallery PNGs, two ~49MB raw/oversized
-  source videos (*.MOV plus the 49MB mp4), and the internal tooling dirs
-  sales-tools/ and vpp-cabinet-fb-posts/. Ignore patterns were checked against
-  tracked files so no tracked logo/image/video is affected. The two untracked
-  docs (VPP_Color_Approval.md, VPP_Contract_Terms.md) are held pending Ricardo's
-  read; the untracked src/app/privacy/ copy is byte-identical to the page
-  already live on main (PR #30) and is dropped as the branch is retired.
-- Local matched origin at last update: committed on branch
-  claude/gitignore-local-assets (off origin/main) and pushed direct to main. The
-  final cleanup step (retire the orphaned codex/offer-stack-source-cleanup
-  branch) is performed right after this commit; branch-deletion facts are
-  reported in chat, not via a follow-up commit.
+- Working tree at last update: gitignored the two local-only working docs
+  (docs/VPP_Color_Approval.md, docs/VPP_Contract_Terms.md) per Ricardo's
+  decision to hold them local rather than commit them to the public repo, and
+  refreshed the KNOWN HAZARDS note now that PR #32 deleted the two retired v4
+  HTML brand drafts. With this the working tree is clean (no untracked files)
+  and the Codex-branch cleanup is fully closed.
+- Local matched origin at last update: committed directly on main and pushed.
+  PR #32 (docs/brand/AGENTS sync) merged earlier this session as merge commit
+  aa0adb2; the orphaned codex branch plus ~20 stale feature branches were
+  deleted (reported in chat, not via follow-up commits).
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -37,23 +31,19 @@
 
 Date: 2026-06-05
 Agent: Claude
-Branch worked: claude/gitignore-local-assets (created from origin/main)
+Branch worked: main (direct commit)
 Files touched: .gitignore, AI-STATE.md
-Committed: this commit — recorded the untracked-file triage in .gitignore.
-  Gitignored (held local, per Ricardo's category decisions): the brand logo set
-  public/logos/{pngs,svgs}/vpp-*, 3 gallery PNGs, raw/oversized videos (*.MOV
-  plus the 49MB Cabinet-Refinishing-Done-Right.mp4), and the tooling dirs
-  sales-tools/ + vpp-cabinet-fb-posts/. Patterns were checked against tracked
-  files so no tracked logo/image/video is affected.
-Edited but not committed: none here. The orphaned
-  codex/offer-stack-source-cleanup branch is retired this session: its one
-  commit bce3905 was re-landed as 567cc0f (offer copy) and PR #32 (docs), and
-  its uncommitted AI-STATE.md edit is discarded as superseded execution state.
+Committed: this commit — gitignored the two held working docs
+  (docs/VPP_Color_Approval.md, docs/VPP_Contract_Terms.md) so they stay local
+  and out of the public repo (Ricardo's call), and refreshed the KNOWN HAZARDS
+  HTML note (both v4 drafts were deleted when PR #32 merged). Closes out the
+  Codex cleanup — the working tree is now clean.
+Edited but not committed: none.
 Blockers encountered: none.
-Post-deploy step Ricardo must do: merge PR #32 (docs sync) when ready; read the
-  two held docs (VPP_Color_Approval.md, VPP_Contract_Terms.md) and tell me
-  whether to commit or keep them local. Promote any held logo/gallery assets out
-  of .gitignore whenever they get wired into the site.
+Post-deploy step Ricardo must do: none outstanding. FYI: a gitignored local
+  folder public/cabinet-content/approved-photos/ holds 32 verified VPP photos
+  available for future gallery use; logo duplication (tracked root set vs the
+  gitignored staged set) is noted in the brand-overhaul memory for that work.
 
 ---
 
@@ -224,6 +214,17 @@ Post-deploy step Ricardo must do: merge PR #32 (docs sync) when ready; read the
   and PR #32 (docs), so the orphaned branch carried nothing unique and was
   deleted local + remote; its uncommitted AI-STATE.md was superseded execution
   state and discarded.
+- 2026-06-05: Closed out the cleanup — merged PR #32 (docs/brand/AGENTS sync) as
+  merge commit aa0adb2 (resolved a benign AI-STATE.md-only conflict by taking
+  main's version), then per Ricardo gitignored the two held working docs
+  (VPP_Color_Approval.md, VPP_Contract_Terms.md) to keep them local / out of the
+  public repo. Also swept ~20 stale merged or abandoned feature branches (local +
+  remote), leaving only main. Working tree clean; repo down to one branch.
+- 2026-06-05: Branch-hygiene note — the deleted codex/logo-png-optimization-
+  section-6 (closed PR #24) had losslessly optimized the tracked root logo PNGs,
+  but the live header/footer had already switched to the SVG monogram, so those
+  PNGs no longer render live and the optimization was moot. If the brand overhaul
+  keeps any root PNGs, redo the optimization then.
 
 ---
 
@@ -233,8 +234,8 @@ Post-deploy step Ricardo must do: merge PR #32 (docs sync) when ready; read the
   recently. Treat as Level 1 gate (propose patch before writing).
 - public/cabinet-content/ and public/social-proof/ are gitignored — files
   there will NOT deploy to Vercel. Do not reference these paths in code.
-- docs/VPP_BrandIdentity_v4_0.html and docs/VPP_LogoSystem_v4_0.html are
-  stale and must not govern audits. Flag if referenced.
+- docs/VPP_BrandIdentity_v4_0.html and docs/VPP_LogoSystem_v4_0.html were
+  deleted (PR #32, merge aa0adb2). Do not recreate or reference them.
 - public/favicon.svg is 1.04MB (embedded raster). Works but wasteful.
   Do not remove without Ricardo's approval.
 - The 3 blog posts in src/content/blog/ have not been QC'd for pricing
