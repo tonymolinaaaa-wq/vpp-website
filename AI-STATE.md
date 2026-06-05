@@ -10,21 +10,24 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: claude/offer-copy-sync (created from origin/main)
+- State last updated from branch: claude/gitignore-local-assets (created from origin/main)
 - State last updated after commit: this commit
-- Working tree at last update: synced the cabinet-refinishing "What's Included"
-  offer copy on production to the current offer stack
-  (src/app/cabinet-refinishing/CabinetPage.tsx). Retired the stale items
-  "$300/Day Finish Promise" -> "Finish-date guarantee", "Lifetime Touch-Up Kit"
-  -> "Leftover paint clearly labeled", and "6-Month Quality Hold" -> "6-Month
-  Wellness Check", and changed wellness-check wording "touched up free" ->
-  "corrected free". Copy lifted verbatim from the unmerged Codex commit bce3905
-  (offer-stack-compliant) and shipped isolated; the rest of bce3905 (brand-doc
-  retirements, AGENTS edits, new offer doc) was NOT included.
+- Working tree at last update: triaged the ~31 untracked files left on the
+  orphaned codex branch and recorded the dispositions in .gitignore. Held local
+  (gitignored, kept on disk, not committed/deployed) per Ricardo's per-category
+  decisions: the 23-file brand logo set under public/logos/{pngs,svgs}/vpp-*
+  (pending the brand overhaul), 3 unused gallery PNGs, two ~49MB raw/oversized
+  source videos (*.MOV plus the 49MB mp4), and the internal tooling dirs
+  sales-tools/ and vpp-cabinet-fb-posts/. Ignore patterns were checked against
+  tracked files so no tracked logo/image/video is affected. The two untracked
+  docs (VPP_Color_Approval.md, VPP_Contract_Terms.md) are held pending Ricardo's
+  read; the untracked src/app/privacy/ copy is byte-identical to the page
+  already live on main (PR #30) and is dropped as the branch is retired.
 - Local matched origin at last update: committed on branch
-  claude/offer-copy-sync (off origin/main) and pushed direct to main per
-  Ricardo's per-commit approval for this single-file low-risk fix (transport
-  SHAs reported in chat)
+  claude/gitignore-local-assets (off origin/main) and pushed direct to main. The
+  final cleanup step (retire the orphaned codex/offer-stack-source-cleanup
+  branch) is performed right after this commit; branch-deletion facts are
+  reported in chat, not via a follow-up commit.
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -34,27 +37,23 @@
 
 Date: 2026-06-05
 Agent: Claude
-Branch worked: claude/offer-copy-sync (created from origin/main)
-Files touched: src/app/cabinet-refinishing/CabinetPage.tsx, AI-STATE.md
-Committed: this commit — synced the cabinet-refinishing "What's Included" offer
-  copy to the current offer stack, retiring stale items that were still live on
-  production: "$300/Day Finish Promise" -> "Finish-date guarantee", "Lifetime
-  Touch-Up Kit" -> "Leftover paint clearly labeled", "6-Month Quality Hold" ->
-  "6-Month Wellness Check", and "touched up free" -> "corrected free" on both
-  wellness checks. Copy lifted verbatim from the unmerged Codex commit bce3905;
-  only the four CabinetPage.tsx copy items were taken, nothing else from that
-  commit.
-Edited but not committed: none in this commit. The divergent
-  codex/offer-stack-source-cleanup branch still holds commit bce3905 (whose
-  remaining brand-doc + AGENTS + new-offer-doc changes are pending a separate
-  review PR) plus an uncommitted AI-STATE.md edit and untracked assets; all
-  left untouched (built on a temporary git worktree off origin/main).
-Blockers encountered: none. The four corrections are byte-for-byte from
-  bce3905, which had already passed review; no behavior change beyond copy.
-Post-deploy step Ricardo must do: confirm the live "What's Included" section on
-  https://www.valleypaintingpros.com after Vercel deploys. Follow-ups in
-  progress this session: land the rest of bce3905 as a docs PR, triage the
-  untracked files, then retire the orphaned codex branch.
+Branch worked: claude/gitignore-local-assets (created from origin/main)
+Files touched: .gitignore, AI-STATE.md
+Committed: this commit — recorded the untracked-file triage in .gitignore.
+  Gitignored (held local, per Ricardo's category decisions): the brand logo set
+  public/logos/{pngs,svgs}/vpp-*, 3 gallery PNGs, raw/oversized videos (*.MOV
+  plus the 49MB Cabinet-Refinishing-Done-Right.mp4), and the tooling dirs
+  sales-tools/ + vpp-cabinet-fb-posts/. Patterns were checked against tracked
+  files so no tracked logo/image/video is affected.
+Edited but not committed: none here. The orphaned
+  codex/offer-stack-source-cleanup branch is retired this session: its one
+  commit bce3905 was re-landed as 567cc0f (offer copy) and PR #32 (docs), and
+  its uncommitted AI-STATE.md edit is discarded as superseded execution state.
+Blockers encountered: none.
+Post-deploy step Ricardo must do: merge PR #32 (docs sync) when ready; read the
+  two held docs (VPP_Color_Approval.md, VPP_Contract_Terms.md) and tell me
+  whether to commit or keep them local. Promote any held logo/gallery assets out
+  of .gitignore whenever they get wired into the site.
 
 ---
 
@@ -214,6 +213,17 @@ Post-deploy step Ricardo must do: confirm the live "What's Included" section on
   guarantee, 6/12-month wellness checks). First step of a four-part Codex
   cleanup: (1) this copy fix, (2) land bce3905's docs as a review PR, (3) triage
   untracked assets, (4) retire the orphaned branch.
+- 2026-06-05: Steps (3)+(4) of the Codex cleanup — triaged the ~31 untracked
+  files and retired the orphaned codex/offer-stack-source-cleanup branch. Per
+  Ricardo's per-category decisions, held everything local via .gitignore rather
+  than committing: the 23-file brand logo set (pending brand overhaul), 3 unused
+  gallery PNGs, two ~49MB raw/oversized videos, and the sales-tools/ +
+  vpp-cabinet-fb-posts/ tooling dirs. The two untracked docs are held pending
+  Ricardo's read; src/app/privacy/ was a byte-identical local dup of main's
+  shipped page (dropped). bce3905's value reached main as 567cc0f (offer copy)
+  and PR #32 (docs), so the orphaned branch carried nothing unique and was
+  deleted local + remote; its uncommitted AI-STATE.md was superseded execution
+  state and discarded.
 
 ---
 
