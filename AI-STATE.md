@@ -10,19 +10,19 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: claude/hero-declutter (created from origin/main)
+- State last updated from branch: claude/offer-copy-sync (created from origin/main)
 - State last updated after commit: this commit
-- Working tree at last update: decluttered the cabinet-refinishing hero
-  above-the-fold (src/app/cabinet-refinishing/CabinetPage.tsx). Removed the
-  "or see recent transformations →" gallery link and the redundant italic
-  "Built for daily kitchen use. Verified locally: AZ ROC #363664." line, and
-  bumped the CTA row bottom margin mb-3 -> mb-6 so the trust badges breathe.
-  Sub-CTA stack drops from six stacked lines to two (call link + badge row);
-  one primary CTA in the hero instead of four competing ones. Type effect,
-  headline, subhead, CTA, call link, all three trust badges, and the photo
-  are unchanged.
+- Working tree at last update: synced the cabinet-refinishing "What's Included"
+  offer copy on production to the current offer stack
+  (src/app/cabinet-refinishing/CabinetPage.tsx). Retired the stale items
+  "$300/Day Finish Promise" -> "Finish-date guarantee", "Lifetime Touch-Up Kit"
+  -> "Leftover paint clearly labeled", and "6-Month Quality Hold" -> "6-Month
+  Wellness Check", and changed wellness-check wording "touched up free" ->
+  "corrected free". Copy lifted verbatim from the unmerged Codex commit bce3905
+  (offer-stack-compliant) and shipped isolated; the rest of bce3905 (brand-doc
+  retirements, AGENTS edits, new offer doc) was NOT included.
 - Local matched origin at last update: committed on branch
-  claude/hero-declutter (off origin/main) and pushed direct to main per
+  claude/offer-copy-sync (off origin/main) and pushed direct to main per
   Ricardo's per-commit approval for this single-file low-risk fix (transport
   SHAs reported in chat)
 - Production URL: https://www.valleypaintingpros.com
@@ -34,29 +34,27 @@
 
 Date: 2026-06-05
 Agent: Claude
-Branch worked: claude/hero-declutter (created from origin/main)
+Branch worked: claude/offer-copy-sync (created from origin/main)
 Files touched: src/app/cabinet-refinishing/CabinetPage.tsx, AI-STATE.md
-Committed: this commit — decluttered the cabinet-refinishing hero. Removed the
-  "or see recent transformations →" gallery link (redundant fourth CTA; the
-  gallery is one scroll down) and the italic "Built for daily kitchen use.
-  Verified locally: AZ ROC #363664." line (ROC already shows in the header,
-  the social-proof bar below the fold, and the sticky bar). Bumped the CTA
-  row margin mb-3 -> mb-6 for badge breathing room. Hero type effect,
-  headline, subhead, primary CTA, call link, trust badges, and photo
-  unchanged.
+Committed: this commit — synced the cabinet-refinishing "What's Included" offer
+  copy to the current offer stack, retiring stale items that were still live on
+  production: "$300/Day Finish Promise" -> "Finish-date guarantee", "Lifetime
+  Touch-Up Kit" -> "Leftover paint clearly labeled", "6-Month Quality Hold" ->
+  "6-Month Wellness Check", and "touched up free" -> "corrected free" on both
+  wellness checks. Copy lifted verbatim from the unmerged Codex commit bce3905;
+  only the four CabinetPage.tsx copy items were taken, nothing else from that
+  commit.
 Edited but not committed: none in this commit. The divergent
-  codex/offer-stack-source-cleanup branch still holds commit bce3905 (offer
-  copy + brand-doc changes, incl. CabinetPage.tsx WhatsIncluded copy) plus an
-  uncommitted AI-STATE.md edit and untracked assets; all left untouched per
-  Ricardo (built on a temporary git worktree off origin/main).
-Blockers encountered: none. npm run lint passes (only pre-existing <img>
-  warnings in Footer/SiteHeader); hero verified in-browser at 375px and
-  1280px.
-Post-deploy step Ricardo must do: confirm the live hero on
-  https://www.valleypaintingpros.com after Vercel deploys. Note: production's
-  "What's Included" section still shows retired offer copy ("Lifetime Touch-Up
-  Kit", "$300/Day Finish Promise") — that fix lives in the unmerged Codex
-  commit bce3905, intentionally not shipped here.
+  codex/offer-stack-source-cleanup branch still holds commit bce3905 (whose
+  remaining brand-doc + AGENTS + new-offer-doc changes are pending a separate
+  review PR) plus an uncommitted AI-STATE.md edit and untracked assets; all
+  left untouched (built on a temporary git worktree off origin/main).
+Blockers encountered: none. The four corrections are byte-for-byte from
+  bce3905, which had already passed review; no behavior change beyond copy.
+Post-deploy step Ricardo must do: confirm the live "What's Included" section on
+  https://www.valleypaintingpros.com after Vercel deploys. Follow-ups in
+  progress this session: land the rest of bce3905 as a docs PR, triage the
+  untracked files, then retire the orphaned codex branch.
 
 ---
 
@@ -205,6 +203,17 @@ Post-deploy step Ricardo must do: confirm the live hero on
   main per Ricardo's per-commit approval, built on a temporary git worktree
   off origin/main so the divergent codex/offer-stack-source-cleanup branch
   (commit bce3905 + uncommitted AI-STATE/untracked assets) stayed untouched.
+- 2026-06-05: Synced production cabinet "What's Included" offer copy to the
+  current offer stack, fixing stale items Ricardo flagged ("Lifetime Touch-Up
+  Kit", "$300/Day Finish Promise", "6-Month Quality Hold", "touched up free").
+  Rather than merge the orphaned codex/offer-stack-source-cleanup branch (8
+  commits behind main, and bce3905 bundles unrelated brand-doc + AGENTS work),
+  lifted ONLY the four CabinetPage.tsx copy corrections from bce3905 and shipped
+  them isolated to main via a worktree off origin/main. The corrections match
+  the AGENTS.md value stack (leftover paint cleanly labeled, finish-date
+  guarantee, 6/12-month wellness checks). First step of a four-part Codex
+  cleanup: (1) this copy fix, (2) land bce3905's docs as a review PR, (3) triage
+  untracked assets, (4) retire the orphaned branch.
 
 ---
 
