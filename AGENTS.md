@@ -2,7 +2,7 @@
 # Single source of truth for all AI agents working on this codebase.
 # Claude Code reads this via @AGENTS.md import in CLAUDE.md.
 # Codex reads this directly.
-# Last meaningful update: 2026-05-23
+# Last meaningful update: 2026-05-24
 
 ---
 
@@ -228,9 +228,11 @@ Use repo-relative paths. When the website contradicts these files, the files win
 | brand/type/vpp-typography-spec.md | Typography system |
 | brand/prompt-block/vpp-house-style-prompt-block-v1.0.md | AI production prompt block |
 
-STALE — do not use for audits or implementation:
-- docs/VPP_BrandIdentity_v4_0.html
-- docs/VPP_LogoSystem_v4_0.html
+Retired v4 HTML brand and logo drafts were deleted on 2026-05-24 because
+they conflicted with the active brand system. Do not recreate or use them.
+
+ARCHIVED — framework material only, not current source of truth:
+- docs/CLAUDE-VPP- EAB BOARD/eab-growth-and-brand-strategist.md
 
 ---
 
@@ -257,8 +259,10 @@ Key line: "A $15,000 kitchen remodel result for $4,800."
 - 3–5 days for most East Valley kitchens
 - Kitchen out of commission 2–3 days while doors are off
 
-### What's Included (value stack — all 8 must be represented accurately)
-1. Professional cabinet refinishing — 76-step process, 14 phases, vertical spray
+### What's Included (value stack — all items must be represented accurately)
+1. Professional cabinet refinishing — prep, prime, topcoat, vertical spray,
+   professional-grade waterborne urethane finish. The 76-step process is
+   internal SOP language, not customer-facing copy.
 2. Soft-close hinge upgrade — sourced, installed, adjusted (cost absorbed)
 3. Hardware audit — old holes patched, redrilled straight
 4. Felt pads on all doors
@@ -266,6 +270,13 @@ Key line: "A $15,000 kitchen remodel result for $4,800."
 6. Full deep clean including cabinet tops
 7. 5-year warranty in writing
 8. Fixed price in writing before work begins
+9. Daily photo updates by text
+10. Finish-date guarantee in writing — $300/day credit if VPP misses the
+    contracted finish date, excluding weather, HOA approval delays, or
+    owner-initiated change orders
+11. Leftover paint cleanly labeled by color, finish, and location used
+12. 6-month wellness check
+13. 12-month wellness check
 
 ### Product Language
 - "Professional-grade waterborne urethane finish"

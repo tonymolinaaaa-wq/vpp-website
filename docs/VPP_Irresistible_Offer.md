@@ -1,6 +1,6 @@
 # VPP Irresistible Offer — Cabinet Refinishing
 
-**Status:** LOCKED — April 10, 2026
+**Status:** LOCKED — May 24, 2026
 **Price:** $150 per opening (doors and drawers priced identically)
 **Service:** Cabinet refinishing only — no interior, no exterior
 
@@ -12,13 +12,19 @@ $150 per opening. All-inclusive. Fixed price in writing before we touch a single
 
 **What's included in every job:**
 
-1. **Professional cabinet refinishing** — prep, prime, topcoat using dedicated cabinet coatings (not regular wall paint). 76-step process across 14 phases. Vertical spray system.
-2. **Soft-close hinge upgrade** — Everbilt 35mm face frame, 1/2" overlay. Sourced, installed, adjusted. Cost absorbed (~$11.32/door) — no separate line item, no markup to the customer.
+1. **Professional cabinet refinishing** — prep, prime, topcoat using dedicated cabinet coatings (not regular wall paint). Vertical spray system. The 76-step process is internal SOP language, not customer-facing copy.
+2. **Soft-close hinge upgrade** — Everbilt 35mm face frame, 1/2" overlay. Sourced, installed, adjusted. Cost absorbed (~$11.32 for each eligible door) — no separate line item, no markup to the customer.
 3. **Hardware audit** — inspect existing handle positions. Patch all old/misaligned holes. Redrill straight to correct alignment. Whether the customer is keeping or replacing handles, every hole is right.
 4. **Felt pads** — installed on all doors.
 5. **Cabinet label preservation** — identify, document, and reinstall original cabinet labels (KCMA certification stickers, builder emergency contact labels, utility info). Reprinted clean and reapplied after refinishing with before/after photos. Nobody else does this.
 6. **Full deep clean** — including cabinet tops.
 7. **5-year warranty in writing** — covers finish adhesion and peeling under normal use. Excludes: physical damage, chemical exposure, improper cleaning, substrate failure.
+8. **Fixed price in writing** — price confirmed before work begins.
+9. **Daily photo updates by text** — documented progress while work is underway.
+10. **Finish-date guarantee** — $300/day credit if VPP misses the contracted finish date, excluding weather, HOA approval delays, or owner-initiated change orders.
+11. **Leftover paint cleanly labeled** — color, finish, and location used, so the customer never has to wonder what was used where.
+12. **6-month wellness check** — scheduled follow-up to confirm the finish is holding up correctly.
+13. **12-month wellness check** — one-year follow-up walkthrough.
 
 **Turnaround:** 3–5 days for most East Valley kitchens.
 
@@ -56,7 +62,7 @@ The comparison that closes: "A $15,000 kitchen remodel result for $4,800."
 
 Every item below is included at $150/opening. No add-ons, no surprise charges.
 
-1. **Professional refinishing that lasts years** — vs. DIY kits that fail in months
+1. **Professional refinishing that lasts years** — dedicated cabinet coatings, proper prep, and vertical spray application.
 2. **New soft-close hinges** — sourced, installed, adjusted. Customer never deals with slamming doors again.
 3. **Hardware audit** — every hole filled, redrilled, aligned. The detail nobody else touches.
 4. **Felt pads** — quiet, protected doors from day one.
@@ -65,6 +71,11 @@ Every item below is included at $150/opening. No add-ons, no surprise charges.
 7. **5-year warranty in writing** — strongest in the East Valley market.
 8. **Fixed price** — price certainty before work begins is itself a premium service.
 9. **3–5 day turnaround** — kitchen out of commission for 2–3 days while doors are off, then fully restored. Set expectations upfront.
+10. **Daily photo updates** — progress documented by text while the customer is away from the kitchen.
+11. **Finish-date guarantee** — written $300/day accountability if VPP misses the contracted finish date, excluding weather, HOA approval delays, or owner-initiated change orders.
+12. **Leftover paint labeled clearly** — color, finish, and location used so future touch-ups do not become guesswork.
+13. **6-month wellness check** — proactive follow-up after the finish has lived through daily use.
+14. **12-month wellness check** — one-year follow-up walkthrough to confirm the finish is performing.
 
 ---
 
@@ -92,7 +103,7 @@ Do NOT name specific products in customer-facing copy unless Ricardo approves.
 | Element | VPP Delivery |
 |---|---|
 | **Dream Outcome** | A kitchen that looks like a $15,000 remodel — in under a week |
-| **Perceived Likelihood** | 5-star Google reviews · AZ ROC #363664 · Before/after photos · 5-year warranty in writing |
+| **Perceived Likelihood** | 5-star Google reviews · AZ ROC #363664 · Before/after photos · 5-year warranty in writing · finish-date guarantee · scheduled wellness checks |
 | **Time to Result** | 3–5 days for most kitchens |
 | **Effort & Sacrifice** | Fully contained. Zero mess. Kitchen out of commission 2–3 days while doors are off (depends on size), then fully restored. VPP handles everything. |
 
@@ -111,7 +122,7 @@ Do NOT name specific products in customer-facing copy unless Ricardo approves.
 | Designer Cabinet Refinishing | $4,000–$6,000+ | Lifetime | Premium tier — VPP is the quality alternative at lower price |
 | WOW 1 DAY Painting | $2,500–$4,500 | 2-year | VPP has stronger warranty, more thorough process |
 
-**Positioning statement:** VPP delivers a premium-tier process (76 steps, spray system, hinge upgrade, hardware audit) at a mid-market price point with the strongest standard warranty in the East Valley. The offer is designed so the customer gets more than they expect at a price that makes the decision easy.
+**Positioning statement:** VPP delivers a premium-tier cabinet refinishing offer (spray system, hinge upgrade, hardware audit, written finish-date accountability, and scheduled wellness checks) at a mid-market price point with the strongest standard warranty in the East Valley. The offer is designed so the customer gets more than they expect at a price that makes the decision easy.
 
 ---
 
@@ -126,7 +137,7 @@ Every physical piece needs a time-limited offer. Without one, it goes on the fri
 **Why this works:**
 - Soft-close hinges feel expensive and luxurious to homeowners. High perceived value.
 - Hinges only go on doors, not drawers — but the customer pays $150 on both doors AND drawers. The math is already in VPP's favor.
-- Actual hinge cost: ~$11.32/door. On a 20-door kitchen: ~$226. On a 28-door kitchen: ~$317. This is a framing play, not a discount — the cost is already absorbed into the $150 price.
+- Actual hinge cost: ~$11.32 for each eligible door. On a 20-door kitchen: ~$226. On a 28-door kitchen: ~$317. This is a framing play, not a discount — the cost is already absorbed into the $150 price.
 - The offer is designed to pull direct-to-homeowner work and reduce GC dependency. Homeowners getting in line for VPP's schedule is the goal.
 
 **Framing variations by asset:**
@@ -154,7 +165,7 @@ Every advisor, every asset, every estimate references this file as the single so
 
 ## KNOWN COST DATA (as of April 2026)
 
-- **Soft-close hinges:** ~$11.32/door (Everbilt 35mm face frame, 1/2" overlay). Doors only, not drawers.
+- **Soft-close hinges:** ~$11.32 for each eligible door (Everbilt 35mm face frame, 1/2" overlay). Doors only, not drawers.
 - **Total materials per kitchen (20–45 openings):** ~$600. Breakdown: 4 gal primer + 3–4 gal paint + paper, plastic, caulk, sundries. Relatively flat across kitchen sizes.
 - **Per-opening labor time:** Not yet tracked — #1 financial KPI gap.
 - **Per-opening material cost:** Not yet isolated from total kitchen cost — derivable from the $600 figure above once tracked per job.
@@ -165,10 +176,10 @@ Every advisor, every asset, every estimate references this file as the single so
 
 - [ ] Per-opening labor time KPI not yet tracked — needed for accurate margin calculation
 - [ ] Face frame pricing formula not documented
-- [ ] Warranty document not yet drafted (legal review needed before first direct close)
-- [ ] Website copy needs updating to reflect $150/opening and current offer
-- [ ] VPP-STRATEGY.md full audit needed — still shows $125, separate drawer pricing, 3-year warranty
+- [ ] Warranty and finish-date guarantee documents need legal review before first direct close
+- [ ] Website copy needs updating whenever the official offer stack changes
+- [ ] Legacy strategy docs need a full audit for old pricing, separate drawer pricing, and old warranty language
 
 ---
 
-*Single source of truth for VPP's irresistible offer. Updated April 10, 2026. All project files referencing $125/door or $150/door are stale and will be updated downstream.*
+*Single source of truth for VPP's irresistible offer. Updated May 24, 2026. Old door-based website pricing is stale and must be updated downstream.*

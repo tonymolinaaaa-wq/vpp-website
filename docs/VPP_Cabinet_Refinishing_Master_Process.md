@@ -139,8 +139,8 @@
 64. Remove all masking inside kitchen bases
 65. **Deep clean inside of all bases** — every interior surface cleaned and ready for customer to put belongings back
 66. Set doors face down on table with plastic
-67. Install hinges — **soft-close hinge upgrade included in every job** (VPP sources Everbilt 35mm face frame hinges from Home Depot, cost absorbed into $150/door pricing. Doors never slam again.)
-68. **Handle audit (every job):** regardless of whether installing new handles, patch ALL existing hardware holes and drill new straight ones. Builders install handles crooked and hide it with dark stain. VPP corrects this — included in the $150/door price.
+67. Install hinges — **soft-close hinge upgrade included in every job** (VPP sources Everbilt 35mm face frame hinges from Home Depot, cost absorbed into the $150/opening offer. Doors never slam again.)
+68. **Handle audit (every job):** regardless of whether installing new handles, patch ALL existing hardware holes and drill new straight ones. Builders install handles crooked and hide it with dark stain. VPP corrects this — included in the $150/opening price.
 69. Install hardware (new or reused, or none if no hardware)
 69. Follow numerical order — match hinge hole numbers to base opening tape
 70. Remove tape from inside bases as each door/drawer is installed
@@ -168,7 +168,7 @@
 - **Degreaser deep clean on cabinet tops** — the area everyone ignores
 - **Deep clean of cabinet interiors** — customer gets a clean kitchen back, not just a painted one
 - **Felt pads on every door and drawer** — prevents finish-to-finish sticking
-- **Soft-close hinge upgrade included** — baked into $150/door pricing, no separate line item
+- **Soft-close hinge upgrade included** — baked into the $150/opening offer, no separate line item
 - **Handle audit on every job** — patch all old crooked holes, redrill straight ones, included in price
 - **Hinge hole numbering system** — hook drill holes are always hidden after reinstall
 - **Festool filter for dust/fume containment** — professional-grade air quality during the job
