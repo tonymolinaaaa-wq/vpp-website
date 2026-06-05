@@ -4,26 +4,29 @@
 # Does NOT direct strategy or prioritize next work — that happens outside this file.
 # Exact HEAD comes from git. AI-STATE.md records execution state as of its last update.
 # This file wins over stale chat memory for project status.
-# Last meaningful update: 2026-05-26
+# Last meaningful update: 2026-06-04
 
 ---
 
 ## SNAPSHOT
 
-- State last updated from branch: claude/facebook-link-preview-hAnND
+- State last updated from branch: claude/privacy-policy (created from origin/main)
 - State last updated after commit: this commit
-- Working tree at last update: committed two changes on this branch — first
-  commit b4541b1 hardened Open Graph / Twitter card metadata across
-  layout.tsx, cabinet-refinishing/page.tsx, blog/page.tsx, and
-  blog/[slug]/page.tsx; this commit switches src/app/page.tsx from
-  redirect() to permanentRedirect() so the root URL returns a 308 instead
-  of a 307 (Facebook's scraper choked on the 307 with "Could Not Follow
-  Redirect" and kept serving its cached pre-cabinet-only preview, which is
-  the visible bug that triggered this work). Extra Ricardo-created gallery
-  images open-concept-kitchen.png and saltillo-floor-cabinets.png remain
-  untracked, and extra Ricardo-created logo assets remain untracked under
-  public/logos/pngs and public/logos/svgs
-- Local matched origin at last update: feature branch pushed to origin
+- Working tree at last update: added src/app/privacy/page.tsx — a new
+  /privacy Privacy Policy route. Reason: Meta (Facebook/Instagram) lead forms
+  require a live privacy-policy URL and the site had none (/privacy was only
+  "Planned"). The page reuses SiteHeader + Footer and brand tokens, exports
+  canonical + OpenGraph metadata, and documents data collected via the website
+  and Meta lead forms, calls/SMS with STOP/HELP opt-out and "consent not a
+  condition of purchase" (TCPA posture for texting leads), analytics +
+  Meta-pixel cookies, sharing (service providers, Meta/Google, legal), "we do
+  not sell your personal information," retention, children, and contact
+  (AZ ROC #363664). The policy is a DRAFT pending owner/legal review, flagged
+  in a code comment at the top of the file. No footer link added yet.
+- Local matched origin at last update: committed on branch claude/privacy-policy
+  (off origin/main); push + PR + merge to main to follow this session per
+  Ricardo's instruction (transport SHAs reported in chat, not baked into the
+  commit)
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -31,50 +34,33 @@
 
 ## LAST SESSION
 
-Date: 2026-05-26
+Date: 2026-06-04
 Agent: Claude
-Branch worked: claude/facebook-link-preview-hAnND
-Files touched: src/app/layout.tsx, src/app/cabinet-refinishing/page.tsx,
-  src/app/blog/page.tsx, src/app/blog/[slug]/page.tsx, src/app/page.tsx,
-  AI-STATE.md
-Committed: b4541b1 (prior commit on this branch) and this commit. b4541b1
-  hardened Open Graph / Twitter card metadata so
-  Facebook, iMessage, Slack, LinkedIn, and X reliably render the new
-  VPP_og-image.png preview. Moved the root og:image from a raw <head>
-  meta tag into Next's metadata.openGraph.images so metadataBase resolves
-  it to an absolute URL and Next emits og:image:width (1200), og:image:height
-  (630), og:image:type (image/png), og:image:alt; added og:site_name and
-  root-level og:url; added a matching twitter card (summary_large_image)
-  on layout. Repeated images + siteName on cabinet-refinishing/page.tsx
-  and blog/page.tsx because route-level openGraph blocks replace (not
-  merge with) the layout's openGraph in Next App Router. Added siteName
-  to blog/[slug]/page.tsx for consistency; that route already supplied
-  per-article images via frontmatter.featuredImage and a twitter card.
-  Removed the now-redundant raw og:image meta tag from layout.tsx <head>.
-  This second commit switches src/app/page.tsx from next/navigation's
-  redirect() (307 temporary) to permanentRedirect() (308 permanent) so
-  the root URL is no longer a Facebook-scraper trap. Real-world reproduction:
-  pasting https://www.valleypaintingpros.com/ into Facebook's Sharing
-  Debugger returns "Could Not Follow Redirect — URL requested a HTTP
-  redirect, but it could not be followed" with response code 307, and the
-  link preview falls back to FB's cached pre-cabinet-only scrape. Switching
-  to 308 is also better SEO (Google honors permanent redirects more
-  favorably) and was already on the open checklist.
-Edited but not committed: extra Ricardo-created gallery images and logo assets
-  remain unstaged/uncommitted.
-Blockers encountered: none; npm run lint and npm run build both pass with only
-  pre-existing img/Image warnings. Verified the prerendered HTML for /,
-  /cabinet-refinishing, /blog, and a blog article all emit the full OG +
-  Twitter tag set with absolute URLs.
-Post-deploy step Ricardo must do: paste the production URLs into the
-  Facebook Sharing Debugger (https://developers.facebook.com/tools/debug/)
-  and click "Scrape Again" to bust Facebook's cached stale preview that
-  prompted this work. Repeat for /cabinet-refinishing and /blog. The
-  /cabinet-refinishing URL was confirmed in this session to have never
-  been scraped by Facebook before (FB reported "this URL has never been
-  shared"), so a single Scrape pass will populate it cleanly. The root
-  URL specifically needed the 308 fix above to be deployed first — until
-  then FB will keep failing to follow the redirect.
+Branch worked: claude/privacy-policy (created from origin/main)
+Files touched: src/app/privacy/page.tsx (new route), AI-STATE.md
+Committed: this commit — added a /privacy Privacy Policy page so Meta
+  (Facebook/Instagram) lead forms can launch (Meta requires a live
+  privacy-policy URL; /privacy did not exist). The page reuses SiteHeader +
+  Footer and brand tokens, exports canonical + OpenGraph metadata, and
+  covers: information collected via the website and Meta lead forms; calls
+  and SMS with STOP/HELP opt-out and "consent not a condition of purchase"
+  (TCPA posture for texting leads); analytics + Meta-pixel cookies; sharing
+  with service providers and Meta/Google plus legal; "we do not sell your
+  personal information"; retention; children; and contact (AZ ROC #363664,
+  (480) 433-2680, valleypaintingprosllc@gmail.com). It is a DRAFT pending
+  owner/legal review before reliance, flagged in a code comment at the top
+  of the file.
+Edited but not committed: none in this PR. The divergent
+  codex/offer-stack-source-cleanup branch still holds an uncommitted
+  AI-STATE.md edit and untracked assets; left untouched (this work was built
+  on a temporary git worktree off origin/main).
+Blockers encountered: none. npm run lint and npm run build both pass (only
+  pre-existing <img> warnings in Footer/SiteHeader); /privacy prerenders as
+  static HTML, 1.98 kB.
+Post-deploy step Ricardo must do: once /privacy is live on production, use
+  https://www.valleypaintingpros.com/privacy as the privacy-policy URL in the
+  Meta lead form. Have the policy reviewed by counsel before relying on it.
+  Optional follow-up: add a footer link to /privacy.
 
 ---
 
@@ -194,6 +180,18 @@ Post-deploy step Ricardo must do: paste the production URLs into the
   308 from permanentRedirect() is followed correctly and lets FB read the
   /cabinet-refinishing page's full OG metadata. This was already on the
   open SEO checklist independent of the FB issue.
+- 2026-06-04: Added a /privacy Privacy Policy route (src/app/privacy/page.tsx)
+  to unblock Meta (Facebook/Instagram) lead forms, which require a live
+  privacy-policy URL. The page is brand-consistent (SiteHeader/Footer, brand
+  tokens, canonical + OpenGraph) and tailored to VPP's real data flow:
+  website + Meta lead-form collection; calls/SMS with STOP/HELP opt-out and
+  consent-not-a-condition language (TCPA posture); analytics + Meta-pixel
+  cookies; no sale of personal information; AZ ROC #363664 contact. Marked as
+  a draft pending owner/legal review (code comment at top of file). Built on a
+  temporary git worktree off origin/main so the unrelated, divergent
+  codex/offer-stack-source-cleanup branch (1 commit ahead, bce3905, plus
+  uncommitted AI-STATE edits and untracked assets) was not disturbed. Footer
+  link to /privacy deferred as an optional follow-up.
 
 ---
 
