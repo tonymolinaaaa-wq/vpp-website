@@ -10,21 +10,22 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: claude/offer-copy-sync (created from origin/main)
-- State last updated after commit: this commit
-- Working tree at last update: synced the cabinet-refinishing "What's Included"
-  offer copy on production to the current offer stack
-  (src/app/cabinet-refinishing/CabinetPage.tsx). Retired the stale items
-  "$300/Day Finish Promise" -> "Finish-date guarantee", "Lifetime Touch-Up Kit"
-  -> "Leftover paint clearly labeled", and "6-Month Quality Hold" -> "6-Month
-  Wellness Check", and changed wellness-check wording "touched up free" ->
-  "corrected free". Copy lifted verbatim from the unmerged Codex commit bce3905
-  (offer-stack-compliant) and shipped isolated; the rest of bce3905 (brand-doc
-  retirements, AGENTS edits, new offer doc) was NOT included.
+- State last updated from branch: claude/retire-stale-brand-docs (created from origin/main)
+- State last updated after commit: this commit (on the PR branch; pending PR to
+  main and Ricardo's merge)
+- Working tree at last update: re-landed the non-code portion of the orphaned
+  Codex commit bce3905 onto a fresh branch off origin/main, as a reviewable PR.
+  Deletes the two retired v4 HTML drafts (docs/VPP_BrandIdentity_v4_0.html,
+  docs/VPP_LogoSystem_v4_0.html), adds
+  docs/VPP_ChatGPT_Ad_Source_Offer_Inclusions.md, and syncs AGENTS.md (value
+  stack 8 -> 13 items, 76-step process marked internal SOP), the two brand
+  source-of-truth files (standardize "AZ ROC #363664" credential wording),
+  docs/VPP_Irresistible_Offer.md, the master-process doc, and the EAB framework
+  note. bce3905's CabinetPage.tsx + AI-STATE.md were excluded (the copy already
+  shipped in 567cc0f; main keeps its own AI-STATE).
 - Local matched origin at last update: committed on branch
-  claude/offer-copy-sync (off origin/main) and pushed direct to main per
-  Ricardo's per-commit approval for this single-file low-risk fix (transport
-  SHAs reported in chat)
+  claude/retire-stale-brand-docs (off origin/main); pushed and opened as a PR
+  for Ricardo to merge (PR URL reported in chat). Not auto-merged.
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -34,27 +35,27 @@
 
 Date: 2026-06-05
 Agent: Claude
-Branch worked: claude/offer-copy-sync (created from origin/main)
-Files touched: src/app/cabinet-refinishing/CabinetPage.tsx, AI-STATE.md
-Committed: this commit — synced the cabinet-refinishing "What's Included" offer
-  copy to the current offer stack, retiring stale items that were still live on
-  production: "$300/Day Finish Promise" -> "Finish-date guarantee", "Lifetime
-  Touch-Up Kit" -> "Leftover paint clearly labeled", "6-Month Quality Hold" ->
-  "6-Month Wellness Check", and "touched up free" -> "corrected free" on both
-  wellness checks. Copy lifted verbatim from the unmerged Codex commit bce3905;
-  only the four CabinetPage.tsx copy items were taken, nothing else from that
-  commit.
-Edited but not committed: none in this commit. The divergent
-  codex/offer-stack-source-cleanup branch still holds commit bce3905 (whose
-  remaining brand-doc + AGENTS + new-offer-doc changes are pending a separate
-  review PR) plus an uncommitted AI-STATE.md edit and untracked assets; all
-  left untouched (built on a temporary git worktree off origin/main).
-Blockers encountered: none. The four corrections are byte-for-byte from
-  bce3905, which had already passed review; no behavior change beyond copy.
-Post-deploy step Ricardo must do: confirm the live "What's Included" section on
-  https://www.valleypaintingpros.com after Vercel deploys. Follow-ups in
-  progress this session: land the rest of bce3905 as a docs PR, triage the
-  untracked files, then retire the orphaned codex branch.
+Branch worked: claude/retire-stale-brand-docs (created from origin/main)
+Files touched: AGENTS.md, brand/guidelines/vpp-brand-guidelines-v1.0.md,
+  brand/prompt-block/vpp-house-style-prompt-block-v1.0.md,
+  "docs/CLAUDE-VPP- EAB BOARD/eab-growth-and-brand-strategist.md",
+  docs/VPP_Cabinet_Refinishing_Master_Process.md,
+  docs/VPP_Irresistible_Offer.md,
+  docs/VPP_ChatGPT_Ad_Source_Offer_Inclusions.md (new),
+  docs/VPP_BrandIdentity_v4_0.html (deleted),
+  docs/VPP_LogoSystem_v4_0.html (deleted), AI-STATE.md
+Committed: this commit (PR branch) — re-landed bce3905's doc/brand/AGENTS work
+  onto current main as a reviewable PR, isolated from the orphaned codex branch.
+  Verified clean: origin/main was byte-identical to bce3905's base on every one
+  of these paths, so the lift carried no divergence/conflicts.
+Edited but not committed: none in this commit. The orphaned
+  codex/offer-stack-source-cleanup branch (commit bce3905, uncommitted
+  AI-STATE.md, untracked assets) is still untouched and now slated for retirement
+  once this PR merges and the untracked assets are triaged.
+Blockers encountered: none.
+Post-merge step Ricardo must do: review + merge this PR. After merge, the
+  remaining Codex-cleanup steps are: triage the ~31 untracked files, then delete
+  the orphaned codex branch.
 
 ---
 
@@ -214,6 +215,16 @@ Post-deploy step Ricardo must do: confirm the live "What's Included" section on
   guarantee, 6/12-month wellness checks). First step of a four-part Codex
   cleanup: (1) this copy fix, (2) land bce3905's docs as a review PR, (3) triage
   untracked assets, (4) retire the orphaned branch.
+- 2026-06-05: Step (2) of the Codex cleanup — re-landed the non-code portion of
+  bce3905 as a reviewable PR on branch claude/retire-stale-brand-docs off current
+  origin/main, instead of merging the 8-commits-behind codex branch. Confirmed
+  origin/main was byte-identical to bce3905's base on every doc/brand/AGENTS path,
+  so the lift was conflict-free. Scope: delete the two retired v4 HTML drafts, add
+  the ChatGPT offer-inclusions doc, sync the AGENTS.md value stack (8 -> 13 items)
+  and the "AZ ROC #363664" credential wording in the two brand source-of-truth
+  files, plus the irresistible-offer and master-process docs. Excluded bce3905's
+  CabinetPage.tsx (already shipped in 567cc0f) and its AI-STATE.md (main keeps its
+  own). Opened as a PR for Ricardo to merge; not auto-merged.
 
 ---
 
@@ -223,8 +234,9 @@ Post-deploy step Ricardo must do: confirm the live "What's Included" section on
   recently. Treat as Level 1 gate (propose patch before writing).
 - public/cabinet-content/ and public/social-proof/ are gitignored — files
   there will NOT deploy to Vercel. Do not reference these paths in code.
-- docs/VPP_BrandIdentity_v4_0.html and docs/VPP_LogoSystem_v4_0.html are
-  stale and must not govern audits. Flag if referenced.
+- docs/VPP_BrandIdentity_v4_0.html and docs/VPP_LogoSystem_v4_0.html were
+  retired and are deleted by the claude/retire-stale-brand-docs PR. Do not
+  recreate or reference them.
 - public/favicon.svg is 1.04MB (embedded raster). Works but wasteful.
   Do not remove without Ricardo's approval.
 - The 3 blog posts in src/content/blog/ have not been QC'd for pricing

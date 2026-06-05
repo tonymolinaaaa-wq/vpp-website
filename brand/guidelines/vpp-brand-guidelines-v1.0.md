@@ -162,7 +162,7 @@ Direct. Confident. Local. Warm without being casual. Never corporate. Never sale
 
 ### Credentials reference
 
-Always specific: **"AZ ROC #363664"** or **"Arizona ROC License #363664"**. Do not use generic "Licensed Contractor" or "ROC Licensed" as the main public trust signal. CR-34 may appear only as supporting license-class context when needed, never in place of the ROC number.
+Always use exactly **"AZ ROC #363664"** wherever the license credential is required. Do not use alternate long-form license wording or generic license phrases as the main public trust signal. CR-34 may appear only as supporting license-class context when needed, never in place of the ROC number.
 
 ### Voice → Microcopy translation
 
@@ -206,7 +206,7 @@ Always specific: **"AZ ROC #363664"** or **"Arizona ROC License #363664"**. Do n
 | Use cream as the default light background | Use pure white anywhere in the brand system |
 | Pair Alfa Slab One (display) with Inter (everything else) | Mix in additional display fonts |
 | Use terracotta for CTAs and the "P" letterform | Use teal, navy, or cool blue anywhere |
-| Always include "AZ ROC #363664" when claiming credentials | Write "Licensed Contractor" generically |
+| Always include "AZ ROC #363664" when claiming credentials | Use generic license wording |
 | Always position as East Valley specialist | Position as "Phoenix" in marketing copy (SEO context only) |
 | Use real photos of completed VPP jobs | Generate AI photos for GBP or before/after pairs |
 | Test contrast at WebAIM before deploying any new color pairing | Use sage green or terracotta as body text on dark backgrounds |

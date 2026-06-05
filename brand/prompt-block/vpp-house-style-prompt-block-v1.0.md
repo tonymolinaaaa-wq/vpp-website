@@ -78,9 +78,10 @@ BRAND VOICE: Trustworthy Desert Craftsman. Direct, confident, local, warm withou
 casual, never corporate, never salesy, never hypey. Write as if Ricardo is talking to
 a neighbor across the fence.
 
-CREDENTIALS REFERENCE: Always specific — "AZ ROC #363664" or "Arizona ROC License
-#363664." Never use generic "Licensed Contractor" or "ROC Licensed" as the main
-public trust signal. Bond on file with the Arizona ROC. General liability $1M per
+CREDENTIALS REFERENCE: Always use exactly "AZ ROC #363664" wherever the license
+credential is required. Never use alternate long-form license wording or generic
+license phrases as the main public trust signal. Bond on file with the Arizona
+ROC. General liability $1M per
 occurrence / $2M aggregate.
 
 SERVICES: Cabinet refinishing only. Do not advertise interior painting, exterior
