@@ -4,23 +4,27 @@
 # Does NOT direct strategy or prioritize next work — that happens outside this file.
 # Exact HEAD comes from git. AI-STATE.md records execution state as of its last update.
 # This file wins over stale chat memory for project status.
-# Last meaningful update: 2026-06-04
+# Last meaningful update: 2026-06-05
 
 ---
 
 ## SNAPSHOT
 
-- State last updated from branch: claude/footer-privacy-link (created from origin/main)
+- State last updated from branch: claude/hero-declutter (created from origin/main)
 - State last updated after commit: this commit
-- Working tree at last update: added a "Privacy Policy" link to the site
-  footer legal row (src/components/Footer.tsx), pointing to the /privacy page
-  that shipped earlier today (PR #30). Single-line addition next to the
-  copyright line, styled to match the existing footer links (underline,
-  hover:text-sand-light); renders site-wide since Footer is on every page.
-  Completes the optional footer-link follow-up noted in the /privacy session.
+- Working tree at last update: decluttered the cabinet-refinishing hero
+  above-the-fold (src/app/cabinet-refinishing/CabinetPage.tsx). Removed the
+  "or see recent transformations →" gallery link and the redundant italic
+  "Built for daily kitchen use. Verified locally: AZ ROC #363664." line, and
+  bumped the CTA row bottom margin mb-3 -> mb-6 so the trust badges breathe.
+  Sub-CTA stack drops from six stacked lines to two (call link + badge row);
+  one primary CTA in the hero instead of four competing ones. Type effect,
+  headline, subhead, CTA, call link, all three trust badges, and the photo
+  are unchanged.
 - Local matched origin at last update: committed on branch
-  claude/footer-privacy-link (off origin/main); push + PR + merge to main to
-  follow per Ricardo's instruction (transport SHAs reported in chat)
+  claude/hero-declutter (off origin/main) and pushed direct to main per
+  Ricardo's per-commit approval for this single-file low-risk fix (transport
+  SHAs reported in chat)
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -28,26 +32,31 @@
 
 ## LAST SESSION
 
-Date: 2026-06-04
+Date: 2026-06-05
 Agent: Claude
-Branch worked: claude/footer-privacy-link (created from origin/main)
-Files touched: src/components/Footer.tsx, AI-STATE.md
-Committed: this commit — added a "Privacy Policy" link to the footer legal
-  row, pointing to the /privacy page that shipped earlier today (PR #30).
-  Conventional placement beside the copyright line; styled to match the
-  existing footer links (underline, hover:text-sand-light). Site-wide via the
-  shared Footer component. Completes the optional footer-link follow-up from
-  the /privacy session.
-Edited but not committed: none in this PR. The divergent
-  codex/offer-stack-source-cleanup branch still holds an uncommitted
-  AI-STATE.md edit and untracked assets; left untouched (built on a temporary
-  git worktree off origin/main).
-Blockers encountered: none. npm run lint and npm run build both pass (only
-  pre-existing <img> warnings in Footer/SiteHeader).
-Post-deploy step Ricardo must do: none specific to this change. Standing
-  reminder: have the /privacy policy reviewed by counsel before relying on it,
-  and use https://www.valleypaintingpros.com/privacy as the privacy-policy URL
-  in the Meta lead form.
+Branch worked: claude/hero-declutter (created from origin/main)
+Files touched: src/app/cabinet-refinishing/CabinetPage.tsx, AI-STATE.md
+Committed: this commit — decluttered the cabinet-refinishing hero. Removed the
+  "or see recent transformations →" gallery link (redundant fourth CTA; the
+  gallery is one scroll down) and the italic "Built for daily kitchen use.
+  Verified locally: AZ ROC #363664." line (ROC already shows in the header,
+  the social-proof bar below the fold, and the sticky bar). Bumped the CTA
+  row margin mb-3 -> mb-6 for badge breathing room. Hero type effect,
+  headline, subhead, primary CTA, call link, trust badges, and photo
+  unchanged.
+Edited but not committed: none in this commit. The divergent
+  codex/offer-stack-source-cleanup branch still holds commit bce3905 (offer
+  copy + brand-doc changes, incl. CabinetPage.tsx WhatsIncluded copy) plus an
+  uncommitted AI-STATE.md edit and untracked assets; all left untouched per
+  Ricardo (built on a temporary git worktree off origin/main).
+Blockers encountered: none. npm run lint passes (only pre-existing <img>
+  warnings in Footer/SiteHeader); hero verified in-browser at 375px and
+  1280px.
+Post-deploy step Ricardo must do: confirm the live hero on
+  https://www.valleypaintingpros.com after Vercel deploys. Note: production's
+  "What's Included" section still shows retired offer copy ("Lifetime Touch-Up
+  Kit", "$300/Day Finish Promise") — that fix lives in the unmerged Codex
+  commit bce3905, intentionally not shipped here.
 
 ---
 
@@ -185,6 +194,17 @@ Post-deploy step Ricardo must do: none specific to this change. Standing
   copyright line, styled to match existing footer links; site-wide via the
   shared Footer. Shipped on branch claude/footer-privacy-link via a worktree
   off origin/main (Codex's divergent branch left untouched).
+- 2026-06-05: Decluttered the cabinet-refinishing hero above-the-fold after a
+  design audit (hero read as crowded: ~10 stacked elements, 4 competing CTAs,
+  AZ ROC #363664 repeated up to 3x in the first screen). Removed two hero
+  elements — the "or see recent transformations →" gallery link and the italic
+  "Built for daily kitchen use. Verified locally: AZ ROC #363664." line — and
+  bumped the CTA row margin mb-3 -> mb-6. Kept the typewriter hero type effect
+  per Ricardo's explicit instruction; headline, subhead, CTA, call link, and
+  all three trust badges unchanged. Single-file, low-risk; shipped direct to
+  main per Ricardo's per-commit approval, built on a temporary git worktree
+  off origin/main so the divergent codex/offer-stack-source-cleanup branch
+  (commit bce3905 + uncommitted AI-STATE/untracked assets) stayed untouched.
 
 ---
 

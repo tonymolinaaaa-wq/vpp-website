@@ -243,7 +243,7 @@ function Hero() {
             </p>
 
             <div>
-              <div className="flex flex-col sm:flex-row items-start gap-4 mb-3">
+              <div className="flex flex-col sm:flex-row items-start gap-4 mb-6">
                 <button
                   onClick={() => smoothScrollTo('quote-form')}
                   className="btn-primary text-base h-14 px-8 shadow-lg"
@@ -257,13 +257,6 @@ function Hero() {
                   or call (480) 433-2680
                 </a>
               </div>
-
-              <button
-                onClick={() => smoothScrollTo('gallery')}
-                className="font-body font-medium text-sm text-sand-light underline underline-offset-4 hover:text-brand-cream-50 transition-colors mb-5"
-              >
-                or see recent transformations →
-              </button>
 
               <ul className="flex flex-col items-start gap-x-4 gap-y-2 mb-3 list-none p-0 sm:flex-row sm:flex-wrap sm:items-center">
                 {[
@@ -291,9 +284,6 @@ function Hero() {
                   </li>
                 ))}
               </ul>
-              <p className="font-body italic text-[13px] leading-6 text-sand-light max-w-[310px] md:max-w-[520px] break-words">
-                Built for daily kitchen use. Verified locally: AZ ROC #363664.
-              </p>
             </div>
         </div>
       </div>
