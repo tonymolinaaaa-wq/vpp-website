@@ -10,22 +10,24 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: claude/retire-stale-brand-docs (created from origin/main)
-- State last updated after commit: this commit (on the PR branch; pending PR to
-  main and Ricardo's merge)
-- Working tree at last update: re-landed the non-code portion of the orphaned
-  Codex commit bce3905 onto a fresh branch off origin/main, as a reviewable PR.
-  Deletes the two retired v4 HTML drafts (docs/VPP_BrandIdentity_v4_0.html,
-  docs/VPP_LogoSystem_v4_0.html), adds
-  docs/VPP_ChatGPT_Ad_Source_Offer_Inclusions.md, and syncs AGENTS.md (value
-  stack 8 -> 13 items, 76-step process marked internal SOP), the two brand
-  source-of-truth files (standardize "AZ ROC #363664" credential wording),
-  docs/VPP_Irresistible_Offer.md, the master-process doc, and the EAB framework
-  note. bce3905's CabinetPage.tsx + AI-STATE.md were excluded (the copy already
-  shipped in 567cc0f; main keeps its own AI-STATE).
+- State last updated from branch: claude/gitignore-local-assets (created from origin/main)
+- State last updated after commit: this commit
+- Working tree at last update: triaged the ~31 untracked files left on the
+  orphaned codex branch and recorded the dispositions in .gitignore. Held local
+  (gitignored, kept on disk, not committed/deployed) per Ricardo's per-category
+  decisions: the 23-file brand logo set under public/logos/{pngs,svgs}/vpp-*
+  (pending the brand overhaul), 3 unused gallery PNGs, two ~49MB raw/oversized
+  source videos (*.MOV plus the 49MB mp4), and the internal tooling dirs
+  sales-tools/ and vpp-cabinet-fb-posts/. Ignore patterns were checked against
+  tracked files so no tracked logo/image/video is affected. The two untracked
+  docs (VPP_Color_Approval.md, VPP_Contract_Terms.md) are held pending Ricardo's
+  read; the untracked src/app/privacy/ copy is byte-identical to the page
+  already live on main (PR #30) and is dropped as the branch is retired.
 - Local matched origin at last update: committed on branch
-  claude/retire-stale-brand-docs (off origin/main); pushed and opened as a PR
-  for Ricardo to merge (PR URL reported in chat). Not auto-merged.
+  claude/gitignore-local-assets (off origin/main) and pushed direct to main. The
+  final cleanup step (retire the orphaned codex/offer-stack-source-cleanup
+  branch) is performed right after this commit; branch-deletion facts are
+  reported in chat, not via a follow-up commit.
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -35,27 +37,23 @@
 
 Date: 2026-06-05
 Agent: Claude
-Branch worked: claude/retire-stale-brand-docs (created from origin/main)
-Files touched: AGENTS.md, brand/guidelines/vpp-brand-guidelines-v1.0.md,
-  brand/prompt-block/vpp-house-style-prompt-block-v1.0.md,
-  "docs/CLAUDE-VPP- EAB BOARD/eab-growth-and-brand-strategist.md",
-  docs/VPP_Cabinet_Refinishing_Master_Process.md,
-  docs/VPP_Irresistible_Offer.md,
-  docs/VPP_ChatGPT_Ad_Source_Offer_Inclusions.md (new),
-  docs/VPP_BrandIdentity_v4_0.html (deleted),
-  docs/VPP_LogoSystem_v4_0.html (deleted), AI-STATE.md
-Committed: this commit (PR branch) — re-landed bce3905's doc/brand/AGENTS work
-  onto current main as a reviewable PR, isolated from the orphaned codex branch.
-  Verified clean: origin/main was byte-identical to bce3905's base on every one
-  of these paths, so the lift carried no divergence/conflicts.
-Edited but not committed: none in this commit. The orphaned
-  codex/offer-stack-source-cleanup branch (commit bce3905, uncommitted
-  AI-STATE.md, untracked assets) is still untouched and now slated for retirement
-  once this PR merges and the untracked assets are triaged.
+Branch worked: claude/gitignore-local-assets (created from origin/main)
+Files touched: .gitignore, AI-STATE.md
+Committed: this commit — recorded the untracked-file triage in .gitignore.
+  Gitignored (held local, per Ricardo's category decisions): the brand logo set
+  public/logos/{pngs,svgs}/vpp-*, 3 gallery PNGs, raw/oversized videos (*.MOV
+  plus the 49MB Cabinet-Refinishing-Done-Right.mp4), and the tooling dirs
+  sales-tools/ + vpp-cabinet-fb-posts/. Patterns were checked against tracked
+  files so no tracked logo/image/video is affected.
+Edited but not committed: none here. The orphaned
+  codex/offer-stack-source-cleanup branch is retired this session: its one
+  commit bce3905 was re-landed as 567cc0f (offer copy) and PR #32 (docs), and
+  its uncommitted AI-STATE.md edit is discarded as superseded execution state.
 Blockers encountered: none.
-Post-merge step Ricardo must do: review + merge this PR. After merge, the
-  remaining Codex-cleanup steps are: triage the ~31 untracked files, then delete
-  the orphaned codex branch.
+Post-deploy step Ricardo must do: merge PR #32 (docs sync) when ready; read the
+  two held docs (VPP_Color_Approval.md, VPP_Contract_Terms.md) and tell me
+  whether to commit or keep them local. Promote any held logo/gallery assets out
+  of .gitignore whenever they get wired into the site.
 
 ---
 
@@ -215,16 +213,17 @@ Post-merge step Ricardo must do: review + merge this PR. After merge, the
   guarantee, 6/12-month wellness checks). First step of a four-part Codex
   cleanup: (1) this copy fix, (2) land bce3905's docs as a review PR, (3) triage
   untracked assets, (4) retire the orphaned branch.
-- 2026-06-05: Step (2) of the Codex cleanup — re-landed the non-code portion of
-  bce3905 as a reviewable PR on branch claude/retire-stale-brand-docs off current
-  origin/main, instead of merging the 8-commits-behind codex branch. Confirmed
-  origin/main was byte-identical to bce3905's base on every doc/brand/AGENTS path,
-  so the lift was conflict-free. Scope: delete the two retired v4 HTML drafts, add
-  the ChatGPT offer-inclusions doc, sync the AGENTS.md value stack (8 -> 13 items)
-  and the "AZ ROC #363664" credential wording in the two brand source-of-truth
-  files, plus the irresistible-offer and master-process docs. Excluded bce3905's
-  CabinetPage.tsx (already shipped in 567cc0f) and its AI-STATE.md (main keeps its
-  own). Opened as a PR for Ricardo to merge; not auto-merged.
+- 2026-06-05: Steps (3)+(4) of the Codex cleanup — triaged the ~31 untracked
+  files and retired the orphaned codex/offer-stack-source-cleanup branch. Per
+  Ricardo's per-category decisions, held everything local via .gitignore rather
+  than committing: the 23-file brand logo set (pending brand overhaul), 3 unused
+  gallery PNGs, two ~49MB raw/oversized videos, and the sales-tools/ +
+  vpp-cabinet-fb-posts/ tooling dirs. The two untracked docs are held pending
+  Ricardo's read; src/app/privacy/ was a byte-identical local dup of main's
+  shipped page (dropped). bce3905's value reached main as 567cc0f (offer copy)
+  and PR #32 (docs), so the orphaned branch carried nothing unique and was
+  deleted local + remote; its uncommitted AI-STATE.md was superseded execution
+  state and discarded.
 
 ---
 
@@ -234,9 +233,8 @@ Post-merge step Ricardo must do: review + merge this PR. After merge, the
   recently. Treat as Level 1 gate (propose patch before writing).
 - public/cabinet-content/ and public/social-proof/ are gitignored — files
   there will NOT deploy to Vercel. Do not reference these paths in code.
-- docs/VPP_BrandIdentity_v4_0.html and docs/VPP_LogoSystem_v4_0.html were
-  retired and are deleted by the claude/retire-stale-brand-docs PR. Do not
-  recreate or reference them.
+- docs/VPP_BrandIdentity_v4_0.html and docs/VPP_LogoSystem_v4_0.html are
+  stale and must not govern audits. Flag if referenced.
 - public/favicon.svg is 1.04MB (embedded raster). Works but wasteful.
   Do not remove without Ricardo's approval.
 - The 3 blog posts in src/content/blog/ have not been QC'd for pricing

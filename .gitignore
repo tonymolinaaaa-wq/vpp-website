@@ -44,3 +44,24 @@ next-env.d.ts
 /local-content/
 /.clip-preview/
 /public/social-proof/
+
+# local-only internal tooling — not website code, not deployed
+/sales-tools/
+/vpp-cabinet-fb-posts/
+
+# local-only raw/oversized source video (web-ready clips are committed in /public/videos)
+*.MOV
+/public/videos/Cabinet-Refinishing-Done-Right.mp4
+
+# brand logo set staged for the pending brand overhaul — held local until referenced
+/public/logos/pngs/vpp-horizontal-*
+/public/logos/pngs/vpp-stacked-*
+/public/logos/pngs/vpp-monogram-color-*
+/public/logos/pngs/vpp-monogram-dark-*
+/public/logos/pngs/vpp-monogram-onecolor-*
+/public/logos/svgs/vpp-*
+
+# gallery images staged for future use — held local until wired into the gallery
+/public/images/gallery/golden-hour-barril-cactus.png
+/public/images/gallery/open-concept-kitchen.png
+/public/images/gallery/saltillo-floor-cabinets.png
