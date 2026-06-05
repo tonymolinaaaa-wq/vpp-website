@@ -104,7 +104,14 @@ export function Footer() {
         {/* Bottom row — Legal */}
         <div className="border-t border-mid/30 pt-6 space-y-2">
           <p className="font-body font-light text-[11px] text-rule">
-            &copy; 2026 Valley Painting Pros, LLC. All rights reserved.
+            &copy; 2026 Valley Painting Pros, LLC. All rights reserved.{' '}
+            <span aria-hidden="true">&middot;</span>{' '}
+            <a
+              href="/privacy"
+              className="underline transition-colors hover:text-sand-light"
+            >
+              Privacy Policy
+            </a>
           </p>
           <p className="font-body font-light text-[11px] text-rule">
             You may file a complaint with the Registrar of Contractors at{' '}

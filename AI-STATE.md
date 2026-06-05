@@ -10,23 +10,17 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: claude/privacy-policy (created from origin/main)
+- State last updated from branch: claude/footer-privacy-link (created from origin/main)
 - State last updated after commit: this commit
-- Working tree at last update: added src/app/privacy/page.tsx — a new
-  /privacy Privacy Policy route. Reason: Meta (Facebook/Instagram) lead forms
-  require a live privacy-policy URL and the site had none (/privacy was only
-  "Planned"). The page reuses SiteHeader + Footer and brand tokens, exports
-  canonical + OpenGraph metadata, and documents data collected via the website
-  and Meta lead forms, calls/SMS with STOP/HELP opt-out and "consent not a
-  condition of purchase" (TCPA posture for texting leads), analytics +
-  Meta-pixel cookies, sharing (service providers, Meta/Google, legal), "we do
-  not sell your personal information," retention, children, and contact
-  (AZ ROC #363664). The policy is a DRAFT pending owner/legal review, flagged
-  in a code comment at the top of the file. No footer link added yet.
-- Local matched origin at last update: committed on branch claude/privacy-policy
-  (off origin/main); push + PR + merge to main to follow this session per
-  Ricardo's instruction (transport SHAs reported in chat, not baked into the
-  commit)
+- Working tree at last update: added a "Privacy Policy" link to the site
+  footer legal row (src/components/Footer.tsx), pointing to the /privacy page
+  that shipped earlier today (PR #30). Single-line addition next to the
+  copyright line, styled to match the existing footer links (underline,
+  hover:text-sand-light); renders site-wide since Footer is on every page.
+  Completes the optional footer-link follow-up noted in the /privacy session.
+- Local matched origin at last update: committed on branch
+  claude/footer-privacy-link (off origin/main); push + PR + merge to main to
+  follow per Ricardo's instruction (transport SHAs reported in chat)
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -36,31 +30,24 @@
 
 Date: 2026-06-04
 Agent: Claude
-Branch worked: claude/privacy-policy (created from origin/main)
-Files touched: src/app/privacy/page.tsx (new route), AI-STATE.md
-Committed: this commit — added a /privacy Privacy Policy page so Meta
-  (Facebook/Instagram) lead forms can launch (Meta requires a live
-  privacy-policy URL; /privacy did not exist). The page reuses SiteHeader +
-  Footer and brand tokens, exports canonical + OpenGraph metadata, and
-  covers: information collected via the website and Meta lead forms; calls
-  and SMS with STOP/HELP opt-out and "consent not a condition of purchase"
-  (TCPA posture for texting leads); analytics + Meta-pixel cookies; sharing
-  with service providers and Meta/Google plus legal; "we do not sell your
-  personal information"; retention; children; and contact (AZ ROC #363664,
-  (480) 433-2680, valleypaintingprosllc@gmail.com). It is a DRAFT pending
-  owner/legal review before reliance, flagged in a code comment at the top
-  of the file.
+Branch worked: claude/footer-privacy-link (created from origin/main)
+Files touched: src/components/Footer.tsx, AI-STATE.md
+Committed: this commit — added a "Privacy Policy" link to the footer legal
+  row, pointing to the /privacy page that shipped earlier today (PR #30).
+  Conventional placement beside the copyright line; styled to match the
+  existing footer links (underline, hover:text-sand-light). Site-wide via the
+  shared Footer component. Completes the optional footer-link follow-up from
+  the /privacy session.
 Edited but not committed: none in this PR. The divergent
   codex/offer-stack-source-cleanup branch still holds an uncommitted
-  AI-STATE.md edit and untracked assets; left untouched (this work was built
-  on a temporary git worktree off origin/main).
+  AI-STATE.md edit and untracked assets; left untouched (built on a temporary
+  git worktree off origin/main).
 Blockers encountered: none. npm run lint and npm run build both pass (only
-  pre-existing <img> warnings in Footer/SiteHeader); /privacy prerenders as
-  static HTML, 1.98 kB.
-Post-deploy step Ricardo must do: once /privacy is live on production, use
-  https://www.valleypaintingpros.com/privacy as the privacy-policy URL in the
-  Meta lead form. Have the policy reviewed by counsel before relying on it.
-  Optional follow-up: add a footer link to /privacy.
+  pre-existing <img> warnings in Footer/SiteHeader).
+Post-deploy step Ricardo must do: none specific to this change. Standing
+  reminder: have the /privacy policy reviewed by counsel before relying on it,
+  and use https://www.valleypaintingpros.com/privacy as the privacy-policy URL
+  in the Meta lead form.
 
 ---
 
@@ -192,6 +179,12 @@ Post-deploy step Ricardo must do: once /privacy is live on production, use
   codex/offer-stack-source-cleanup branch (1 commit ahead, bce3905, plus
   uncommitted AI-STATE edits and untracked assets) was not disturbed. Footer
   link to /privacy deferred as an optional follow-up.
+- 2026-06-04: Added a "Privacy Policy" link to the footer legal row
+  (src/components/Footer.tsx) pointing to /privacy, completing the optional
+  follow-up from the privacy-page session. Conventional placement beside the
+  copyright line, styled to match existing footer links; site-wide via the
+  shared Footer. Shipped on branch claude/footer-privacy-link via a worktree
+  off origin/main (Codex's divergent branch left untouched).
 
 ---
 
