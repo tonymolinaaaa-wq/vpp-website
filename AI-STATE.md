@@ -295,6 +295,21 @@ Owner to-dos before interior/exterior go live: merge PR #33 (then the Phase 1
   confirmed /cabinet-refinishing renders unchanged (title, h1, header subtitle
   "Cabinet refinishing | AZ ROC #363664", sticky-bar copy, and 5-Year Warranty
   badge all preserved via the shared-component defaults).
+- 2026-06-05: Applied the two deferred Level 1 changes (owner-approved via diff)
+  on claude/homepage. (1) layout.tsx: broadened root metadata + the global
+  HomeAndConstructionBusiness JSON-LD description to full-service and added a
+  makesOffer catalog built from getAllServices() (interior, exterior, cabinet);
+  phone, address, areaServed, 5.0/7 rating, and the AZ ROC credential unchanged.
+  (2) TrustSignalCards: added warrantyLabel/warrantyDetail props defaulting to
+  the cabinet "5-Year Warranty" text. Verified via preview: homepage Org schema
+  lists all three services in makesOffer; /cabinet-refinishing keeps its own
+  title, canonical, and 7-item FAQPage schema, and its warranty card still reads
+  "5-Year Warranty" (default preserved). The broadened business-level Org schema
+  now renders on every page including cabinet — intended (it describes the
+  business; cabinet's service-specific SEO is untouched). The homepage still uses
+  its inline no-warranty trust strip; adopting the 4-card grid with a generic
+  warranty line awaits owner confirmation of interior/exterior written-warranty
+  terms. npm run build passes.
 
 ---
 
