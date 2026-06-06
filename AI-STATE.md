@@ -10,17 +10,19 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: claude/services-foundation (off main)
+- State last updated from branch: claude/homepage (stacked on
+  claude/services-foundation, which is PR #33 pending Ricardo's merge)
 - State last updated after commit: this commit
-- Working tree at last update: clean after committing Phase 0 of the
-  full-service expansion (see DECISIONS LOG 2026-06-05). Two commits on this
-  branch: a docs commit opening AGENTS.md scope to full-service, and a feat
-  commit adding src/lib/services.ts (single source of truth for services) and
-  tagging cabinet leads by service. npm run build passes; the rendered
-  /cabinet-refinishing page is unchanged.
-- Local matched origin at last update: branch pushed to origin and a PR opened
-  for Ricardo to review and merge (PR URL reported in chat, not via a follow-up
-  commit). Not yet merged to main.
+- Working tree at last update: clean. Phase 0 (foundation) is on
+  claude/services-foundation / PR #33. Phase 1 (this branch) replaces the root
+  cabinet redirect with a real full-service homepage at / and makes SiteHeader +
+  StickyMobileCTA prop-driven (defaults preserve cabinet/blog/privacy exactly).
+  npm run build passes; / is now a static page; /cabinet-refinishing output is
+  unchanged.
+- Local matched origin at last update: claude/homepage pushed; Phase 1 PR opened
+  with base claude/services-foundation so it shows only the Phase 1 diff (it
+  auto-retargets to main once PR #33 merges). PR URLs reported in chat. Nothing
+  merged to main yet.
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -30,25 +32,31 @@
 
 Date: 2026-06-05
 Agent: Claude
-Branch worked: claude/services-foundation (off main)
-Files touched: AGENTS.md, src/lib/services.ts (new),
-  src/app/cabinet-refinishing/CabinetPage.tsx, AI-STATE.md
-Committed: two commits on the branch. (1) docs(agents): opened the website
-  scope from cabinet-only to full-service (interior, exterior, cabinet), froze
-  the /cabinet-refinishing page, made warranty per-service, and relaxed the
-  voice rule to allow "full-service"/"painting company" (Ricardo's call) while
-  still banning "one-stop-shop"/"we do it all". (2) feat(services): added
-  src/lib/services.ts as the single source of truth for all services and wired
-  the cabinet quote form to it, so every lead now carries a `service` tag.
+Branches worked: claude/services-foundation (Phase 0, PR #33) and
+  claude/homepage (Phase 1, stacked on Phase 0).
+Files touched: AGENTS.md, AI-STATE.md, src/lib/services.ts (new),
+  src/app/cabinet-refinishing/CabinetPage.tsx, src/app/HomePage.tsx (new),
+  src/app/page.tsx, src/app/sitemap.ts, src/components/SiteHeader.tsx,
+  src/components/StickyMobileCTA.tsx
+Committed: Phase 0 on claude/services-foundation — (1) docs(agents): opened
+  scope to full-service + froze cabinet + per-service warranty + voice tweak;
+  (2) feat(services): services.ts SSOT + cabinet lead `service` tag. Phase 1 on
+  claude/homepage — (3) feat(homepage): real full-service homepage at /, plus
+  prop-driven SiteHeader/StickyMobileCTA (defaults preserve cabinet/blog/privacy
+  exactly).
 Edited but not committed: none.
-Blockers encountered: none.
-Next up (Phase 1, not started): full-service homepage at / + multi-service nav,
-  plus the Level 1 changes (layout.tsx metadata/schema broadening, service-aware
-  TrustSignalCards warranty). Interior/exterior pages are Phase 2/3; their
-  services.ts entries are status: 'draft' until then.
-Owner to-dos before interior/exterior go live: confirm AZ ROC #363664 license
-  class covers interior/exterior painting (roc.az.gov); supply per-service
-  warranty terms; supply interior/exterior project photos + page copy.
+Blockers encountered: production merge is owner-only (auto-mode correctly
+  blocked the agent from merging PR #33 to main). Phase 1 is therefore stacked
+  on Phase 0 and rebases onto main once #33 merges.
+Still pending (Level 1, proposed separately, not yet written): layout.tsx
+  metadata/schema broadening (Organization makesOffer catalog) + service-aware
+  TrustSignalCards warranty. Multi-service header nav deferred until
+  interior/exterior are live. Interior/exterior pages are Phase 2/3; their
+  services.ts entries stay status: 'draft' until then.
+Owner to-dos before interior/exterior go live: merge PR #33 (then the Phase 1
+  PR); confirm AZ ROC #363664 license class covers interior/exterior painting
+  (roc.az.gov); supply per-service warranty terms + interior/exterior photos and
+  page copy.
 
 ---
 
@@ -259,6 +267,25 @@ Owner to-dos before interior/exterior go live: confirm AZ ROC #363664 license
   service. Reminder: the live lead path is Formspree
   (https://formspree.io/f/xaqankry), NOT src/app/api/quote/route.ts, which stays
   unused. npm run build passes and the rendered /cabinet-refinishing is unchanged.
+- 2026-06-05: Phase 1 — replaced the root redirect (src/app/page.tsx) with a real
+  full-service homepage (src/app/HomePage.tsx) covering interior, exterior, and
+  cabinet refinishing, on branch claude/homepage (stacked on Phase 0). The
+  homepage reads its service cards from src/lib/services.ts (cabinet links to its
+  page; interior/exterior are status: 'draft' and render "Now booking" CTAs that
+  preselect the lead form). Trust signals are business-level only (Google 5.0, AZ
+  ROC, BBB) with NO warranty claim, because warranty is per-service and
+  interior/exterior terms are unconfirmed. The homepage lead form tags
+  submissions with the chosen service + _source: 'homepage' (Formspree). Made
+  SiteHeader (added subtitle + quoteHref props) and StickyMobileCTA (prop-driven
+  copy) reusable with defaults that preserve cabinet/blog/privacy output
+  byte-for-byte; those pages were not modified. Added / to sitemap.ts at priority
+  1 (cabinet entry untouched). Multi-service header nav intentionally deferred
+  until interior/exterior pages are live (getNavServices() would otherwise list
+  only cabinet). Deferred Level 1 items (proposed to owner, NOT written): broaden
+  layout.tsx metadata + Organization JSON-LD (makesOffer catalog), and make
+  TrustSignalCards warranty service-aware. npm run build passes; / is a static
+  page; /cabinet-refinishing output unchanged. NOTE: going live with
+  interior/exterior messaging is gated on confirming the AZ ROC license class.
 
 ---
 

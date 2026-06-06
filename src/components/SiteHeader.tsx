@@ -1,12 +1,16 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { trackEvent } from '@/lib/analytics'
 
 type SiteHeaderProps = {
   homeHref?: string
   trackingPage: string
   ctaLabel?: string
+  /** Small text under the wordmark. Defaults to the cabinet subtitle. */
+  subtitle?: ReactNode
+  /** Where the header CTA sends users when no #quote-form is on the page. */
+  quoteHref?: string
 }
 
 function PhoneIcon({ className = 'h-5 w-5' }: { className?: string }) {
@@ -21,6 +25,8 @@ export function SiteHeader({
   homeHref = '/cabinet-refinishing',
   trackingPage,
   ctaLabel = 'Get a Quote',
+  subtitle,
+  quoteHref = '/cabinet-refinishing#quote-form',
 }: SiteHeaderProps) {
   const [scrolled, setScrolled] = useState(false)
 
@@ -40,7 +46,7 @@ export function SiteHeader({
 
     const el = document.getElementById('quote-form')
     if (!el) {
-      window.location.href = '/cabinet-refinishing#quote-form'
+      window.location.href = quoteHref
       return
     }
 
@@ -75,7 +81,11 @@ export function SiteHeader({
               Valley Painting Pros
             </span>
             <span className="mt-1 hidden font-body text-[8px] font-semibold uppercase leading-tight tracking-[0.12em] text-mid sm:block sm:text-[10px] sm:tracking-[0.18em]">
-              <span className="hidden sm:inline">Cabinet refinishing | </span>AZ ROC #363664
+              {subtitle ?? (
+                <>
+                  <span className="hidden sm:inline">Cabinet refinishing | </span>AZ ROC #363664
+                </>
+              )}
             </span>
           </span>
         </a>

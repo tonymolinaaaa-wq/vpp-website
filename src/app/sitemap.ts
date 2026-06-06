@@ -6,6 +6,12 @@ const siteUrl = 'https://www.valleypaintingpros.com'
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     {
+      url: `${siteUrl}/`,
+      lastModified: new Date('2026-06-05'),
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    {
       url: `${siteUrl}/cabinet-refinishing`,
       lastModified: new Date('2026-05-23'),
       changeFrequency: 'monthly',

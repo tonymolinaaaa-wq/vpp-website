@@ -1,8 +1,23 @@
 'use client'
 
+import { type ReactNode } from 'react'
 import { trackEvent } from '@/lib/analytics'
 
-export function StickyMobileCTA() {
+type StickyMobileCTAProps = {
+  trackingPage?: string
+  desktopBlurb?: string
+  desktopCtaLabel?: string
+  mobileLabel?: string
+  mobileSubline?: ReactNode
+}
+
+export function StickyMobileCTA({
+  trackingPage = 'cabinet_refinishing',
+  desktopBlurb = 'Cabinet refinishing quotes are fixed in writing before work begins.',
+  desktopCtaLabel = 'Get Your Quote',
+  mobileLabel = 'Call for a Cabinet Quote',
+  mobileSubline = 'AZ ROC #363664 | 5-year warranty',
+}: StickyMobileCTAProps) {
   return (
     <>
       {/* Desktop bottom bar */}
@@ -10,13 +25,13 @@ export function StickyMobileCTA() {
         <div className="bg-ink/95 shadow-[0_-4px_20px_rgba(0,0,0,0.16)] h-16 flex items-center backdrop-blur-md border-t border-sand/10">
           <div className="mx-auto max-w-content w-full px-6 flex items-center justify-between">
             <p className="font-body font-medium text-sm text-sand">
-              Cabinet refinishing quotes are fixed in writing before work begins.
+              {desktopBlurb}
             </p>
             <div className="flex items-center gap-4">
               <button
                 onClick={() => {
                   trackEvent('estimate_cta_click', {
-                    page: 'cabinet_refinishing',
+                    page: trackingPage,
                     placement: 'desktop_sticky_bar',
                   })
                   const el = document.getElementById('quote-form')
@@ -27,7 +42,7 @@ export function StickyMobileCTA() {
                 }}
                 className="bg-terra text-white font-body font-semibold text-sm px-5 h-10 rounded-lg hover:bg-terra-dark transition-colors"
               >
-                Get Your Quote
+                {desktopCtaLabel}
               </button>
               <a
                 href="tel:+14804332680"
@@ -51,10 +66,10 @@ export function StickyMobileCTA() {
         >
           <div className="flex flex-col items-center justify-center h-full">
             <span className="font-body font-semibold text-[15px] text-white">
-              Call for a Cabinet Quote
+              {mobileLabel}
             </span>
             <span className="font-body font-light text-[11px] text-cream/80">
-              AZ ROC #363664 | 5-year warranty
+              {mobileSubline}
             </span>
           </div>
         </a>
