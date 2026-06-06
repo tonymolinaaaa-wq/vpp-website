@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Alfa_Slab_One, Inter } from 'next/font/google'
 import { Analytics } from '@/components/Analytics'
+import { getAllServices } from '@/lib/services'
 import './globals.css'
 
 const alfaSlab = Alfa_Slab_One({
@@ -19,13 +20,13 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.valleypaintingpros.com'),
-  title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa, Queen Creek, Scottsdale & Tempe | Valley Painting Pros',
+  title: 'Valley Painting Pros | Interior, Exterior & Cabinet Painting — East Valley AZ',
   description:
-    'Cabinet refinishing in the East Valley. AZ ROC #363664, 5-star rated, 5-year warranty. Custom quote — free in-home estimate. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
+    'Interior painting, exterior painting, and cabinet refinishing in the East Valley. Licensed (AZ ROC #363664), bonded, insured, and 5-star rated. Fixed quotes in writing, free in-home estimates. Call (480) 433-2680.',
   openGraph: {
-    title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa, Queen Creek, Scottsdale & Tempe | Valley Painting Pros',
+    title: 'Valley Painting Pros | Interior, Exterior & Cabinet Painting — East Valley AZ',
     description:
-      'Cabinet refinishing in the East Valley. AZ ROC #363664, 5-star rated, 5-year warranty. Custom quote — free in-home estimate. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
+      'Interior painting, exterior painting, and cabinet refinishing in the East Valley. Licensed (AZ ROC #363664), bonded, insured, and 5-star rated. Fixed quotes in writing, free in-home estimates. Call (480) 433-2680.',
     url: 'https://www.valleypaintingpros.com/',
     siteName: 'Valley Painting Pros',
     type: 'website',
@@ -36,15 +37,15 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: 'image/png',
-        alt: 'Valley Painting Pros — Cabinet Refinishing in the East Valley. AZ ROC #363664, 5-year warranty.',
+        alt: 'Valley Painting Pros — interior, exterior & cabinet painting in the East Valley. AZ ROC #363664.',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cabinet Refinishing in Chandler, Gilbert, Mesa, Queen Creek, Scottsdale & Tempe | Valley Painting Pros',
+    title: 'Valley Painting Pros | Interior, Exterior & Cabinet Painting — East Valley AZ',
     description:
-      'Cabinet refinishing in the East Valley. AZ ROC #363664, 5-star rated, 5-year warranty. Custom quote — free in-home estimate. Same cabinets, completely different kitchen in 3–5 days. Call (480) 433-2680.',
+      'Interior painting, exterior painting, and cabinet refinishing in the East Valley. Licensed (AZ ROC #363664), bonded, insured, and 5-star rated. Fixed quotes in writing, free in-home estimates. Call (480) 433-2680.',
     images: ['/VPP_og-image.png'],
   },
 }
@@ -54,7 +55,7 @@ const structuredData = {
   '@type': 'HomeAndConstructionBusiness',
   name: 'Valley Painting Pros',
   description:
-    'Professional cabinet refinishing in the East Valley. Licensed, insured, 5-star rated.',
+    'Interior painting, exterior painting, and cabinet refinishing in the East Valley. Licensed, insured, and 5-star rated.',
   url: 'https://valleypaintingpros.com',
   telephone: '+14804332680',
   email: 'valleypaintingprosllc@gmail.com',
@@ -96,6 +97,14 @@ const structuredData = {
     'https://www.facebook.com/valleyprosaz',
     'https://www.instagram.com/valleyprosaz',
   ],
+  makesOffer: getAllServices().map((service) => ({
+    '@type': 'Offer',
+    itemOffered: {
+      '@type': 'Service',
+      name: service.displayName,
+      serviceType: service.serviceType,
+    },
+  })),
 }
 
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION

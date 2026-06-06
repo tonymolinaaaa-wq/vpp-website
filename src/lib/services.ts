@@ -158,7 +158,10 @@ const services: Record<ServiceSlug, ServiceDefinition> = {
     navLabel: 'Interior Painting',
     shortLabel: 'Interior',
     displayName: 'Interior Painting',
-    cardTagline: 'DRAFT — pending owner copy.', // TODO(owner)
+    // Neutral category description (owner may refine). Page-level meta/hero below
+    // stay DRAFT until the interior page is built.
+    cardTagline:
+      'Walls, ceilings, trim, and doors — clean lines and a durable finish that stands up to daily life.',
     metaTitle: 'Interior Painting in the East Valley | Valley Painting Pros', // TODO(owner): finalize
     metaDescription:
       'DRAFT — pending owner copy. Interior painting in the East Valley by Valley Painting Pros. AZ ROC #363664.', // TODO(owner)
@@ -188,7 +191,10 @@ const services: Record<ServiceSlug, ServiceDefinition> = {
     navLabel: 'Exterior Painting',
     shortLabel: 'Exterior',
     displayName: 'Exterior Painting',
-    cardTagline: 'DRAFT — pending owner copy.', // TODO(owner)
+    // Neutral category description (owner may refine). Page-level meta/hero below
+    // stay DRAFT until the exterior page is built.
+    cardTagline:
+      'Stucco, siding, and trim, prepped and coated to handle the Arizona sun.',
     metaTitle: 'Exterior Painting in the East Valley | Valley Painting Pros', // TODO(owner): finalize
     metaDescription:
       'DRAFT — pending owner copy. Exterior house painting in the East Valley by Valley Painting Pros. AZ ROC #363664.', // TODO(owner)

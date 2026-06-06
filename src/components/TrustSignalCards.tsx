@@ -2,6 +2,8 @@ import Image from 'next/image'
 
 type TrustSignalCardsProps = {
   compact?: boolean
+  warrantyLabel?: string
+  warrantyDetail?: string
 }
 
 function StarRating() {
@@ -37,7 +39,11 @@ function WarrantyIcon() {
   )
 }
 
-export function TrustSignalCards({ compact = false }: TrustSignalCardsProps) {
+export function TrustSignalCards({
+  compact = false,
+  warrantyLabel = '5-Year Warranty',
+  warrantyDetail = 'Delivered in writing at job completion.',
+}: TrustSignalCardsProps) {
   const gridClass = compact
     ? 'grid grid-cols-1 gap-3 sm:grid-cols-2'
     : 'grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4'
@@ -111,8 +117,8 @@ export function TrustSignalCards({ compact = false }: TrustSignalCardsProps) {
 
       <div className="flex flex-col items-center rounded-lg border border-rule/70 bg-cream p-5 text-center">
         <WarrantyIcon />
-        <div className="font-body text-lg font-bold text-ink">5-Year Warranty</div>
-        <div className="mt-1 font-body text-sm text-brown">Delivered in writing at job completion.</div>
+        <div className="font-body text-lg font-bold text-ink">{warrantyLabel}</div>
+        <div className="mt-1 font-body text-sm text-brown">{warrantyDetail}</div>
         <span className="mt-4 inline-block font-body text-xs font-semibold uppercase tracking-[0.16em] text-terra">
           Written protection
         </span>
