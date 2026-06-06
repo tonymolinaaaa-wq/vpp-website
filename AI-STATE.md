@@ -286,6 +286,15 @@ Owner to-dos before interior/exterior go live: merge PR #33 (then the Phase 1
   TrustSignalCards warranty service-aware. npm run build passes; / is a static
   page; /cabinet-refinishing output unchanged. NOTE: going live with
   interior/exterior messaging is gated on confirming the AZ ROC license class.
+- 2026-06-05: Visual QA of the Phase 1 homepage (desktop 1280 + mobile 375 via
+  the local preview). One defect found and fixed: the interior/exterior service
+  cards were rendering the "DRAFT — pending owner copy." placeholder. Replaced
+  src/lib/services.ts cardTagline for both with neutral, accurate category
+  descriptions (owner may refine); page-level meta/hero for those services stay
+  DRAFT until their pages are built. Re-verified the cards render real copy, and
+  confirmed /cabinet-refinishing renders unchanged (title, h1, header subtitle
+  "Cabinet refinishing | AZ ROC #363664", sticky-bar copy, and 5-Year Warranty
+  badge all preserved via the shared-component defaults).
 
 ---
 
