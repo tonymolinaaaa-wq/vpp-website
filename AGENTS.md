@@ -2,7 +2,7 @@
 # Single source of truth for all AI agents working on this codebase.
 # Claude Code reads this via @AGENTS.md import in CLAUDE.md.
 # Codex reads this directly.
-# Last meaningful update: 2026-05-24
+# Last meaningful update: 2026-06-05
 
 ---
 
@@ -18,11 +18,13 @@ Before your final response after editing files:
 
 ## PROJECT
 
-Valley Painting Pros (VPP) — cabinet refinishing contractor, East Valley Arizona.
+Valley Painting Pros (VPP) — painting contractor, East Valley Arizona.
+Services: interior painting, exterior painting, and cabinet refinishing.
 
-Website scope: cabinet refinishing only. Do not surface non-cabinet services
-anywhere in customer-facing website content. This rule is absolute regardless
-of what the business does operationally outside the website.
+Website scope: full-service (interior, exterior, and cabinet refinishing).
+Each service has its own page and its own claims. A service-specific claim —
+especially warranty — must never appear on a service it does not apply to.
+See "SERVICE SCOPE & CABINET FREEZE" below.
 
 Stack: Next.js · TypeScript · Tailwind CSS · Vercel
 Repo: github.com/tonymolinaaaa-wq/vpp-website
@@ -31,6 +33,38 @@ Commands:
   Dev:    npm run dev
   Build:  npm run build
   Lint:   npm run lint
+
+---
+
+## SERVICE SCOPE & CABINET FREEZE
+
+The site is expanding from cabinet-only to full-service. The foundation is
+src/lib/services.ts — the single source of truth for nav, sitemap, schema, and
+lead tags. Add a service there (and drop photos in public/images/gallery/) and
+it propagates everywhere; nothing else needs editing for it to appear.
+
+Service pages:
+- /cabinet-refinishing — LIVE and FROZEN. This page is indexed and has paid ads
+  pointing at it. Do NOT change its URL, metadata, canonical, or FAQ JSON-LD
+  when adding services. Shared components it imports may change only via
+  additive props whose defaults preserve the current cabinet output.
+- / — becomes the full-service homepage (replacing the old cabinet redirect).
+- /interior-painting, /exterior-painting — new service pages. Until each one
+  ships, its services.ts entry stays status: 'draft' and is not shown in nav or
+  sitemap.
+
+Warranty is PER-SERVICE:
+- Cabinet refinishing: 5-year written warranty.
+- Interior / exterior: their own, separate, owner-supplied warranty terms.
+- Never display the cabinet 5-year warranty on an interior or exterior surface.
+  Until the owner supplies exact terms, use a non-numeric "written warranty on
+  every job" line. (Warranty copy is a Level 1 change — propose before writing.)
+
+Reviews are business-level: the 5.0 / 7 Google reviews may appear on any page,
+but never imply they are specific to a service they were not written for.
+
+Before any interior/exterior page goes live, confirm AZ ROC #363664's license
+class covers that work (owner verifies at roc.az.gov).
 
 ---
 
@@ -325,7 +359,8 @@ Two-typeface system only. Do not add other fonts.
 - Short sentences. No filler words.
 - "We" not "our team of experts"
 - Trade-specific language where it earns trust; plain language everywhere else
-- Never use: "full-service," "one-stop-shop," "we do it all," "painting company"
+- Never use: "one-stop-shop," "we do it all" (still too salesy). "Full-service"
+  and "painting company" are allowed now that the site is genuinely multi-service.
 - Never claim "in-house crew" or "no subcontractors" — refer to "our crew" or
   "our team." Trust comes from licensing, warranty, fixed price, oversight.
 
@@ -341,8 +376,6 @@ explicitly assigned.
 - Any reference to "per door" instead of "per opening"
 - Any reference to 3-year warranty
 - Any reference to separate drawer pricing
-- Any mention of interior or exterior painting as services
-- Any reference to "full-service painting" or "painting company"
 - Any v2.1 brand references or retired color values
 - Any colors not in the v4.0 palette above
 - Any specific paint brand names in customer-facing copy
@@ -352,16 +385,22 @@ explicitly assigned.
 ## PAGES
 
 ### Live
-- / — 307 redirect to /cabinet-refinishing (should be 308, on checklist)
-- /cabinet-refinishing — main service page
+- / — 308 redirect to /cabinet-refinishing (becomes the homepage in Phase 1)
+- /cabinet-refinishing — main service page (FROZEN — see Service scope above)
 - /blog — blog index
 - /blog/[slug] — article template (3 posts live)
+- /privacy — Privacy Policy
 - /sitemap.xml — auto-generated
+- /robots.txt — auto-generated
 
-### Planned
+### Planned (full-service expansion)
+- / — full-service homepage (replaces the cabinet redirect)
+- /interior-painting — service page (services.ts entry exists as draft)
+- /exterior-painting — service page (services.ts entry exists as draft)
+
+### Planned (later)
 - /trade-partners — B2B landing
 - /gilbert, /chandler, /mesa, /tempe, /scottsdale, /queen-creek — city pages
-- /privacy — Privacy Policy
 - /terms — Terms of Service
 
 ---
@@ -371,8 +410,8 @@ explicitly assigned.
 When auditing the site, check every page for:
 
 1. Pricing accuracy — $150/opening, not per door, not $125
-2. Warranty — 5-year, not 3-year
-3. Service scope — cabinet refinishing only
+2. Warranty — cabinet 5-year; interior/exterior per owner-supplied terms
+3. Service scope — interior, exterior, cabinet; /cabinet-refinishing frozen
 4. Color values — match v4.0 palette exactly
 5. Typography — Alfa Slab One display, Inter body/UI
 6. Voice — confident peer tone, no salesy language
@@ -387,7 +426,6 @@ When auditing the site, check every page for:
 
 ## DO NOT
 
-- Do not add non-cabinet services to the website
 - Do not name specific paint products in customer-facing copy
 - Do not use colors outside the v4.0 palette
 - Do not use "per door" — always "per opening"
