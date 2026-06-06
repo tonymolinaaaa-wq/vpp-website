@@ -10,18 +10,17 @@
 
 ## SNAPSHOT
 
-- State last updated from branch: main (direct commit)
+- State last updated from branch: claude/services-foundation (off main)
 - State last updated after commit: this commit
-- Working tree at last update: gitignored the two local-only working docs
-  (docs/VPP_Color_Approval.md, docs/VPP_Contract_Terms.md) per Ricardo's
-  decision to hold them local rather than commit them to the public repo, and
-  refreshed the KNOWN HAZARDS note now that PR #32 deleted the two retired v4
-  HTML brand drafts. With this the working tree is clean (no untracked files)
-  and the Codex-branch cleanup is fully closed.
-- Local matched origin at last update: committed directly on main and pushed.
-  PR #32 (docs/brand/AGENTS sync) merged earlier this session as merge commit
-  aa0adb2; the orphaned codex branch plus ~20 stale feature branches were
-  deleted (reported in chat, not via follow-up commits).
+- Working tree at last update: clean after committing Phase 0 of the
+  full-service expansion (see DECISIONS LOG 2026-06-05). Two commits on this
+  branch: a docs commit opening AGENTS.md scope to full-service, and a feat
+  commit adding src/lib/services.ts (single source of truth for services) and
+  tagging cabinet leads by service. npm run build passes; the rendered
+  /cabinet-refinishing page is unchanged.
+- Local matched origin at last update: branch pushed to origin and a PR opened
+  for Ricardo to review and merge (PR URL reported in chat, not via a follow-up
+  commit). Not yet merged to main.
 - Production URL: https://www.valleypaintingpros.com
 - Deploy target: Vercel (auto-deploys on push to main)
 
@@ -31,19 +30,25 @@
 
 Date: 2026-06-05
 Agent: Claude
-Branch worked: main (direct commit)
-Files touched: .gitignore, AI-STATE.md
-Committed: this commit — gitignored the two held working docs
-  (docs/VPP_Color_Approval.md, docs/VPP_Contract_Terms.md) so they stay local
-  and out of the public repo (Ricardo's call), and refreshed the KNOWN HAZARDS
-  HTML note (both v4 drafts were deleted when PR #32 merged). Closes out the
-  Codex cleanup — the working tree is now clean.
+Branch worked: claude/services-foundation (off main)
+Files touched: AGENTS.md, src/lib/services.ts (new),
+  src/app/cabinet-refinishing/CabinetPage.tsx, AI-STATE.md
+Committed: two commits on the branch. (1) docs(agents): opened the website
+  scope from cabinet-only to full-service (interior, exterior, cabinet), froze
+  the /cabinet-refinishing page, made warranty per-service, and relaxed the
+  voice rule to allow "full-service"/"painting company" (Ricardo's call) while
+  still banning "one-stop-shop"/"we do it all". (2) feat(services): added
+  src/lib/services.ts as the single source of truth for all services and wired
+  the cabinet quote form to it, so every lead now carries a `service` tag.
 Edited but not committed: none.
 Blockers encountered: none.
-Post-deploy step Ricardo must do: none outstanding. FYI: a gitignored local
-  folder public/cabinet-content/approved-photos/ holds 32 verified VPP photos
-  available for future gallery use; logo duplication (tracked root set vs the
-  gitignored staged set) is noted in the brand-overhaul memory for that work.
+Next up (Phase 1, not started): full-service homepage at / + multi-service nav,
+  plus the Level 1 changes (layout.tsx metadata/schema broadening, service-aware
+  TrustSignalCards warranty). Interior/exterior pages are Phase 2/3; their
+  services.ts entries are status: 'draft' until then.
+Owner to-dos before interior/exterior go live: confirm AZ ROC #363664 license
+  class covers interior/exterior painting (roc.az.gov); supply per-service
+  warranty terms; supply interior/exterior project photos + page copy.
 
 ---
 
@@ -225,6 +230,35 @@ Post-deploy step Ricardo must do: none outstanding. FYI: a gitignored local
   but the live header/footer had already switched to the SVG monogram, so those
   PNGs no longer render live and the optimization was moot. If the brand overhaul
   keeps any root PNGs, redo the optimization then.
+- 2026-06-05: Began the full-service expansion (cabinet-only -> interior,
+  exterior, cabinet) on branch claude/services-foundation, per owner (Tony)
+  approval of a phased rollout plan. Governance first: opened AGENTS.md website
+  scope to full-service, added a "SERVICE SCOPE & CABINET FREEZE" section, made
+  warranty per-service (cabinet 5-year; interior/exterior owner-supplied; never
+  show the cabinet warranty on the others), and froze /cabinet-refinishing (URL,
+  metadata, canonical, FAQ JSON-LD) because it is indexed and has paid ads
+  pointing at it. Per the owner's voice decision, relaxed the brand-voice rule to
+  ALLOW "full-service" and "painting company" while still banning "one-stop-shop"
+  and "we do it all". Removed the obsolete cabinet-only stale-content flags and
+  the "do not add non-cabinet services" DO-NOT item. Landed as the docs commit
+  preceding this one on the branch.
+- 2026-06-05: Added src/lib/services.ts as the single source of truth for service
+  lines (slug, nav labels, SEO metadata, hero copy, gallery, proof state, FAQs,
+  schema serviceType, accent token, and Formspree lead tags). Cabinet is
+  transcribed faithfully from the live page; the cabinet page keeps its own
+  metadata + FAQ JSON-LD authoritative for byte-stable SEO (config `faqs` left
+  empty for cabinet in Phase 0 to avoid schema drift — migrate later in a
+  verified step). Interior and exterior are status: 'draft' with clearly-marked
+  DRAFT/TODO placeholder copy and no invented pricing/warranty/proof, so
+  getNavServices() and the sitemap will not surface them until their pages ship.
+  Warranty fields are intentionally omitted from the config in Phase 0 because
+  warranty copy is Level 1; they land with the service-aware TrustSignalCards
+  change in Phase 1. Wired the cabinet QuoteForm to read leadSource/leadServiceTag
+  from the config and added a `service: "cabinet refinishing"` field to the
+  Formspree payload (matching BlogEstimateForm) so inbound leads self-label by
+  service. Reminder: the live lead path is Formspree
+  (https://formspree.io/f/xaqankry), NOT src/app/api/quote/route.ts, which stays
+  unused. npm run build passes and the rendered /cabinet-refinishing is unchanged.
 
 ---
 

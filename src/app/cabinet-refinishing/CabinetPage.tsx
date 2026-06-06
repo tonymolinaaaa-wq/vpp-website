@@ -8,6 +8,7 @@ import { SiteHeader } from '@/components/SiteHeader'
 import { StickyMobileCTA } from '@/components/StickyMobileCTA'
 import { TrustSignalCards } from '@/components/TrustSignalCards'
 import { trackEvent } from '@/lib/analytics'
+import { services } from '@/lib/services'
 
 /* ───────── ANIMATION HOOK ───────── */
 
@@ -1179,10 +1180,11 @@ function QuoteForm() {
 
     setStatus('sending')
     try {
+      const cabinet = services['cabinet-refinishing']
       const res = await fetch('https://formspree.io/f/xaqankry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...formData, _source: 'cabinet-refinishing' }),
+        body: JSON.stringify({ ...formData, _source: cabinet.leadSource, service: cabinet.leadServiceTag }),
       })
       if (res.ok) {
         trackEvent('quote_form_submit', {
